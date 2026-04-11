@@ -1,0 +1,21 @@
+---
+title: "Choosing Right Test"
+---
+
+
+
+::: {#fig-association-test fig-cap="Flowchart for selecting test of association (categorical variables)"}
+
+```{mermaid}
+flowchart TD
+A[Test of association] --> B[Check expected frequencies]
+
+B -->|≥5 in ≥80% of cells| C[Chi-square test]
+
+B -->|<5 in >20% cells| D{Sample size small?}
+
+D -->|Yes| E[Fisher’s exact test]
+D -->|No| F[Chi-square with Yates continuity correction]
+```
+
+:::

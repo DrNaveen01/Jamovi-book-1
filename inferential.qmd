@@ -1,0 +1,38 @@
+
+# Core Inferential Statistics {#sec-inferential}
+
+
+Inferential analysis is the process of drawing conclusions about a population based on information obtained from a sample. In most real-world settings, complete population data are unavailable, and decisions must be made under uncertainty. Inferential methods provide a structured framework to quantify this uncertainty and to distinguish between patterns that arise due to true underlying effects and those that occur by random variation. This transition—from describing observed data to making generalizable statements—is the defining step that separates descriptive analysis from analytical research.
+
+The core logic of inference is built on probability theory and sampling distributions. Estimates derived from a sample, such as means or proportions, are subject to variability; inferential analysis evaluates how likely it is that these estimates reflect the true population parameters. This is operationalized through concepts such as confidence intervals, which provide a range of plausible values, and hypothesis testing, which formally evaluates competing explanations for observed data. Procedures such as the Student's t-test, Chi-square test, and Analysis of Variance are specific implementations of this framework, each designed for particular data structures and research questions.
+
+A critical requirement in inferential analysis is the alignment between the research question, data type, and statistical method. The choice of test is not arbitrary; it depends on factors such as the 
+- scale of measurement, number of groups, 
+- distributional assumptions, 
+- and study design.
+
+Violations of underlying assumptions—such as **normality, independence, or homogeneity of variance** can lead to misleading conclusions if not properly addressed. Therefore, inference is not merely the application of statistical tests, but a decision-driven process that integrates data structure, methodological assumptions, and interpretative rigor.
+
+In applied medical and public health research, inferential analysis enables estimation of disease burden, comparison of interventions, identification of risk factors, and evaluation of associations. The outputs—p-values, confidence intervals, and effect sizes—must be interpreted in context, with attention to both statistical and clinical significance. Within Jamovi, these analyses can be executed through a graphical interface; however, the validity of conclusions depends on correct methodological choices rather than the mechanics of execution.
+
+
+::: {#fig-inferential-analysis fig-cap="Framework of inferential analysis"}
+```{mermaid}
+flowchart TD
+A[Population<br/>Target of inference]
+B[Sample<br/>Observed data]
+C[Descriptive analysis<br/>Summarization]
+D[Inferential analysis]
+E[Point estimate<br/>Confidence intervals]
+F[Hypothesis testing]
+G[Conclusion]
+H[Population inference]
+
+A --> B --> C --> D
+D --> E --> G
+D --> F --> G
+G --> H
+```
+:::
+
+

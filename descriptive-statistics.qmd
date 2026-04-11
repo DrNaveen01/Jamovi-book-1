@@ -1,0 +1,7 @@
+---
+title: "Descriptive Statistics"
+---
+
+### Frequencies and Proportions
+### Mean, Median, Standard Deviation, IQR
+### Confidence Intervals

@@ -1,0 +1,8 @@
+---
+title: "Graphical Presentation"
+
+---
+
+### Bar Charts and Pie Charts
+### Histograms and Boxplots
+### Basic Interpretation

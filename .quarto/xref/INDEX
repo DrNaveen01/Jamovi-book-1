@@ -1,0 +1,74 @@
+{
+  "index.qmd": {
+    "index.html": "feebf722"
+  },
+  "foundations.qmd": {
+    "foundations.html": "93d334dc"
+  },
+  "role.qmd": {
+    "role.html": "3272eab8"
+  },
+  "getting-started.qmd": {
+    "getting-started.html": "2e4c0a8d"
+  },
+  "data-management.qmd": {
+    "data-management.html": "32b07426"
+  },
+  "descriptive.qmd": {
+    "descriptive.html": "9c6c4563"
+  },
+  "descriptive-statistics.qmd": {
+    "descriptive-statistics.html": "fc58938f"
+  },
+  "graphical-presentation.qmd": {
+    "graphical-presentation.html": "c0dabacc"
+  },
+  "inferential.qmd": {
+    "inferential.html": "9e32c6b6"
+  },
+  "hypothesis-testing-concepts.qmd": {
+    "hypothesis-testing-concepts.html": "5a2502a6"
+  },
+  "comparing-two-means.qmd": {
+    "comparing-two-means.html": "009ca0b9"
+  },
+  "comparing-more-than-two-means.qmd": {
+    "comparing-more-than-two-means.html": "fe116575"
+  },
+  "categorical-variables.qmd": {
+    "categorical-variables.html": "7ed7d3c1"
+  },
+  "regression.qmd": {
+    "regression.html": "5ab545fb"
+  },
+  "correlation.qmd": {
+    "correlation.html": "651463c5"
+  },
+  "linear-regression.qmd": {
+    "linear-regression.html": "b8fa9de2"
+  },
+  "logistic-regression.qmd": {
+    "logistic-regression.html": "4ac79fdc"
+  },
+  "reporting.qmd": {
+    "reporting.html": "3fd465ee"
+  },
+  "reporting-results.qmd": {
+    "reporting-results.html": "f6272587"
+  },
+  "references.qmd": {
+    "references.html": "ae293206"
+  },
+  "statistical-formulas.qmd": {
+    "statistical-formulas.html": "4e1cd79c"
+  },
+  "choosing-right-test.qmd": {
+    "choosing-right-test.html": "7998c8d2"
+  },
+  "glossary.qmd": {
+    "glossary.html": "7ace3528"
+  },
+  "practice-dataset-excercises.qmd": {
+    "practice-dataset-excercises.html": "e23a86c1"
+  }
+}

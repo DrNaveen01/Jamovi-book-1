@@ -1,0 +1,19 @@
+---
+title: "Hypothesis Testing Concepts"
+---
+
+Hypothesis testing provides a formal framework for making decisions under uncertainty. It involves evaluating evidence from sample data to determine whether a predefined assumption about a population—the null hypothesis—should be rejected in favor of an alternative. This process does not establish truth with certainty; rather, it quantifies the strength of evidence against the null hypothesis while controlling the risk of incorrect conclusions.
+
+## p-value and Confidence Interval
+
+The p-value represents the probability of observing data as extreme as, or more extreme than, the current sample, assuming that the null hypothesis is true. A small p-value indicates that the observed data are unlikely under the null hypothesis, providing evidence against it. However, it does not measure the magnitude or practical importance of an effect, nor does it indicate the probability that the null hypothesis is true.
+
+A confidence interval provides a range of values within which the true population parameter is likely to lie, with a specified level of confidence (commonly 95%). Unlike the p-value, the confidence interval conveys both the direction and magnitude of an effect, as well as the precision of the estimate. Narrow intervals indicate more precise estimates, while wide intervals reflect greater uncertainty. In practice, confidence intervals are often preferred for interpretation because they provide more information than a binary significance decision.
+
+## Type I and Type II Errors
+
+Hypothesis testing is subject to two types of errors. A Type I error occurs when the null hypothesis is incorrectly rejected despite being true; its probability is denoted by the significance level (α), commonly set at 0.05. A Type II error occurs when the null hypothesis is not rejected despite being false, representing a failure to detect a true effect. These errors reflect a trade-off: reducing the probability of one often increases the probability of the other, and both must be considered in study design and interpretation.
+
+## Introduction to Power
+
+Statistical power is the probability of correctly rejecting a false null hypothesis, defined as (1 − β), where β is the probability of a Type II error. Power depends on several factors, including sample size, effect size, variability in the data, and the chosen significance level. Studies with low power are less likely to detect meaningful effects, even when they exist, leading to inconclusive or misleading results. Therefore, power considerations are integral to study planning, particularly in determining adequate sample size and ensuring that the analysis is capable of addressing the research question.

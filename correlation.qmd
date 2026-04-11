@@ -1,0 +1,49 @@
+# Correlation {#sec-correlation}
+
+Correlation analysis is used to quantify the relationship between two variables, specifically assessing the strength and direction of their association. It serves as an initial analytical step to determine whether variables tend to vary together and, if so, whether this relationship is positive or negative. Unlike more complex modeling approaches, correlation does not impose a directional structure; both variables are treated symmetrically, and no distinction is made between dependent and independent variables.
+
+The most commonly used measure is the Pearson correlation coefficient, which evaluates the strength of a linear relationship between two continuous variables under the assumption of normality. When these assumptions are not met, the Spearman rank correlation coefficient provides a non-parametric alternative based on ranked data, allowing assessment of monotonic relationships. These coefficients range from −1 to +1, indicating the extent and direction of association, with values closer to the extremes representing stronger relationships.
+
+Correlation analysis is particularly useful in exploratory data analysis, where it helps identify potential relationships that may warrant further investigation. However, it has inherent limitations. It does not account for confounding variables, cannot establish causation, and provides no mechanism for prediction. A strong correlation between two variables does not imply that one causes the other; the observed association may be influenced by underlying factors not included in the analysis.
+
+Within Jamovi, correlation analysis can be performed efficiently, generating both numerical coefficients and visual representations such as scatter plots. The emphasis, however, should remain on appropriate selection of methods, verification of assumptions, and cautious interpretation of results. Correlation should be viewed as a tool for identifying and quantifying associations, forming a basis for more detailed analytical approaches such as regression.
+
+::: {.landscape}
+```{r}
+library(tibble)
+library(dplyr)
+library(gt)
+
+tbl <- tribble(
+  ~Range,        ~Funder2019, ~Gignac2016, ~Cohen1988, ~Lovakov2021, ~Evans1996,
+  "< 0.05",      "Tiny",      "Very small","Very small","Very small","Very weak",
+  "0.05–<0.10",  "Very small","Very small","Very small","Very small","Very weak",
+  "0.10–<0.12",  "Small",     "Small",     "Small",     "Very small","Very weak",
+  "0.12–<0.20",  "Small",     "Small",     "Small",     "Small",     "Very weak",
+  "0.20–<0.24",  "Medium",    "Moderate",  "Small",     "Small",     "Weak",
+  "0.24–<0.30",  "Medium",    "Moderate",  "Small",     "Moderate",  "Weak",
+  "0.30–<0.40",  "Large",     "Large",     "Moderate",  "Moderate",  "Moderate",
+  "0.40–<0.41",  "Very large","Large",     "Moderate",  "Moderate",  "Moderate",
+  "0.41–<0.50",  "Very large","Large",     "Moderate",  "Large",     "Moderate",
+  "0.50–<0.60",  "Very large","Large",     "Large",     "Large",     "Moderate",
+  "0.60–<0.80",  "Very large","Large",     "Large",     "Large",     "Strong",
+  "≥ 0.80",      "Very large","Large",     "Large",     "Large",     "Very strong"
+)
+
+tbl |>
+  gt() |>
+  cols_align(align = "center") |>
+  tab_header(
+    title = "Comparative Interpretation of Correlation Effect Sizes"
+  )
+
+
+```
+:::
+
+
+## Pearson Correlation
+
+## Spearman Correlation
+
+## Interpretation and Reporting

@@ -1,0 +1,21 @@
+---
+title: "Comparing Two Means"
+---
+
+## Overview
+The t-test is used to compare the means of a continuous outcome between two groups. It is one of the most commonly applied inferential methods in medical and public health research, particularly when assessing differences between an exposure and control group or before-and-after measurements within the same individuals. The objective is to determine whether the observed difference in means is likely to reflect a true difference in the population or can be attributed to random variation.
+
+The most widely used form, the Student's t-test, evaluates the difference between group means relative to the variability within the data. Variants of the test are selected based on study design: the independent samples t-test compares two unrelated groups, while the paired t-test is used when observations are matched or repeated within the same subjects. In situations where the assumption of equal variances between groups is not met, the Welch t-test provides a more robust alternative.
+
+The validity of the t-test depends on key assumptions, including independence of observations, approximate normal distribution of the outcome within groups, and, for the standard version, homogeneity of variances. Deviations from these assumptions may require transformation of data or the use of non-parametric alternatives. Therefore, appropriate test selection and assumption checking are integral to correct application.
+
+In applied research, the t-test provides both a statistical test of difference and an estimate of the magnitude of that difference, typically reported alongside confidence intervals. Within Jamovi, it can be implemented through a graphical interface; however, interpretation requires attention to the direction and size of the mean difference, not solely the p-value.
+
+
+
+
+
+## Independent t-test
+## Paired t-test
+## Mann–Whitney U Test
+## Wilcoxon Signed-Rank Test

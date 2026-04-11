@@ -1,0 +1,118 @@
+---
+title: "Applied Data Analysis Using Jamovi – Volume II"
+subtitle: "Regression, Advanced Methods, and Applied Modeling in Health Research"
+author: "Author Name"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+  docx:
+    toc: true
+    number-sections: true
+  html:
+    toc: true
+    number-sections: true
+---
+
+# Front Matter
+
+## Preface to Volume II
+## Prerequisites and Scope
+## List of Abbreviations
+## List of Figures
+## List of Tables
+
+# Section I: Regression Framework
+
+## Chapter 1: From Association to Modeling
+### Concept of Prediction vs Explanation
+### Confounding and Effect Modification
+### Model Building Strategy
+
+## Chapter 2: Multiple Linear Regression
+### Model Specification
+### Assumption Checking
+### Multicollinearity
+### Interpretation of Coefficients
+### Model Diagnostics
+
+## Chapter 3: Logistic Regression
+### Binary Logistic Regression
+### Adjusted Odds Ratio
+### Model Fit (Pseudo R², AIC)
+### Interaction Terms
+### Interpretation in Clinical Context
+
+## Chapter 4: Model Validation
+### Residual Analysis
+### Influence Diagnostics
+### Internal Validation Concepts
+
+# Section II: Generalized Linear Models
+
+## Chapter 5: Count Data Models
+### Poisson Regression
+### Overdispersion
+### Negative Binomial Regression
+
+## Chapter 6: Risk Modeling
+### Relative Risk vs Odds Ratio
+### Log-binomial Models (Conceptual)
+### Clinical Interpretation
+
+# Section III: Time-to-Event Analysis
+
+## Chapter 7: Survival Analysis
+### Kaplan–Meier Estimation
+### Log-rank Test
+### Median Survival Interpretation
+
+## Chapter 8: Cox Proportional Hazards Model
+### Hazard Ratio
+### Proportional Hazards Assumption
+### Multivariable Survival Modeling
+
+# Section IV: Diagnostic and Measurement Analytics
+
+## Chapter 9: Diagnostic Test Evaluation
+### Sensitivity and Specificity
+### ROC Curve and AUC
+### Cut-off Selection
+
+## Chapter 10: Reliability and Agreement
+### Cronbach’s Alpha
+### Cohen’s Kappa
+### Intraclass Correlation Coefficient
+
+# Section V: Advanced ANOVA and Repeated Measures
+
+## Chapter 11: Factorial ANOVA
+### Interaction Effects
+### Effect Size
+
+## Chapter 12: Repeated Measures ANOVA
+### Within-Subject Designs
+### Sphericity and Corrections
+### Post-hoc Comparisons
+
+# Section VI: Reporting and Applied Case Modeling
+
+## Chapter 13: Writing Regression Results
+### Structured Reporting
+### Table Presentation
+### Common Analytical Errors
+
+## Chapter 14: Applied Modeling Case Studies
+### Cohort Study Example
+### Case-control Study Example
+### Clinical Dataset Modeling Workflow
+
+# Appendices
+
+## Appendix A: Assumption Checklist for Regression
+## Appendix B: Model Selection Flowchart
+## Appendix C: Interpretation Templates
+## Appendix D: Practice Datasets
+
+# References
+# Index

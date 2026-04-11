@@ -1,0 +1,75 @@
+---
+title: "guide-instructions"
+format: html
+---
+
+Logical flow must mirror **how a clinician thinks**, not how statistics textbooks are arranged.
+
+
+## Volume I — From Data to Basic Inference
+
+1. **Clinical Question → Study Design**
+2. **Type of Data → Measurement Scale**
+3. **Data Entry and Cleaning in Jamovi**
+4. **Descriptive Statistics**
+5. **Graphical Representation**
+6. **Concept of Uncertainty (CI, p-value)**
+7. **Two-Group Comparisons**
+8. **Multiple-Group Comparisons**
+9. **Categorical Associations**
+10. **Correlation**
+11. **Introduction to Linear Regression**
+12. **How to Report Results**
+
+Flow principle:
+**Describe → Compare → Associate → Predict (basic level)**
+
+---
+
+## Volume II — From Association to Multivariable Modeling
+
+1. **Why Adjustment Is Needed (Confounding)**
+2. **Multiple Linear Regression**
+3. **Logistic Regression**
+4. **Model Diagnostics**
+5. **Count Models (Poisson / NB)**
+6. **Survival Analysis (KM → Cox)**
+7. **Repeated Measures / Factorial ANOVA**
+8. **Diagnostic Test Evaluation**
+9. **Reliability and Agreement**
+10. **Structured Reporting of Models**
+
+Flow principle:
+**Adjust → Model → Validate → Interpret clinically**
+
+---
+
+## Volume III — From Modeling to Scientific Rigor
+
+1. **Causal Thinking (DAG logic)**
+2. **Model Building Strategy**
+3. **Interaction and Effect Modification**
+4. **Longitudinal Concepts**
+5. **Advanced Survival Concepts**
+6. **Risk Prediction Models**
+7. **Calibration & Validation**
+8. **Meta-analysis**
+9. **Reproducible Workflow (Jamovi ↔ R)**
+10. **Full-scale Applied Case Study**
+
+Flow principle:
+**Think causally → Build rigorously → Validate → Reproduce**
+
+---
+
+Unifying spine across all volumes:
+
+> Clinical question
+> → Data structure
+> → Statistical choice
+> → Assumptions
+> → Output interpretation
+> → Clinical meaning
+> → Reporting
+
+If this spine is consistent, the series will feel engineered, not compiled.

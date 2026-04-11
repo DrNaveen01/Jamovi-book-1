@@ -1,0 +1,102 @@
+---
+title: "Applied Data Analysis Using Jamovi – Volume I"
+subtitle: "Foundations and Core Statistical Methods for Health Researchers"
+author: "Author Name"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+  docx:
+    toc: true
+    number-sections: true
+  html:
+    toc: true
+    number-sections: true
+---
+
+# Front Matter
+
+## Preface
+## How to Use This Book
+## About the Author(s)
+## List of Abbreviations
+## List of Figures
+## List of Tables
+
+# Section I: Foundations
+
+## Chapter 1: Role of Statistics in Health Research
+### Types of Data and Measurement Scales
+### Research Designs in Brief
+### Statistical Workflow in Jamovi
+
+## Chapter 2: Getting Started with Jamovi
+### Installation and Interface
+### Importing and Structuring Data
+### Variable Properties and Levels
+
+## Chapter 3: Data Management
+
+# Section II: Descriptive Statistics and Visualization
+
+## Chapter 4: Descriptive Statistics
+### Frequencies and Proportions
+### Mean, Median, Standard Deviation, IQR
+### Confidence Intervals
+
+## Chapter 5: Graphical Presentation
+### Bar Charts and Pie Charts
+### Histograms and Boxplots
+### Basic Interpretation
+
+# Section III: Core Inferential Statistics
+
+## Chapter 6: Hypothesis Testing Concepts
+### p-value and Confidence Interval
+### Type I and Type II Errors
+### Introduction to Power
+
+## Chapter 7: Comparing Two Groups
+### Independent t-test
+### Paired t-test
+### Mann–Whitney U Test
+### Wilcoxon Signed-Rank Test
+
+## Chapter 8: Comparing More Than Two Groups
+### One-way ANOVA
+### Kruskal–Wallis Test
+### Basic Post-hoc Testing
+
+## Chapter 9: Association Between Categorical Variables
+### Chi-square Test
+### Fisher’s Exact Test
+### Measures of Association (Risk, Odds Ratio)
+
+# Section IV: Introduction to Correlation and Regression
+
+## Chapter 10: Correlation
+### Pearson Correlation
+### Spearman Correlation
+### Interpretation and Reporting
+
+## Chapter 11: Introduction to Linear Regression
+### Simple Linear Regression
+### Basic Assumptions
+### Output Interpretation in Jamovi
+
+# Reporting and Practice
+
+## Chapter 12: Reporting Results
+### Writing Statistical Results
+### Table Interpretation
+### Common Mistakes in Reporting
+
+# Appendices
+
+## Appendix A: Statistical Formulae (Basic)
+## Appendix B: Choosing the Correct Statistical Test (Decision Guide)
+## Appendix C: Glossary of Key Terms
+## Appendix D: Practice Datasets and Exercises
+
+# References
+# Index

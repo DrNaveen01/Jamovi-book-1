@@ -1,0 +1,11 @@
+---
+title: "Categorical Variables"
+---
+
+The chi-square test is used to assess the association between two categorical variables by comparing observed frequencies with those expected under the assumption of independence. It evaluates whether the distribution of one variable differs across the levels of another, providing a basis for determining whether an observed pattern is likely due to chance. This method is central to the analysis of contingency tables in medical and public health research, particularly when outcomes and exposures are expressed as categories.
+
+The most commonly applied form is the Chi-square test for independence. When applied to 2×2 tables with small sample sizes, a continuity correction—often referred to as Yates’ correction—may be used to adjust for the discrete nature of the data and reduce overestimation of statistical significance. However, this correction can be overly conservative and is generally unnecessary when sample sizes are adequate. In situations where expected cell frequencies are low (typically less than 5), the Fisher's exact test provides an exact probability calculation and is preferred over the chi-square approximation.
+
+The validity of the chi-square test depends on key assumptions, including independence of observations and sufficiently large expected frequencies in each cell. Violations of these assumptions can lead to inaccurate p-values and misleading conclusions. Therefore, evaluation of expected counts and appropriate selection between chi-square, continuity-corrected chi-square, and Fisher’s exact test are essential components of the analytical process.
+
+In applied settings, these tests are used to examine associations such as exposure–outcome relationships, treatment effects, or differences in proportions across groups. Within Jamovi, both chi-square and Fisher’s exact test can be performed through a graphical interface, with options for continuity correction where applicable. Interpretation should focus on the strength and direction of association, supported by measures such as proportions or risk estimates, rather than reliance on p-values alone.

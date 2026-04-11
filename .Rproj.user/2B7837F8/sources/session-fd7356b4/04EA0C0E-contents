@@ -1,0 +1,74 @@
+project:
+  type: book
+  output-dir: docs
+
+engine: knitr
+book:
+  title: "Hands-On Data Analysis Using Jamovi"
+  subtitle: "Foundations and Core Statistical Methods for Health Researchers"
+  author: "Dr Naveen Suthar"
+  date: "2026-03-26"
+  draft-mode: visible
+  chapters:
+    - index.qmd
+    - part: foundations.qmd
+      chapters: 
+        - role.qmd
+        - getting-started.qmd
+        - data-management.qmd
+    - part: descriptive.qmd
+      chapters: 
+        - descriptive-statistics.qmd
+        - graphical-presentation.qmd
+    - part: inferential.qmd
+      chapters: 
+        - hypothesis-testing-concepts.qmd
+        - comparing-two-means.qmd
+        - comparing-more-than-two-means.qmd
+        - categorical-variables.qmd
+    - part: regression.qmd
+      chapters: 
+        - correlation.qmd
+        - linear-regression.qmd
+        - logistic-regression.qmd
+    - part: reporting.qmd
+      chapters: 
+        - reporting-results.qmd
+    - references.qmd
+  appendices: 
+    - statistical-formulas.qmd
+    - choosing-right-test.qmd
+    - glossary.qmd
+    - practice-dataset-excercises.qmd
+
+  announcement: This work is in part of a project to write a companion to data analysis using Jamovi software for medical professionals.
+  bread-crumbs: true
+  volume: 1
+  volume-title: First book of the series
+  status: forthcoming
+  publisher-place: "Patna, India"
+  reader-mode: true
+  number-of-volumes: 3
+  
+bibliography: references.bib
+toc: true
+toc-expand: true
+toc-depth: 2
+lof: true
+lot: true
+execute: 
+  echo: false
+  warning: false
+format:
+  monashthesis-html: default
+  pdf:
+    documentclass: book
+    classoption: oneside
+    pdf-engine: xelatex
+    fig-align: center
+    zotero: true
+    
+    
+  
+
+

@@ -1,0 +1,6 @@
+# Role of Statistics in Health Research
+
+
+### Types of Data and Measurement Scales
+### Research Designs in Brief
+### Statistical Workflow in Jamovi

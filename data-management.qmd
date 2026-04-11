@@ -1,0 +1,7 @@
+---
+title: "Data Management"
+---
+
+### Recoding and Transforming Variables
+### Handling Missing Data
+### Filtering and Creating Computed Variables

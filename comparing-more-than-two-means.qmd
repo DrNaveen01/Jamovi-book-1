@@ -1,0 +1,14 @@
+---
+title: "Comparing More Than Two Means"
+---
+Analysis of Variance (ANOVA) is used to compare the means of a continuous outcome across two or more groups. While a Student's t-test is limited to comparing two groups, ANOVA extends this framework to multiple groups within a single model, allowing simultaneous evaluation of differences without inflating the risk of type I error from repeated testing.
+
+At its core, Analysis of Variance partitions the total variability in the outcome into variability between groups and variability within groups. The ratio of these components forms the F-statistic, which assesses whether the observed differences in group means are greater than would be expected by chance alone. A statistically significant result indicates that at least one group mean differs from the others, but it does not specify which groups are different.
+
+The validity of ANOVA depends on key assumptions, including independence of observations, approximate normality of the outcome within groups, and homogeneity of variances across groups. Violations of these assumptions can affect the reliability of results and may require alternative approaches such as non-parametric tests or variance adjustments. When the overall ANOVA is significant, post hoc comparisons are performed to identify specific group differences while controlling for multiple testing.
+
+In applied medical and public health research, ANOVA is commonly used to compare outcomes across exposure groups, treatment arms, or categorical risk factors with more than two levels. Within Jamovi, ANOVA can be implemented through a graphical interface, providing outputs such as F-statistics, p-values, and effect size measures. Proper interpretation requires attention to both statistical significance and the magnitude of differences, as well as appropriate reporting of post hoc analyses where relevant.
+
+### One-way ANOVA
+### Kruskal–Wallis Test
+### Basic Post-hoc Testing

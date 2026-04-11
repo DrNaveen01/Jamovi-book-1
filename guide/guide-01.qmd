@@ -1,0 +1,89 @@
+---
+title: "guide-01"
+format: html
+---
+
+Use a **fixed writing scaffold**. Each paragraph must satisfy one structural role. If a sentence does not serve that role, remove it.
+
+### 1. Topic Sentence (Claim)
+
+State the exact idea of the paragraph in one line.
+
+**Rule:** one claim only.
+
+Example
+“Postpartum hemorrhage remains the leading cause of maternal mortality globally.”
+
+Reference example:
+World Health Organization. WHO recommendations for the prevention and treatment of postpartum haemorrhage. Geneva: WHO; 2012.
+
+---
+
+### 2. Context / Background
+
+Provide the minimum necessary context explaining why the claim matters.
+
+**Rule:** 1–2 sentences maximum.
+
+Example
+“It accounts for nearly one quarter of maternal deaths worldwide, with uterine atony responsible for the majority of cases.”
+
+Reference:
+Say L, et al. Global causes of maternal death: a WHO systematic analysis. *Lancet Glob Health*. 2014;2(6):e323-e333.
+
+---
+
+### 3. Evidence
+
+Present data, study findings, or authoritative statements.
+
+**Rule:** every factual claim must have a citation.
+
+Example
+“Uterine atony contributes to approximately 70–80% of primary postpartum hemorrhage cases.”
+
+Reference:
+ACOG Practice Bulletin No. 183: Postpartum Hemorrhage. *Obstet Gynecol*. 2017;130:e168-e186.
+
+---
+
+### 4. Interpretation
+
+Explain what the evidence means.
+
+**Rule:** interpret, do not repeat the data.
+
+Example
+“This highlights the need for rapid uterine compression techniques when pharmacologic measures fail.”
+
+---
+
+### 5. Link Sentence
+
+Connect the paragraph to the next idea.
+
+**Rule:** forward-link to the next concept.
+
+Example
+“Among the available surgical techniques, uterine compression sutures have become an effective fertility-preserving option.”
+
+---
+
+## Operational Writing Rule
+
+Before keeping any sentence, test it against four questions:
+
+1. Does it support the **central claim of the paragraph**?
+2. Does it add **new information** rather than repeating earlier text?
+3. Does it have **evidence or citation** if factual?
+4. Does it **advance the argument** toward the next section?
+
+If any answer is **no**, delete the sentence.
+
+---
+
+## One-Line Pole to Follow
+
+**Claim → Context → Evidence → Interpretation → Link.**
+
+Every paragraph follows this sequence.

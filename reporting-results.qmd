@@ -1,0 +1,7 @@
+---
+title: "Reporting Results"
+---
+
+### Writing Statistical Results
+### Table Interpretation
+### Common Mistakes in Reporting

@@ -1,0 +1,16 @@
+
+# Introduction To Linear Regression {#sec-linear-reg}
+
+Linear regression is a statistical method used to model the relationship between a continuous outcome variable and one or more predictor variables. It extends the idea of association by providing a quantitative estimate of how the outcome changes with variation in predictors. Unlike correlation, which measures the strength of association without directionality, regression defines a dependent–independent structure, allowing both explanation and prediction.
+
+At its core, Linear regression expresses the outcome as a linear function of predictors, with each coefficient representing the expected change in the outcome for a one-unit change in the corresponding predictor, holding other variables constant. In simple linear regression, this relationship involves a single predictor, whereas multiple linear regression incorporates several predictors simultaneously, enabling adjustment for confounding and assessment of independent effects.
+
+The validity of linear regression depends on key assumptions, including linearity of relationships, independence of observations, homoscedasticity of residuals, and approximate normality of errors. Violations of these assumptions can lead to biased estimates or incorrect inference. Therefore, regression analysis is not limited to model fitting but requires systematic evaluation of these conditions and, where necessary, transformation or alternative modeling approaches.
+
+In applied medical and public health research, linear regression is used to quantify relationships between exposures and continuous outcomes, such as the effect of age, body mass index, or treatment duration on physiological measurements. Within Jamovi, linear regression can be implemented through a graphical interface; however, meaningful interpretation requires understanding of coefficients, confidence intervals, model fit indices, and the distinction between statistical and practical significance.
+
+## Simple Linear Regression
+
+## Basic Assumptions
+
+## Output Interpretation in Jamovi

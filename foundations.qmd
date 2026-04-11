@@ -1,0 +1,13 @@
+---
+title: "Foundations"
+---
+
+The foundation section establishes the essential groundwork for conducting any form of data analysis. Before applying statistical methods or interpreting results, it is necessary to understand the role that data analysis plays within the broader research process, how to operate within the analytical environment, and how to manage data in a structured and reliable manner. Without this foundation, subsequent analyses risk becoming mechanical, inconsistent, and methodologically unsound.
+
+Data analysis serves as the link between raw observations and meaningful conclusions. It transforms collected data into interpretable information that can address research questions, test hypotheses, and support decision-making. This requires clarity regarding the type of analysis being performed—whether descriptive, inferential, or predictive—and how each aligns with the study objectives. Establishing this perspective early ensures that analytical choices remain purposeful rather than arbitrary.
+
+Getting started with the analytical environment involves developing familiarity with the tools used for analysis. Within Jamovi, this includes importing datasets, understanding variable structures, and navigating the interface to perform basic operations. Early competence at this stage reduces technical errors and allows focus to remain on analytical reasoning rather than software mechanics.
+
+Equally critical is data management, which underpins the validity of all subsequent analysis. This includes defining variables correctly, assigning appropriate measurement levels, handling missing data, and maintaining consistency in coding. Well-managed data ensure that the dataset accurately represents the underlying study population and that statistical procedures operate on valid inputs.
+
+Together, these components provide a structured entry point into data analysis. They ensure that the analytical process begins with clarity, control, and data integrity, forming the basis upon which all further statistical work is built.

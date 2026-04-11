@@ -1,0 +1,122 @@
+---
+title: "Applied Data Analysis Using Jamovi – Volume III"
+subtitle: "Advanced Analytics, Research Design Integration, and Reproducible Health Data Science"
+author: "Author Name"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+  docx:
+    toc: true
+    number-sections: true
+  html:
+    toc: true
+    number-sections: true
+---
+
+# Front Matter
+
+## Preface to Volume III
+## Scope and Intended Audience
+## List of Abbreviations
+## List of Figures
+## List of Tables
+
+# Section I: Advanced Modeling Strategy
+
+## Chapter 1: Causal Thinking in Data Analysis
+### Directed Acyclic Graphs (Conceptual)
+### Confounding vs Mediation
+### Model Specification Strategy
+
+## Chapter 2: Advanced Regression Extensions
+### Interaction and Effect Modification
+### Stratified Analysis
+### Non-linear Relationships
+### Model Comparison (AIC, BIC)
+
+## Chapter 3: Multivariable Model Building
+### Stepwise vs Theory-Driven Modeling
+### Handling Collinearity
+### Parsimony and Overfitting
+
+# Section II: Longitudinal and Repeated Data
+
+## Chapter 4: Longitudinal Data Concepts
+### Within-Subject Correlation
+### Fixed vs Random Effects (Conceptual)
+
+## Chapter 5: Advanced Repeated Measures Analysis
+### Mixed Model Concepts (if module supported)
+### Interpretation of Time × Group Effects
+
+# Section III: Advanced Survival and Risk Prediction
+
+## Chapter 6: Advanced Survival Modeling
+### Time-Dependent Covariates (Conceptual)
+### Checking Proportional Hazards
+### Competing Risk (Conceptual Overview)
+
+## Chapter 7: Risk Prediction Models
+### Model Calibration
+### Discrimination
+### Internal Validation (Bootstrapping – Conceptual)
+### Clinical Risk Score Development Framework
+
+# Section IV: Advanced Diagnostic Analytics
+
+## Chapter 8: Advanced ROC Analysis
+### Comparing ROC Curves
+### Optimal Cut-off Methods
+### Clinical Utility Interpretation
+
+## Chapter 9: Agreement and Measurement Error
+### Bland–Altman Analysis
+### Limits of Agreement
+### Measurement Bias
+
+# Section V: Research Synthesis and Evidence Analysis
+
+## Chapter 10: Introduction to Meta-Analysis (Conceptual with Jamovi Modules)
+### Fixed vs Random Effects
+### Forest Plot Interpretation
+### Heterogeneity (I²)
+
+## Chapter 11: Publication Bias
+### Funnel Plot
+### Egger’s Test (Conceptual)
+
+# Section VI: Reproducibility and Integration
+
+## Chapter 12: Jamovi Syntax and R Integration
+### Using the Rj Editor
+### Extracting and Modifying R Code
+### Transitioning from Jamovi to R Workflow
+
+## Chapter 13: Reproducible Research Framework
+### Data Documentation
+### Transparent Reporting Standards (CONSORT, STROBE – Overview)
+### Structured Workflow for Thesis and Publication
+
+# Section VII: Full-Length Applied Case Studies
+
+## Chapter 14: Development of a Clinical Prediction Model
+### Dataset Preparation
+### Model Development
+### Validation
+### Reporting Framework
+
+## Chapter 15: Public Health Survey Analysis
+### Complex Survey Overview (Conceptual)
+### Weighted Analysis (Conceptual)
+### Interpretation in Policy Context
+
+# Appendices
+
+## Appendix A: Advanced Assumption Checklist
+## Appendix B: Reporting Checklists
+## Appendix C: Model Development Template
+## Appendix D: Extended Practice Datasets
+
+# References
+# Index

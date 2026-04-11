@@ -1,0 +1,33 @@
+# Frontmatter {-}
+
+
+
+## Preface {.unnumbered}
+
+This book is dedicated to Lord Jaggannath. To seek his eternal blessings i am undertaking this task on the auspicious day of Ramnavami on 26-March-2026.
+
+
+## How to Use This Book {.unnumbered}
+This book is intended to be used as a practical mannual to conduct data analysis in the statistcal environment of Jamovi.
+
+:::{.callout-note}
+This book is actively under development. If you find any inaccuracy, inconsistency, or mistake please report it at <books.drnaveen@gmail.com>
+
+Your suggestions to author of this book are also welcome at <books.drnaveen@gmail.com>, Your contribution will be duly acknowledged
+
+:::
+
+## About the Author(s) {.unnumbered}
+Author of this book can be contacted at <https://drnaveensuthar.quarto.pub/>
+
+## List of Abbreviations {.unnumbered}
+
+
+## List of Figures {.unnumbered}
+\listoffigures
+\pagebreak
+
+## List of Tables {.unnumbered}
+\listoftables
+\pagebreak
+
