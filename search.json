@@ -1,0 +1,386 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hands-On Data Analysis Using Jamovi",
+    "section": "",
+    "text": "Frontmatter",
+    "crumbs": [
+      "Frontmatter"
+    ]
+  },
+  {
+    "objectID": "index.html#preface",
+    "href": "index.html#preface",
+    "title": "Hands-On Data Analysis Using Jamovi",
+    "section": "Preface",
+    "text": "Preface\nThis book is dedicated to Lord Jaggannath. To seek his eternal blessings i am undertaking this task on the auspicious day of Ramnavami on 26-March-2026.",
+    "crumbs": [
+      "Frontmatter"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use-this-book",
+    "href": "index.html#how-to-use-this-book",
+    "title": "Hands-On Data Analysis Using Jamovi",
+    "section": "How to Use This Book",
+    "text": "How to Use This Book\nThis book is intended to be used as a practical mannual to conduct data analysis in the statistcal environment of Jamovi.\n\n\n\n\n\n\nNote\n\n\n\nThis book is actively under development. If you find any inaccuracy, inconsistency, or mistake please report it at books.drnaveen@gmail.com\nYour suggestions to author of this book are also welcome at books.drnaveen@gmail.com, Your contribution will be duly acknowledged",
+    "crumbs": [
+      "Frontmatter"
+    ]
+  },
+  {
+    "objectID": "index.html#about-the-authors",
+    "href": "index.html#about-the-authors",
+    "title": "Hands-On Data Analysis Using Jamovi",
+    "section": "About the Author(s)",
+    "text": "About the Author(s)\nAuthor of this book can be contacted at https://drnaveensuthar.quarto.pub/",
+    "crumbs": [
+      "Frontmatter"
+    ]
+  },
+  {
+    "objectID": "index.html#list-of-abbreviations",
+    "href": "index.html#list-of-abbreviations",
+    "title": "Hands-On Data Analysis Using Jamovi",
+    "section": "List of Abbreviations",
+    "text": "List of Abbreviations",
+    "crumbs": [
+      "Frontmatter"
+    ]
+  },
+  {
+    "objectID": "index.html#list-of-figures",
+    "href": "index.html#list-of-figures",
+    "title": "Hands-On Data Analysis Using Jamovi",
+    "section": "List of Figures",
+    "text": "List of Figures",
+    "crumbs": [
+      "Frontmatter"
+    ]
+  },
+  {
+    "objectID": "index.html#list-of-tables",
+    "href": "index.html#list-of-tables",
+    "title": "Hands-On Data Analysis Using Jamovi",
+    "section": "List of Tables",
+    "text": "List of Tables",
+    "crumbs": [
+      "Frontmatter"
+    ]
+  },
+  {
+    "objectID": "foundations.html",
+    "href": "foundations.html",
+    "title": "Foundations",
+    "section": "",
+    "text": "The foundation section establishes the essential groundwork for conducting any form of data analysis. Before applying statistical methods or interpreting results, it is necessary to understand the role that data analysis plays within the broader research process, how to operate within the analytical environment, and how to manage data in a structured and reliable manner. Without this foundation, subsequent analyses risk becoming mechanical, inconsistent, and methodologically unsound.\nData analysis serves as the link between raw observations and meaningful conclusions. It transforms collected data into interpretable information that can address research questions, test hypotheses, and support decision-making. This requires clarity regarding the type of analysis being performed—whether descriptive, inferential, or predictive—and how each aligns with the study objectives. Establishing this perspective early ensures that analytical choices remain purposeful rather than arbitrary.\nGetting started with the analytical environment involves developing familiarity with the tools used for analysis. Within Jamovi, this includes importing datasets, understanding variable structures, and navigating the interface to perform basic operations. Early competence at this stage reduces technical errors and allows focus to remain on analytical reasoning rather than software mechanics.\nEqually critical is data management, which underpins the validity of all subsequent analysis. This includes defining variables correctly, assigning appropriate measurement levels, handling missing data, and maintaining consistency in coding. Well-managed data ensure that the dataset accurately represents the underlying study population and that statistical procedures operate on valid inputs.\nTogether, these components provide a structured entry point into data analysis. They ensure that the analytical process begins with clarity, control, and data integrity, forming the basis upon which all further statistical work is built.",
+    "crumbs": [
+      "Foundations"
+    ]
+  },
+  {
+    "objectID": "role.html",
+    "href": "role.html",
+    "title": "1  Role of Statistics in Health Research",
+    "section": "",
+    "text": "1.0.1 Types of Data and Measurement Scales\n\n\n1.0.2 Research Designs in Brief\n\n\n1.0.3 Statistical Workflow in Jamovi",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Role of Statistics in Health Research</span>"
+    ]
+  },
+  {
+    "objectID": "getting-started.html",
+    "href": "getting-started.html",
+    "title": "2  Getting Started With Jamovi",
+    "section": "",
+    "text": "2.0.1 Installation and Interface\n\n\n2.0.2 Importing and Structuring Data\n\n\n2.0.3 Variable Properties and Levels",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting Started With Jamovi</span>"
+    ]
+  },
+  {
+    "objectID": "data-management.html",
+    "href": "data-management.html",
+    "title": "3  Data Management",
+    "section": "",
+    "text": "3.0.1 Recoding and Transforming Variables\n\n\n3.0.2 Handling Missing Data\n\n\n3.0.3 Filtering and Creating Computed Variables",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Management</span>"
+    ]
+  },
+  {
+    "objectID": "descriptive.html",
+    "href": "descriptive.html",
+    "title": "Descriptive statistics and visualization",
+    "section": "",
+    "text": "Descriptive statistics form the first level of data analysis, focused on organizing, summarizing, and presenting data in a meaningful way. At this stage, the objective is not to draw conclusions beyond the observed dataset, but to understand its internal structure, distribution, and patterns. Raw data, in its original form, are often unstructured and difficult to interpret; descriptive methods convert these into interpretable summaries through tabulation, numerical measures, and graphical representation.\nThe process begins with data preparation, including cleaning, coding, and organizing variables into a usable format. Once structured, the data are summarized using measures of central tendency such as mean, median, and mode, which represent the typical value, and measures of dispersion such as standard deviation, interquartile range, and range, which reflect variability. These numerical summaries are complemented by visual tools—such as histograms, bar charts, and boxplots—that provide an intuitive understanding of distributional characteristics, outliers, and group differences.\nDescriptive statistics are essential for identifying data quality issues, detecting anomalies, and guiding subsequent analytical decisions. They provide the necessary context for inferential analysis by clarifying the nature of the data, including scale, distribution, and underlying patterns. Within Jamovi, these procedures can be executed efficiently through a graphical interface; however, their value lies in correct interpretation rather than mechanical computation. Descriptive analysis does not establish causation or generalize findings to a population, but it defines the foundation upon which all further statistical inference is built.\n\n\n\n\n\n\n\n\nflowchart TD\nA[Raw data]\nB[Data preparation&lt;br/&gt;Cleaning and coding]\nC[Organized data]\nD[Descriptive statistics]\nE[Central tendency&lt;br/&gt;Mean, median]\nF[Dispersion&lt;br/&gt;SD, IQR]\nG[Visualization&lt;br/&gt;Plots]\nH[Summary&lt;br/&gt;Patterns]\n\nA --&gt; B\nB --&gt; C\nC --&gt; D\nD --&gt; E\nD --&gt; F\nD --&gt; G\nE --&gt; H\nF --&gt; H\nG --&gt; H\n\n\n\n\n\n\n\n\nFigure 1: Framework of descriptive statistics",
+    "crumbs": [
+      "Descriptive statistics and visualization"
+    ]
+  },
+  {
+    "objectID": "descriptive-statistics.html",
+    "href": "descriptive-statistics.html",
+    "title": "4  Descriptive Statistics",
+    "section": "",
+    "text": "4.0.1 Frequencies and Proportions\n\n\n4.0.2 Mean, Median, Standard Deviation, IQR\n\n\n4.0.3 Confidence Intervals",
+    "crumbs": [
+      "Descriptive statistics and visualization",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "graphical-presentation.html",
+    "href": "graphical-presentation.html",
+    "title": "5  Graphical Presentation",
+    "section": "",
+    "text": "5.0.1 Bar Charts and Pie Charts\n\n\n5.0.2 Histograms and Boxplots\n\n\n5.0.3 Basic Interpretation",
+    "crumbs": [
+      "Descriptive statistics and visualization",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Graphical Presentation</span>"
+    ]
+  },
+  {
+    "objectID": "inferential.html",
+    "href": "inferential.html",
+    "title": "Core Inferential Statistics",
+    "section": "",
+    "text": "Inferential analysis is the process of drawing conclusions about a population based on information obtained from a sample. In most real-world settings, complete population data are unavailable, and decisions must be made under uncertainty. Inferential methods provide a structured framework to quantify this uncertainty and to distinguish between patterns that arise due to true underlying effects and those that occur by random variation. This transition—from describing observed data to making generalizable statements—is the defining step that separates descriptive analysis from analytical research.\nThe core logic of inference is built on probability theory and sampling distributions. Estimates derived from a sample, such as means or proportions, are subject to variability; inferential analysis evaluates how likely it is that these estimates reflect the true population parameters. This is operationalized through concepts such as confidence intervals, which provide a range of plausible values, and hypothesis testing, which formally evaluates competing explanations for observed data. Procedures such as the Student’s t-test, Chi-square test, and Analysis of Variance are specific implementations of this framework, each designed for particular data structures and research questions.\nA critical requirement in inferential analysis is the alignment between the research question, data type, and statistical method. The choice of test is not arbitrary; it depends on factors such as the - scale of measurement, number of groups, - distributional assumptions, - and study design.\nViolations of underlying assumptions—such as normality, independence, or homogeneity of variance can lead to misleading conclusions if not properly addressed. Therefore, inference is not merely the application of statistical tests, but a decision-driven process that integrates data structure, methodological assumptions, and interpretative rigor.\nIn applied medical and public health research, inferential analysis enables estimation of disease burden, comparison of interventions, identification of risk factors, and evaluation of associations. The outputs—p-values, confidence intervals, and effect sizes—must be interpreted in context, with attention to both statistical and clinical significance. Within Jamovi, these analyses can be executed through a graphical interface; however, the validity of conclusions depends on correct methodological choices rather than the mechanics of execution.\n\n\n\n\n\n\n\n\nflowchart TD\nA[Population&lt;br/&gt;Target of inference]\nB[Sample&lt;br/&gt;Observed data]\nC[Descriptive analysis&lt;br/&gt;Summarization]\nD[Inferential analysis]\nE[Point estimate&lt;br/&gt;Confidence intervals]\nF[Hypothesis testing]\nG[Conclusion]\nH[Population inference]\n\nA --&gt; B --&gt; C --&gt; D\nD --&gt; E --&gt; G\nD --&gt; F --&gt; G\nG --&gt; H\n\n\n\n\n\n\n\n\nFigure 1: Framework of inferential analysis",
+    "crumbs": [
+      "Core Inferential Statistics"
+    ]
+  },
+  {
+    "objectID": "hypothesis-testing-concepts.html",
+    "href": "hypothesis-testing-concepts.html",
+    "title": "6  Hypothesis Testing Concepts",
+    "section": "",
+    "text": "6.1 p-value and Confidence Interval\nHypothesis testing provides a formal framework for making decisions under uncertainty. It involves evaluating evidence from sample data to determine whether a predefined assumption about a population—the null hypothesis—should be rejected in favor of an alternative. This process does not establish truth with certainty; rather, it quantifies the strength of evidence against the null hypothesis while controlling the risk of incorrect conclusions.\nThe p-value represents the probability of observing data as extreme as, or more extreme than, the current sample, assuming that the null hypothesis is true. A small p-value indicates that the observed data are unlikely under the null hypothesis, providing evidence against it. However, it does not measure the magnitude or practical importance of an effect, nor does it indicate the probability that the null hypothesis is true.\nA confidence interval provides a range of values within which the true population parameter is likely to lie, with a specified level of confidence (commonly 95%). Unlike the p-value, the confidence interval conveys both the direction and magnitude of an effect, as well as the precision of the estimate. Narrow intervals indicate more precise estimates, while wide intervals reflect greater uncertainty. In practice, confidence intervals are often preferred for interpretation because they provide more information than a binary significance decision.",
+    "crumbs": [
+      "Core Inferential Statistics",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Hypothesis Testing Concepts</span>"
+    ]
+  },
+  {
+    "objectID": "hypothesis-testing-concepts.html#type-i-and-type-ii-errors",
+    "href": "hypothesis-testing-concepts.html#type-i-and-type-ii-errors",
+    "title": "6  Hypothesis Testing Concepts",
+    "section": "6.2 Type I and Type II Errors",
+    "text": "6.2 Type I and Type II Errors\nHypothesis testing is subject to two types of errors. A Type I error occurs when the null hypothesis is incorrectly rejected despite being true; its probability is denoted by the significance level (α), commonly set at 0.05. A Type II error occurs when the null hypothesis is not rejected despite being false, representing a failure to detect a true effect. These errors reflect a trade-off: reducing the probability of one often increases the probability of the other, and both must be considered in study design and interpretation.",
+    "crumbs": [
+      "Core Inferential Statistics",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Hypothesis Testing Concepts</span>"
+    ]
+  },
+  {
+    "objectID": "hypothesis-testing-concepts.html#introduction-to-power",
+    "href": "hypothesis-testing-concepts.html#introduction-to-power",
+    "title": "6  Hypothesis Testing Concepts",
+    "section": "6.3 Introduction to Power",
+    "text": "6.3 Introduction to Power\nStatistical power is the probability of correctly rejecting a false null hypothesis, defined as (1 − β), where β is the probability of a Type II error. Power depends on several factors, including sample size, effect size, variability in the data, and the chosen significance level. Studies with low power are less likely to detect meaningful effects, even when they exist, leading to inconclusive or misleading results. Therefore, power considerations are integral to study planning, particularly in determining adequate sample size and ensuring that the analysis is capable of addressing the research question.",
+    "crumbs": [
+      "Core Inferential Statistics",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Hypothesis Testing Concepts</span>"
+    ]
+  },
+  {
+    "objectID": "comparing-two-means.html",
+    "href": "comparing-two-means.html",
+    "title": "7  Comparing Two Means",
+    "section": "",
+    "text": "7.1 Overview\nThe t-test is used to compare the means of a continuous outcome between two groups. It is one of the most commonly applied inferential methods in medical and public health research, particularly when assessing differences between an exposure and control group or before-and-after measurements within the same individuals. The objective is to determine whether the observed difference in means is likely to reflect a true difference in the population or can be attributed to random variation.\nThe most widely used form, the Student’s t-test, evaluates the difference between group means relative to the variability within the data. Variants of the test are selected based on study design: the independent samples t-test compares two unrelated groups, while the paired t-test is used when observations are matched or repeated within the same subjects. In situations where the assumption of equal variances between groups is not met, the Welch t-test provides a more robust alternative.\nThe validity of the t-test depends on key assumptions, including independence of observations, approximate normal distribution of the outcome within groups, and, for the standard version, homogeneity of variances. Deviations from these assumptions may require transformation of data or the use of non-parametric alternatives. Therefore, appropriate test selection and assumption checking are integral to correct application.\nIn applied research, the t-test provides both a statistical test of difference and an estimate of the magnitude of that difference, typically reported alongside confidence intervals. Within Jamovi, it can be implemented through a graphical interface; however, interpretation requires attention to the direction and size of the mean difference, not solely the p-value.",
+    "crumbs": [
+      "Core Inferential Statistics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Comparing Two Means</span>"
+    ]
+  },
+  {
+    "objectID": "comparing-two-means.html#independent-t-test",
+    "href": "comparing-two-means.html#independent-t-test",
+    "title": "7  Comparing Two Means",
+    "section": "7.2 Independent t-test",
+    "text": "7.2 Independent t-test",
+    "crumbs": [
+      "Core Inferential Statistics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Comparing Two Means</span>"
+    ]
+  },
+  {
+    "objectID": "comparing-two-means.html#paired-t-test",
+    "href": "comparing-two-means.html#paired-t-test",
+    "title": "7  Comparing Two Means",
+    "section": "7.3 Paired t-test",
+    "text": "7.3 Paired t-test",
+    "crumbs": [
+      "Core Inferential Statistics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Comparing Two Means</span>"
+    ]
+  },
+  {
+    "objectID": "comparing-two-means.html#mannwhitney-u-test",
+    "href": "comparing-two-means.html#mannwhitney-u-test",
+    "title": "7  Comparing Two Means",
+    "section": "7.4 Mann–Whitney U Test",
+    "text": "7.4 Mann–Whitney U Test",
+    "crumbs": [
+      "Core Inferential Statistics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Comparing Two Means</span>"
+    ]
+  },
+  {
+    "objectID": "comparing-two-means.html#wilcoxon-signed-rank-test",
+    "href": "comparing-two-means.html#wilcoxon-signed-rank-test",
+    "title": "7  Comparing Two Means",
+    "section": "7.5 Wilcoxon Signed-Rank Test",
+    "text": "7.5 Wilcoxon Signed-Rank Test",
+    "crumbs": [
+      "Core Inferential Statistics",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Comparing Two Means</span>"
+    ]
+  },
+  {
+    "objectID": "comparing-more-than-two-means.html",
+    "href": "comparing-more-than-two-means.html",
+    "title": "8  Comparing More Than Two Means",
+    "section": "",
+    "text": "Analysis of Variance (ANOVA) is used to compare the means of a continuous outcome across two or more groups. While a Student’s t-test is limited to comparing two groups, ANOVA extends this framework to multiple groups within a single model, allowing simultaneous evaluation of differences without inflating the risk of type I error from repeated testing.\nAt its core, Analysis of Variance partitions the total variability in the outcome into variability between groups and variability within groups. The ratio of these components forms the F-statistic, which assesses whether the observed differences in group means are greater than would be expected by chance alone. A statistically significant result indicates that at least one group mean differs from the others, but it does not specify which groups are different.\nThe validity of ANOVA depends on key assumptions, including independence of observations, approximate normality of the outcome within groups, and homogeneity of variances across groups. Violations of these assumptions can affect the reliability of results and may require alternative approaches such as non-parametric tests or variance adjustments. When the overall ANOVA is significant, post hoc comparisons are performed to identify specific group differences while controlling for multiple testing.\nIn applied medical and public health research, ANOVA is commonly used to compare outcomes across exposure groups, treatment arms, or categorical risk factors with more than two levels. Within Jamovi, ANOVA can be implemented through a graphical interface, providing outputs such as F-statistics, p-values, and effect size measures. Proper interpretation requires attention to both statistical significance and the magnitude of differences, as well as appropriate reporting of post hoc analyses where relevant.\n\n8.0.1 One-way ANOVA\n\n\n8.0.2 Kruskal–Wallis Test\n\n\n8.0.3 Basic Post-hoc Testing",
+    "crumbs": [
+      "Core Inferential Statistics",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Comparing More Than Two Means</span>"
+    ]
+  },
+  {
+    "objectID": "categorical-variables.html",
+    "href": "categorical-variables.html",
+    "title": "9  Categorical Variables",
+    "section": "",
+    "text": "The chi-square test is used to assess the association between two categorical variables by comparing observed frequencies with those expected under the assumption of independence. It evaluates whether the distribution of one variable differs across the levels of another, providing a basis for determining whether an observed pattern is likely due to chance. This method is central to the analysis of contingency tables in medical and public health research, particularly when outcomes and exposures are expressed as categories.\nThe most commonly applied form is the Chi-square test for independence. When applied to 2×2 tables with small sample sizes, a continuity correction—often referred to as Yates’ correction—may be used to adjust for the discrete nature of the data and reduce overestimation of statistical significance. However, this correction can be overly conservative and is generally unnecessary when sample sizes are adequate. In situations where expected cell frequencies are low (typically less than 5), the Fisher’s exact test provides an exact probability calculation and is preferred over the chi-square approximation.\nThe validity of the chi-square test depends on key assumptions, including independence of observations and sufficiently large expected frequencies in each cell. Violations of these assumptions can lead to inaccurate p-values and misleading conclusions. Therefore, evaluation of expected counts and appropriate selection between chi-square, continuity-corrected chi-square, and Fisher’s exact test are essential components of the analytical process.\nIn applied settings, these tests are used to examine associations such as exposure–outcome relationships, treatment effects, or differences in proportions across groups. Within Jamovi, both chi-square and Fisher’s exact test can be performed through a graphical interface, with options for continuity correction where applicable. Interpretation should focus on the strength and direction of association, supported by measures such as proportions or risk estimates, rather than reliance on p-values alone.",
+    "crumbs": [
+      "Core Inferential Statistics",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Categorical Variables</span>"
+    ]
+  },
+  {
+    "objectID": "regression.html",
+    "href": "regression.html",
+    "title": "Regression",
+    "section": "",
+    "text": "Regression analysis and correlation analysis address the same fundamental problem: understanding relationships between variables. They diverge in purpose, interpretability, and analytical output. Correlation (10  Correlation), typically quantified using measures such as the Pearson correlation coefficient or Spearman rank correlation coefficient, provides a standardized estimate of the strength and direction of association between two variables. Its value ranges from −1 to +1, indicating whether variables move together, inversely, or show no linear relationship. However, correlation is symmetrical and non-directional; it does not distinguish between dependent and independent variables, nor does it allow prediction. It answers a limited question: whether variables vary together and to what extent.\nRegression analysis extends this framework by introducing directionality and purpose. It explicitly models the relationship between an outcome (dependent variable) and one or more predictors (independent variables). In doing so, it enables:\n\nEstimation of the magnitude of effect (how much change in outcome per unit change in predictor)\nAdjustment for multiple variables simultaneously (control of confounding)\nPrediction of outcomes under specified conditions\n\nIn simple settings, the association captured by correlation is mathematically related to the slope estimated in Linear regression (11  Introduction To Linear Regression), but regression provides an explicit functional form linking variables. In applied medical and public health research, this distinction is operational: correlation serves as an exploratory tool, whereas regression supports inference, adjustment, and decision-making.\nWhen the outcome variable is binary, the assumptions of linear regression are violated, and alternative modeling approaches are required. Logistic regression (12  Logistic Regression) addresses this by modeling the probability of an event using a logit transformation, producing estimates in the form of odds ratios. This allows interpretation in terms of relative likelihood while accommodating non-linear relationships between predictors and the probability scale. Logistic regression is therefore central to clinical and epidemiological research where outcomes are frequently dichotomous, such as disease presence or absence, treatment response, or mortality.\nBeyond these, a broader class of models—collectively termed Generalized Linear Models—extends regression to different types of outcome distributions through appropriate link functions. These include Poisson regression for count data, log-binomial regression for estimating risk ratios directly, and negative binomial regression for overdispersed count data. Each model is defined by a specific combination of distributional assumption and link function, allowing analytical flexibility when standard linear or logistic frameworks are inadequate. In situations where the outcome is time until an event, standard regression approaches are insufficient due to censoring and varying follow-up times. Methods from survival analysis, such as Kaplan–Meier estimation and Cox proportional hazards modeling, are designed to handle these complexities. These approaches focus not only on whether an event occurs, but also on when it occurs, providing a different but complementary perspective to regression-based analyses. As of writing of this volume these are out of scope and will be discussed in subsequent volumes.",
+    "crumbs": [
+      "Regression"
+    ]
+  },
+  {
+    "objectID": "correlation.html",
+    "href": "correlation.html",
+    "title": "10  Correlation",
+    "section": "",
+    "text": "10.1 Pearson Correlation\nCorrelation analysis is used to quantify the relationship between two variables, specifically assessing the strength and direction of their association. It serves as an initial analytical step to determine whether variables tend to vary together and, if so, whether this relationship is positive or negative. Unlike more complex modeling approaches, correlation does not impose a directional structure; both variables are treated symmetrically, and no distinction is made between dependent and independent variables.\nThe most commonly used measure is the Pearson correlation coefficient, which evaluates the strength of a linear relationship between two continuous variables under the assumption of normality. When these assumptions are not met, the Spearman rank correlation coefficient provides a non-parametric alternative based on ranked data, allowing assessment of monotonic relationships. These coefficients range from −1 to +1, indicating the extent and direction of association, with values closer to the extremes representing stronger relationships.\nCorrelation analysis is particularly useful in exploratory data analysis, where it helps identify potential relationships that may warrant further investigation. However, it has inherent limitations. It does not account for confounding variables, cannot establish causation, and provides no mechanism for prediction. A strong correlation between two variables does not imply that one causes the other; the observed association may be influenced by underlying factors not included in the analysis.\nWithin Jamovi, correlation analysis can be performed efficiently, generating both numerical coefficients and visual representations such as scatter plots. The emphasis, however, should remain on appropriate selection of methods, verification of assumptions, and cautious interpretation of results. Correlation should be viewed as a tool for identifying and quantifying associations, forming a basis for more detailed analytical approaches such as regression.",
+    "crumbs": [
+      "Regression",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Correlation</span>"
+    ]
+  },
+  {
+    "objectID": "correlation.html#spearman-correlation",
+    "href": "correlation.html#spearman-correlation",
+    "title": "10  Correlation",
+    "section": "10.2 Spearman Correlation",
+    "text": "10.2 Spearman Correlation",
+    "crumbs": [
+      "Regression",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Correlation</span>"
+    ]
+  },
+  {
+    "objectID": "correlation.html#interpretation-and-reporting",
+    "href": "correlation.html#interpretation-and-reporting",
+    "title": "10  Correlation",
+    "section": "10.3 Interpretation and Reporting",
+    "text": "10.3 Interpretation and Reporting",
+    "crumbs": [
+      "Regression",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Correlation</span>"
+    ]
+  },
+  {
+    "objectID": "linear-regression.html",
+    "href": "linear-regression.html",
+    "title": "11  Introduction To Linear Regression",
+    "section": "",
+    "text": "11.1 Simple Linear Regression\nLinear regression is a statistical method used to model the relationship between a continuous outcome variable and one or more predictor variables. It extends the idea of association by providing a quantitative estimate of how the outcome changes with variation in predictors. Unlike correlation, which measures the strength of association without directionality, regression defines a dependent–independent structure, allowing both explanation and prediction.\nAt its core, Linear regression expresses the outcome as a linear function of predictors, with each coefficient representing the expected change in the outcome for a one-unit change in the corresponding predictor, holding other variables constant. In simple linear regression, this relationship involves a single predictor, whereas multiple linear regression incorporates several predictors simultaneously, enabling adjustment for confounding and assessment of independent effects.\nThe validity of linear regression depends on key assumptions, including linearity of relationships, independence of observations, homoscedasticity of residuals, and approximate normality of errors. Violations of these assumptions can lead to biased estimates or incorrect inference. Therefore, regression analysis is not limited to model fitting but requires systematic evaluation of these conditions and, where necessary, transformation or alternative modeling approaches.\nIn applied medical and public health research, linear regression is used to quantify relationships between exposures and continuous outcomes, such as the effect of age, body mass index, or treatment duration on physiological measurements. Within Jamovi, linear regression can be implemented through a graphical interface; however, meaningful interpretation requires understanding of coefficients, confidence intervals, model fit indices, and the distinction between statistical and practical significance.",
+    "crumbs": [
+      "Regression",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Introduction To Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "linear-regression.html#basic-assumptions",
+    "href": "linear-regression.html#basic-assumptions",
+    "title": "11  Introduction To Linear Regression",
+    "section": "11.2 Basic Assumptions",
+    "text": "11.2 Basic Assumptions",
+    "crumbs": [
+      "Regression",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Introduction To Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "linear-regression.html#output-interpretation-in-jamovi",
+    "href": "linear-regression.html#output-interpretation-in-jamovi",
+    "title": "11  Introduction To Linear Regression",
+    "section": "11.3 Output Interpretation in Jamovi",
+    "text": "11.3 Output Interpretation in Jamovi",
+    "crumbs": [
+      "Regression",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Introduction To Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "logistic-regression.html",
+    "href": "logistic-regression.html",
+    "title": "12  Logistic Regression",
+    "section": "",
+    "text": "Logistic regression is used to model the relationship between one or more predictor variables and a binary outcome. It is applied when the dependent variable represents the occurrence of an event, such as disease status, treatment response, or mortality. Unlike linear regression, which models continuous outcomes, logistic regression estimates the probability of an event while ensuring that predicted values remain within the valid range of 0 to 1.\nAt its core, Logistic regression uses a logit transformation to relate predictors to the outcome. The coefficients obtained from the model are interpreted in terms of odds ratios, representing the change in odds of the outcome for a one-unit increase in the predictor, holding other variables constant. This allows quantification of associations in a way that is directly applicable to clinical and epidemiological contexts. Multiple logistic regression extends this framework by incorporating several predictors simultaneously, enabling adjustment for confounding and identification of independent effects.\nThe validity of logistic regression depends on key assumptions, including independence of observations, correct specification of the model, and a linear relationship between continuous predictors and the log-odds of the outcome. Issues such as multicollinearity, sparse data, or complete separation can affect model stability and interpretation. Therefore, model diagnostics and careful variable selection are essential components of the analytical process.\nIn applied research, logistic regression is widely used to identify risk factors, estimate adjusted associations, and support decision-making. Within Jamovi, it can be implemented through a graphical interface; however, interpretation requires attention to odds ratios, confidence intervals, model fit measures, and the distinction between statistical association and causal inference.",
+    "crumbs": [
+      "Regression",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "reporting.html",
+    "href": "reporting.html",
+    "title": "Reporting Your Findings",
+    "section": "",
+    "text": "The reporting section represents the final stage of the analytical process, where statistical findings are translated into clear, structured, and interpretable statements. The objective is not to restate outputs generated by software, but to communicate results in a manner that is scientifically accurate, concise, and aligned with the research question. Effective reporting requires selection, synthesis, and interpretation of relevant results, rather than indiscriminate presentation of all computed statistics.\nA well-constructed report integrates numerical results with narrative explanation. Key elements include point estimates, measures of variability, effect sizes, and corresponding confidence intervals, supplemented where appropriate by p-values. The emphasis should be on magnitude and direction of effects rather than sole reliance on statistical significance. Tables and figures should be used strategically to present complex information efficiently, avoiding redundancy between text and visuals. Each reported result must directly address a predefined objective or hypothesis.\nStandardization is critical in reporting. Established guidelines such as CONSORT for randomized trials and STROBE for observational studies provide structured frameworks to ensure completeness and transparency. Adherence to such guidelines improves reproducibility, facilitates peer review, and enhances the credibility of findings.\nWithin Jamovi, outputs are often presented in tabular formats that require refinement before inclusion in reports. This includes appropriate rounding, labeling, ordering of variables, and alignment with journal or thesis requirements. The reporting section should ultimately enable a reader to understand what was analyzed, what was found, and how those findings should be interpreted, without needing to refer back to raw output or software-specific details.",
+    "crumbs": [
+      "Reporting Your Findings"
+    ]
+  },
+  {
+    "objectID": "reporting-results.html",
+    "href": "reporting-results.html",
+    "title": "13  Reporting Results",
+    "section": "",
+    "text": "13.0.1 Writing Statistical Results\n\n\n13.0.2 Table Interpretation\n\n\n13.0.3 Common Mistakes in Reporting",
+    "crumbs": [
+      "Reporting Your Findings",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Reporting Results</span>"
+    ]
+  },
+  {
+    "objectID": "choosing-right-test.html",
+    "href": "choosing-right-test.html",
+    "title": "Appendix B — Choosing Right Test",
+    "section": "",
+    "text": "flowchart TD\nA[Test of association] --&gt; B[Check expected frequencies]\n\nB --&gt;|≥5 in ≥80% of cells| C[Chi-square test]\n\nB --&gt;|&lt;5 in &gt;20% cells| D{Sample size small?}\n\nD --&gt;|Yes| E[Fisher’s exact test]\nD --&gt;|No| F[Chi-square with Yates continuity correction]\n\n\n\n\n\n\n\n\nFigure B.1: Flowchart for selecting test of association (categorical variables)",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Choosing Right Test</span>"
+    ]
+  }
+]
