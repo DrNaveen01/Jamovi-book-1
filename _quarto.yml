@@ -49,6 +49,7 @@ book:
   publisher-place: "Patna, India"
   reader-mode: true
   number-of-volumes: 3
+  downloads: pdf
   
 bibliography: references.bib
 toc: true
@@ -56,11 +57,24 @@ toc-expand: true
 toc-depth: 2
 lof: true
 lot: true
+date-format: "D MMMM YYYY"
+number-sections: true
+fig-height: 5
+fig-width: 8
 execute: 
   echo: false
   warning: false
 format:
-  monashthesis-html: default
+  html:
+    theme: cosmo
+    fontsize: 16px
+    mainfont: "Merriweather, serif"
+    code-link: true
+    toc-title: "<b>Sections</b>"
+    html-math-method: katex
+    published-title: "Last updated"
+    include-in-header:
+      file: fonts.html
   pdf:
     documentclass: book
     classoption: oneside

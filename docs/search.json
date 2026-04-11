@@ -84,7 +84,7 @@
     "href": "role.html",
     "title": "1  Role of Statistics in Health Research",
     "section": "",
-    "text": "Types of Data and Measurement Scales\n\n\nResearch Designs in Brief\n\n\nStatistical Workflow in Jamovi",
+    "text": "1.0.1 Types of Data and Measurement Scales\n\n\n1.0.2 Research Designs in Brief\n\n\n1.0.3 Statistical Workflow in Jamovi",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Role of Statistics in Health Research</span>"
@@ -95,7 +95,7 @@
     "href": "getting-started.html",
     "title": "2  Getting Started With Jamovi",
     "section": "",
-    "text": "Installation and Interface\n\n\nImporting and Structuring Data\n\n\nVariable Properties and Levels",
+    "text": "2.0.1 Installation and Interface\n\n\n2.0.2 Importing and Structuring Data\n\n\n2.0.3 Variable Properties and Levels",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting Started With Jamovi</span>"
@@ -106,7 +106,7 @@
     "href": "data-management.html",
     "title": "3  Data Management",
     "section": "",
-    "text": "Recoding and Transforming Variables\n\n\nHandling Missing Data\n\n\nFiltering and Creating Computed Variables",
+    "text": "3.0.1 Recoding and Transforming Variables\n\n\n3.0.2 Handling Missing Data\n\n\n3.0.3 Filtering and Creating Computed Variables",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Management</span>"
@@ -127,7 +127,7 @@
     "href": "descriptive-statistics.html",
     "title": "4  Descriptive Statistics",
     "section": "",
-    "text": "Frequencies and Proportions\n\n\nMean, Median, Standard Deviation, IQR\n\n\nConfidence Intervals",
+    "text": "4.0.1 Frequencies and Proportions\n\n\n4.0.2 Mean, Median, Standard Deviation, IQR\n\n\n4.0.3 Confidence Intervals",
     "crumbs": [
       "Descriptive statistics and visualization",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Descriptive Statistics</span>"
@@ -138,7 +138,7 @@
     "href": "graphical-presentation.html",
     "title": "5  Graphical Presentation",
     "section": "",
-    "text": "Bar Charts and Pie Charts\n\n\nHistograms and Boxplots\n\n\nBasic Interpretation",
+    "text": "5.0.1 Bar Charts and Pie Charts\n\n\n5.0.2 Histograms and Boxplots\n\n\n5.0.3 Basic Interpretation",
     "crumbs": [
       "Descriptive statistics and visualization",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Graphical Presentation</span>"
@@ -247,7 +247,7 @@
     "href": "comparing-more-than-two-means.html",
     "title": "8  Comparing More Than Two Means",
     "section": "",
-    "text": "Analysis of Variance (ANOVA) is used to compare the means of a continuous outcome across two or more groups. While a Student’s t-test is limited to comparing two groups, ANOVA extends this framework to multiple groups within a single model, allowing simultaneous evaluation of differences without inflating the risk of type I error from repeated testing.\nAt its core, Analysis of Variance partitions the total variability in the outcome into variability between groups and variability within groups. The ratio of these components forms the F-statistic, which assesses whether the observed differences in group means are greater than would be expected by chance alone. A statistically significant result indicates that at least one group mean differs from the others, but it does not specify which groups are different.\nThe validity of ANOVA depends on key assumptions, including independence of observations, approximate normality of the outcome within groups, and homogeneity of variances across groups. Violations of these assumptions can affect the reliability of results and may require alternative approaches such as non-parametric tests or variance adjustments. When the overall ANOVA is significant, post hoc comparisons are performed to identify specific group differences while controlling for multiple testing.\nIn applied medical and public health research, ANOVA is commonly used to compare outcomes across exposure groups, treatment arms, or categorical risk factors with more than two levels. Within Jamovi, ANOVA can be implemented through a graphical interface, providing outputs such as F-statistics, p-values, and effect size measures. Proper interpretation requires attention to both statistical significance and the magnitude of differences, as well as appropriate reporting of post hoc analyses where relevant.\n\nOne-way ANOVA\n\n\nKruskal–Wallis Test\n\n\nBasic Post-hoc Testing",
+    "text": "Analysis of Variance (ANOVA) is used to compare the means of a continuous outcome across two or more groups. While a Student’s t-test is limited to comparing two groups, ANOVA extends this framework to multiple groups within a single model, allowing simultaneous evaluation of differences without inflating the risk of type I error from repeated testing.\nAt its core, Analysis of Variance partitions the total variability in the outcome into variability between groups and variability within groups. The ratio of these components forms the F-statistic, which assesses whether the observed differences in group means are greater than would be expected by chance alone. A statistically significant result indicates that at least one group mean differs from the others, but it does not specify which groups are different.\nThe validity of ANOVA depends on key assumptions, including independence of observations, approximate normality of the outcome within groups, and homogeneity of variances across groups. Violations of these assumptions can affect the reliability of results and may require alternative approaches such as non-parametric tests or variance adjustments. When the overall ANOVA is significant, post hoc comparisons are performed to identify specific group differences while controlling for multiple testing.\nIn applied medical and public health research, ANOVA is commonly used to compare outcomes across exposure groups, treatment arms, or categorical risk factors with more than two levels. Within Jamovi, ANOVA can be implemented through a graphical interface, providing outputs such as F-statistics, p-values, and effect size measures. Proper interpretation requires attention to both statistical significance and the magnitude of differences, as well as appropriate reporting of post hoc analyses where relevant.\n\n8.0.1 One-way ANOVA\n\n\n8.0.2 Kruskal–Wallis Test\n\n\n8.0.3 Basic Post-hoc Testing",
     "crumbs": [
       "Core Inferential Statistics",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Comparing More Than Two Means</span>"
@@ -366,7 +366,7 @@
     "href": "reporting-results.html",
     "title": "13  Reporting Results",
     "section": "",
-    "text": "Writing Statistical Results\n\n\nTable Interpretation\n\n\nCommon Mistakes in Reporting",
+    "text": "13.0.1 Writing Statistical Results\n\n\n13.0.2 Table Interpretation\n\n\n13.0.3 Common Mistakes in Reporting",
     "crumbs": [
       "Reporting Your Findings",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Reporting Results</span>"
