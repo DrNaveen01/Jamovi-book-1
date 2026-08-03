@@ -30,6 +30,8 @@ jobs:
           packages: |
             any::knitr
             any::rmarkdown
+            any::tidyverse
+            any::gt
 
       - name: Render book
         run: quarto render --to html
