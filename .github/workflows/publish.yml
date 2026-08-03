@@ -32,7 +32,7 @@ jobs:
             any::rmarkdown
 
       - name: Render book
-        run: quarto render
+        run: quarto render --to html
 
       - uses: actions/configure-pages@v5
 

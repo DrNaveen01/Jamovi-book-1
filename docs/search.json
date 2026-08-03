@@ -10,6 +10,16 @@
     ]
   },
   {
+    "objectID": "index.html#copyright",
+    "href": "index.html#copyright",
+    "title": "Hands-On Data Analysis Using Jamovi",
+    "section": "Copyright",
+    "text": "Copyright\nCopyright © 2026 Dr Naveen Suthar.\nAll rights reserved.\nNo part of this manuscript may be reproduced, stored in a retrieval system, or transmitted in any form or by any means without prior written permission of the copyright holder, except where permitted by applicable copyright law.",
+    "crumbs": [
+      "Frontmatter"
+    ]
+  },
+  {
     "objectID": "index.html#preface",
     "href": "index.html#preface",
     "title": "Hands-On Data Analysis Using Jamovi",
@@ -381,16 +391,6 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Choosing Right Test</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#copyright",
-    "href": "index.html#copyright",
-    "title": "Hands-On Data Analysis Using Jamovi",
-    "section": "Copyright",
-    "text": "Copyright\nCopyright © 2026 Dr Naveen Suthar.\nAll rights reserved.\nNo part of this manuscript may be reproduced, stored in a retrieval system, or transmitted in any form or by any means without prior written permission of the copyright holder, except where permitted by applicable copyright law.",
-    "crumbs": [
-      "Frontmatter"
     ]
   }
 ]
