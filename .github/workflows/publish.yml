@@ -32,6 +32,8 @@ jobs:
             any::rmarkdown
             any::tidyverse
             any::gt
+            any::downlit
+            any::xml2
 
       - name: Render book
         run: quarto render --to html

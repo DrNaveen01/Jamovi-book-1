@@ -64,6 +64,7 @@ fig-width: 8
 execute: 
   echo: false
   warning: false
+code-link: false
 format:
   html:
     theme: cosmo
