@@ -1,11 +1,20 @@
-.Rproj.user
+/.Rproj.user/
+/.quarto/
+/_freeze/
+/_book/
+/docs/
+/tmp/
+/review-qa/
 .Rhistory
 .RData
 .Ruserdata
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.tex
+!includes/*.tex
 
-/.quarto/
+
 **/*.quarto_ipynb
-
-_book/
-_output/
-_site/

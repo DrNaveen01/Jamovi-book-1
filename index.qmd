@@ -1,40 +1,60 @@
-# Frontmatter {-}
+# Preface {.unnumbered}
 
-## Copyright
-Copyright © 2026 Dr Naveen Suthar.
+Statistical analysis begins with a research question and ends with a statement that another reader can evaluate. Between these points, the researcher must define the population, understand how observations were collected, choose an appropriate summary or model, examine assumptions, and explain uncertainty. Software supports these decisions; it does not make them on the researcher's behalf.
 
-All rights reserved.
+This book is written for medical students, clinicians, postgraduate trainees, and health researchers beginning applied data analysis. Its purpose is to connect a clinical question with the structure of the data, the statistical method, and the meaning of the result. The emphasis is on estimates and their uncertainty, supported by appropriate tests and clear reporting. The American Statistical Association's statement provides the basis for interpreting a p-value in context rather than treating a threshold as a complete scientific conclusion. [@ASAp]
 
-No part of this manuscript may be reproduced, stored in a retrieval system, or
-transmitted in any form or by any means without prior written permission of the
-copyright holder, except where permitted by applicable copyright law.
+The author dedicates this work to Lord Jagannath. The project began on Ram Navami, 26 March 2026. This version is review revision 2, dated 5 October 2026.
 
-## Preface {.unnumbered}
+## What this volume covers {.unnumbered}
 
-This book is dedicated to Lord Jaggannath. To seek his eternal blessings i am undertaking this task on the auspicious day of Ramnavami on 26-March-2026.
+Volume I covers the foundations needed to analyse a straightforward health dataset: study design, variable types, data entry and validation, cleaning and missing values, transformations, preparation for a specific analysis, descriptive statistics, graphs, uncertainty, group comparisons, categorical associations, correlation, simple linear regression, and reporting. These topics are developed in 16 teaching chapters. An introductory logistic regression chapter explains binary outcomes and odds ratios as a bridge to Volume II. Adjusted modeling, advanced diagnostic assessment, and prediction-model development belong to later volumes.
 
+After studying this volume, the reader should be able to define the unit of observation; distinguish independent from paired observations; check data coding and missingness; choose a basic method for a specified question; interpret an estimate with its confidence interval; and write a results paragraph supported by a clear table or figure. These are the learning outcomes used throughout the manuscript.
 
-## How to Use This Book {.unnumbered}
-This book is intended to be used as a practical mannual to conduct data analysis in the statistcal environment of Jamovi.
+## How to use the book {.unnumbered}
 
-:::{.callout-note}
-This book is actively under development. If you find any inaccuracy, inconsistency, or mistake please report it at <books.drnaveen@gmail.com>
+Read the foundations before moving to an analysis chapter. Within each chapter, start with the question and data structure, then study the method, assumptions, illustrative example, interpretation, and reporting. Complete the review questions before checking the answers. The decision guide in the appendices supports method selection but does not replace reading the relevant chapter.
 
-Your suggestions to author of this book are also welcome at <books.drnaveen@gmail.com>, Your contribution will be duly acknowledged
+Every main chapter contains a separate **Hands-on** subsection and a note box. These boxes are intentionally empty in this review version. They are reserved for the author's jamovi datasets, screenshots, saved analyses, and procedural demonstrations. The conceptual text and small numerical illustrations can be reviewed now; the complete practical workflow will be added in those boxes.
 
-:::
+All health examples and numerical results in this manuscript are invented for teaching. They do not represent observed patient data, claims about treatment effectiveness, or clinical thresholds. A number used to illustrate a method should not be taken as a recommendation for patient care.
 
-## About the Author(s) {.unnumbered}
-Author of this book can be contacted at <https://drnaveensuthar.quarto.pub/>
+## The three-volume progression {.unnumbered}
 
-## List of Abbreviations {.unnumbered}
+| Volume | Central task | Boundary |
+|:-------|:-------------|:---------|
+| I: Foundations and core methods | Describe, compare, associate, and report | Basic independent or paired analyses; simple regression; introductory binary-outcome interpretation |
+| II: Adjusted models and specialist methods | Adjust, model, diagnose, and interpret | Multiple linear and logistic regression; count and risk models; survival; diagnostic tests; measurement; repeated measures |
+| III: Advanced inference and reproducible analysis | Assess validity, validate, synthesise, and reproduce | Causal thinking; advanced models; prediction; evidence synthesis; detailed jamovi–R workflows |
 
+The recurring sequence is **question, design, data, method, assumptions, output, clinical meaning, and reporting**. Reproducibility begins in Volume I through data documentation and saved analysis files. Later volumes extend that foundation to more complex modeling and code-based workflows.
 
-## List of Figures {.unnumbered}
-\listoffigures
-\pagebreak
+## Reading statistical language {.unnumbered}
 
-## List of Tables {.unnumbered}
-\listoftables
-\pagebreak
+An **outcome** is the variable whose distribution or relationship is being studied. A **predictor** is a variable used to explain or model the outcome. These labels describe an analysis role and do not establish a causal relationship. A **parameter** is a population quantity; a **statistic** is calculated from the observed sample. An **estimate** is the sample-based value used to learn about a parameter.
 
+Read a result in three parts: its direction and size, its uncertainty, and its relevance to the research question. For example, a mean difference is incomplete without the group order and measurement unit. A ratio is incomplete without its reference category. A p-value is incomplete without the model and hypothesis to which it refers. Reporting guidance is available in the SAMPL guidelines. [@SAMPL]
+
+## About the author {.unnumbered}
+
+Dr Naveen Suthar is the author of this series. Project correspondence can be directed to <books.drnaveen@gmail.com>. The manuscript is maintained at <https://github.com/DrNaveen01/Jamovi-book-1>.
+
+## Abbreviations {.unnumbered}
+
+| Abbreviation | Meaning |
+|:-------------|:--------|
+| ANOVA | Analysis of variance |
+| CI | Confidence interval |
+| ID | Identifier |
+| IQR | Interquartile range |
+| OR | Odds ratio |
+| Q–Q | Quantile–quantile |
+| RD | Risk difference, when the design supports a risk interpretation |
+| RR | Risk ratio, when the design supports a risk interpretation |
+| SD | Standard deviation |
+| SE | Standard error |
+
+## Copyright {.unnumbered}
+
+Copyright © 2026 Dr Naveen Suthar. All rights reserved. Third-party software, documentation, trademarks, and later-added datasets or screenshots retain their respective ownership and licence terms. The bibliography identifies sources supporting the statistical and software guidance.

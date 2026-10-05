@@ -1,173 +1,87 @@
-# Hands-On Data Analysis Using Jamovi
+# Hands-On Data Analysis Using Jamovi - Volume I
 
-A practical Quarto book for medical students, health researchers, clinicians, and public health professionals learning statistical analysis using jamovi.
+**Author-review project, revision 2 - 5 October 2026 - Dr Naveen Suthar**
 
-The book focuses on selecting appropriate statistical methods, performing analyses in jamovi, interpreting results, and reporting findings clearly.
+The editable manuscript contains 16 teaching chapters, four content appendices,
+references, five figures, and review questions with answers. Chapters 3-6 now
+separately cover data entry and validation, cleaning and missing values,
+transformations, and preparation for a specific analysis.
 
-## Current status
+Every chapter has a separate **Hands-on** heading and an **empty note callout**.
+The practice appendix adds one further box: 17 in total. The author will add
+jamovi datasets, saved analyses, procedures, and screenshots. Numerical health
+examples are invented; no patient-level dataset or `.omv` analysis is included.
+Volumes II and III remain planning outlines in `guide/`.
 
-This repository contains the first volume of a planned series.
+This review project is based on [DrNaveen01/Jamovi-book-1](https://github.com/DrNaveen01/Jamovi-book-1),
+main commit `8868df0a5a2bec900bfb72fb9c4efe0ff8859383`. Preparing it did not
+change or deploy the GitHub repository. Existing chapter paths are retained,
+with three new preparation chapter files.
 
--   **Title:** *Hands-On Data Analysis Using Jamovi*
--   **Subtitle:** *Foundations and Core Statistical Methods for Health Researchers*
--   **Author:** Dr Naveen Suthar
--   **Format:** Quarto book
--   **Website:** GitHub Pages
--   **Status:** Under active development
+## Open and review
 
-## Topics covered
+Extract the ZIP, then open `docs/index.html` or
+`docs/jamovi-book-volume-1-review.pdf`. Open `Jamovi-book-1.Rproj` in RStudio to
+edit the chapter `.qmd` files. `PROJECT_REVIEW.md` maps the scope and checks;
+`AUTHORING.md` explains how to add practical material. Use
+`guide/author-review-checklist.md` to record editorial decisions.
 
-The current volume includes:
+## Render
 
--   foundations of health-data analysis;
--   getting started with jamovi;
--   data management;
--   descriptive statistics;
--   graphical presentation;
--   hypothesis testing;
--   comparison of two or more groups;
--   categorical data analysis;
--   correlation;
--   linear regression;
--   logistic regression;
--   interpretation and reporting of results.
+Install [Quarto](https://quarto.org/docs/get-started/) and a XeLaTeX distribution
+for PDF. Rendering uses existing prose and images, without executing R or Python
+analysis chunks. Both preview formats are written to `docs/`:
 
-Appendices include statistical formulas, test-selection guidance, a glossary, and practice exercises.
-
-## Repository structure
-
-``` text
-Jamovi-book-1/
-├── .github/workflows/   # GitHub Actions
-├── data/                # Practice datasets
-├── images/              # Screenshots and figures
-├── docs/                # Rendered website
-├── *.qmd                # Book chapters
-├── _quarto.yml          # Book configuration
-├── references.bib       # Bibliography
-└── README.md
-```
-
-## Requirements
-
-Install:
-
--   [Quarto](https://quarto.org/)
--   [R](https://cran.r-project.org/)
--   [RStudio](https://posit.co/download/rstudio-desktop/)
--   Git
-
-Required R packages can be installed using:
-
-``` r
-install.packages(c("knitr", "rmarkdown"))
-```
-
-
-## Preview locally
-
-``` bash
+```sh
+quarto render
 quarto preview
 ```
 
-## Render the book
+On Windows, use `quarto render --profile windows` for Times New Roman, Arial,
+and Consolas. The default and `portable` profiles use Latin Modern fonts.
+`quarto install tinytex` can install Quarto's supported TeX distribution.
+Render both formats to retain the complete preview and its PDF download.
+The included local KaTeX assets support offline equations. Local browser
+restrictions can affect search through `file://`; use `quarto preview` for search.
 
-Render the HTML website:
+From RStudio:
 
-``` bash
-quarto render --to html
+```r
+source("scripts/render_book.R")
 ```
 
-Render all configured formats:
+## Reproduce and check
 
-``` bash
-quarto render
+The figure images are already included. Base R companions are available:
+
+```r
+source("scripts/create_teaching_figures.R")
+source("scripts/verify_illustrations.R")
 ```
 
-The HTML website is generated in the `docs/` directory.
+The optional Python tools require NumPy, SciPy, and Matplotlib for figures,
+and NumPy and SciPy for validation:
 
-## Automatic website deployment
-
-GitHub Actions automatically rebuilds and publishes the website whenever changes are pushed to the `main` branch.
-
-Routine workflow:
-
-``` bash
-git add .
-git commit -m "Update chapter"
-git push origin main
+```sh
+python scripts/create_teaching_figures.py
+python scripts/validate_project.py
 ```
 
-After the push:
+The R scripts were supplied but not executed in the preparation environment.
+The numerical checks were executed independently in Python. Validation covers
+the current manuscript, rather than future author-supplied jamovi output.
 
-1.  GitHub Actions installs the required software.
-2.  Quarto renders the book.
-3.  The rendered website is deployed to GitHub Pages.
+| Location | Purpose |
+|:---------|:--------|
+| Root `.qmd` files | Editable manuscript |
+| `data/`, `images/` | Author-supplied data and screenshots; existing teaching figures |
+| `guide/` | Scope maps, review checklist, source register, and validation records |
+| `scripts/` | Rendering, reproduction, and verification |
+| `docs/` | Rendered review book |
 
-The workflow can be monitored under the repository's **Actions** tab.
+The existing `practice-dataset-excercises.qmd` filename is retained for path
+compatibility; its reader-facing title is correct. The included Pages workflow
+is available for a later repository publication and has not been run for this
+review project.
 
-## Adding a chapter
-
-1.  Create a new `.qmd` file.
-2.  Add the chapter title and content.
-3.  Register the file under `book: chapters:` in `_quarto.yml`.
-4.  Run `quarto preview`.
-5.  Commit and push the changes.
-
-## Data and confidentiality
-
-Only anonymised, synthetic, or publicly available datasets should be committed.
-
-Do not upload:
-
--   identifiable patient data;
--   confidential institutional data;
--   passwords or access tokens;
--   restricted research datasets.
-
-## Contribution
-
-Major revisions should preferably be developed on a separate branch.
-
-``` bash
-git switch -c revise-chapter-name
-```
-
-After editing:
-
-``` bash
-quarto render --to html
-git add .
-git commit -m "Revise chapter name"
-git push -u origin revise-chapter-name
-```
-
-Minor corrections may be pushed directly to `main`.
-
-## Planned development
-
-Future additions may include:
-
--   more worked examples;
--   downloadable jamovi `.omv` files;
--   practice datasets and exercises;
--   improved PDF formatting;
--   advanced statistical methods;
--   teaching and workshop resources;
--   additional volumes in the series.
-
-## Website
-
-https://drnaveen01.github.io/Jamovi-book-1/
-
-## Repository
-
-https://github.com/DrNaveen01/Jamovi-book-1
-
-## Copyright
-
-Copyright © 2026 Dr Naveen Suthar.
-
-This repository is currently maintained as a private development project.
-All original content is protected by copyright. No licence has yet been granted
-for reuse or redistribution.
+Copyright © 2026 Dr Naveen Suthar. All rights reserved. See `copyright.md`.

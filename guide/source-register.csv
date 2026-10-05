@@ -1,0 +1,65 @@
+citation_key,source_owner,title,url,accessed
+PSUCLT,Pennsylvania State University,The Central Limit Theorem: STAT 414,https://online.stat.psu.edu/stat414/Lesson27,2026-10-05
+PSUScales,Pennsylvania State University,What is Data: measurement scales,https://online.stat.psu.edu/stat857/node/31/,2026-10-05
+NISTNormal,NIST/SEMATECH,Normal Distribution,https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm,2026-10-05
+NISTTesting,NIST/SEMATECH,Quantitative Techniques: hypothesis tests,https://www.itl.nist.gov/div898/handbook/eda/section3/eda35.htm,2026-10-05
+RPowerT,R Core Team,Power calculations for one and two sample t tests,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/power.t.test.html,2026-10-05
+RPredictLm,R Core Team,Predict method for Linear Model Fits,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/predict.lm.html,2026-10-05
+RFamily,R Core Team,Family Objects for Models,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/family.html,2026-10-05
+RSummaryLm,R Core Team,Summarizing Linear Model Fits,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/summary.lm.html,2026-10-05
+RSummaryGlm,R Core Team,Summarizing Generalized Linear Model Fits,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/summary.glm.html,2026-10-05
+jamoviGettingStarted,jamovi,Getting started,https://www.jamovi.org/getting-started.html,2026-10-05
+jamoviSpreadsheet,jamovi,The Spreadsheet,https://docs.jamovi.org/usermanual/um_4_spreadsheet.html,2026-10-05
+jamoviData,jamovi,Data Variables,https://docs.jamovi.org/data/data_1_overview_data_variables.html,2026-10-05
+jamoviComputed,jamovi,Computed Variables,https://docs.jamovi.org/data/data_2_computed_variables.html,2026-10-05
+jamoviTransform,jamovi,Transformed Variables,https://docs.jamovi.org/data/data_3_transformed_variables.html,2026-10-05
+jamoviFilters,jamovi,Introducing filters in jamovi,https://blog.jamovi.org/2018/04/25/jamovi-filters.html,2026-10-05
+jamoviUpdating,jamovi,Updating data,https://docs.jamovi.org/usermanual/um_5_updating_data.html,2026-10-05
+jamoviR,jamovi,Combining jamovi and R,https://docs.jamovi.org/usermanual/um_6_jamovi_and_R.html,2026-10-05
+jamoviDesc,jamovi,Descriptives: descriptives,https://docs.jamovi.org/jmv/jmv_descriptives.html,2026-10-05
+jamoviIndependent,jamovi,t-test: Independent samples,https://docs.jamovi.org/analyses/jg_21_t-test-independent.html,2026-10-05
+jamoviPaired,jamovi,Paired Samples T-Test: ttestPS,https://docs.jamovi.org/jmv/jmv_ttestPS.html,2026-10-05
+jamoviOneWay,jamovi,One-Way ANOVA: anovaOneW,https://docs.jamovi.org/jmv/jmv_anovaOneW.html,2026-10-05
+jamoviKruskal,jamovi,"One-Way ANOVA, non-parametric: anovaNP",https://docs.jamovi.org/jmv/jmv_anovaNP.html,2026-10-05
+jamoviContingency,jamovi,Contingency Tables: contTables,https://docs.jamovi.org/jmv/jmv_contTables.html,2026-10-05
+jamoviPairedTables,jamovi,Paired Samples Contingency Tables: contTablesPaired,https://docs.jamovi.org/jmv/jmv_contTablesPaired.html,2026-10-05
+jamoviCorrelation,jamovi,Correlation Matrix: corrMatrix,https://docs.jamovi.org/jmv/jmv_corrMatrix.html,2026-10-05
+jamoviLinear,jamovi,Linear Regression: linReg,https://docs.jamovi.org/jmv/jmv_linReg.html,2026-10-05
+jamoviLogistic,jamovi,From SPSS to jamovi: Logistic Regression,https://docs.jamovi.org/spss2jamovi/s2j_logReg.html,2026-10-05
+NISTLocation,NIST/SEMATECH,Measures of Location,https://www.itl.nist.gov/div898/handbook/eda/section3/eda351.htm,2026-10-05
+NISTScale,NIST/SEMATECH,Measures of Scale,https://www.itl.nist.gov/div898/handbook/eda/section3/eda356.htm,2026-10-05
+NISTHist,NIST/SEMATECH,Histogram,https://www.itl.nist.gov/div898/handbook/eda/section3/eda33e.htm,2026-10-05
+NISTBox,NIST/SEMATECH,Box Plot,https://www.itl.nist.gov/div898/handbook/eda/section3/boxplot.htm,2026-10-05
+NISTQQ,NIST/SEMATECH,Normal Probability Plot,https://www.itl.nist.gov/div898/handbook/eda/section3/normprpl.htm,2026-10-05
+NISTCI,NIST/SEMATECH,Confidence Limits for the Mean,https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm,2026-10-05
+NISTPaired,NIST/SEMATECH,Analysis of paired observations,https://www.itl.nist.gov/div898/handbook/prc/section3/prc311.htm,2026-10-05
+NISTANOVA,NIST/SEMATECH,The one-way ANOVA model and assumptions,https://www.itl.nist.gov/div898/handbook/prc/section4/prc432.htm,2026-10-05
+NISTRegDiagnostics,NIST/SEMATECH,How can I tell if a model fits my data?,https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm,2026-10-05
+RTTest,R Core Team,Student's t-Test,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html,2026-10-05
+RWilcoxon,R Core Team,Wilcoxon Rank Sum and Signed Rank Tests,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/wilcox.test.html,2026-10-05
+RChiSq,R Core Team,Pearson's Chi-squared Test for Count Data,https://www.stat.ethz.ch/R-manual/R-patched/library/stats/html/chisq.test.html,2026-10-05
+RFisher,R Core Team,Fisher's Exact Test for Count Data,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/fisher.test.html,2026-10-05
+RCor,R Core Team,Test for Association/Correlation Between Paired Samples,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.test.html,2026-10-05
+ROneWay,R Core Team,Test for Equal Means in a One-Way Layout,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/oneway.test.html,2026-10-05
+RKruskal,R Core Team,Kruskal-Wallis Rank Sum Test,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/kruskal.test.html,2026-10-05
+RPadjust,R Core Team,Adjust P-values for Multiple Comparisons,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/p.adjust.html,2026-10-05
+RLm,R Core Team,Fitting Linear Models,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html,2026-10-05
+RGlm,R Core Team,Fitting Generalized Linear Models,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html,2026-10-05
+RBinom,R Core Team,Exact Binomial Test,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/binom.test.html,2026-10-05
+RMcNemar,R Core Team,McNemar's Chi-squared Test for Count Data,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/mcnemar.test.html,2026-10-05
+RQuantile,R Core Team,Sample Quantiles,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/quantile.html,2026-10-05
+RComplete,R Core Team,Find Complete Cases,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/complete.cases.html,2026-10-05
+RTukey,R Core Team,Compute Tukey Honest Significant Differences,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/TukeyHSD.html,2026-10-05
+RPairwiseWilcoxon,R Core Team,Pairwise Wilcoxon Rank Sum Tests,https://stat.ethz.ch/R-manual/R-devel/library/stats/html/pairwise.wilcox.test.html,2026-10-05
+ASAp,American Statistical Association,Statement on Statistical Significance and P-Values,https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf,2026-10-05
+SAMPL,EQUATOR Network,Basic Statistical Reporting for Articles Published in Biomedical Journals: The SAMPL Guidelines,https://www.equator-network.org/reporting-guidelines/sampl/,2026-10-05
+STROBE,EQUATOR Network,STROBE: guidelines for reporting observational studies,https://www.equator-network.org/reporting-guidelines/strobe/,2026-10-05
+ICMJE,International Committee of Medical Journal Editors,Preparing a Manuscript for Submission to a Medical Journal,https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html,2026-10-05
+BMJOdds,Bland and Altman,The odds ratio,https://www.bmj.com/content/320/7247/1468.1,2026-10-05
+BMJAbsence,Altman and Bland,Absence of evidence is not evidence of absence,https://www.bmj.com/content/311/7003/485,2026-10-05
+RubinMissing,Rubin,Inference and missing data,https://doi.org/10.1093/biomet/63.3.581,2026-10-05
+Greenland2016,Greenland and colleagues,"Statistical tests, P values, confidence intervals, and power",https://pmc.ncbi.nlm.nih.gov/articles/PMC4877414/,2026-10-05
+BromanWoo,Karl W. Broman and Kara H. Woo,Data Organization in Spreadsheets,https://kbroman.org/Paper_DataOrg/,2026-10-05
+AltmanDichotomy,Douglas G. Altman and Patrick Royston,The cost of dichotomising continuous variables,https://www.bmj.com/content/332/7549/1080.1,2026-10-05
+jamoviFunctions,jamovi,List of Functions,https://docs.jamovi.org/data/data_5_list_of_functions.html,2026-10-05
+WHOBMI,World Health Organization,Malnutrition in women: body mass index definition,https://www.who.int/data/nutrition/nlis/info/malnutrition-in-women,2026-10-05

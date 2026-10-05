@@ -1,75 +1,63 @@
 ---
-title: "guide-instructions"
+title: "Series writing and review instructions"
+author: "Dr Naveen Suthar"
 format: html
 ---
 
-Logical flow must mirror **how a clinician thinks**, not how statistics textbooks are arranged.
+# Common learning sequence
 
+Write from the researcher's question to the defensible result:
+**question → design → data → method → assumptions → output → clinical meaning → reporting**.
 
-## Volume I — From Data to Basic Inference
+| Component | The chapter must establish |
+|:----------|:---------------------------|
+| Question | Population, comparison or relationship, time point, and target quantity |
+| Design | Sampling, assignment, unit, independence, pairing, or clustering |
+| Data | Variable roles, scales, units, coding, missingness, and analysis set |
+| Method | Why the procedure answers the specified question |
+| Assumptions | Which conditions matter, how they are assessed, and what alternatives mean |
+| Output | Estimate, uncertainty, sample size, direction, denominator, and reference category |
+| Clinical meaning | Magnitude in context, uncertainty, and the design's interpretation limits |
+| Reporting | A reproducible methods description and a clear results statement |
 
-1. **Clinical Question → Study Design**
-2. **Type of Data → Measurement Scale**
-3. **Data Entry and Cleaning in Jamovi**
-4. **Descriptive Statistics**
-5. **Graphical Representation**
-6. **Concept of Uncertainty (CI, p-value)**
-7. **Two-Group Comparisons**
-8. **Multiple-Group Comparisons**
-9. **Categorical Associations**
-10. **Correlation**
-11. **Introduction to Linear Regression**
-12. **How to Report Results**
+## Chapter pattern
 
-Flow principle:
-**Describe → Compare → Associate → Predict (basic level)**
+Begin with learning objectives and a health question. Explain the method in
+plain language before using notation. Define each equation's symbols and
+conditions. Include a small calculated illustration where useful, a reporting
+example, common errors, and review questions with answers.
 
----
+Give Hands-on its own subsection and note callout. The current review version
+leaves this box empty for author-supplied datasets and screenshots. Do not leave
+other teaching sections as heading-only placeholders. Do not fill the reserved
+box with fabricated software output.
 
-## Volume II — From Association to Multivariable Modeling
+## Series boundaries
 
-1. **Why Adjustment Is Needed (Confounding)**
-2. **Multiple Linear Regression**
-3. **Logistic Regression**
-4. **Model Diagnostics**
-5. **Count Models (Poisson / NB)**
-6. **Survival Analysis (KM → Cox)**
-7. **Repeated Measures / Factorial ANOVA**
-8. **Diagnostic Test Evaluation**
-9. **Reliability and Agreement**
-10. **Structured Reporting of Models**
+Volume I describes, compares, associates, and reports. Its regression chapters
+are introductory, with one predictor. Volume II adjusts and develops specialist
+models, with diagnostics and clear interpretation. Volume III assesses advanced
+validity, extends dependence structures, validates prediction, synthesises
+evidence, and develops the jamovi–R record.
 
-Flow principle:
-**Adjust → Model → Validate → Interpret clinically**
+An introductory mention is not a promise of a complete procedure. Clearly refer
+readers to the later volume when the design requires a method beyond the present
+chapter. Keep reliability, agreement, diagnostic accuracy, prediction, and causal
+inference as distinct targets.
 
----
+## Review standards
 
-## Volume III — From Modeling to Scientific Rigor
+Check numerical examples independently. Keep group order, units, interval
+method, and p-value convention consistent between tables, text, and figures.
+Interpret a non-significant result using its uncertainty rather than declaring
+equality. Do not describe an unadjusted association as a causal effect or an
+in-sample fit statistic as evidence of validated clinical prediction.
 
-1. **Causal Thinking (DAG logic)**
-2. **Model Building Strategy**
-3. **Interaction and Effect Modification**
-4. **Longitudinal Concepts**
-5. **Advanced Survival Concepts**
-6. **Risk Prediction Models**
-7. **Calibration & Validation**
-8. **Meta-analysis**
-9. **Reproducible Workflow (Jamovi ↔ R)**
-10. **Full-scale Applied Case Study**
+Use official software documentation and primary methodological or reporting
+sources. Cite them beside the relevant explanation. The source register provides
+an inspectable record. Record jamovi and module versions in each practical case.
+Read both rendered formats after adding figures, tables, or long callouts.
 
-Flow principle:
-**Think causally → Build rigorously → Validate → Reproduce**
-
----
-
-Unifying spine across all volumes:
-
-> Clinical question
-> → Data structure
-> → Statistical choice
-> → Assumptions
-> → Output interpretation
-> → Clinical meaning
-> → Reporting
-
-If this spine is consistent, the series will feel engineered, not compiled.
+Use simple formal academic prose, informative headings, and a consistent author
+and series title. All current health examples are explicitly invented; replace
+that label only when a documented dataset actually supports the reported result.

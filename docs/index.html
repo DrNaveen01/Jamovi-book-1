@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr Naveen Suthar">
-<meta name="dcterms.date" content="2026-03-26">
+<meta name="dcterms.date" content="2026-10-05">
 
 <title>Hands-On Data Analysis Using Jamovi</title>
 <style>
@@ -25,7 +25,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -45,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-992d75fbf9f2a62f89d3d81d710e967d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,13 +93,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
-
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -88,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Frontmatter</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -100,12 +119,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -124,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -145,13 +163,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -159,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -168,13 +204,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -182,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -191,25 +227,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -217,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -226,19 +262,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -246,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -255,17 +291,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -284,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -296,7 +326,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -307,19 +343,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
-    <h2 id="toc-title"><b>Sections</b></h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
    
   <ul class="collapse">
-  <li><a href="#frontmatter" id="toc-frontmatter" class="nav-link active" data-scroll-target="#frontmatter">Frontmatter</a>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
   <ul class="collapse">
+  <li><a href="#what-this-volume-covers" id="toc-what-this-volume-covers" class="nav-link" data-scroll-target="#what-this-volume-covers">What this volume covers</a></li>
+  <li><a href="#how-to-use-the-book" id="toc-how-to-use-the-book" class="nav-link" data-scroll-target="#how-to-use-the-book">How to use the book</a></li>
+  <li><a href="#the-three-volume-progression" id="toc-the-three-volume-progression" class="nav-link" data-scroll-target="#the-three-volume-progression">The three-volume progression</a></li>
+  <li><a href="#reading-statistical-language" id="toc-reading-statistical-language" class="nav-link" data-scroll-target="#reading-statistical-language">Reading statistical language</a></li>
+  <li><a href="#about-the-author" id="toc-about-the-author" class="nav-link" data-scroll-target="#about-the-author">About the author</a></li>
+  <li><a href="#abbreviations" id="toc-abbreviations" class="nav-link" data-scroll-target="#abbreviations">Abbreviations</a></li>
   <li><a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright">Copyright</a></li>
-  <li><a href="#preface" id="toc-preface" class="nav-link" data-scroll-target="#preface">Preface</a></li>
-  <li><a href="#how-to-use-this-book" id="toc-how-to-use-this-book" class="nav-link" data-scroll-target="#how-to-use-this-book">How to Use This Book</a></li>
-  <li><a href="#about-the-authors" id="toc-about-the-authors" class="nav-link" data-scroll-target="#about-the-authors">About the Author(s)</a></li>
-  <li><a href="#list-of-abbreviations" id="toc-list-of-abbreviations" class="nav-link" data-scroll-target="#list-of-abbreviations">List of Abbreviations</a></li>
-  <li><a href="#list-of-figures" id="toc-list-of-figures" class="nav-link" data-scroll-target="#list-of-figures">List of Figures</a></li>
-  <li><a href="#list-of-tables" id="toc-list-of-tables" class="nav-link" data-scroll-target="#list-of-tables">List of Tables</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -330,7 +366,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Hands-On Data Analysis Using Jamovi</h1>
-<p class="subtitle lead">Foundations and Core Statistical Methods for Health Researchers</p>
+<p class="subtitle lead">Volume I: Foundations and Core Statistical Methods for Health Researchers</p>
 </div>
 
 
@@ -345,9 +381,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Last updated</div>
+    <div class="quarto-title-meta-heading">Draft revised</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">26 March 2026</p>
+      <p class="date">5 October 2026</p>
     </div>
   </div>
   
@@ -359,51 +395,132 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="frontmatter" class="level1 unnumbered">
-<h1 class="unnumbered">Frontmatter</h1>
-<section id="copyright" class="level2">
-<h2 class="anchored" data-anchor-id="copyright">Copyright</h2>
-<p>Copyright © 2026 Dr Naveen Suthar.</p>
-<p>All rights reserved.</p>
-<p>No part of this manuscript may be reproduced, stored in a retrieval system, or transmitted in any form or by any means without prior written permission of the copyright holder, except where permitted by applicable copyright law.</p>
+<section id="preface" class="level1 unnumbered">
+<h1 class="unnumbered">Preface</h1>
+<p>Statistical analysis begins with a research question and ends with a statement that another reader can evaluate. Between these points, the researcher must define the population, understand how observations were collected, choose an appropriate summary or model, examine assumptions, and explain uncertainty. Software supports these decisions; it does not make them on the researcher’s behalf.</p>
+<p>This book is written for medical students, clinicians, postgraduate trainees, and health researchers beginning applied data analysis. Its purpose is to connect a clinical question with the structure of the data, the statistical method, and the meaning of the result. The emphasis is on estimates and their uncertainty, supported by appropriate tests and clear reporting. The American Statistical Association’s statement provides the basis for interpreting a p-value in context rather than treating a threshold as a complete scientific conclusion. <span class="citation" data-cites="ASAp">[<a href="references.html#ref-ASAp" role="doc-biblioref">1</a>]</span></p>
+<p>The author dedicates this work to Lord Jagannath. The project began on Ram Navami, 26 March 2026. This version is review revision 2, dated 5 October 2026.</p>
+<section id="what-this-volume-covers" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="what-this-volume-covers">What this volume covers</h2>
+<p>Volume I covers the foundations needed to analyse a straightforward health dataset: study design, variable types, data entry and validation, cleaning and missing values, transformations, preparation for a specific analysis, descriptive statistics, graphs, uncertainty, group comparisons, categorical associations, correlation, simple linear regression, and reporting. These topics are developed in 16 teaching chapters. An introductory logistic regression chapter explains binary outcomes and odds ratios as a bridge to Volume II. Adjusted modeling, advanced diagnostic assessment, and prediction-model development belong to later volumes.</p>
+<p>After studying this volume, the reader should be able to define the unit of observation; distinguish independent from paired observations; check data coding and missingness; choose a basic method for a specified question; interpret an estimate with its confidence interval; and write a results paragraph supported by a clear table or figure. These are the learning outcomes used throughout the manuscript.</p>
 </section>
-<section id="preface" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="preface">Preface</h2>
-<p>This book is dedicated to Lord Jaggannath. To seek his eternal blessings i am undertaking this task on the auspicious day of Ramnavami on 26-March-2026.</p>
+<section id="how-to-use-the-book" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="how-to-use-the-book">How to use the book</h2>
+<p>Read the foundations before moving to an analysis chapter. Within each chapter, start with the question and data structure, then study the method, assumptions, illustrative example, interpretation, and reporting. Complete the review questions before checking the answers. The decision guide in the appendices supports method selection but does not replace reading the relevant chapter.</p>
+<p>Every main chapter contains a separate <strong>Hands-on</strong> subsection and a note box. These boxes are intentionally empty in this review version. They are reserved for the author’s jamovi datasets, screenshots, saved analyses, and procedural demonstrations. The conceptual text and small numerical illustrations can be reviewed now; the complete practical workflow will be added in those boxes.</p>
+<p>All health examples and numerical results in this manuscript are invented for teaching. They do not represent observed patient data, claims about treatment effectiveness, or clinical thresholds. A number used to illustrate a method should not be taken as a recommendation for patient care.</p>
 </section>
-<section id="how-to-use-this-book" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="how-to-use-this-book">How to Use This Book</h2>
-<p>This book is intended to be used as a practical mannual to conduct data analysis in the statistcal environment of Jamovi.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This book is actively under development. If you find any inaccuracy, inconsistency, or mistake please report it at <a href="mailto:books.drnaveen@gmail.com" class="email">books.drnaveen@gmail.com</a></p>
-<p>Your suggestions to author of this book are also welcome at <a href="mailto:books.drnaveen@gmail.com" class="email">books.drnaveen@gmail.com</a>, Your contribution will be duly acknowledged</p>
-</div>
-</div>
+<section id="the-three-volume-progression" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-three-volume-progression">The three-volume progression</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 43%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Central task</th>
+<th style="text-align: left;">Boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">I: Foundations and core methods</td>
+<td style="text-align: left;">Describe, compare, associate, and report</td>
+<td style="text-align: left;">Basic independent or paired analyses; simple regression; introductory binary-outcome interpretation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">II: Adjusted models and specialist methods</td>
+<td style="text-align: left;">Adjust, model, diagnose, and interpret</td>
+<td style="text-align: left;">Multiple linear and logistic regression; count and risk models; survival; diagnostic tests; measurement; repeated measures</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">III: Advanced inference and reproducible analysis</td>
+<td style="text-align: left;">Assess validity, validate, synthesise, and reproduce</td>
+<td style="text-align: left;">Causal thinking; advanced models; prediction; evidence synthesis; detailed jamovi–R workflows</td>
+</tr>
+</tbody>
+</table>
+<p>The recurring sequence is <strong>question, design, data, method, assumptions, output, clinical meaning, and reporting</strong>. Reproducibility begins in Volume I through data documentation and saved analysis files. Later volumes extend that foundation to more complex modeling and code-based workflows.</p>
 </section>
-<section id="about-the-authors" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="about-the-authors">About the Author(s)</h2>
-<p>Author of this book can be contacted at <a href="https://drnaveensuthar.quarto.pub/" class="uri">https://drnaveensuthar.quarto.pub/</a></p>
+<section id="reading-statistical-language" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="reading-statistical-language">Reading statistical language</h2>
+<p>An <strong>outcome</strong> is the variable whose distribution or relationship is being studied. A <strong>predictor</strong> is a variable used to explain or model the outcome. These labels describe an analysis role and do not establish a causal relationship. A <strong>parameter</strong> is a population quantity; a <strong>statistic</strong> is calculated from the observed sample. An <strong>estimate</strong> is the sample-based value used to learn about a parameter.</p>
+<p>Read a result in three parts: its direction and size, its uncertainty, and its relevance to the research question. For example, a mean difference is incomplete without the group order and measurement unit. A ratio is incomplete without its reference category. A p-value is incomplete without the model and hypothesis to which it refers. Reporting guidance is available in the SAMPL guidelines. <span class="citation" data-cites="SAMPL">[<a href="references.html#ref-SAMPL" role="doc-biblioref">2</a>]</span></p>
 </section>
-<section id="list-of-abbreviations" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="list-of-abbreviations">List of Abbreviations</h2>
+<section id="about-the-author" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="about-the-author">About the author</h2>
+<p>Dr Naveen Suthar is the author of this series. Project correspondence can be directed to <a href="mailto:books.drnaveen@gmail.com" class="email">books.drnaveen@gmail.com</a>. The manuscript is maintained at <a href="https://github.com/DrNaveen01/Jamovi-book-1" class="uri">https://github.com/DrNaveen01/Jamovi-book-1</a>.</p>
 </section>
-<section id="list-of-figures" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="list-of-figures">List of Figures</h2>
+<section id="abbreviations" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="abbreviations">Abbreviations</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Abbreviation</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ANOVA</td>
+<td style="text-align: left;">Analysis of variance</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CI</td>
+<td style="text-align: left;">Confidence interval</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ID</td>
+<td style="text-align: left;">Identifier</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IQR</td>
+<td style="text-align: left;">Interquartile range</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OR</td>
+<td style="text-align: left;">Odds ratio</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q–Q</td>
+<td style="text-align: left;">Quantile–quantile</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RD</td>
+<td style="text-align: left;">Risk difference, when the design supports a risk interpretation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RR</td>
+<td style="text-align: left;">Risk ratio, when the design supports a risk interpretation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SD</td>
+<td style="text-align: left;">Standard deviation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SE</td>
+<td style="text-align: left;">Standard error</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="copyright" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="copyright">Copyright</h2>
+<p>Copyright © 2026 Dr Naveen Suthar. All rights reserved. Third-party software, documentation, trademarks, and later-added datasets or screenshots retain their respective ownership and licence terms. The bibliography identifies sources supporting the statistical and software guidance.</p>
 
-</section>
-<section id="list-of-tables" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="list-of-tables">List of Tables</h2>
 
-
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ASAp" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">American Statistical Association. Statement on statistical significance and p-values. <a href="https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf">https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-SAMPL" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">EQUATOR Network. Basic statistical reporting for articles published in biomedical journals: The SAMPL guidelines. <a href="https://www.equator-network.org/reporting-guidelines/sampl/">https://www.equator-network.org/reporting-guidelines/sampl/</a> [accessed 5 Oct. 2026].</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -822,4 +939,5 @@ Note
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Hypothesis Testing Concepts – Hands-On Data Analysis Using Jamovi</title>
+<title>9&nbsp; Estimation and Hypothesis Testing – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-992d75fbf9f2a62f89d3d81d710e967d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,55 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
+<style>html{ scroll-behavior: smooth; }</style>
 
+  <script defer="" src="vendor/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./hypothesis-testing-concepts.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Methods</a></li><li class="breadcrumb-item"><a href="./hypothesis-testing-concepts.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,12 +161,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +205,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +246,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +260,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +269,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +304,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +333,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +368,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -306,22 +385,34 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
-    <h2 id="toc-title"><b>Sections</b></h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
    
   <ul class="collapse">
-  <li><a href="#p-value-and-confidence-interval" id="toc-p-value-and-confidence-interval" class="nav-link active" data-scroll-target="#p-value-and-confidence-interval"><span class="header-section-number">6.1</span> p-value and Confidence Interval</a></li>
-  <li><a href="#type-i-and-type-ii-errors" id="toc-type-i-and-type-ii-errors" class="nav-link" data-scroll-target="#type-i-and-type-ii-errors"><span class="header-section-number">6.2</span> Type I and Type II Errors</a></li>
-  <li><a href="#introduction-to-power" id="toc-introduction-to-power" class="nav-link" data-scroll-target="#introduction-to-power"><span class="header-section-number">6.3</span> Introduction to Power</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">9.1</span> Learning objectives</a></li>
+  <li><a href="#begin-with-an-estimate" id="toc-begin-with-an-estimate" class="nav-link" data-scroll-target="#begin-with-an-estimate"><span class="header-section-number">9.2</span> Begin with an estimate</a></li>
+  <li><a href="#sampling-distributions-and-the-normal-model" id="toc-sampling-distributions-and-the-normal-model" class="nav-link" data-scroll-target="#sampling-distributions-and-the-normal-model"><span class="header-section-number">9.3</span> Sampling distributions and the normal model</a></li>
+  <li><a href="#null-and-alternative-hypotheses" id="toc-null-and-alternative-hypotheses" class="nav-link" data-scroll-target="#null-and-alternative-hypotheses"><span class="header-section-number">9.4</span> Null and alternative hypotheses</a></li>
+  <li><a href="#what-a-p-value-means" id="toc-what-a-p-value-means" class="nav-link" data-scroll-target="#what-a-p-value-means"><span class="header-section-number">9.5</span> What a p-value means</a></li>
+  <li><a href="#confidence-intervals-and-sampling-uncertainty" id="toc-confidence-intervals-and-sampling-uncertainty" class="nav-link" data-scroll-target="#confidence-intervals-and-sampling-uncertainty"><span class="header-section-number">9.6</span> Confidence intervals and sampling uncertainty</a></li>
+  <li><a href="#precision-and-clinical-importance" id="toc-precision-and-clinical-importance" class="nav-link" data-scroll-target="#precision-and-clinical-importance"><span class="header-section-number">9.7</span> Precision and clinical importance</a></li>
+  <li><a href="#type-i-and-type-ii-errors" id="toc-type-i-and-type-ii-errors" class="nav-link" data-scroll-target="#type-i-and-type-ii-errors"><span class="header-section-number">9.8</span> Type I and Type II errors</a></li>
+  <li><a href="#non-significance-and-equivalence" id="toc-non-significance-and-equivalence" class="nav-link" data-scroll-target="#non-significance-and-equivalence"><span class="header-section-number">9.9</span> Non-significance and equivalence</a></li>
+  <li><a href="#multiple-analyses-and-selective-interpretation" id="toc-multiple-analyses-and-selective-interpretation" class="nav-link" data-scroll-target="#multiple-analyses-and-selective-interpretation"><span class="header-section-number">9.10</span> Multiple analyses and selective interpretation</a></li>
+  <li><a href="#assumptions-belong-to-the-interpretation" id="toc-assumptions-belong-to-the-interpretation" class="nav-link" data-scroll-target="#assumptions-belong-to-the-interpretation"><span class="header-section-number">9.11</span> Assumptions belong to the interpretation</a></li>
+  <li><a href="#reporting-an-inferential-result" id="toc-reporting-an-inferential-result" class="nav-link" data-scroll-target="#reporting-an-inferential-result"><span class="header-section-number">9.12</span> Reporting an inferential result</a></li>
+  <li><a href="#hands-on-hypothesis-testing" id="toc-hands-on-hypothesis-testing" class="nav-link" data-scroll-target="#hands-on-hypothesis-testing"><span class="header-section-number">9.13</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">9.14</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">9.15</span> Answers and reasoning</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./hypothesis-testing-concepts.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Methods</a></li><li class="breadcrumb-item"><a href="./hypothesis-testing-concepts.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></h1>
+<h1 class="title"><span id="sec-hypothesis-testing" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></h1>
 </div>
 
 
@@ -338,22 +429,184 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Hypothesis testing provides a formal framework for making decisions under uncertainty. It involves evaluating evidence from sample data to determine whether a predefined assumption about a population—the null hypothesis—should be rejected in favor of an alternative. This process does not establish truth with certainty; rather, it quantifies the strength of evidence against the null hypothesis while controlling the risk of incorrect conclusions.</p>
-<section id="p-value-and-confidence-interval" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="p-value-and-confidence-interval"><span class="header-section-number">6.1</span> p-value and Confidence Interval</h2>
-<p>The p-value represents the probability of observing data as extreme as, or more extreme than, the current sample, assuming that the null hypothesis is true. A small p-value indicates that the observed data are unlikely under the null hypothesis, providing evidence against it. However, it does not measure the magnitude or practical importance of an effect, nor does it indicate the probability that the null hypothesis is true.</p>
-<p>A confidence interval provides a range of values within which the true population parameter is likely to lie, with a specified level of confidence (commonly 95%). Unlike the p-value, the confidence interval conveys both the direction and magnitude of an effect, as well as the precision of the estimate. Narrow intervals indicate more precise estimates, while wide intervals reflect greater uncertainty. In practice, confidence intervals are often preferred for interpretation because they provide more information than a binary significance decision.</p>
+<section id="learning-objectives" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">9.1</span> Learning objectives</h2>
+<p>After this chapter, the reader should be able to define a null hypothesis on the correct scale; explain a p-value and confidence interval; distinguish statistical from clinical importance; interpret Type I and Type II errors; and recognise why a non-significant result does not establish equivalence.</p>
 </section>
-<section id="type-i-and-type-ii-errors" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="type-i-and-type-ii-errors"><span class="header-section-number">6.2</span> Type I and Type II Errors</h2>
-<p>Hypothesis testing is subject to two types of errors. A Type I error occurs when the null hypothesis is incorrectly rejected despite being true; its probability is denoted by the significance level (α), commonly set at 0.05. A Type II error occurs when the null hypothesis is not rejected despite being false, representing a failure to detect a true effect. These errors reflect a trade-off: reducing the probability of one often increases the probability of the other, and both must be considered in study design and interpretation.</p>
+<section id="begin-with-an-estimate" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="begin-with-an-estimate"><span class="header-section-number">9.2</span> Begin with an estimate</h2>
+<p>Suppose the question is whether mean follow-up blood pressure differs between groups A and B. The target quantity is the population mean in A minus the population mean in B. The sample provides an estimate of that quantity. A statistical analysis should report the estimate and its uncertainty even when it also conducts a hypothesis test.</p>
+<p>The null value depends on the scale. A difference of zero represents no difference; a ratio of one represents equal quantities. Testing an odds ratio against zero would therefore be a scale error. Specify the estimand, group direction, and null value before interpreting the output.</p>
 </section>
-<section id="introduction-to-power" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="introduction-to-power"><span class="header-section-number">6.3</span> Introduction to Power</h2>
-<p>Statistical power is the probability of correctly rejecting a false null hypothesis, defined as (1 − β), where β is the probability of a Type II error. Power depends on several factors, including sample size, effect size, variability in the data, and the chosen significance level. Studies with low power are less likely to detect meaningful effects, even when they exist, leading to inconclusive or misleading results. Therefore, power considerations are integral to study planning, particularly in determining adequate sample size and ensuring that the analysis is capable of addressing the research question.</p>
+<section id="sampling-distributions-and-the-normal-model" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="sampling-distributions-and-the-normal-model"><span class="header-section-number">9.3</span> Sampling distributions and the normal model</h2>
+<p>A sampling distribution describes how an estimator varies across repeated samples. It is different from the distribution of individual measurements in one sample. A normal distribution is symmetric and is described by a mean and standard deviation; the standard normal has mean zero and SD one. <span class="citation" data-cites="NISTNormal">[<a href="references.html#ref-NISTNormal" role="doc-biblioref">32</a>]</span></p>
+<p>Under appropriate conditions, including independent, identically distributed sampling and finite positive variance in the basic version, the central limit theorem makes the distribution of a properly standardised sample mean approach a normal distribution as sample size increases. This does not require the individual measurements themselves to become normal. There is no universal sample-size cutoff that removes all problems from heavy tails, dependence, or influential observations. <span class="citation" data-cites="PSUCLT">[<a href="references.html#ref-PSUCLT" role="doc-biblioref">33</a>]</span></p>
+<p>The t-based intervals introduced here account for estimating the unknown variance under the conventional model. Always connect the reference distribution to the statistic and assumptions rather than treating “normality” as a label applied to an entire dataset.</p>
+</section>
+<section id="null-and-alternative-hypotheses" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="null-and-alternative-hypotheses"><span class="header-section-number">9.4</span> Null and alternative hypotheses</h2>
+<p>The null hypothesis is the specified value or relationship being evaluated by a test. For a two-group mean comparison,</p>
+<p><span class="math display">
+H_0:\mu_A-\mu_B=0.
+</span></p>
+<p>A two-sided alternative is</p>
+<p><span class="math display">
+H_1:\mu_A-\mu_B\ne0.
+</span></p>
+<p>The model includes more than this equation: it also contains assumptions about the observations and their distribution. A p-value must be interpreted in relation to that model, not as a free-standing measure of truth.</p>
+<p>A one-sided alternative addresses a prespecified direction. It should be justified by the question before the results are examined. Switching to a one-sided test after observing the direction of a difference changes the analysis procedure and its error properties.</p>
+</section>
+<section id="what-a-p-value-means" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="what-a-p-value-means"><span class="header-section-number">9.5</span> What a p-value means</h2>
+<p>A p-value is the probability, under the specified null model, of a test statistic at least as incompatible with that model as the observed statistic, according to the chosen test. It is not the probability that the null hypothesis is true, the probability that the results arose “by chance,” or the magnitude of the effect. <span class="citation" data-cites="ASAp">[<a href="references.html#ref-ASAp" role="doc-biblioref">1</a>]</span></p>
+<p>The conditioning is essential: the calculation begins by assuming the null model and evaluating the observed statistic within it. It does not assign a probability to the model itself. A small value identifies incompatibility with the null model but does not identify which assumption or feature accounts for that incompatibility.</p>
+<p>Read the p-value alongside the estimate, CI, sample size, design, and analysis decisions. An extremely small difference can produce a small p-value in a large sample. A substantial estimate can have a large p-value when the data provide little precision. Neither situation is resolved by the threshold alone.</p>
+</section>
+<section id="confidence-intervals-and-sampling-uncertainty" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="confidence-intervals-and-sampling-uncertainty"><span class="header-section-number">9.6</span> Confidence intervals and sampling uncertainty</h2>
+<p>A confidence interval is produced by a procedure intended to cover a population parameter at a stated rate under its assumptions. In repeated sampling, a 95% procedure covers the parameter in approximately 95% of repetitions. Once one interval is observed, the fixed parameter is either inside or outside it; the confidence level is not a frequentist probability assigned to that particular inclusion. <span class="citation" data-cites="NISTCI">[<a href="references.html#ref-NISTCI" role="doc-biblioref">25</a>]</span></p>
+<p>The interval can be read as a range of parameter values compatible with the observed data and model according to the interval procedure. This interpretation remains conditional on the design and analysis assumptions. It does not incorporate every possible bias or guarantee that values just outside the limits are impossible.</p>
+<div id="fig-confidence-coverage" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Thirty confidence intervals are shown around means from simulated samples. A vertical line marks the known generating mean; intervals missing that mean use a different line style.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-confidence-coverage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/teaching/confidence-coverage.png" class="img-fluid figure-img" style="width:100.0%" alt="Thirty confidence intervals are shown around means from simulated samples. A vertical line marks the known generating mean; intervals missing that mean use a different line style.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-confidence-coverage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Repeated-sampling illustration of confidence intervals for a known mean. Each line is calculated from an invented simulated sample, and the vertical reference is the generating mean.
+</figcaption>
+</figure>
+</div>
+<p>The figure demonstrates coverage across repetitions. It does not show 30 plausible positions for the same observed interval, and it is not a clinical dataset. Individual simulations need not yield exactly 95% coverage in a finite set of repetitions.</p>
+</section>
+<section id="precision-and-clinical-importance" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="precision-and-clinical-importance"><span class="header-section-number">9.7</span> Precision and clinical importance</h2>
+<p>Precision concerns the uncertainty of an estimate. Clinical importance concerns whether its magnitude matters for the stated clinical or research objective. Establish the relevant threshold or interpretation using subject knowledge and appropriate sources before drawing a conclusion. A teaching threshold should be labelled as illustrative.</p>
+<p>Consider three invented results for the same mean contrast:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 29%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Estimate and 95% CI, mmHg</th>
+<th style="text-align: left;">What the result shows</th>
+<th style="text-align: left;">What it does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">−6.0, CI −11.4 to −0.6</td>
+<td style="text-align: left;">Negative estimate with an interval excluding zero</td>
+<td style="text-align: left;">A precisely established reduction of at least an illustrative 5 mmHg</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">−6.0, CI −13.0 to 1.0</td>
+<td style="text-align: left;">Negative estimate with substantial uncertainty, including zero</td>
+<td style="text-align: left;">Absence of a clinically relevant difference</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">−1.0, CI −2.0 to −0.1</td>
+<td style="text-align: left;">Small negative estimate with an interval excluding zero</td>
+<td style="text-align: left;">Clinical importance merely because zero is excluded</td>
+</tr>
+</tbody>
+</table>
+<p>The second and third intervals are schematic teaching examples, not calculated study results. The first is reproduced in the two-group chapter. All three require a stated clinical question before being described as useful or important.</p>
+</section>
+<section id="type-i-and-type-ii-errors" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="type-i-and-type-ii-errors"><span class="header-section-number">9.8</span> Type I and Type II errors</h2>
+<p>A Type I error is rejection of a true null hypothesis under the test procedure. The significance level, alpha, sets its nominal control under the relevant assumptions. A Type II error is failure to reject the null when a specified alternative is true. Power is one minus the Type II error probability for that alternative. <span class="citation" data-cites="NISTTesting">[<a href="references.html#ref-NISTTesting" role="doc-biblioref">34</a>]</span></p>
+<p>Power is not a property of a sample size alone. It depends on the specified effect, variability, analysis, significance level, and other design features. A study can have good power for a large effect and poor power for a smaller effect. Define the effect that matters before calculating the required sample size. R’s power calculation documentation makes these inputs explicit for t-tests. <span class="citation" data-cites="RPowerT">[<a href="references.html#ref-RPowerT" role="doc-biblioref">35</a>]</span></p>
+<p>Do not interpret alpha as the probability that a particular positive result is false. That statement conditions on a different event and requires additional information. Similarly, planned power is not the probability that one non-significant result is a false negative. The probability definitions concern repetitions of a specified procedure and model.</p>
+</section>
+<section id="non-significance-and-equivalence" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="non-significance-and-equivalence"><span class="header-section-number">9.9</span> Non-significance and equivalence</h2>
+<p>When a test does not reject the null, the data may be compatible with zero and with a range of non-zero values. The CI indicates how broad that range is. A statement of “no difference” is especially misleading when the interval includes differences that would matter for the study objective. <span class="citation" data-cites="BMJAbsence">[<a href="references.html#ref-BMJAbsence" role="doc-biblioref">36</a>]</span></p>
+<p>Equivalence and non-inferiority require their own prespecified margins, hypotheses, and analyses. A conventional superiority test with p greater than 0.05 does not answer those questions. In this volume, report the estimated difference and interval, then explain whether the remaining uncertainty includes relevant effects.</p>
+</section>
+<section id="multiple-analyses-and-selective-interpretation" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="multiple-analyses-and-selective-interpretation"><span class="header-section-number">9.10</span> Multiple analyses and selective interpretation</h2>
+<p>If many outcomes or subgroup comparisons are tested, the opportunity to obtain a small p-value somewhere increases. Define the primary question and distinguish prespecified analyses from exploration. Where multiple comparisons belong to one inferential family, select and report a suitable adjustment strategy. <span class="citation" data-cites="RPadjust">[<a href="references.html#ref-RPadjust" role="doc-biblioref">37</a>]</span></p>
+<p>Adjusting p-values does not repair selective reporting of only the most favourable analysis. Report the relevant analysis family and explain which conclusions are confirmatory and which are exploratory. A change in method after seeing the result should be documented with its reason.</p>
+</section>
+<section id="assumptions-belong-to-the-interpretation" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="assumptions-belong-to-the-interpretation"><span class="header-section-number">9.11</span> Assumptions belong to the interpretation</h2>
+<p>Every test is attached to an observation structure and a statistical model. Independence, pairing, category definitions, and measurement units should be checked before examining distributional assumptions. A normality check cannot establish that repeated observations are independent.</p>
+<p>A diagnostic test’s non-significant result does not prove that its null hypothesis is true. Use plots, design information, and the sensitivity of the intended analysis to departures, rather than choosing methods solely by whether a preliminary p-value falls above or below 0.05. <span class="citation" data-cites="Greenland2016">[<a href="references.html#ref-Greenland2016" role="doc-biblioref">6</a>]</span></p>
+</section>
+<section id="reporting-an-inferential-result" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="reporting-an-inferential-result"><span class="header-section-number">9.12</span> Reporting an inferential result</h2>
+<p>A clear statement identifies the comparison and analytical sample, gives the estimate with units, reports the CI and method, and includes the test result when it is relevant. Its interpretation should remain proportionate to the design and uncertainty.</p>
+<p>For the calculated teaching contrast: “Mean follow-up systolic blood pressure was 6.0 mmHg lower in group A than in group B (A minus B: −6.0 mmHg; 95% CI −11.4 to −0.6; Welch’s two-sided p = 0.031). The interval allows effects smaller and larger than the illustrative 5-mmHg threshold, so the estimate does not establish that the reduction is at least 5 mmHg.”</p>
+</section>
+<section id="hands-on-hypothesis-testing" class="level2" data-number="9.13">
+<h2 data-number="9.13" class="anchored" data-anchor-id="hands-on-hypothesis-testing"><span class="header-section-number">9.13</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add uncertainty demonstrations, jamovi settings, dataset, and screenshots here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="9.14">
+<h2 data-number="9.14" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">9.14</span> Review questions</h2>
+<ol type="1">
+<li>Why is p = 0.03 not the probability that the null hypothesis is true?</li>
+<li>A mean difference is −6 with CI −13 to 1. Does this establish no difference?</li>
+<li>What is the no-association value for an odds ratio?</li>
+<li>Why is power incomplete without a specified alternative effect?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="9.15">
+<h2 data-number="9.15" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">9.15</span> Answers and reasoning</h2>
+<ol type="1">
+<li>The p-value is calculated conditional on the null model and concerns the test statistic, not the probability of the model.</li>
+<li>No.&nbsp;The interval includes zero and meaningful negative values; the estimate remains uncertain.</li>
+<li>One. Equal odds give a ratio of one.</li>
+<li>The chance of rejecting the null changes with the alternative effect. One design can detect a large effect more readily than a smaller one.</li>
+</ol>
+</section>
 
 
-</section>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-NISTNormal" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">NIST/SEMATECH. Normal distribution. <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm">https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-PSUCLT" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Pennsylvania State University. The central limit theorem: STAT 414. <a href="https://online.stat.psu.edu/stat414/Lesson27">https://online.stat.psu.edu/stat414/Lesson27</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-ASAp" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">American Statistical Association. Statement on statistical significance and p-values. <a href="https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf">https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-NISTCI" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">NIST/SEMATECH. Confidence limits for the mean. <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm">https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-NISTTesting" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">NIST/SEMATECH. Quantitative techniques: Hypothesis tests. <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35.htm">https://www.itl.nist.gov/div898/handbook/eda/section3/eda35.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RPowerT" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">R Core Team. Power calculations for one and two sample t tests. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/power.t.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/power.t.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-BMJAbsence" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Altman DG, Bland JM. Absence of evidence is not evidence of absence. BMJ. 1995;311:485. doi: <a href="https://doi.org/10.1136/bmj.311.7003.485">10.1136/bmj.311.7003.485</a> <a href="https://www.bmj.com/content/311/7003/485">https://www.bmj.com/content/311/7003/485</a></div>
+</div>
+<div id="ref-RPadjust" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">R Core Team. Adjust p-values for multiple comparisons. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/p.adjust.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/p.adjust.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-Greenland2016" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Greenland S, Senn SJ, Rothman KJ, Carlin JB, Poole C, Goodman SN, et al. Statistical tests, <span>P</span> values, confidence intervals, and power: A guide to misinterpretations. European Journal of Epidemiology. 2016;31:337–350. doi: <a href="https://doi.org/10.1007/s10654-016-0149-3">10.1007/s10654-016-0149-3</a> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4877414/">https://pmc.ncbi.nlm.nih.gov/articles/PMC4877414/</a></div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -758,13 +1011,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./inferential.html" class="pagination-link" aria-label="Core Inferential Statistics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Core Inferential Statistics</span>
+      <a href="./inferential.html" class="pagination-link" aria-label="Core Inferential Methods">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Core Inferential Methods</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./comparing-two-means.html" class="pagination-link" aria-label="Comparing Two Means">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./comparing-two-means.html" class="pagination-link" aria-label="Comparing Two Groups or Two Paired Measurements">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -773,4 +1026,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

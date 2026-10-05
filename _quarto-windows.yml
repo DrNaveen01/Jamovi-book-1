@@ -1,0 +1,5 @@
+format:
+  pdf:
+    mainfont: "Times New Roman"
+    sansfont: "Arial"
+    monofont: "Consolas"

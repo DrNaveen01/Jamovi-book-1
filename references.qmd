@@ -1,4 +1,7 @@
 # References {.unnumbered}
 
+The sources below support the statistical definitions, analysis assumptions, interpretation, and software features cited in the text. Software documentation was checked on 5 October 2026. Menu labels and available options may differ by jamovi or module version; the Hands-on demonstrations should record the versions used.
+
 ::: {#refs}
 :::
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Correlation – Hands-On Data Analysis Using Jamovi</title>
+<title>13&nbsp; Correlation – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-992d75fbf9f2a62f89d3d81d710e967d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,55 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
+<style>html{ scroll-behavior: smooth; }</style>
 
+  <script defer="" src="vendor/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Regression</a></li><li class="breadcrumb-item"><a href="./correlation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Correlation and Introductory Regression</a></li><li class="breadcrumb-item"><a href="./correlation.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,12 +161,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +205,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +246,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +260,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +269,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +304,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +333,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +368,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -306,22 +385,34 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
-    <h2 id="toc-title"><b>Sections</b></h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
    
   <ul class="collapse">
-  <li><a href="#pearson-correlation" id="toc-pearson-correlation" class="nav-link active" data-scroll-target="#pearson-correlation"><span class="header-section-number">10.1</span> Pearson Correlation</a></li>
-  <li><a href="#spearman-correlation" id="toc-spearman-correlation" class="nav-link" data-scroll-target="#spearman-correlation"><span class="header-section-number">10.2</span> Spearman Correlation</a></li>
-  <li><a href="#interpretation-and-reporting" id="toc-interpretation-and-reporting" class="nav-link" data-scroll-target="#interpretation-and-reporting"><span class="header-section-number">10.3</span> Interpretation and Reporting</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">13.1</span> Learning objectives</a></li>
+  <li><a href="#define-the-association-question" id="toc-define-the-association-question" class="nav-link" data-scroll-target="#define-the-association-question"><span class="header-section-number">13.2</span> Define the association question</a></li>
+  <li><a href="#inspect-the-scatterplot-first" id="toc-inspect-the-scatterplot-first" class="nav-link" data-scroll-target="#inspect-the-scatterplot-first"><span class="header-section-number">13.3</span> Inspect the scatterplot first</a></li>
+  <li><a href="#pearsons-correlation-coefficient" id="toc-pearsons-correlation-coefficient" class="nav-link" data-scroll-target="#pearsons-correlation-coefficient"><span class="header-section-number">13.4</span> Pearson’s correlation coefficient</a></li>
+  <li><a href="#spearmans-rank-correlation" id="toc-spearmans-rank-correlation" class="nav-link" data-scroll-target="#spearmans-rank-correlation"><span class="header-section-number">13.5</span> Spearman’s rank correlation</a></li>
+  <li><a href="#inference-for-pearsons-coefficient" id="toc-inference-for-pearsons-coefficient" class="nav-link" data-scroll-target="#inference-for-pearsons-coefficient"><span class="header-section-number">13.6</span> Inference for Pearson’s coefficient</a></li>
+  <li><a href="#calculated-illustration" id="toc-calculated-illustration" class="nav-link" data-scroll-target="#calculated-illustration"><span class="header-section-number">13.7</span> Calculated illustration</a></li>
+  <li><a href="#correlation-is-not-causation" id="toc-correlation-is-not-causation" class="nav-link" data-scroll-target="#correlation-is-not-causation"><span class="header-section-number">13.8</span> Correlation is not causation</a></li>
+  <li><a href="#correlation-is-not-agreement" id="toc-correlation-is-not-agreement" class="nav-link" data-scroll-target="#correlation-is-not-agreement"><span class="header-section-number">13.9</span> Correlation is not agreement</a></li>
+  <li><a href="#correlation-matrices-and-missingness" id="toc-correlation-matrices-and-missingness" class="nav-link" data-scroll-target="#correlation-matrices-and-missingness"><span class="header-section-number">13.10</span> Correlation matrices and missingness</a></li>
+  <li><a href="#the-relationship-with-simple-regression" id="toc-the-relationship-with-simple-regression" class="nav-link" data-scroll-target="#the-relationship-with-simple-regression"><span class="header-section-number">13.11</span> The relationship with simple regression</a></li>
+  <li><a href="#reporting-example" id="toc-reporting-example" class="nav-link" data-scroll-target="#reporting-example"><span class="header-section-number">13.12</span> Reporting example</a></li>
+  <li><a href="#hands-on-correlation" id="toc-hands-on-correlation" class="nav-link" data-scroll-target="#hands-on-correlation"><span class="header-section-number">13.13</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">13.14</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">13.15</span> Answers and reasoning</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Regression</a></li><li class="breadcrumb-item"><a href="./correlation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Correlation and Introductory Regression</a></li><li class="breadcrumb-item"><a href="./correlation.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-correlation" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></h1>
+<h1 class="title"><span id="sec-correlation" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></h1>
 </div>
 
 
@@ -338,592 +429,136 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Correlation analysis is used to quantify the relationship between two variables, specifically assessing the strength and direction of their association. It serves as an initial analytical step to determine whether variables tend to vary together and, if so, whether this relationship is positive or negative. Unlike more complex modeling approaches, correlation does not impose a directional structure; both variables are treated symmetrically, and no distinction is made between dependent and independent variables.</p>
-<p>The most commonly used measure is the Pearson correlation coefficient, which evaluates the strength of a linear relationship between two continuous variables under the assumption of normality. When these assumptions are not met, the Spearman rank correlation coefficient provides a non-parametric alternative based on ranked data, allowing assessment of monotonic relationships. These coefficients range from −1 to +1, indicating the extent and direction of association, with values closer to the extremes representing stronger relationships.</p>
-<p>Correlation analysis is particularly useful in exploratory data analysis, where it helps identify potential relationships that may warrant further investigation. However, it has inherent limitations. It does not account for confounding variables, cannot establish causation, and provides no mechanism for prediction. A strong correlation between two variables does not imply that one causes the other; the observed association may be influenced by underlying factors not included in the analysis.</p>
-<p>Within Jamovi, correlation analysis can be performed efficiently, generating both numerical coefficients and visual representations such as scatter plots. The emphasis, however, should remain on appropriate selection of methods, verification of assumptions, and cautious interpretation of results. Correlation should be viewed as a tool for identifying and quantifying associations, forming a basis for more detailed analytical approaches such as regression.</p>
-<div class="landscape">
-<div class="cell">
-<div class="cell-output-display">
-<div id="vghriikczh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vghriikczh table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#vghriikczh thead, #vghriikczh tbody, #vghriikczh tfoot, #vghriikczh tr, #vghriikczh td, #vghriikczh th {
-  border-style: none;
-}
-
-#vghriikczh p {
-  margin: 0;
-  padding: 0;
-}
-
-#vghriikczh .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#vghriikczh .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#vghriikczh .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#vghriikczh .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#vghriikczh .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#vghriikczh .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#vghriikczh .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#vghriikczh .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#vghriikczh .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#vghriikczh .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#vghriikczh .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#vghriikczh .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#vghriikczh .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#vghriikczh .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#vghriikczh .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#vghriikczh .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#vghriikczh .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#vghriikczh .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#vghriikczh .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#vghriikczh .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#vghriikczh .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#vghriikczh .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#vghriikczh .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#vghriikczh .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#vghriikczh .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#vghriikczh .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#vghriikczh .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#vghriikczh .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#vghriikczh .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#vghriikczh .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#vghriikczh .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#vghriikczh .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#vghriikczh .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#vghriikczh .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#vghriikczh .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#vghriikczh .gt_left {
-  text-align: left;
-}
-
-#vghriikczh .gt_center {
-  text-align: center;
-}
-
-#vghriikczh .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#vghriikczh .gt_font_normal {
-  font-weight: normal;
-}
-
-#vghriikczh .gt_font_bold {
-  font-weight: bold;
-}
-
-#vghriikczh .gt_font_italic {
-  font-style: italic;
-}
-
-#vghriikczh .gt_super {
-  font-size: 65%;
-}
-
-#vghriikczh .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#vghriikczh .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#vghriikczh .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#vghriikczh .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#vghriikczh .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#vghriikczh .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#vghriikczh .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#vghriikczh .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#vghriikczh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
-<thead>
-<tr class="gt_heading header">
-<td colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border">Comparative Interpretation of Correlation Effect Sizes</td>
-</tr>
-<tr class="gt_col_headings even">
-<th id="Range" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Range</th>
-<th id="Funder2019" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Funder2019</th>
-<th id="Gignac2016" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Gignac2016</th>
-<th id="Cohen1988" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Cohen1988</th>
-<th id="Lovakov2021" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Lovakov2021</th>
-<th id="Evans1996" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Evans1996</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_center" headers="Range">&lt; 0.05</td>
-<td class="gt_row gt_center" headers="Funder2019">Tiny</td>
-<td class="gt_row gt_center" headers="Gignac2016">Very small</td>
-<td class="gt_row gt_center" headers="Cohen1988">Very small</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Very small</td>
-<td class="gt_row gt_center" headers="Evans1996">Very weak</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="Range">0.05–&lt;0.10</td>
-<td class="gt_row gt_center" headers="Funder2019">Very small</td>
-<td class="gt_row gt_center" headers="Gignac2016">Very small</td>
-<td class="gt_row gt_center" headers="Cohen1988">Very small</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Very small</td>
-<td class="gt_row gt_center" headers="Evans1996">Very weak</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="Range">0.10–&lt;0.12</td>
-<td class="gt_row gt_center" headers="Funder2019">Small</td>
-<td class="gt_row gt_center" headers="Gignac2016">Small</td>
-<td class="gt_row gt_center" headers="Cohen1988">Small</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Very small</td>
-<td class="gt_row gt_center" headers="Evans1996">Very weak</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="Range">0.12–&lt;0.20</td>
-<td class="gt_row gt_center" headers="Funder2019">Small</td>
-<td class="gt_row gt_center" headers="Gignac2016">Small</td>
-<td class="gt_row gt_center" headers="Cohen1988">Small</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Small</td>
-<td class="gt_row gt_center" headers="Evans1996">Very weak</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="Range">0.20–&lt;0.24</td>
-<td class="gt_row gt_center" headers="Funder2019">Medium</td>
-<td class="gt_row gt_center" headers="Gignac2016">Moderate</td>
-<td class="gt_row gt_center" headers="Cohen1988">Small</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Small</td>
-<td class="gt_row gt_center" headers="Evans1996">Weak</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="Range">0.24–&lt;0.30</td>
-<td class="gt_row gt_center" headers="Funder2019">Medium</td>
-<td class="gt_row gt_center" headers="Gignac2016">Moderate</td>
-<td class="gt_row gt_center" headers="Cohen1988">Small</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Moderate</td>
-<td class="gt_row gt_center" headers="Evans1996">Weak</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="Range">0.30–&lt;0.40</td>
-<td class="gt_row gt_center" headers="Funder2019">Large</td>
-<td class="gt_row gt_center" headers="Gignac2016">Large</td>
-<td class="gt_row gt_center" headers="Cohen1988">Moderate</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Moderate</td>
-<td class="gt_row gt_center" headers="Evans1996">Moderate</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="Range">0.40–&lt;0.41</td>
-<td class="gt_row gt_center" headers="Funder2019">Very large</td>
-<td class="gt_row gt_center" headers="Gignac2016">Large</td>
-<td class="gt_row gt_center" headers="Cohen1988">Moderate</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Moderate</td>
-<td class="gt_row gt_center" headers="Evans1996">Moderate</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="Range">0.41–&lt;0.50</td>
-<td class="gt_row gt_center" headers="Funder2019">Very large</td>
-<td class="gt_row gt_center" headers="Gignac2016">Large</td>
-<td class="gt_row gt_center" headers="Cohen1988">Moderate</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Large</td>
-<td class="gt_row gt_center" headers="Evans1996">Moderate</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="Range">0.50–&lt;0.60</td>
-<td class="gt_row gt_center" headers="Funder2019">Very large</td>
-<td class="gt_row gt_center" headers="Gignac2016">Large</td>
-<td class="gt_row gt_center" headers="Cohen1988">Large</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Large</td>
-<td class="gt_row gt_center" headers="Evans1996">Moderate</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="Range">0.60–&lt;0.80</td>
-<td class="gt_row gt_center" headers="Funder2019">Very large</td>
-<td class="gt_row gt_center" headers="Gignac2016">Large</td>
-<td class="gt_row gt_center" headers="Cohen1988">Large</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Large</td>
-<td class="gt_row gt_center" headers="Evans1996">Strong</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="Range">≥ 0.80</td>
-<td class="gt_row gt_center" headers="Funder2019">Very large</td>
-<td class="gt_row gt_center" headers="Gignac2016">Large</td>
-<td class="gt_row gt_center" headers="Cohen1988">Large</td>
-<td class="gt_row gt_center" headers="Lovakov2021">Large</td>
-<td class="gt_row gt_center" headers="Evans1996">Very strong</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div>
-<section id="pearson-correlation" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="pearson-correlation"><span class="header-section-number">10.1</span> Pearson Correlation</h2>
+<section id="learning-objectives" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">13.1</span> Learning objectives</h2>
+<p>After this chapter, the reader should be able to distinguish linear from monotonic association, interpret direction and magnitude without using universal strength labels, identify the relevant data pairs, and explain why correlation is neither causation nor agreement.</p>
 </section>
-<section id="spearman-correlation" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="spearman-correlation"><span class="header-section-number">10.2</span> Spearman Correlation</h2>
+<section id="define-the-association-question" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="define-the-association-question"><span class="header-section-number">13.2</span> Define the association question</h2>
+<p>Consider whether age and systolic blood pressure vary together among study participants. Each participant contributes one age–blood-pressure pair. Neither variable is automatically an outcome in the correlation calculation; the purpose is to summarise their relationship.</p>
+<p>Confirm that paired values belong to the same observation unit. If a participant contributes multiple visits, a conventional correlation across all rows does not account for the dependence between those visits. A correlation between facility averages also answers a different question from a correlation between individual measurements.</p>
+<p>State whether the objective concerns a linear relationship in the original values or an ordered relationship. The choice between Pearson and Spearman should reflect that objective and the observed form, not simply a threshold from a normality test.</p>
 </section>
-<section id="interpretation-and-reporting" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="interpretation-and-reporting"><span class="header-section-number">10.3</span> Interpretation and Reporting</h2>
+<section id="inspect-the-scatterplot-first" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="inspect-the-scatterplot-first"><span class="header-section-number">13.3</span> Inspect the scatterplot first</h2>
+<p>Look for direction, form, spread, influential observations, and subgroups. The graphical-presentation chapter shows examples of a roughly linear relationship, a monotonic curve, and a U-shaped relationship. A single coefficient cannot communicate all those features.</p>
+<p>A pooled association can depend on differences between subgroups rather than on the relationship within them. Inspect groups relevant to the question before treating a pooled coefficient as the whole explanation. This inspection does not itself adjust for confounding; it reveals a feature that may require a different analysis.</p>
+<p>When a verified unusual observation strongly affects the coefficient, show or describe that influence. Do not remove it solely to obtain a preferred value. If a sensitivity analysis is justified, report the rule and its interpretation.</p>
+</section>
+<section id="pearsons-correlation-coefficient" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="pearsons-correlation-coefficient"><span class="header-section-number">13.4</span> Pearson’s correlation coefficient</h2>
+<p>Pearson’s <span class="math inline">r</span> describes linear association after scaling the covariance by the two standard deviations:</p>
+<p><span class="math display">
+r=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}
+{\sqrt{\sum_i(x_i-\bar x)^2\sum_i(y_i-\bar y)^2}}.
+</span></p>
+<p>It ranges from −1 to +1 when both variables have non-zero variation. A positive value indicates that larger values tend to occur together in a linear pattern; a negative value indicates the opposite direction. A constant variable does not provide the variation needed for this coefficient.</p>
+<p>The coefficient is a descriptive calculation and does not require normality merely to exist. Its conventional small-sample test and interval use additional model assumptions. R documents the t-based Pearson test under independent observations from a suitable normal model and a Fisher-transformation interval. <span class="citation" data-cites="RCor">[<a href="references.html#ref-RCor" role="doc-biblioref">30</a>]</span></p>
+<section id="direction-and-magnitude" class="level3" data-number="13.4.1">
+<h3 data-number="13.4.1" class="anchored" data-anchor-id="direction-and-magnitude"><span class="header-section-number">13.4.1</span> Direction and magnitude</h3>
+<p>The sign communicates direction. The absolute magnitude indicates how closely the observed values follow a linear relationship in their standardised scale. It does not indicate the slope in mmHg per year or the size of a clinical effect in original units.</p>
+<p>Avoid using “weak,” “moderate,” or “strong” as universal clinical conclusions. Such labels are conventions, and their value depends on the measurement reliability, population range, and research objective. Report the numerical coefficient, uncertainty, sample size, and scatterplot context before adding any descriptive label.</p>
+</section>
+<section id="why-zero-does-not-mean-no-relationship" class="level3" data-number="13.4.2">
+<h3 data-number="13.4.2" class="anchored" data-anchor-id="why-zero-does-not-mean-no-relationship"><span class="header-section-number">13.4.2</span> Why zero does not mean no relationship</h3>
+<p>A near-zero Pearson coefficient can occur when positive and negative linear components balance in a curved pattern. In a symmetric U-shaped example, outcomes vary systematically with the predictor while the linear coefficient is zero. The graph is therefore necessary to distinguish lack of a linear association from lack of any relationship.</p>
+</section>
+</section>
+<section id="spearmans-rank-correlation" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="spearmans-rank-correlation"><span class="header-section-number">13.5</span> Spearman’s rank correlation</h2>
+<p>Spearman’s coefficient applies correlation to the ranks of the paired values. It describes monotonic association: whether values tend to move in one direction together, without requiring a straight-line pattern in the original units. Ties need an appropriate ranking and inferential calculation. <span class="citation" data-cites="RCor">[<a href="references.html#ref-RCor" role="doc-biblioref">30</a>]</span></p>
+<p>An increasing curve can have a high rank correlation even when its original-scale relationship is not linear. A U-shaped relationship is not generally monotonic over its full range, so substituting Spearman for Pearson does not automatically summarise every curve well.</p>
+<p>Choose Spearman because ranks and monotonic ordering match the question and data. Do not describe it as a method that ignores all assumptions or repairs invalid observation matching. Independence between pairs remains relevant to the conventional inferential calculation.</p>
+</section>
+<section id="inference-for-pearsons-coefficient" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="inference-for-pearsons-coefficient"><span class="header-section-number">13.6</span> Inference for Pearson’s coefficient</h2>
+<p>For a conventional test of zero population correlation,</p>
+<p><span class="math display">
+t=r\sqrt{\frac{n-2}{1-r^2}},\qquad df=n-2.
+</span></p>
+<p>The p-value refers to that null model. It is not the probability that the correlation is causal or that a future sample will show the same magnitude.</p>
+<p>An approximate interval can be formed using Fisher’s transformation:</p>
+<p><span class="math display">
+z=\operatorname{atanh}(r),\qquad SE(z)=\frac{1}{\sqrt{n-3}},
+</span></p>
+<p>then transforming the interval limits back with the hyperbolic tangent. This is an interval for Pearson’s population correlation under the method’s assumptions. Do not use it as an unlabelled interval for a different coefficient.</p>
+</section>
+<section id="calculated-illustration" class="level2" data-number="13.7">
+<h2 data-number="13.7" class="anchored" data-anchor-id="calculated-illustration"><span class="header-section-number">13.7</span> Calculated illustration</h2>
+<p>Suppose an invented Pearson result is <span class="math inline">r=0.60</span> from 50 complete, independent pairs. The t statistic is approximately 5.20 with 48 degrees of freedom, giving a two-sided p-value of 0.00000412. The approximate Fisher 95% CI is 0.386 to 0.753.</p>
+<p>The estimate indicates positive linear association, but the interval permits a range of magnitudes. It does not say that a one-year age increase changes blood pressure by 0.60 mmHg. That original-scale question requires a regression slope or another suitable model.</p>
+<p>For comparison, an invented <span class="math inline">r=0.30</span> with the same 50 pairs has p = 0.0343 and a Fisher interval of approximately 0.024 to 0.534. A threshold label alone would hide the uncertainty in its magnitude. These are separate numerical teaching cases, not outcomes selected from one clinical dataset.</p>
+</section>
+<section id="correlation-is-not-causation" class="level2" data-number="13.8">
+<h2 data-number="13.8" class="anchored" data-anchor-id="correlation-is-not-causation"><span class="header-section-number">13.8</span> Correlation is not causation</h2>
+<p>An association may reflect a causal pathway, a common cause, selection, measurement structure, or other features of the study. A correlation coefficient does not distinguish these explanations. The design and substantive knowledge determine which interpretation is defensible.</p>
+<p>For example, a relationship between age and blood pressure does not specify what would happen if one could intervene on age, nor does it isolate the influence of other characteristics. Later volumes address adjustment and causal reasoning. This volume reports the observed relationship with an explicit boundary on interpretation.</p>
+</section>
+<section id="correlation-is-not-agreement" class="level2" data-number="13.9">
+<h2 data-number="13.9" class="anchored" data-anchor-id="correlation-is-not-agreement"><span class="header-section-number">13.9</span> Correlation is not agreement</h2>
+<p>Two measurement methods can correlate perfectly while differing systematically. If method B equals method A plus 20 units for every observation, the linear correlation is +1, but the methods do not give the same values. A method-comparison question therefore requires assessment of differences and agreement, not correlation alone.</p>
+<p>Reliability, agreement, and diagnostic accuracy have different targets. A high correlation does not establish that one method can replace another clinically. The relevant specialist methods are developed in later volumes.</p>
+</section>
+<section id="correlation-matrices-and-missingness" class="level2" data-number="13.10">
+<h2 data-number="13.10" class="anchored" data-anchor-id="correlation-matrices-and-missingness"><span class="header-section-number">13.10</span> Correlation matrices and missingness</h2>
+<p>A matrix can present correlations among several variables. Inspect which observations contribute to each pair and whether the sample sizes differ. A coefficient based on 50 complete pairs and another based on 35 pairs do not have the same information, even if they appear in one matrix.</p>
+<p>jamovi’s correlation analysis provides Pearson, Spearman, and Kendall options, sample-size display, and graphical and uncertainty options. Verify which outputs apply to the selected coefficient and record the method. <span class="citation" data-cites="jamoviCorrelation">[<a href="references.html#ref-jamoviCorrelation" role="doc-biblioref">54</a>]</span></p>
+<p>If many correlations are examined, distinguish the prespecified relationship from exploratory screening. Multiplicity and selective interpretation remain relevant; a matrix of flagged p-values is not a model-selection strategy by itself.</p>
+</section>
+<section id="the-relationship-with-simple-regression" class="level2" data-number="13.11">
+<h2 data-number="13.11" class="anchored" data-anchor-id="the-relationship-with-simple-regression"><span class="header-section-number">13.11</span> The relationship with simple regression</h2>
+<p>In an ordinary least-squares regression with one quantitative predictor, an intercept, and the same complete observations, <span class="math inline">R^2=r^2</span>. This relationship does not make the two analyses interchangeable. Correlation is symmetric in the two variables, while regression specifies an outcome and produces a slope in defined units.</p>
+<p>The regression chapter explains why those units, residuals, and prediction uncertainty matter. A numerical association summary should lead to a clearer question, not to an automatic causal explanation.</p>
+</section>
+<section id="reporting-example" class="level2" data-number="13.12">
+<h2 data-number="13.12" class="anchored" data-anchor-id="reporting-example"><span class="header-section-number">13.12</span> Reporting example</h2>
+<p>For the invented 50-pair result: “Age and systolic blood pressure showed a positive linear association (Pearson r = 0.60; approximate Fisher 95% CI 0.39–0.75; n = 50; p &lt; 0.001). Interpretation requires the scatterplot and the observation structure; the coefficient does not establish a causal effect or an original-scale increase per year.”</p>
+<p>In a completed study report, describe the actual scatterplot assessment and any influential observations or design limitation. Avoid adding an unsupported strength category when the numerical result and context are more informative.</p>
+</section>
+<section id="hands-on-correlation" class="level2" data-number="13.13">
+<h2 data-number="13.13" class="anchored" data-anchor-id="hands-on-correlation"><span class="header-section-number">13.13</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add scatterplots, Pearson and Spearman analyses, dataset, and screenshots here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="13.14">
+<h2 data-number="13.14" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">13.14</span> Review questions</h2>
+<ol type="1">
+<li>Can Pearson’s r be calculated for non-normal measurements?</li>
+<li>Does r close to zero rule out a U-shaped relationship?</li>
+<li>Why can perfect correlation coexist with poor agreement?</li>
+<li>What does r = 0.60 fail to tell the reader about the slope in original units?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="13.15">
+<h2 data-number="13.15" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">13.15</span> Answers and reasoning</h2>
+<ol type="1">
+<li>Yes, if the required variation and data pairs exist. The conventional test and interval require additional assumptions.</li>
+<li>No.&nbsp;It summarises linear association, and opposite sides of the curve can balance.</li>
+<li>A systematic offset or scale difference can preserve linear association while changing the measured values.</li>
+<li>It does not provide the outcome change per predictor unit; that requires a model with the relevant units.</li>
+</ol>
+</section>
 
 
-</section>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-RCor" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">R Core Team. Test for association/correlation between paired samples. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-jamoviCorrelation" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. Correlation matrix: corrMatrix. <a href="https://docs.jamovi.org/jmv/jmv_corrMatrix.html">https://docs.jamovi.org/jmv/jmv_corrMatrix.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1328,13 +963,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./regression.html" class="pagination-link" aria-label="Regression">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Regression</span>
+      <a href="./regression.html" class="pagination-link" aria-label="Correlation and Introductory Regression">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Correlation and Introductory Regression</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./linear-regression.html" class="pagination-link" aria-label="Introduction To Linear Regression">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./linear-regression.html" class="pagination-link" aria-label="Introduction to Simple Linear Regression">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1343,4 +978,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -1,0 +1,32 @@
+/*-- scss:defaults --*/
+$body-color: #202124;
+$body-bg: #ffffff;
+$headings-color: #151515;
+$link-color: #205b58;
+$font-family-serif: Georgia, "Times New Roman", serif;
+$font-family-sans-serif: Georgia, "Times New Roman", serif;
+$toc-color: #373737;
+$callout-color-note: #507773;
+
+/*-- scss:rules --*/
+main p { line-height: 1.65; }
+h1, h2, h3 { font-weight: 700; color: #151515; }
+table { font-size: 0.91em; }
+table thead { background: #f2f1ed; }
+.hands-on-note { border: 1px solid #b3c8c5 !important; border-left: 5px solid #507773 !important; background: #f7faf9; margin: 1rem 0 1.7rem; }
+.hands-on-note .callout-header { background: #edf3f1 !important; color: #1c3532; }
+.hands-on-note .callout-body, .hands-on-note .callout-body-container { min-height: 5rem; }
+.hands-on-note.callout-empty-content { min-height: 7rem; }
+.callout { break-inside: avoid; }
+blockquote { border-left: 3px solid #b8b8b8; color: #292929; padding-left: 1rem; }
+figcaption { color: #363636; font-size: 0.9em; }
+.math.display { display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-bottom: 0.2rem; }
+.sidebar-title { font-weight: 700; }
+.review-questions, .review-answers { break-inside: avoid; }
+.csl-entry, .csl-right-inline { overflow-wrap: anywhere; }
+@media print { .hands-on-note { min-height: 6rem; } }
+@media (max-width: 575px) {
+  main table { table-layout: fixed; width: 100%; }
+  main th, main td { overflow-wrap: anywhere; }
+}

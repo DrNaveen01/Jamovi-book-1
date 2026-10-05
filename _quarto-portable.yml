@@ -1,0 +1,5 @@
+format:
+  pdf:
+    mainfont: "Latin Modern Roman"
+    sansfont: "Latin Modern Sans"
+    monofont: "Latin Modern Mono"

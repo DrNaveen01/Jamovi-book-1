@@ -1,4 +1,118 @@
----
-title: "Glossary"
----
+# Glossary {#sec-glossary}
 
+These definitions use the meanings applied in Volume I. Follow the relevant chapter when a quantity has several possible conventions or requires design-specific interpretation.
+
+## Data and design
+
+| Term | Meaning in this book |
+|:-----|:---------------------|
+| Analysis-ready data | A reviewed file with documented coding, eligibility, units, and missing-value rules |
+| Analysis specification | A stated question, target quantity, eligible sample, variables, method, and reporting plan |
+| Binary variable | A variable with two defined categories |
+| Categorical variable | A variable whose values indicate categories rather than a continuous numerical amount |
+| Complete case | An observation with values for all variables required by the specified analysis |
+| Complete pair | Two matched measurements both available for the paired calculation |
+| Continuous variable | A quantitative measurement treated on a numerical scale with meaningful distances |
+| Data dictionary | Definitions of variables, units, categories, timing, missing codes, and derivations |
+| Data type | Storage property such as integer, decimal, or text |
+| Data validation | Checks of whether the file follows its measurement and entry definitions |
+| Derived variable | A new quantity calculated or recoded from documented source variables |
+| Filter | A defined rule controlling which observations enter analyses |
+| Identifier | A label used to identify or link observation units |
+| Independent observations | Observations treated as independent under the design and analysis model; repeated or clustered records need assessment |
+| Long format | Data with measurements across occasions represented in separate rows and linked by identifiers |
+| Measure type | Analytical property such as nominal, ordinal, continuous, or ID |
+| Missing value | An unavailable intended measurement or status; not automatically a zero or negative result |
+| Missing at random (MAR) | Missingness independent of missing values conditional on relevant observed information |
+| Missing completely at random (MCAR) | Missingness unrelated to observed and unobserved values |
+| Missing not at random (MNAR) | Dependence of missingness on unobserved values remains |
+| Nominal variable | Categories with no inherent order |
+| Ordinal variable | Ordered categories without an automatic equal-spacing interpretation |
+| Paired data | Observations related by a defined match, such as two measurements from the same participant |
+| Row key | A variable or combination of variables identifying a row under the defined observation unit |
+| Unit of observation | The entity represented by an analytical record, such as a patient, visit, admission, or facility |
+| Wide format | Data with different measurements represented in separate columns for the same unit |
+
+The software distinctions between data type, measure type, and derived variables are documented in jamovi. Complete-case status is defined relative to the variables used in a calculation. Missingness assumptions concern the data process. [@jamoviData; @jamoviComputed; @RComplete; @RubinMissing]
+
+## Description and uncertainty
+
+| Term | Meaning in this book |
+|:-----|:---------------------|
+| Confidence interval | An interval produced by a procedure with a stated coverage rate under its assumptions |
+| Denominator | The set or count relative to which a proportion is calculated |
+| Estimate | A sample-based value used to learn about a target parameter |
+| Estimand | The precisely defined quantity the analysis aims to estimate |
+| Frequency | The number of observations in a category or interval |
+| Geometric mean | For positive values, the exponential of the average of their natural logarithms |
+| Interquartile range | Third quartile minus first quartile |
+| Mean | Sum of the observations divided by their number |
+| Median | Middle ordered value, with the two middle values averaged when n is even |
+| Mode | Most frequent value or category; it need not be unique |
+| Parameter | A quantity describing the population or statistical model |
+| Percentage point | A unit for an absolute difference between percentages |
+| Precision | The degree of uncertainty in an estimate under the selected procedure |
+| Proportion | A defined count divided by an appropriate denominator |
+| Quartile | A value dividing an ordered distribution at a specified quarter; interpolation conventions can vary |
+| Range | The span from minimum to maximum, or their difference when explicitly stated |
+| Sampling variability | Variation in a statistic across repeated samples under the sampling model |
+| Standard deviation | Dispersion of observations around their mean, in the original unit |
+| Standard error | Estimated sampling variability of an estimator, distinct from individual spread |
+| Standardisation | Expressing a value relative to a stated reference mean and SD |
+| Statistic | A quantity calculated from the observed sample |
+| Variance | Squared standard deviation under the corresponding definition |
+
+The location, spread, quantile, and mean-interval definitions are described in the statistical reference documentation. [@NISTLocation; @NISTScale; @RQuantile; @NISTCI]
+
+## Testing and interpretation
+
+| Term | Meaning in this book |
+|:-----|:---------------------|
+| Alternative hypothesis | The specified departure from the null evaluated by a test |
+| Bias | A systematic problem in an estimator or study process relative to its target; not ordinary sampling variation |
+| Clinical importance | Relevance of an effect magnitude to the stated clinical objective, distinct from a p-value threshold |
+| Contrast | A defined comparison, such as A minus B or A relative to B |
+| Degrees of freedom | A parameter of a test's reference distribution, determined by its procedure |
+| Multiplicity | The problem of interpreting several related analyses and their combined error criterion |
+| Null hypothesis | The specified value or relationship evaluated under a test model |
+| Omnibus test | An overall assessment across a set of groups or terms rather than one specific pair |
+| P-value | Probability of the chosen test statistic being at least as incompatible as observed, conditional on the specified null model |
+| Post-hoc comparison | A follow-up comparison whose procedure and multiplicity handling must be identified |
+| Power | Probability of rejecting the null under a specified alternative and test procedure |
+| Reference category | The category against which a contrast or model coefficient is expressed |
+| Significance level | The nominal Type I error control level under the test's assumptions |
+| Type I error | Rejecting a true null under the test procedure |
+| Type II error | Failing to reject the null under a specified true alternative |
+
+Interpretation of p-values, errors, and power depends on the conditioning and model. A non-significant result does not alone establish equivalence. [@ASAp; @NISTTesting; @RPowerT; @BMJAbsence]
+
+## Association and modeling
+
+| Term | Meaning in this book |
+|:-----|:---------------------|
+| Cramér's V | A scaled categorical-association summary based on a chi-square statistic and table dimensions |
+| Expected count | Cell frequency implied by the specified table model, such as independence |
+| Fitted value | The model's estimated response quantity at a specified predictor value |
+| Homoscedasticity | A constant error variance under the relevant model |
+| Influence | The extent to which an observation affects the fitted result |
+| Intercept | The model quantity at the predictor's reference or zero value |
+| Leverage | A property related to an observation's predictor position relative to the fitted design |
+| Linear association | A relationship summarised by a straight-line pattern |
+| Logit | Natural logarithm of probability divided by its complement |
+| Monotonic association | An ordered relationship that moves in one direction, not necessarily in a straight line |
+| Odds | Probability divided by one minus that probability |
+| Odds ratio | Ratio of two odds; the null value is one |
+| Outcome | The variable whose distribution or relationship is the focus of the analysis |
+| Pearson correlation | A standardised summary of linear association between paired quantitative values |
+| Prediction interval | An interval for a new observation under a model, including individual variation |
+| Predictor | A variable used to specify or explain a model outcome; the role does not establish causation |
+| Residual | Observed value minus fitted value for the relevant model quantity |
+| Risk difference | Difference between design-supported risks, often expressed in percentage points |
+| Risk ratio | Ratio of design-supported risks |
+| R-squared | In ordinary linear regression with an intercept, the share of observed squared outcome variation accounted for by the fit |
+| Separation | A binary-model data pattern that prevents a finite ordinary maximum-likelihood estimate in the affected direction |
+| Slope | Change in the modeled outcome quantity for a defined predictor increment |
+| Spearman correlation | Correlation of ranks used to summarise monotonic association |
+| Unadjusted model | A model that does not control for additional characteristics beyond its stated predictor structure |
+
+The categorical, correlation, linear, and generalised-linear-model references provide the associated calculations and output definitions. [@RChiSq; @RCor; @RLm; @RSummaryLm; @RGlm; @RPredictLm; @BMJOdds]

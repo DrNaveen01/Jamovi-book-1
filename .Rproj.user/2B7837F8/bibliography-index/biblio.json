@@ -1,32 +1,1362 @@
 {
     "sources": [
         {
-            "DOI": "10.1093/comjnl/27.2.97",
-            "ISSN": "0010-4620",
-            "URL": "https://doi.org/10.1093/comjnl/27.2.97",
-            "author": [
-                {
-                    "family": "Knuth",
-                    "given": "Donald E."
-                }
-            ],
-            "container-title": "Comput. J.",
-            "id": "knuth84",
-            "issue": "2",
-            "issued": {
+            "URL": "https://online.stat.psu.edu/stat414/Lesson27",
+            "accessed": {
                 "date-parts": [
                     [
-                        1984,
+                        2026,
+                        10,
                         5
                     ]
                 ]
             },
-            "page": "97-111",
-            "publisher": "Oxford University Press, Inc.",
-            "publisher-place": "USA",
-            "title": "Literate programming",
+            "author": [
+                {
+                    "literal": "Pennsylvania State University"
+                }
+            ],
+            "id": "PSUCLT",
+            "title": "The central limit theorem: STAT 414",
+            "title-short": "The central limit theorem",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://online.stat.psu.edu/stat857/node/31/",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "Pennsylvania State University"
+                }
+            ],
+            "id": "PSUScales",
+            "title": "What is data: Measurement scales",
+            "title-short": "What is data",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "NIST/SEMATECH"
+                }
+            ],
+            "id": "NISTNormal",
+            "title": "Normal distribution",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "NIST/SEMATECH"
+                }
+            ],
+            "id": "NISTTesting",
+            "title": "Quantitative techniques: Hypothesis tests",
+            "title-short": "Quantitative techniques",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/power.t.test.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RPowerT",
+            "title": "Power calculations for one and two sample t tests",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/predict.lm.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RPredictLm",
+            "title": "Predict method for linear model fits",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/family.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RFamily",
+            "title": "Family objects for models",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/summary.lm.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RSummaryLm",
+            "title": "Summarizing linear model fits",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/summary.glm.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RSummaryGlm",
+            "title": "Summarizing generalized linear model fits",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.jamovi.org/getting-started.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviGettingStarted",
+            "title": "Getting started",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/usermanual/um_4_spreadsheet.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviSpreadsheet",
+            "title": "The spreadsheet",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/data/data_1_overview_data_variables.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviData",
+            "title": "Data variables",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/data/data_2_computed_variables.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviComputed",
+            "title": "Computed variables",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/data/data_3_transformed_variables.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviTransform",
+            "title": "Transformed variables",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://blog.jamovi.org/2018/04/25/jamovi-filters.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviFilters",
+            "title": "Introducing filters in jamovi",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/usermanual/um_5_updating_data.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviUpdating",
+            "title": "Updating data",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/usermanual/um_6_jamovi_and_R.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviR",
+            "title": "Combining jamovi and r",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/jmv/jmv_descriptives.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviDesc",
+            "title": "Descriptives: descriptives",
+            "title-short": "Descriptives",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/analyses/jg_21_t-test-independent.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviIndependent",
+            "title": "T-test: Independent samples",
+            "title-short": "T-test",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/jmv/jmv_ttestPS.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviPaired",
+            "title": "Paired samples t-test: ttestPS",
+            "title-short": "Paired samples t-test",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/jmv/jmv_anovaOneW.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviOneWay",
+            "title": "One-way ANOVA: anovaOneW",
+            "title-short": "One-way ANOVA",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/jmv/jmv_anovaNP.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviKruskal",
+            "title": "One-way ANOVA, non-parametric: anovaNP",
+            "title-short": "One-way ANOVA, non-parametric",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/jmv/jmv_contTables.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviContingency",
+            "title": "Contingency tables: contTables",
+            "title-short": "Contingency tables",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/jmv/jmv_contTablesPaired.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviPairedTables",
+            "title": "Paired samples contingency tables: contTablesPaired",
+            "title-short": "Paired samples contingency tables",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/jmv/jmv_corrMatrix.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviCorrelation",
+            "title": "Correlation matrix: corrMatrix",
+            "title-short": "Correlation matrix",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/jmv/jmv_linReg.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviLinear",
+            "title": "Linear regression: linReg",
+            "title-short": "Linear regression",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://docs.jamovi.org/spss2jamovi/s2j_logReg.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviLogistic",
+            "title": "From SPSS to jamovi: Logistic regression",
+            "title-short": "From SPSS to jamovi",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda351.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "NIST/SEMATECH"
+                }
+            ],
+            "id": "NISTLocation",
+            "title": "Measures of location",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda356.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "NIST/SEMATECH"
+                }
+            ],
+            "id": "NISTScale",
+            "title": "Measures of scale",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda33e.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "NIST/SEMATECH"
+                }
+            ],
+            "id": "NISTHist",
+            "title": "Histogram",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.itl.nist.gov/div898/handbook/eda/section3/boxplot.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "NIST/SEMATECH"
+                }
+            ],
+            "id": "NISTBox",
+            "title": "Box plot",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.itl.nist.gov/div898/handbook/eda/section3/normprpl.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "NIST/SEMATECH"
+                }
+            ],
+            "id": "NISTQQ",
+            "title": "Normal probability plot",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "NIST/SEMATECH"
+                }
+            ],
+            "id": "NISTCI",
+            "title": "Confidence limits for the mean",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.itl.nist.gov/div898/handbook/prc/section3/prc311.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "NIST/SEMATECH"
+                }
+            ],
+            "id": "NISTPaired",
+            "title": "Analysis of paired observations",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.itl.nist.gov/div898/handbook/prc/section4/prc432.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "NIST/SEMATECH"
+                }
+            ],
+            "id": "NISTANOVA",
+            "title": "The one-way ANOVA model and assumptions",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "NIST/SEMATECH"
+                }
+            ],
+            "id": "NISTRegDiagnostics",
+            "title": "How can i tell if a model fits my data?",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RTTest",
+            "title": "Student’s t-test",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/wilcox.test.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RWilcoxon",
+            "title": "Wilcoxon rank sum and signed rank tests",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.stat.ethz.ch/R-manual/R-patched/library/stats/html/chisq.test.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RChiSq",
+            "title": "Pearson’s chi-squared test for count data",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/fisher.test.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RFisher",
+            "title": "Fisher’s exact test for count data",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.test.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RCor",
+            "title": "Test for association/correlation between paired samples",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/oneway.test.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "ROneWay",
+            "title": "Test for equal means in a one-way layout",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/kruskal.test.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RKruskal",
+            "title": "Kruskal-wallis rank sum test",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/p.adjust.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RPadjust",
+            "title": "Adjust p-values for multiple comparisons",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RLm",
+            "title": "Fitting linear models",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RGlm",
+            "title": "Fitting generalized linear models",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/binom.test.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RBinom",
+            "title": "Exact binomial test",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/mcnemar.test.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RMcNemar",
+            "title": "McNemar’s chi-squared test for count data",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/quantile.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RQuantile",
+            "title": "Sample quantiles",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/complete.cases.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RComplete",
+            "title": "Find complete cases",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/TukeyHSD.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RTukey",
+            "title": "Compute tukey honest significant differences",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/pairwise.wilcox.test.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RPairwiseWilcoxon",
+            "title": "Pairwise wilcoxon rank sum tests",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "American Statistical Association"
+                }
+            ],
+            "id": "ASAp",
+            "title": "Statement on statistical significance and p-values",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.equator-network.org/reporting-guidelines/sampl/",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "EQUATOR Network"
+                }
+            ],
+            "id": "SAMPL",
+            "title": "Basic statistical reporting for articles published in biomedical journals: The SAMPL guidelines",
+            "title-short": "Basic statistical reporting for articles published in biomedical journals",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.equator-network.org/reporting-guidelines/strobe/",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "EQUATOR Network"
+                }
+            ],
+            "id": "STROBE",
+            "title": "STROBE: Guidelines for reporting observational studies",
+            "title-short": "STROBE",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "International Committee of Medical Journal Editors"
+                }
+            ],
+            "id": "ICMJE",
+            "title": "Preparing a manuscript for submission to a medical journal",
+            "type": "webpage"
+        },
+        {
+            "DOI": "10.1136/bmj.320.7247.1468",
+            "URL": "https://www.bmj.com/content/320/7247/1468.1",
+            "author": [
+                {
+                    "family": "Bland",
+                    "given": "J. Martin"
+                },
+                {
+                    "family": "Altman",
+                    "given": "Douglas G."
+                }
+            ],
+            "container-title": "BMJ",
+            "id": "BMJOdds",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "page": "1468",
+            "title": "The odds ratio",
             "type": "article-journal",
-            "volume": "27"
+            "volume": "320"
+        },
+        {
+            "DOI": "10.1136/bmj.311.7003.485",
+            "URL": "https://www.bmj.com/content/311/7003/485",
+            "author": [
+                {
+                    "family": "Altman",
+                    "given": "Douglas G."
+                },
+                {
+                    "family": "Bland",
+                    "given": "J. Martin"
+                }
+            ],
+            "container-title": "BMJ",
+            "id": "BMJAbsence",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "page": "485",
+            "title": "Absence of evidence is not evidence of absence",
+            "type": "article-journal",
+            "volume": "311"
+        },
+        {
+            "DOI": "10.1093/biomet/63.3.581",
+            "URL": "https://doi.org/10.1093/biomet/63.3.581",
+            "author": [
+                {
+                    "family": "Rubin",
+                    "given": "Donald B."
+                }
+            ],
+            "container-title": "Biometrika",
+            "id": "RubinMissing",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1976
+                    ]
+                ]
+            },
+            "page": "581-592",
+            "title": "Inference and missing data",
+            "type": "article-journal",
+            "volume": "63"
+        },
+        {
+            "DOI": "10.1007/s10654-016-0149-3",
+            "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4877414/",
+            "author": [
+                {
+                    "family": "Greenland",
+                    "given": "Sander"
+                },
+                {
+                    "family": "Senn",
+                    "given": "Stephen J."
+                },
+                {
+                    "family": "Rothman",
+                    "given": "Kenneth J."
+                },
+                {
+                    "family": "Carlin",
+                    "given": "John B."
+                },
+                {
+                    "family": "Poole",
+                    "given": "Charles"
+                },
+                {
+                    "family": "Goodman",
+                    "given": "Steven N."
+                },
+                {
+                    "family": "Altman",
+                    "given": "Douglas G."
+                }
+            ],
+            "container-title": "European Journal of Epidemiology",
+            "id": "Greenland2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "page": "337-350",
+            "title": "Statistical tests, P values, confidence intervals, and power: A guide to misinterpretations",
+            "title-short": "Statistical tests, P values, confidence intervals, and power",
+            "type": "article-journal",
+            "volume": "31"
+        },
+        {
+            "DOI": "10.1080/00031305.2017.1375989",
+            "URL": "https://kbroman.org/Paper_DataOrg/",
+            "author": [
+                {
+                    "family": "Broman",
+                    "given": "Karl W."
+                },
+                {
+                    "family": "Woo",
+                    "given": "Kara H."
+                }
+            ],
+            "container-title": "The American Statistician",
+            "id": "BromanWoo",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "2-10",
+            "title": "Data organization in spreadsheets",
+            "type": "article-journal",
+            "volume": "72"
+        },
+        {
+            "DOI": "10.1136/bmj.332.7549.1080",
+            "URL": "https://www.bmj.com/content/332/7549/1080.1",
+            "author": [
+                {
+                    "family": "Altman",
+                    "given": "Douglas G."
+                },
+                {
+                    "family": "Royston",
+                    "given": "Patrick"
+                }
+            ],
+            "container-title": "BMJ",
+            "id": "AltmanDichotomy",
+            "issue": "7549",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "page": "1080",
+            "title": "The cost of dichotomising continuous variables",
+            "type": "article-journal",
+            "volume": "332"
+        },
+        {
+            "URL": "https://docs.jamovi.org/data/data_5_list_of_functions.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "jamovi"
+                }
+            ],
+            "id": "jamoviFunctions",
+            "title": "List of functions",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.who.int/data/nutrition/nlis/info/malnutrition-in-women",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2026,
+                        10,
+                        5
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "World Health Organization"
+                }
+            ],
+            "id": "WHOBMI",
+            "title": "Malnutrition in women: Body mass index definition",
+            "title-short": "Malnutrition in women",
+            "type": "webpage"
         }
     ],
     "project_biblios": [

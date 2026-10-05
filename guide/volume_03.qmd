@@ -1,122 +1,57 @@
 ---
-title: "Applied Data Analysis Using Jamovi – Volume III"
-subtitle: "Advanced Analytics, Research Design Integration, and Reproducible Health Data Science"
-author: "Author Name"
-format:
-  pdf:
-    toc: true
-    number-sections: true
-  docx:
-    toc: true
-    number-sections: true
-  html:
-    toc: true
-    number-sections: true
+title: "Hands-On Data Analysis Using Jamovi — Volume III plan"
+subtitle: "Advanced Inference and Reproducible Health Data Analysis"
+author: "Dr Naveen Suthar"
+format: html
 ---
 
-# Front Matter
+# Planned scope
 
-## Preface to Volume III
-## Scope and Intended Audience
-## List of Abbreviations
-## List of Figures
-## List of Tables
+**Status:** planning outline. This project does not contain a completed Volume III
+manuscript. The volume builds on the core methods of Volume I and the adjusted
+and specialist methods of Volume II.
 
-# Section I: Advanced Modeling Strategy
+The purpose is to assess scientific validity, extend models where the observation
+structure requires it, validate prediction, synthesise evidence, and reproduce
+the analytical record. Complexity should follow the question and design.
 
-## Chapter 1: Causal Thinking in Data Analysis
-### Directed Acyclic Graphs (Conceptual)
-### Confounding vs Mediation
-### Model Specification Strategy
+| Planned chapter | Intended contribution |
+|:----------------|:----------------------|
+| 1. Causal thinking | Causal diagrams, confounding, mediation, selection, and identification assumptions |
+| 2. Regression extensions | Interaction, non-linear relationships, stratification, and model comparison |
+| 3. Model-building strategy | Prespecification, complexity, overfitting, variable selection, and sensitivity analyses |
+| 4. Longitudinal data | Within-person dependence, time structure, and fixed and random effects |
+| 5. Mixed models | Supported implementations, time-by-group effects, and model assumptions |
+| 6. Survival extensions | Time-varying predictors, non-proportional hazards, and competing-risk distinctions |
+| 7. Risk prediction | Calibration, discrimination, internal and external validation, and clinical use |
+| 8. Diagnostic comparisons | ROC comparisons, threshold evaluation, and clinical utility |
+| 9. Method comparison | Bland–Altman differences, limits of agreement, measurement bias, and assumptions |
+| 10. Meta-analysis | Effect scales, study weights, fixed and random effects, and heterogeneity |
+| 11. Small-study and reporting effects | Funnel plots, appropriate tests, selective reporting, and interpretation limits |
+| 12. jamovi and R integration | Rj, generated syntax, reproducible scripts, packages, and dependency records |
+| 13. Reproducible research | Data and analysis documentation, versioning, reporting standards, and review records |
+| 14. Clinical prediction case | Development, validation, calibration, decision context, and transparent reporting |
+| 15. Public health survey case | Design variables, weights, clustering, and supported complex-survey analysis |
 
-## Chapter 2: Advanced Regression Extensions
-### Interaction and Effect Modification
-### Stratified Analysis
-### Non-linear Relationships
-### Model Comparison (AIC, BIC)
+## Delivery requirements
 
-## Chapter 3: Multivariable Model Building
-### Stepwise vs Theory-Driven Modeling
-### Handling Collinearity
-### Parsimony and Overfitting
+Use the common clinical sequence and a separate Hands-on section. Distinguish
+conceptual orientation from an implemented, tested workflow. Advanced analyses
+may need jamovi modules or R packages; document the dependency, version, method,
+and support limits for each worked case. Availability must be verified when the
+chapter is written rather than assumed from this outline.
 
-# Section II: Longitudinal and Repeated Data
+Correlation and regression are introduced in Volume I; adjusted modeling and
+basic model assessment are developed in Volume II. This volume adds explicit
+causal assumptions, longitudinal extensions, prediction validation, evidence
+synthesis, and a fuller computational record. Advanced claims need methods that
+match the design and target quantity.
 
-## Chapter 4: Longitudinal Data Concepts
-### Within-Subject Correlation
-### Fixed vs Random Effects (Conceptual)
+The prediction case should include a stated intended use, adequate development
+data, honest performance assessment, calibration, and validation. The survey case
+should preserve design information rather than treating weighted, clustered
+observations as a simple independent sample. Meta-analysis should distinguish
+heterogeneity from bias and uncertainty in individual studies.
 
-## Chapter 5: Advanced Repeated Measures Analysis
-### Mixed Model Concepts (if module supported)
-### Interpretation of Time × Group Effects
-
-# Section III: Advanced Survival and Risk Prediction
-
-## Chapter 6: Advanced Survival Modeling
-### Time-Dependent Covariates (Conceptual)
-### Checking Proportional Hazards
-### Competing Risk (Conceptual Overview)
-
-## Chapter 7: Risk Prediction Models
-### Model Calibration
-### Discrimination
-### Internal Validation (Bootstrapping – Conceptual)
-### Clinical Risk Score Development Framework
-
-# Section IV: Advanced Diagnostic Analytics
-
-## Chapter 8: Advanced ROC Analysis
-### Comparing ROC Curves
-### Optimal Cut-off Methods
-### Clinical Utility Interpretation
-
-## Chapter 9: Agreement and Measurement Error
-### Bland–Altman Analysis
-### Limits of Agreement
-### Measurement Bias
-
-# Section V: Research Synthesis and Evidence Analysis
-
-## Chapter 10: Introduction to Meta-Analysis (Conceptual with Jamovi Modules)
-### Fixed vs Random Effects
-### Forest Plot Interpretation
-### Heterogeneity (I²)
-
-## Chapter 11: Publication Bias
-### Funnel Plot
-### Egger’s Test (Conceptual)
-
-# Section VI: Reproducibility and Integration
-
-## Chapter 12: Jamovi Syntax and R Integration
-### Using the Rj Editor
-### Extracting and Modifying R Code
-### Transitioning from Jamovi to R Workflow
-
-## Chapter 13: Reproducible Research Framework
-### Data Documentation
-### Transparent Reporting Standards (CONSORT, STROBE – Overview)
-### Structured Workflow for Thesis and Publication
-
-# Section VII: Full-Length Applied Case Studies
-
-## Chapter 14: Development of a Clinical Prediction Model
-### Dataset Preparation
-### Model Development
-### Validation
-### Reporting Framework
-
-## Chapter 15: Public Health Survey Analysis
-### Complex Survey Overview (Conceptual)
-### Weighted Analysis (Conceptual)
-### Interpretation in Policy Context
-
-# Appendices
-
-## Appendix A: Advanced Assumption Checklist
-## Appendix B: Reporting Checklists
-## Appendix C: Model Development Template
-## Appendix D: Extended Practice Datasets
-
-# References
-# Index
+Planned appendices include advanced assumption checklists, reporting checklists,
+a model-development template, and extended datasets. These remain future work.

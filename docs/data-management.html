@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Data Management – Hands-On Data Analysis Using Jamovi</title>
+<title>3&nbsp; Data Entry and Validation – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -33,7 +53,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./descriptive.html" rel="next">
+<link href="./data-cleaning.html" rel="next">
 <link href="./getting-started.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-992d75fbf9f2a62f89d3d81d710e967d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
-
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./foundations.html">Foundations</a></li><li class="breadcrumb-item"><a href="./data-management.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./foundations.html">Foundations</a></li><li class="breadcrumb-item"><a href="./data-management.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,12 +118,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +162,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +203,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +226,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +261,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +290,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +325,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -305,15 +341,34 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
+   
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">3.1</span> Learning objectives</a></li>
+  <li><a href="#start-with-the-measurement-plan" id="toc-start-with-the-measurement-plan" class="nav-link" data-scroll-target="#start-with-the-measurement-plan"><span class="header-section-number">3.2</span> Start with the measurement plan</a></li>
+  <li><a href="#define-the-row-and-its-identifier" id="toc-define-the-row-and-its-identifier" class="nav-link" data-scroll-target="#define-the-row-and-its-identifier"><span class="header-section-number">3.3</span> Define the row and its identifier</a></li>
+  <li><a href="#build-the-data-dictionary" id="toc-build-the-data-dictionary" class="nav-link" data-scroll-target="#build-the-data-dictionary"><span class="header-section-number">3.4</span> Build the data dictionary</a></li>
+  <li><a href="#separate-data-type-from-measure-type" id="toc-separate-data-type-from-measure-type" class="nav-link" data-scroll-target="#separate-data-type-from-measure-type"><span class="header-section-number">3.5</span> Separate data type from measure type</a></li>
+  <li><a href="#choose-a-consistent-table-structure" id="toc-choose-a-consistent-table-structure" class="nav-link" data-scroll-target="#choose-a-consistent-table-structure"><span class="header-section-number">3.6</span> Choose a consistent table structure</a></li>
+  <li><a href="#use-checks-at-entry-and-after-entry" id="toc-use-checks-at-entry-and-after-entry" class="nav-link" data-scroll-target="#use-checks-at-entry-and-after-entry"><span class="header-section-number">3.7</span> Use checks at entry and after entry</a></li>
+  <li><a href="#distinguish-missing-zero-and-not-applicable" id="toc-distinguish-missing-zero-and-not-applicable" class="nav-link" data-scroll-target="#distinguish-missing-zero-and-not-applicable"><span class="header-section-number">3.8</span> Distinguish missing, zero, and not applicable</a></li>
+  <li><a href="#verify-the-import" id="toc-verify-the-import" class="nav-link" data-scroll-target="#verify-the-import"><span class="header-section-number">3.9</span> Verify the import</a></li>
+  <li><a href="#an-invented-validation-audit" id="toc-an-invented-validation-audit" class="nav-link" data-scroll-target="#an-invented-validation-audit"><span class="header-section-number">3.10</span> An invented validation audit</a></li>
+  <li><a href="#release-a-validated-entry-file" id="toc-release-a-validated-entry-file" class="nav-link" data-scroll-target="#release-a-validated-entry-file"><span class="header-section-number">3.11</span> Release a validated entry file</a></li>
+  <li><a href="#hands-on-data-management" id="toc-hands-on-data-management" class="nav-link" data-scroll-target="#hands-on-data-management"><span class="header-section-number">3.12</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">3.13</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">3.14</span> Answers and reasoning</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./foundations.html">Foundations</a></li><li class="breadcrumb-item"><a href="./data-management.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./foundations.html">Foundations</a></li><li class="breadcrumb-item"><a href="./data-management.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></h1>
+<h1 class="title"><span id="sec-data-management" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></h1>
 </div>
 
 
@@ -330,17 +385,250 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="recoding-and-transforming-variables" class="level3" data-number="3.0.1">
-<h3 data-number="3.0.1" class="anchored" data-anchor-id="recoding-and-transforming-variables"><span class="header-section-number">3.0.1</span> Recoding and Transforming Variables</h3>
+<section id="learning-objectives" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">3.1</span> Learning objectives</h2>
+<p>After this chapter, the reader should be able to define what one row represents, build a usable data dictionary, distinguish data type from measure type, specify entry checks, and verify that an imported file retains its intended values and structure.</p>
 </section>
-<section id="handling-missing-data" class="level3" data-number="3.0.2">
-<h3 data-number="3.0.2" class="anchored" data-anchor-id="handling-missing-data"><span class="header-section-number">3.0.2</span> Handling Missing Data</h3>
+<section id="start-with-the-measurement-plan" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="start-with-the-measurement-plan"><span class="header-section-number">3.2</span> Start with the measurement plan</h2>
+<p>Data entry is the conversion of recorded observations into a structured analytical file. Validation asks whether that conversion follows the study’s definitions. A file can open successfully and still contain the wrong unit, a truncated identifier, or a category whose code has changed meaning. Successful import is therefore the beginning of validation.</p>
+<p>Before entering data, identify the source, population, observation unit, measurement occasion, and expected number of records. Specify who records each item and how unclear source entries will be resolved. The questionnaire, case record form, and data dictionary should use compatible definitions. An analysis cannot distinguish a missing measurement from an unrecorded negative result if the collection form did not preserve that distinction.</p>
+<p>The four preparation chapters have separate responsibilities. This chapter covers capture and validation. <a href="data-cleaning.html" class="quarto-xref"><span>Chapter 4</span></a> addresses verified corrections and missingness. <a href="data-transformation.html" class="quarto-xref"><span>Chapter 5</span></a> develops derived variables. <a href="analysis-preparation.html" class="quarto-xref"><span>Chapter 6</span></a> assembles the variables, eligible observations, and settings needed for a particular analysis.</p>
 </section>
-<section id="filtering-and-creating-computed-variables" class="level3" data-number="3.0.3">
-<h3 data-number="3.0.3" class="anchored" data-anchor-id="filtering-and-creating-computed-variables"><span class="header-section-number">3.0.3</span> Filtering and Creating Computed Variables</h3>
+<section id="define-the-row-and-its-identifier" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="define-the-row-and-its-identifier"><span class="header-section-number">3.3</span> Define the row and its identifier</h2>
+<p>A row may represent a participant, visit, admission, specimen, household, or event. State its meaning before choosing an identifier. A participant-level file ordinarily needs a unique participant ID. A visit-level file may need the combination of participant ID and visit occasion to identify a row uniquely.</p>
+<p>An identifier links records; its numerical appearance does not make it a quantitative measurement. The ID <code>0017</code> may be different from <code>17</code> in a source system. Preserve the intended format during entry and import. Do not use the current row number as a substitute for a stable identifier, because sorting or inserting records can change that number.</p>
+<p>For paired measurements, the same row must contain measurements from the same participant, or a verified key must link the separate files. A convenient row order does not establish matching. For clustered data, retain the cluster identifier even when the current volume’s simple methods cannot accommodate the full dependence structure.</p>
+</section>
+<section id="build-the-data-dictionary" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="build-the-data-dictionary"><span class="header-section-number">3.4</span> Build the data dictionary</h2>
+<p>The dictionary should allow another researcher to interpret a column without asking the person who entered it. Include the name, definition, source, timing, unit, data and measure types, permitted values, missing codes, and any validation rule. A derived variable also needs its formula and the version of its source variables.</p>
+<p>The following entries are invented specifications for a teaching study:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 31%">
+<col style="width: 25%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Meaning and timing</th>
+<th style="text-align: left;">Representation</th>
+<th style="text-align: left;">Validation rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>study_id</code></td>
+<td style="text-align: left;">Participant code assigned at enrolment</td>
+<td style="text-align: left;">Text ID</td>
+<td style="text-align: left;">Present and unique in the participant file</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>group</code></td>
+<td style="text-align: left;">Defined study group</td>
+<td style="text-align: left;">Nominal; A or B</td>
+<td style="text-align: left;">One permitted label per eligible participant</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>sbp_baseline</code></td>
+<td style="text-align: left;">Baseline systolic blood pressure</td>
+<td style="text-align: left;">Decimal; continuous; mmHg</td>
+<td style="text-align: left;">Numeric when observed; source checked when flagged</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>sbp_followup</code></td>
+<td style="text-align: left;">Value at the specified follow-up visit</td>
+<td style="text-align: left;">Decimal; continuous; mmHg</td>
+<td style="text-align: left;">Timing meets the study’s visit rule</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>event</code></td>
+<td style="text-align: left;">Defined event during the stated period</td>
+<td style="text-align: left;">Nominal; 1 present, 0 absent</td>
+<td style="text-align: left;">Unknown status is missing, with a reason recorded separately</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>severity</code></td>
+<td style="text-align: left;">Recorded ordered category</td>
+<td style="text-align: left;">Ordinal; mild, moderate, severe</td>
+<td style="text-align: left;">Order matches the collection form</td>
+</tr>
+</tbody>
+</table>
+<p>The blood pressure entries intentionally contain no invented clinical acceptance limit. A project’s limits should come from its measurement protocol and instrument, and should distinguish an error from a value that needs review.</p>
+<p>Use short, stable variable names and informative descriptions. Keep units out of the cells containing numeric values: store <code>128</code>, with mmHg in the dictionary, rather than mixing <code>128 mmHg</code> and <code>128</code> in one column. Store a categorical response in its own column instead of using cell colour to encode its meaning. These principles are consistent with recommendations for organising spreadsheet data. <span class="citation" data-cites="BromanWoo">[<a href="references.html#ref-BromanWoo" role="doc-biblioref">10</a>]</span></p>
+</section>
+<section id="separate-data-type-from-measure-type" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="separate-data-type-from-measure-type"><span class="header-section-number">3.5</span> Separate data type from measure type</h2>
+<p>The <strong>data type</strong> describes how values are stored. jamovi distinguishes integer, decimal, and text data. The <strong>measure type</strong> describes how a variable should be treated: continuous, ordinal, nominal, or ID. The automatic choices made during import need review against the dictionary. <span class="citation" data-cites="jamoviData">[<a href="references.html#ref-jamoviData" role="doc-biblioref">4</a>]</span></p>
+<p>A study group coded 1 and 2 is nominal, because subtracting the codes has no scientific meaning. A count stored as an integer may be used as a quantitative variable, but that storage choice does not make every statistical model appropriate. An ordinal severity score retains order without establishing equal distances between categories.</p>
+<p>Check category labels as well as codes. If 1 means present in one source and absent in another, the same stored value has different meanings. Establish a common mapping from the dictionaries before combining files. Record the reference group and ordinal order explicitly; they affect the presentation and interpretation of later results.</p>
+</section>
+<section id="choose-a-consistent-table-structure" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="choose-a-consistent-table-structure"><span class="header-section-number">3.6</span> Choose a consistent table structure</h2>
+<p>Keep one header row, one variable per column, and one value per cell in a rectangular entry table. Put explanatory notes, totals, and presentation tables elsewhere. Avoid merged cells, repeated headers within the data, and blank rows used to separate groups. They describe a visual layout rather than an analytical structure. <span class="citation" data-cites="BromanWoo">[<a href="references.html#ref-BromanWoo" role="doc-biblioref">10</a>]</span></p>
+<p><strong>Wide format</strong> places different measurement occasions in separate columns for the same participant. This is a useful starting structure for the simple paired procedures in Volume I. <strong>Long format</strong> places occasions in separate rows and preserves an ID and time variable. Neither arrangement removes dependence between measurements from one participant.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 36%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Intended question</th>
+<th style="text-align: left;">Starting structure</th>
+<th style="text-align: left;">Required check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Independent group comparison</td>
+<td style="text-align: left;">Participant ID, outcome, group</td>
+<td style="text-align: left;">Each participant contributes once</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Baseline and follow-up comparison</td>
+<td style="text-align: left;">Participant ID and both measurement columns</td>
+<td style="text-align: left;">The columns form valid within-person pairs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Repeated visit description</td>
+<td style="text-align: left;">Participant ID, visit, outcome</td>
+<td style="text-align: left;">ID plus visit identifies the row; counts distinguish people from visits</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Event proportion over a defined period</td>
+<td style="text-align: left;">Participant ID and event status</td>
+<td style="text-align: left;">Eligibility, observation period, and unknown status remain explicit</td>
+</tr>
+</tbody>
+</table>
+<p>Keep the source structure when it contains information that a later analysis needs. Reducing repeated visits to one outcome is an analytical decision with a selection rule, rather than a routine formatting operation.</p>
+</section>
+<section id="use-checks-at-entry-and-after-entry" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="use-checks-at-entry-and-after-entry"><span class="header-section-number">3.7</span> Use checks at entry and after entry</h2>
+<p>Validation rules should be specified before viewing the statistical results. Their role is to detect departures from the collection definitions, rather than force the dataset to fit a preferred distribution.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 50%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Check</th>
+<th style="text-align: left;">Example of what it detects</th>
+<th style="text-align: left;">Required response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Required field</td>
+<td style="text-align: left;">Missing participant identifier</td>
+<td style="text-align: left;">Resolve from the source before linkage</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Permitted category</td>
+<td style="text-align: left;">Group recorded as an undefined C</td>
+<td style="text-align: left;">Query the source or dictionary</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Data format</td>
+<td style="text-align: left;">Text in a numeric measurement</td>
+<td style="text-align: left;">Check for units, special codes, or import errors</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Range or plausibility</td>
+<td style="text-align: left;">Value outside a protocol-defined range</td>
+<td style="text-align: left;">Distinguish an error from a valid unusual value</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cross-field consistency</td>
+<td style="text-align: left;">Follow-up recorded before enrolment</td>
+<td style="text-align: left;">Verify dates and the occasion definition</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Uniqueness</td>
+<td style="text-align: left;">Repeated participant key</td>
+<td style="text-align: left;">Determine whether it is duplication or a different observation unit</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>hard rule</strong> concerns a contradiction with the definition, such as a negative count of events. A <strong>review rule</strong> flags a value whose validity requires evidence, such as an unusually high measurement. A flag is not itself an instruction to delete the observation. Keep the rule, source query, and eventual decision traceable.</p>
+<p>Some entry systems allow limits and permitted categories to be enforced immediately. A spreadsheet or imported file still needs a separate validation pass. Independent double entry or a targeted source check may be appropriate when the error consequences justify the effort. Record the verification coverage; checking a sample does not establish that every value was checked.</p>
+</section>
+<section id="distinguish-missing-zero-and-not-applicable" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="distinguish-missing-zero-and-not-applicable"><span class="header-section-number">3.8</span> Distinguish missing, zero, and not applicable</h2>
+<p>Zero is a value. Missing means that the intended value is unavailable. Not applicable means that the item does not apply under a defined rule. An event count of zero among observed participants is different from an unknown event count, and both differ from a measurement that was never required.</p>
+<p>Keep a numeric measurement column suitable for calculation and record missing reasons in a separate field when those reasons matter. A reason might distinguish an absent visit, a failed measurement, and a participant outside the eligible measurement group. Do not use a numeric zero for all three situations.</p>
+<p>jamovi represents missing values as blank cells. If a source uses a special code, define that code as missing in the variable settings or create a documented cleaned variable before analysis. Otherwise the code may be treated as an ordinary value. <span class="citation" data-cites="jamoviData">[<a href="references.html#ref-jamoviData" role="doc-biblioref">4</a>]</span> A special code is missing because the dictionary says so, rather than because it is inconvenient for the analysis.</p>
+</section>
+<section id="verify-the-import" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="verify-the-import"><span class="header-section-number">3.9</span> Verify the import</h2>
+<p>Preserve the source file and import a named working copy. Note the source version, export format, delimiter, decimal convention, and date convention. Inspect whether quoted text, accented labels, leading zeros, and blank cells have survived the transfer. If a date such as <code>05/06/2026</code> is ambiguous, resolve its convention from the source rather than from whichever interpretation produces a plausible chronology.</p>
+<p>Compare expected and imported records, variables, and category counts. Inspect a few source values from the beginning, middle, and end of the file, including values that challenge the format: a decimal, a special missing code, an identifier with leading zeros, and a label containing punctuation. Reconcile discrepancies before calculating results.</p>
+<p>An imported numeric column may be text if some cells include units or unexpected characters. Converting the whole column without investigating those cells can create new missing values. Document the number of conversions that succeed and fail, and verify that no genuine observations disappeared unnoticed.</p>
+</section>
+<section id="an-invented-validation-audit" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="an-invented-validation-audit"><span class="header-section-number">3.10</span> An invented validation audit</h2>
+<p>Suppose an entry file is expected to contain 120 participants and 12 specified variables. It imports with 120 rows and 12 columns. A further audit identifies two rows sharing an ID, four uses of the undeclared group label <code>b</code>, and three follow-up fields containing the dictionary’s missing code 999.</p>
+<p>The matching row and column counts do not establish validity. Query the repeated ID before deciding whether it represents a duplicate or an incorrect identifier. Confirm whether <code>b</code> means group B before harmonising it. Define 999 as missing according to the dictionary and retain the reason if available. The issues may overlap within participants, so adding 2, 4, and 3 does not necessarily count the number of affected people.</p>
+<p>Write the audit finding before correcting the working file. The next chapter explains how to resolve and log the findings. Validation discovers an issue; cleaning implements a supported decision.</p>
+</section>
+<section id="release-a-validated-entry-file" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="release-a-validated-entry-file"><span class="header-section-number">3.11</span> Release a validated entry file</h2>
+<p>Before handover, confirm the observation unit and keys, reconcile record counts, verify variable properties, inspect categories and missing codes, and list unresolved queries. Save the dictionary with the entry file. A reviewer should know whether the file is ready for cleaning or whether source questions remain.</p>
+<p>For reporting, describe the collection and validation process at the level needed to assess the data. A statement such as “Data were checked” is insufficient when the relevant questions concern matching, eligibility, or conflicting measurements. The later reporting chapter explains how these preparation decisions enter the methods section.</p>
+</section>
+<section id="hands-on-data-management" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="hands-on-data-management"><span class="header-section-number">3.12</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add the entry file, dictionary, import checks, variable settings, and screenshots here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">3.13</span> Review questions</h2>
+<ol type="1">
+<li>Why can 120 imported rows fail to represent 120 distinct participants?</li>
+<li>A group is coded 1 and 2. What determines its measure type?</li>
+<li>Why should an unusual value trigger review rather than automatic deletion?</li>
+<li>Which checks are needed when an ID such as 0017 is imported?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">3.14</span> Answers and reasoning</h2>
+<ol type="1">
+<li>A row may be duplicated, may represent a repeat visit, or may contain an incorrect ID. Count participants using a verified key and the defined observation unit.</li>
+<li>The scientific meaning determines the measure type. Group membership is nominal even when its stored codes are numbers.</li>
+<li>An unusual observation can be valid. Resolve it against the source and protocol, and retain a record of the decision.</li>
+<li>Verify the intended text format, leading zeros, uniqueness, and linkage to the source; do not assume the numeric-looking value has survived unchanged.</li>
+</ol>
+</section>
 
 
-</section>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-BromanWoo" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Broman KW, Woo KH. Data organization in spreadsheets. The American Statistician. 2018;72(1):2–10. doi: <a href="https://doi.org/10.1080/00031305.2017.1375989">10.1080/00031305.2017.1375989</a> <a href="https://kbroman.org/Paper_DataOrg/">https://kbroman.org/Paper_DataOrg/</a></div>
+</div>
+<div id="ref-jamoviData" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. Data variables. <a href="https://docs.jamovi.org/data/data_1_overview_data_variables.html">https://docs.jamovi.org/data/data_1_overview_data_variables.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -745,13 +1033,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./getting-started.html" class="pagination-link" aria-label="Getting Started With Jamovi">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span>
+      <a href="./getting-started.html" class="pagination-link" aria-label="Getting Started with jamovi">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./descriptive.html" class="pagination-link" aria-label="Descriptive statistics and visualization">
-        <span class="nav-page-text">Descriptive statistics and visualization</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./data-cleaning.html" class="pagination-link" aria-label="Data Cleaning and Missing Values">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -760,4 +1048,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

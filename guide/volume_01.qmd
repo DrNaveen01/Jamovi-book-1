@@ -1,102 +1,76 @@
 ---
-title: "Applied Data Analysis Using Jamovi – Volume I"
-subtitle: "Foundations and Core Statistical Methods for Health Researchers"
-author: "Author Name"
-format:
-  pdf:
-    toc: true
-    number-sections: true
-  docx:
-    toc: true
-    number-sections: true
-  html:
-    toc: true
-    number-sections: true
+title: "Hands-On Data Analysis Using Jamovi - Volume I scope"
+author: "Dr Naveen Suthar"
+format: html
 ---
 
-# Front Matter
+# Foundations and Core Statistical Methods for Health Researchers
 
-## Preface
-## How to Use This Book
-## About the Author(s)
-## List of Abbreviations
-## List of Figures
-## List of Tables
+**Status:** expanded teaching manuscript prepared for author review, revision 2.
+Hands-on material is intentionally reserved for the author. This guide is not
+part of the rendered book; `_quarto.yml` defines the reader-facing manuscript.
 
-# Section I: Foundations
+## What the volume provides
 
-## Chapter 1: Role of Statistics in Health Research
-### Types of Data and Measurement Scales
-### Research Designs in Brief
-### Statistical Workflow in Jamovi
+The book connects a health question with the observation structure, statistical
+method, assumptions, interpretation, and reporting. It teaches basic independent
+and paired analyses, with estimates and uncertainty at the centre of the result.
+It includes 16 chapters, five part introductions, four content appendices,
+references, worked illustrations, review questions and answers, and five figures.
 
-## Chapter 2: Getting Started with Jamovi
-### Installation and Interface
-### Importing and Structuring Data
-### Variable Properties and Levels
+| Chapter | File | Defined scope |
+|:--------|:-----|:--------------|
+| 1. Role of statistics | `role.qmd` | Question, population, estimand, design, unit, variable type, and workflow |
+| 2. Getting started | `getting-started.qmd` | Interface orientation, import, analysis workspace, saving, and reproducibility |
+| 3. Data entry and validation | `data-management.qmd` | Measurement plan, row keys, dictionary, variable properties, entry checks, and import audit |
+| 4. Data cleaning and missing values | `data-cleaning.qmd` | Supported corrections, duplicates, category mapping, missingness, complete cases, and change log |
+| 5. Transformations and derived variables | `data-transformation.qmd` | Units, ratios, change, recoding, reversal, scores, logs, standardisation, and verification |
+| 6. Preparation for a specific analysis | `analysis-preparation.qmd` | Analysis specification, eligibility, filters, required variables, pairing, denominators, and saved record |
+| 7. Descriptive statistics | `descriptive-statistics.qmd` | Counts, proportions, centre, spread, distribution, and appropriate tables |
+| 8. Graphical presentation | `graphical-presentation.qmd` | Graph choice, distributions, relationships, uncertainty, and presentation |
+| 9. Hypothesis-testing concepts | `hypothesis-testing-concepts.qmd` | Sampling distributions, SE, CI, hypotheses, p-values, errors, power, and multiplicity |
+| 10. Two-group and paired comparisons | `comparing-two-means.qmd` | Welch, pooled and paired t procedures; rank alternatives; reasoning record and interpretation |
+| 11. More than two groups | `comparing-more-than-two-means.qmd` | One-way and Welch ANOVA, contrasts, post-hoc choices, and Kruskal-Wallis |
+| 12. Categorical associations | `categorical-variables.qmd` | Denominators, chi-square, Fisher, differences and ratios, and paired binary data |
+| 13. Correlation | `correlation.qmd` | Linear and monotonic association, uncertainty, plots, and interpretation limits |
+| 14. Simple linear regression | `linear-regression.qmd` | One predictor, slope, residuals, uncertainty, fit, and prediction limits |
+| 15. Introductory logistic regression | `logistic-regression.qmd` | Binary outcomes, one predictor, odds, OR, probabilities, coding, and model limits |
+| 16. Reporting results | `reporting-results.qmd` | Methods and results paragraphs, tables, figures, uncertainty, and reproducibility |
 
-## Chapter 3: Data Management
+The four preparation chapters implement the agreed sequence as core content,
+with each stage having its own teaching text, examples, questions, and Hands-on
+space. The established `data-management.qmd` path remains in use for Chapter 3;
+its broader introductory material has been developed across Chapters 3-6.
 
-# Section II: Descriptive Statistics and Visualization
+The appendices provide formulas with their conditions, a method-selection guide,
+a glossary, and ten integrated conceptual practice cases with answers. The
+practice appendix describes future dataset structures but supplies no raw data.
 
-## Chapter 4: Descriptive Statistics
-### Frequencies and Proportions
-### Mean, Median, Standard Deviation, IQR
-### Confidence Intervals
+## What is to be added
 
-## Chapter 5: Graphical Presentation
-### Bar Charts and Pie Charts
-### Histograms and Boxplots
-### Basic Interpretation
+Each main chapter has a separate Hands-on heading and an empty note callout;
+the practice appendix has an additional box. The 17 boxes are reserved for the
+author's datasets, dictionaries, saved `.omv` analyses, screenshots, procedures,
+and practical interpretation. The teaching manuscript is supplied for review.
+No printed result is claimed to come from an included clinical dataset.
 
-# Section III: Core Inferential Statistics
+## How it is provided
 
-## Chapter 6: Hypothesis Testing Concepts
-### p-value and Confidence Interval
-### Type I and Type II Errors
-### Introduction to Power
+The source is an editable Quarto book in an RStudio project, with HTML and PDF
+review outputs. BibTeX records support numeric references. R companion scripts
+reproduce figures and calculations; their execution status is documented in
+`PROJECT_REVIEW.md`. Independent Python checks verify the supplied arithmetic.
 
-## Chapter 7: Comparing Two Groups
-### Independent t-test
-### Paired t-test
-### Mann–Whitney U Test
-### Wilcoxon Signed-Rank Test
+The repeated learning sequence is question, design, data, method, assumptions,
+output, clinical meaning, and reporting. Dataset-specific demonstrations are
+reserved for the Hands-on boxes so they can use verified software output.
 
-## Chapter 8: Comparing More Than Two Groups
-### One-way ANOVA
-### Kruskal–Wallis Test
-### Basic Post-hoc Testing
+## Boundary with later volumes
 
-## Chapter 9: Association Between Categorical Variables
-### Chi-square Test
-### Fisher’s Exact Test
-### Measures of Association (Risk, Odds Ratio)
-
-# Section IV: Introduction to Correlation and Regression
-
-## Chapter 10: Correlation
-### Pearson Correlation
-### Spearman Correlation
-### Interpretation and Reporting
-
-## Chapter 11: Introduction to Linear Regression
-### Simple Linear Regression
-### Basic Assumptions
-### Output Interpretation in Jamovi
-
-# Reporting and Practice
-
-## Chapter 12: Reporting Results
-### Writing Statistical Results
-### Table Interpretation
-### Common Mistakes in Reporting
-
-# Appendices
-
-## Appendix A: Statistical Formulae (Basic)
-## Appendix B: Choosing the Correct Statistical Test (Decision Guide)
-## Appendix C: Glossary of Key Terms
-## Appendix D: Practice Datasets and Exercises
-
-# References
-# Index
+Simple regression illustrates an unadjusted relationship. The logistic chapter
+introduces binary-outcome interpretation rather than full adjusted model building.
+Neither chapter establishes causality or a validated clinical prediction tool.
+Multiple-predictor models, specialist diagnostic and measurement methods,
+extensive repeated measures, and survival remain planned for Volume II.
+Advanced validation, causal analysis, longitudinal extensions, evidence synthesis,
+and deeper jamovi-R integration remain planned for Volume III.

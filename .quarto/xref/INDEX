@@ -1,74 +1,83 @@
 {
   "index.qmd": {
-    "index.html": "feebf722"
+    "index.html": "b9d28b4a"
   },
   "foundations.qmd": {
-    "foundations.html": "93d334dc"
+    "foundations.html": "9b749189"
   },
   "role.qmd": {
-    "role.html": "3272eab8"
+    "role.html": "32913d31"
   },
   "getting-started.qmd": {
-    "getting-started.html": "2e4c0a8d"
+    "getting-started.html": "f773a2e6"
   },
   "data-management.qmd": {
-    "data-management.html": "32b07426"
+    "data-management.html": "66f87f99"
+  },
+  "data-cleaning.qmd": {
+    "data-cleaning.html": "f7a320d4"
+  },
+  "data-transformation.qmd": {
+    "data-transformation.html": "92389482"
+  },
+  "analysis-preparation.qmd": {
+    "analysis-preparation.html": "2fdd3295"
   },
   "descriptive.qmd": {
-    "descriptive.html": "9c6c4563"
+    "descriptive.html": "562054ea"
   },
   "descriptive-statistics.qmd": {
-    "descriptive-statistics.html": "fc58938f"
+    "descriptive-statistics.html": "11cd2656"
   },
   "graphical-presentation.qmd": {
-    "graphical-presentation.html": "c0dabacc"
+    "graphical-presentation.html": "d0886391"
   },
   "inferential.qmd": {
-    "inferential.html": "9e32c6b6"
+    "inferential.html": "ca86e2e8"
   },
   "hypothesis-testing-concepts.qmd": {
-    "hypothesis-testing-concepts.html": "5a2502a6"
+    "hypothesis-testing-concepts.html": "deddcbf1"
   },
   "comparing-two-means.qmd": {
-    "comparing-two-means.html": "009ca0b9"
+    "comparing-two-means.html": "1823ec6b"
   },
   "comparing-more-than-two-means.qmd": {
-    "comparing-more-than-two-means.html": "fe116575"
+    "comparing-more-than-two-means.html": "a941cf4d"
   },
   "categorical-variables.qmd": {
-    "categorical-variables.html": "7ed7d3c1"
+    "categorical-variables.html": "2c5bbefe"
   },
   "regression.qmd": {
-    "regression.html": "5ab545fb"
+    "regression.html": "b494e6dd"
   },
   "correlation.qmd": {
-    "correlation.html": "651463c5"
+    "correlation.html": "74909082"
   },
   "linear-regression.qmd": {
-    "linear-regression.html": "b8fa9de2"
+    "linear-regression.html": "f1813680"
   },
   "logistic-regression.qmd": {
-    "logistic-regression.html": "4ac79fdc"
+    "logistic-regression.html": "9d53a010"
   },
   "reporting.qmd": {
-    "reporting.html": "3fd465ee"
+    "reporting.html": "a667d72b"
   },
   "reporting-results.qmd": {
-    "reporting-results.html": "f6272587"
-  },
-  "references.qmd": {
-    "references.html": "ae293206"
+    "reporting-results.html": "d237b72e"
   },
   "statistical-formulas.qmd": {
-    "statistical-formulas.html": "4e1cd79c"
+    "statistical-formulas.html": "1fc0c509"
   },
   "choosing-right-test.qmd": {
-    "choosing-right-test.html": "7998c8d2"
+    "choosing-right-test.html": "d76b5a30"
   },
   "glossary.qmd": {
-    "glossary.html": "7ace3528"
+    "glossary.html": "f8b7a066"
   },
   "practice-dataset-excercises.qmd": {
-    "practice-dataset-excercises.html": "e23a86c1"
+    "practice-dataset-excercises.html": "4f807355"
+  },
+  "references.qmd": {
+    "references.html": "4474e3d3"
   }
 }

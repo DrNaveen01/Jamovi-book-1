@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Graphical Presentation – Hands-On Data Analysis Using Jamovi</title>
+<title>8&nbsp; Graphical Presentation – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-992d75fbf9f2a62f89d3d81d710e967d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
-
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive.html">Descriptive statistics and visualization</a></li><li class="breadcrumb-item"><a href="./graphical-presentation.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive.html">Descriptive Statistics and Graphs</a></li><li class="breadcrumb-item"><a href="./graphical-presentation.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,12 +118,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +162,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +203,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +226,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +261,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +290,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +325,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -305,15 +341,34 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
+   
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">8.1</span> Learning objectives</a></li>
+  <li><a href="#let-the-question-determine-the-graph" id="toc-let-the-question-determine-the-graph" class="nav-link" data-scroll-target="#let-the-question-determine-the-graph"><span class="header-section-number">8.2</span> Let the question determine the graph</a></li>
+  <li><a href="#bar-charts-for-categories" id="toc-bar-charts-for-categories" class="nav-link" data-scroll-target="#bar-charts-for-categories"><span class="header-section-number">8.3</span> Bar charts for categories</a></li>
+  <li><a href="#histograms-for-numerical-distributions" id="toc-histograms-for-numerical-distributions" class="nav-link" data-scroll-target="#histograms-for-numerical-distributions"><span class="header-section-number">8.4</span> Histograms for numerical distributions</a></li>
+  <li><a href="#boxplots-and-individual-points" id="toc-boxplots-and-individual-points" class="nav-link" data-scroll-target="#boxplots-and-individual-points"><span class="header-section-number">8.5</span> Boxplots and individual points</a></li>
+  <li><a href="#qq-plots-and-distributional-assumptions" id="toc-qq-plots-and-distributional-assumptions" class="nav-link" data-scroll-target="#qq-plots-and-distributional-assumptions"><span class="header-section-number">8.6</span> Q–Q plots and distributional assumptions</a></li>
+  <li><a href="#scatterplots-before-correlation" id="toc-scatterplots-before-correlation" class="nav-link" data-scroll-target="#scatterplots-before-correlation"><span class="header-section-number">8.7</span> Scatterplots before correlation</a></li>
+  <li><a href="#paired-measurements-and-time" id="toc-paired-measurements-and-time" class="nav-link" data-scroll-target="#paired-measurements-and-time"><span class="header-section-number">8.8</span> Paired measurements and time</a></li>
+  <li><a href="#display-uncertainty-explicitly" id="toc-display-uncertainty-explicitly" class="nav-link" data-scroll-target="#display-uncertainty-explicitly"><span class="header-section-number">8.9</span> Display uncertainty explicitly</a></li>
+  <li><a href="#build-a-self-contained-caption" id="toc-build-a-self-contained-caption" class="nav-link" data-scroll-target="#build-a-self-contained-caption"><span class="header-section-number">8.10</span> Build a self-contained caption</a></li>
+  <li><a href="#common-errors" id="toc-common-errors" class="nav-link" data-scroll-target="#common-errors"><span class="header-section-number">8.11</span> Common errors</a></li>
+  <li><a href="#hands-on-graphical-presentation" id="toc-hands-on-graphical-presentation" class="nav-link" data-scroll-target="#hands-on-graphical-presentation"><span class="header-section-number">8.12</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">8.13</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">8.14</span> Answers and reasoning</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive.html">Descriptive statistics and visualization</a></li><li class="breadcrumb-item"><a href="./graphical-presentation.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive.html">Descriptive Statistics and Graphs</a></li><li class="breadcrumb-item"><a href="./graphical-presentation.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></h1>
+<h1 class="title"><span id="sec-graphical-presentation" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></h1>
 </div>
 
 
@@ -330,17 +385,184 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bar-charts-and-pie-charts" class="level3" data-number="5.0.1">
-<h3 data-number="5.0.1" class="anchored" data-anchor-id="bar-charts-and-pie-charts"><span class="header-section-number">5.0.1</span> Bar Charts and Pie Charts</h3>
+<section id="learning-objectives" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">8.1</span> Learning objectives</h2>
+<p>After this chapter, the reader should be able to select a graph for a stated question, distinguish a categorical bar chart from a histogram, interpret distributional and relationship plots, and label uncertainty without confusing it with individual variation.</p>
 </section>
-<section id="histograms-and-boxplots" class="level3" data-number="5.0.2">
-<h3 data-number="5.0.2" class="anchored" data-anchor-id="histograms-and-boxplots"><span class="header-section-number">5.0.2</span> Histograms and Boxplots</h3>
+<section id="let-the-question-determine-the-graph" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="let-the-question-determine-the-graph"><span class="header-section-number">8.2</span> Let the question determine the graph</h2>
+<p>A graph should make one analytical task easier. A bar chart compares counts or proportions across categories. A histogram describes the distribution of a quantitative measurement. A scatterplot examines the relationship between two quantitative variables. A point with an interval displays an estimate and its uncertainty.</p>
+<p>Before creating a graph, state what the reader should be able to see. “Compare the event proportions across groups” is a clearer task than “make a chart of the dataset.” The first task determines the denominator, category labels, and axis scale; the second leaves those decisions unresolved.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 25%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Analytical question</th>
+<th style="text-align: left;">Useful graph</th>
+<th style="text-align: left;">Essential context</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">How many observations are in each category?</td>
+<td style="text-align: left;">Bar chart</td>
+<td style="text-align: left;">Counts, category definitions, and total</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">How is a quantitative variable distributed?</td>
+<td style="text-align: left;">Histogram or distribution plot</td>
+<td style="text-align: left;">Measurement unit, binning, and available n</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">How do distributions differ across groups?</td>
+<td style="text-align: left;">Boxplot with individual points when feasible</td>
+<td style="text-align: left;">Group n, median/quartile definition, and units</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">How do paired values change?</td>
+<td style="text-align: left;">Paired-point plot with connecting lines</td>
+<td style="text-align: left;">Participant matching and time order</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Do two measurements vary together?</td>
+<td style="text-align: left;">Scatterplot</td>
+<td style="text-align: left;">Both units, observation unit, and relevant groups</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">How precise is an estimate?</td>
+<td style="text-align: left;">Point and interval plot</td>
+<td style="text-align: left;">Estimate, interval meaning, confidence level, and reference value</td>
+</tr>
+</tbody>
+</table>
+<p>This table is a design guide for the manuscript. It should be applied to the specific question rather than used as an automatic conversion from variable type to picture.</p>
 </section>
-<section id="basic-interpretation" class="level3" data-number="5.0.3">
-<h3 data-number="5.0.3" class="anchored" data-anchor-id="basic-interpretation"><span class="header-section-number">5.0.3</span> Basic Interpretation</h3>
+<section id="bar-charts-for-categories" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="bar-charts-for-categories"><span class="header-section-number">8.3</span> Bar charts for categories</h2>
+<p>Use separate bars for categories and label the axis as a count or percentage. Absolute count bars should start at zero so that their lengths correspond to the values. If percentages are shown, state whether they use the total sample, a group denominator, or only observations with known status.</p>
+<p>For nominal categories, ordering may follow a meaningful convention or the magnitude of the count. For ordinal categories, preserve the order of the scale. Sorting mild, moderate, and severe by frequency would make the display harder to interpret as an ordered severity distribution.</p>
+<p>Avoid three-dimensional effects and decorative shapes that make lengths difficult to compare. A pie chart can show a coarse part-to-whole division with a few exclusive categories, but a bar chart usually makes precise comparisons easier. If category membership overlaps, the displayed percentages should not be presented as parts of one exclusive whole.</p>
+</section>
+<section id="histograms-for-numerical-distributions" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="histograms-for-numerical-distributions"><span class="header-section-number">8.4</span> Histograms for numerical distributions</h2>
+<p>A histogram divides a numerical axis into intervals and counts observations within them. It can show location, spread, asymmetry, multiple peaks, and potential unusual observations. The width of the intervals affects the apparent shape, so interpretation should not depend on one arbitrary choice of bins. <span class="citation" data-cites="NISTHist">[<a href="references.html#ref-NISTHist" role="doc-biblioref">20</a>]</span></p>
+<p>Unlike a categorical bar chart, neighbouring histogram bins represent adjacent numerical intervals. The horizontal axis therefore retains a quantitative scale. Label the vertical axis accurately: frequency, relative frequency, or density are different representations and should not be used interchangeably.</p>
+<p>The invented waiting times from the descriptive chapter illustrate a long upper tail. Most values are between 2 and 8 minutes, with one value of 18 minutes. The histogram shows where values are concentrated; the boxplot shows the central interval and the separated high observation.</p>
+<div id="fig-waiting-distribution" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A histogram places nine waiting times between two and eight minutes and one at eighteen minutes. A boxplot shows the median and central quartiles with eighteen minutes beyond the upper whisker.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-waiting-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/teaching/waiting-distribution.png" class="img-fluid figure-img" style="width:100.0%" alt="A histogram places nine waiting times between two and eight minutes and one at eighteen minutes. A boxplot shows the median and central quartiles with eighteen minutes beyond the upper whisker.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-waiting-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Histogram and boxplot of the ten invented waiting times. Both panels use the same measurements; they emphasise different distributional features.
+</figcaption>
+</figure>
+</div>
+<p>A second peak may represent a mixture of groups, a change in measurement procedures, or a feature of the underlying distribution. Inspect relevant grouping and timing variables before treating the pooled distribution as one homogeneous sample.</p>
+</section>
+<section id="boxplots-and-individual-points" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="boxplots-and-individual-points"><span class="header-section-number">8.5</span> Boxplots and individual points</h2>
+<p>A boxplot usually displays the median and first–third quartile interval. A common fenced version uses whiskers extending to the most extreme observations within 1.5 IQR of the quartiles and displays observations beyond those limits separately. The whisker convention must be understood because it can differ across implementations. <span class="citation" data-cites="NISTBox">[<a href="references.html#ref-NISTBox" role="doc-biblioref">28</a>]</span></p>
+<p>An observation beyond a whisker is flagged by a plotting rule; the graph has not established that it is erroneous. Verify the source and examine its relevance to the question. A valid high value may be an important part of the distribution.</p>
+<p>For small groups, displaying individual observations alongside a boxplot can make the amount of data visible. A boxplot alone may hide whether a group has five observations or fifty. Show the group sample sizes and use a consistent scale across panels when comparing magnitudes.</p>
+</section>
+<section id="qq-plots-and-distributional-assumptions" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="qq-plots-and-distributional-assumptions"><span class="header-section-number">8.6</span> Q–Q plots and distributional assumptions</h2>
+<p>A normal Q–Q plot compares the ordered observed values with values expected under a normal reference distribution. Approximate alignment with a straight line supports a normal approximation; systematic bends or tail departures identify features needing further assessment. In a regression, the relevant plot is typically for residuals rather than for every raw predictor. <span class="citation" data-cites="NISTQQ">[<a href="references.html#ref-NISTQQ" role="doc-biblioref">29</a>]</span></p>
+<p>A Q–Q plot does not replace the design assumptions. Perfectly aligned observations can still come from repeated measurements treated incorrectly as independent. Conversely, a small tail departure does not by itself identify the best alternative analysis. Interpret the plot alongside sample size, unusual observations, and the target quantity.</p>
+</section>
+<section id="scatterplots-before-correlation" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="scatterplots-before-correlation"><span class="header-section-number">8.7</span> Scatterplots before correlation</h2>
+<p>Plot one point per defined observation unit with the two variables on numerical axes. Inspect direction, form, spread, unusual points, and possible subgroups. A straight upward pattern suggests a positive linear relationship. A steadily increasing curve is monotonic but not necessarily linear. A U-shaped pattern can contain a strong relationship even when its linear correlation is close to zero.</p>
+<div id="fig-relationship-patterns" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Three scatterplots show an upward nearly straight pattern, an increasing cubic curve, and a U-shaped curve with symmetric left and right sides.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-relationship-patterns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/teaching/relationship-patterns.png" class="img-fluid figure-img" style="width:100.0%" alt="Three scatterplots show an upward nearly straight pattern, an increasing cubic curve, and a U-shaped curve with symmetric left and right sides.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-relationship-patterns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: Three invented coordinate examples distinguish a roughly linear relationship, a monotonic curve, and a U-shaped relationship. The axes are arbitrary numerical units; panels use separate vertical scales to compare their form.
+</figcaption>
+</figure>
+</div>
+<p>Do not draw connecting lines between unrelated individuals. Lines imply an order or a relationship between adjacent points. Use a line only when the connection represents something defined, such as repeated measurements from one participant or an ordered time series.</p>
+<p>The correlation chapter develops the distinction between Pearson’s linear coefficient and Spearman’s rank-based coefficient. The scatterplot provides the context in which those numbers should be read. <span class="citation" data-cites="RCor">[<a href="references.html#ref-RCor" role="doc-biblioref">30</a>]</span></p>
+</section>
+<section id="paired-measurements-and-time" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="paired-measurements-and-time"><span class="header-section-number">8.8</span> Paired measurements and time</h2>
+<p>For two measurements from the same participant, connecting that participant’s two values preserves the matching. A plot of change values can then show whether changes are consistently in one direction or whether a few participants account for most of the mean change.</p>
+<p>If follow-up times differ, state the time definition and window. A line from baseline to a common follow-up label should not conceal that observations were taken at substantially different times. More extensive longitudinal patterns require a design and analysis that account for their repeated structure.</p>
+</section>
+<section id="display-uncertainty-explicitly" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="display-uncertainty-explicitly"><span class="header-section-number">8.9</span> Display uncertainty explicitly</h2>
+<p>An interval around a mean may describe a confidence interval, one standard deviation, a standard error, or a prediction interval. These have different meanings. State the interval type and level in the caption; a label of “error bars” alone is insufficient.</p>
+<p>A CI for a mean describes estimation uncertainty. An SD describes individual spread. A prediction interval concerns a new observation under its model. A narrow CI therefore does not imply that individual values are tightly clustered. Similarly, overlap between two separate group intervals is not a direct test of the difference between those groups.</p>
+<p>When the research question concerns a contrast, display the contrast itself with its interval and a relevant reference value. For a mean difference, the no-difference value is zero; for a ratio, the null value is one. Explain the chosen direction and scale in the caption.</p>
+</section>
+<section id="build-a-self-contained-caption" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="build-a-self-contained-caption"><span class="header-section-number">8.10</span> Build a self-contained caption</h2>
+<p>A useful caption identifies the population or illustrative context, outcome and unit, groups or time points, sample size, and meaning of plotted summaries. If a graph shows invented teaching values, label them as invented. If a scale is transformed, state the transformation.</p>
+<p>For example: “Distribution of invented waiting times for 10 observations. The histogram uses two-minute bins. The box shows the median and first–third quartiles; whiskers follow the 1.5-IQR convention. Points beyond the whiskers are plotted individually.”</p>
+<p>The ICMJE guidance describes figures as part of the scientific report and requires units and legends that allow their meaning to be assessed. Apply that principle to a teaching figure as well as to a manuscript figure. <span class="citation" data-cites="ICMJE">[<a href="references.html#ref-ICMJE" role="doc-biblioref">31</a>]</span></p>
+</section>
+<section id="common-errors" class="level2" data-number="8.11">
+<h2 data-number="8.11" class="anchored" data-anchor-id="common-errors"><span class="header-section-number">8.11</span> Common errors</h2>
+<p>Avoid missing denominators, unexplained axis truncation, different units across comparable panels, decorative three-dimensional bars, lines joining unrelated observations, and uncertainty intervals without a definition. Check the graph at its final printed size; a readable analysis window can become unreadable when reduced to a book page.</p>
+</section>
+<section id="hands-on-graphical-presentation" class="level2" data-number="8.12">
+<h2 data-number="8.12" class="anchored" data-anchor-id="hands-on-graphical-presentation"><span class="header-section-number">8.12</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add jamovi graph procedures, datasets, screenshots, and exported figures here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="8.13">
+<h2 data-number="8.13" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">8.13</span> Review questions</h2>
+<ol type="1">
+<li>What distinguishes a histogram from a categorical bar chart?</li>
+<li>Does a point outside a boxplot whisker establish a data-entry error?</li>
+<li>Why should a graph caption define what its intervals represent?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="8.14">
+<h2 data-number="8.14" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">8.14</span> Answers and reasoning</h2>
+<ol type="1">
+<li>Histogram bins represent adjacent numerical intervals; categories in a bar chart are discrete labels or levels.</li>
+<li>No.&nbsp;The point is flagged by the plotting convention and needs source verification and analytical assessment.</li>
+<li>CI, SD, SE, and prediction intervals answer different questions. The reader cannot infer the intended meaning from an unlabelled bar.</li>
+</ol>
+</section>
 
 
-</section>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-NISTHist" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">NIST/SEMATECH. Histogram. <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda33e.htm">https://www.itl.nist.gov/div898/handbook/eda/section3/eda33e.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-NISTBox" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">NIST/SEMATECH. Box plot. <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/boxplot.htm">https://www.itl.nist.gov/div898/handbook/eda/section3/boxplot.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-NISTQQ" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">NIST/SEMATECH. Normal probability plot. <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/normprpl.htm">https://www.itl.nist.gov/div898/handbook/eda/section3/normprpl.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RCor" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">R Core Team. Test for association/correlation between paired samples. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-ICMJE" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">International Committee of Medical Journal Editors. Preparing a manuscript for submission to a medical journal. <a href="https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html">https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -746,12 +968,12 @@ ul.task-list li input[type="checkbox"] {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./descriptive-statistics.html" class="pagination-link" aria-label="Descriptive Statistics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./inferential.html" class="pagination-link" aria-label="Core Inferential Statistics">
-        <span class="nav-page-text">Core Inferential Statistics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./inferential.html" class="pagination-link" aria-label="Core Inferential Methods">
+        <span class="nav-page-text">Core Inferential Methods</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -760,4 +982,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

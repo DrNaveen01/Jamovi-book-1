@@ -1,0 +1,190 @@
+{
+  "status": "passed",
+  "registered_pages": 27,
+  "main_chapters": 16,
+  "content_appendices": 4,
+  "empty_hands_on_callouts": 17,
+  "teaching_figures": 5,
+  "bibliography_records": 64,
+  "cited_sources": 63,
+  "approximate_chapter_word_counts": {
+    "role": 1693,
+    "getting-started": 1334,
+    "data-management": 1950,
+    "data-cleaning": 2029,
+    "data-transformation": 1938,
+    "analysis-preparation": 2044,
+    "descriptive-statistics": 1563,
+    "graphical-presentation": 1594,
+    "hypothesis-testing-concepts": 1667,
+    "comparing-two-means": 2071,
+    "comparing-more-than-two-means": 1593,
+    "categorical-variables": 1706,
+    "correlation": 1503,
+    "linear-regression": 1648,
+    "logistic-regression": 1541,
+    "reporting-results": 1721
+  },
+  "numerical_calculations": 61,
+  "illustration_values": {
+    "waiting_mean": 6.0,
+    "waiting_median": 4.5,
+    "waiting_sample_sd": 4.618802153517006,
+    "waiting_type7_quartiles": [
+      3.25,
+      6.75
+    ],
+    "mean_t95ci": [
+      132.42840948714445,
+      139.57159051285555
+    ],
+    "welch_df": 115.95674926889333,
+    "welch_t": -2.186037754007671,
+    "welch_p": 0.030822268037548034,
+    "welch_95ci": [
+      -11.436229411107721,
+      -0.5637705888922797
+    ],
+    "paired_t": -4.381780460041329,
+    "paired_p": 0.00014070051458021774,
+    "paired_95ci": [
+      -11.734061367580999,
+      -4.265938632419001
+    ],
+    "anova_F": 5.0,
+    "anova_p": 0.009983929593052422,
+    "anova_eta_squared": 0.14925373134328357,
+    "chi_square": 6.451612903225806,
+    "chi_square_p": 0.011085166380602708,
+    "chi_expected_counts": [
+      [
+        22.5,
+        77.5
+      ],
+      [
+        22.5,
+        77.5
+      ]
+    ],
+    "fisher_two_sided_p": 0.01714902276840841,
+    "risk_difference_wald_95ci": [
+      0.03613638193065059,
+      0.2638636180693494
+    ],
+    "risk_ratio_logwald_95ci": [
+      1.1488778125918317,
+      3.481658324461961
+    ],
+    "cross_product_OR": 2.4285714285714284,
+    "OR_logwald_95ci": [
+      1.2109992089276296,
+      4.870324555287085
+    ],
+    "paired_binary_exact_p": 0.04138946533203125,
+    "pearson_0.6_p": 4.1202159309776665e-06,
+    "pearson_0.6_fisher95ci": [
+      0.386141193639051,
+      0.7526488623205274
+    ],
+    "pearson_0.3_p": 0.03428618003292997,
+    "pearson_0.3_fisher95ci": [
+      0.023625077388833595,
+      0.5337751868855202
+    ],
+    "linear_slope_95ci": [
+      0.29982825158547644,
+      0.7001717484145236
+    ],
+    "linear_slope_p": 5.618420697265453e-06,
+    "linear_R_squared": 0.30120481927710846,
+    "logistic_intercept": -1.7346010553881064,
+    "logistic_coefficient": 0.8873031950009027,
+    "logistic_wald_p": 0.012447629523783687,
+    "logistic_probabilities": [
+      0.15,
+      0.3
+    ],
+    "rank_sum_A": 20.0,
+    "mann_whitney_U_A": 10.0,
+    "signed_rank_positive_negative": [
+      8.0,
+      7.0
+    ],
+    "simulated_intervals_covering_mean": 29.0,
+    "cleaning_distinct_and_eligible": [
+      200.0,
+      192.0
+    ],
+    "cleaning_followup_available": [
+      180.0,
+      92.0,
+      88.0
+    ],
+    "cleaning_missing_percentages": [
+      6.25,
+      4.166666666666666,
+      8.333333333333332
+    ],
+    "cleaning_observed_percentage": 93.75,
+    "height_metres": 1.6,
+    "BMI_correct_units": 31.249999999999993,
+    "BMI_wrong_height_units": 0.003125,
+    "absolute_change": -8.0,
+    "individual_percentage_change": -5.47945205479452,
+    "reverse_item_scores": [
+      5.0,
+      4.0,
+      3.0,
+      2.0,
+      1.0
+    ],
+    "complete_item_sum_and_mean": [
+      12.0,
+      4.0
+    ],
+    "equal_log_ratio_differences": [
+      0.693147180559945,
+      0.6931471805599454
+    ],
+    "arithmetic_and_geometric_means": [
+      25.0,
+      20.000000000000007
+    ],
+    "specified_reference_z": 1.0,
+    "waiting_category_boundary_codes": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      2.0
+    ],
+    "invalid_waiting_input_flags": [
+      1.0,
+      1.0
+    ],
+    "complete_pair_count": 108.0,
+    "pair_availability_breakdown": [
+      108.0,
+      4.0,
+      6.0,
+      2.0
+    ],
+    "available_baseline_and_followup": [
+      114.0,
+      112.0
+    ],
+    "known_status_event_percentage": 20.0,
+    "eligible_event_accounting_bounds": [
+      18.75,
+      25.0
+    ],
+    "reversed_welch_95ci": [
+      0.5637705888922797,
+      11.436229411107721
+    ]
+  },
+  "limitations": [
+    "R companion scripts were supplied; this Python check does not execute R.",
+    "Author-supplied jamovi datasets and screenshots remain to be added."
+  ]
+}
