@@ -11,7 +11,11 @@ render_book <- function(format = c("all", "html", "pdf"), profile = NULL) {
     stop("Use profile = 'windows', profile = 'portable', or profile = NULL.")
   }
   args <- "render"
+<<<<<<< HEAD
   args <- c(args, "--to", format)
+=======
+  if (format != "all") args <- c(args, "--to", format)
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
   if (!is.null(profile)) args <- c(args, "--profile", profile)
   status <- system2(quarto, args)
   if (status != 0L) stop("Quarto render failed; inspect its output above.")

@@ -1,5 +1,6 @@
 format:
   pdf:
+<<<<<<< HEAD
     mainfont: texgyretermes
     mainfontoptions:
       - Path=fonts/texgyre/
@@ -7,5 +8,8 @@ format:
       - BoldFont=*-bold.otf
       - ItalicFont=*-italic.otf
       - BoldItalicFont=*-bolditalic.otf
+=======
+    mainfont: "Latin Modern Roman"
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     sansfont: "Latin Modern Sans"
     monofont: "Latin Modern Mono"

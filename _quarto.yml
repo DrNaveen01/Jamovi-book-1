@@ -7,19 +7,30 @@ project:
     - data/
     - images/
     - vendor/
+<<<<<<< HEAD
     - fonts/
 
 profile:
   default: portable
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 
 book:
   title: "Hands-On Data Analysis Using Jamovi"
   subtitle: "Volume I: Foundations and Core Statistical Methods for Health Researchers"
+<<<<<<< HEAD
   author: ""
   date: "2026-10-21"
   date-format: "D MMMM YYYY"
   output-file: "jamovi-book-volume-1-review"
   downloads: [pdf]
+=======
+  author: "Dr Naveen Suthar"
+  date: "2026-10-05"
+  date-format: "D MMMM YYYY"
+  output-file: "jamovi-book-volume-1-review"
+  # downloads: [pdf]
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
   search: true
   reader-mode: true
   sidebar:
@@ -69,7 +80,10 @@ toc-depth: 2
 number-sections: true
 callout-icon: false
 filters:
+<<<<<<< HEAD
   - filters/book-style.lua
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
   - filters/review-layout.lua
 execute:
   eval: false
@@ -80,11 +94,15 @@ format:
   html:
     theme: [cosmo, styles.scss]
     fontsize: 18px
+<<<<<<< HEAD
     mainfont: "'Times New Roman', 'Book Termes', Georgia, serif"
     grid:
       body-width: 760px
       sidebar-width: 250px
       margin-width: 210px
+=======
+    mainfont: "Georgia, 'Times New Roman', serif"
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     html-math-method:
       method: katex
       url: vendor/katex/
@@ -92,6 +110,7 @@ format:
     published-title: "Draft revised"
     code-copy: true
     smooth-scroll: true
+<<<<<<< HEAD
   pdf:
     documentclass: book
     classoption: [oneside, openany]
@@ -111,3 +130,21 @@ format:
     toc-title: "Contents"
     fig-cap-location: bottom
     tbl-cap-location: top
+=======
+  # pdf:
+  #   documentclass: book
+  #   classoption: [oneside, openany]
+  #   pdf-engine: xelatex
+  #   mainfont: "Latin Modern Roman"
+  #   sansfont: "Latin Modern Sans"
+  #   monofont: "Latin Modern Mono"
+  #   fontsize: 11pt
+  #   papersize: a4
+  #   geometry: [margin=25mm]
+  #   colorlinks: false
+  #   keep-tex: true
+  #   toc-depth: 1
+  #   include-in-header: includes/pdf-header.tex
+  #   include-before-body: includes/pdf-frontmatter.tex
+  #   toc-title: "Contents"
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e

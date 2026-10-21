@@ -3,6 +3,7 @@
   "registered_pages": 27,
   "main_chapters": 16,
   "content_appendices": 4,
+<<<<<<< HEAD
   "hands_on_callouts": 17,
   "empty_hands_on_callouts": 17,
   "unregistered_legacy_templates": [
@@ -10,6 +11,9 @@
     "intro.qmd",
     "summary.qmd"
   ],
+=======
+  "empty_hands_on_callouts": 17,
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
   "teaching_figures": 5,
   "bibliography_records": 64,
   "cited_sources": 63,
@@ -52,10 +56,17 @@
       -0.5637705888922797
     ],
     "paired_t": -4.381780460041329,
+<<<<<<< HEAD
     "paired_p": 0.0001407005145802178,
     "paired_95ci": [
       -11.734061367581,
       -4.265938632418999
+=======
+    "paired_p": 0.00014070051458021774,
+    "paired_95ci": [
+      -11.734061367580999,
+      -4.265938632419001
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     ],
     "anova_F": 5.0,
     "anova_p": 0.009983929593052422,
@@ -94,14 +105,23 @@
     ],
     "pearson_0.3_p": 0.03428618003292997,
     "pearson_0.3_fisher95ci": [
+<<<<<<< HEAD
       0.02362507738883365,
       0.5337751868855203
+=======
+      0.023625077388833595,
+      0.5337751868855202
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     ],
     "linear_slope_95ci": [
       0.29982825158547644,
       0.7001717484145236
     ],
+<<<<<<< HEAD
     "linear_slope_p": 5.618420697265454e-06,
+=======
+    "linear_slope_p": 5.618420697265453e-06,
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "linear_R_squared": 0.30120481927710846,
     "logistic_intercept": -1.7346010553881064,
     "logistic_coefficient": 0.8873031950009027,

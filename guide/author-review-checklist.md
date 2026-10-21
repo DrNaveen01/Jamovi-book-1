@@ -1,9 +1,13 @@
 # Author review checklist
 
+<<<<<<< HEAD
 **Volume I, revision 4 - 21 October 2026**
 
 Use `early-release-checklist.md` for the current build status and chapter-level
 practical requirements. This record retains the author’s editorial decisions.
+=======
+**Volume I, revision 2 - 5 October 2026**
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 
 Use this record to review the teaching manuscript before adding the practical
 material. Each Hands-on body is intentionally empty. The boxes are reserved

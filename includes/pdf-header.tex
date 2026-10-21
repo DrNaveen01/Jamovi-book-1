@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 % Book style 1.0: typography, hierarchy, panels, tables and navigation.
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 \usepackage{microtype}
 \usepackage{fancyhdr}
 \usepackage{needspace}
 \usepackage{etoolbox}
 \usepackage{xcolor}
+<<<<<<< HEAD
 \usepackage{titlesec}
 \usepackage[skins,breakable]{tcolorbox}
 \usepackage{caption}
@@ -12,12 +16,15 @@
 \definecolor{bookrule}{HTML}{CCD6D2}
 \definecolor{bookgrey}{HTML}{F3F5F3}
 \definecolor{bookcream}{HTML}{FBF7EF}
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 \setkeys{Gin}{keepaspectratio}
 \raggedbottom
 \setlength{\emergencystretch}{3em}
 \widowpenalty=10000
 \clubpenalty=10000
 \setlength{\parindent}{0pt}
+<<<<<<< HEAD
 \setlength{\parskip}{0.45em}
 \color{bookink}
 \pagestyle{fancy}
@@ -69,3 +76,18 @@
   \end{titlepage}%
 }
 \makeatother
+=======
+\setlength{\parskip}{0.4em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Hands-On Data Analysis Using Jamovi}
+\fancyhead[R]{\small Volume I | Review draft}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{15pt}
+\AtBeginEnvironment{longtable}{\small}
+\AtBeginDocument{%
+  \definecolor{quarto-callout-note-color}{HTML}{507773}%
+  \definecolor{quarto-callout-note-color-frame}{HTML}{B3C8C5}%
+}
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e

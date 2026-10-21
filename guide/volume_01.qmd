@@ -6,7 +6,11 @@ format: html
 
 # Foundations and Core Statistical Methods for Health Researchers
 
+<<<<<<< HEAD
 **Status:** teaching manuscript prepared for author review, revision 4, 21 October 2026.
+=======
+**Status:** expanded teaching manuscript prepared for author review, revision 2.
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 Hands-on material is intentionally reserved for the author. This guide is not
 part of the rendered book; `_quarto.yml` defines the reader-facing manuscript.
 

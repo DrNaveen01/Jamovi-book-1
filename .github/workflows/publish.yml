@@ -1,17 +1,32 @@
+<<<<<<< HEAD
 name: Validate and Publish Quarto Book
+=======
+name: Publish Quarto Book
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 
 on:
   push:
     branches: [main]
+<<<<<<< HEAD
   pull_request:
     branches: [main]
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
   workflow_dispatch:
 
 permissions:
   contents: read
+<<<<<<< HEAD
 
 concurrency:
   group: book-${{ github.workflow }}-${{ github.ref }}
+=======
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
   cancel-in-progress: true
 
 jobs:
@@ -19,6 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+<<<<<<< HEAD
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -28,10 +44,13 @@ jobs:
         run: python -m pip install -r scripts/requirements-validation.txt
       - name: Check sources and numerical illustrations
         run: python scripts/validate_project.py
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: '1.8.27'
           tinytex: true
+<<<<<<< HEAD
       - name: Remove previous generated output
         run: rm -rf docs .quarto
       - name: Render HTML and PDF from the same revision
@@ -49,20 +68,34 @@ jobs:
           retention-days: 14
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+=======
+      - name: Render HTML and PDF from the same revision
+        run: quarto render --profile portable
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
         with:
           path: docs
 
   deploy:
+<<<<<<< HEAD
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     permissions:
       pages: write
       id-token: write
+=======
+    needs: build
+    runs-on: ubuntu-latest
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+<<<<<<< HEAD
       - uses: actions/configure-pages@v5
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
       - id: deployment
         uses: actions/deploy-pages@v4

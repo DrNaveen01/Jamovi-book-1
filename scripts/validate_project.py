@@ -4,17 +4,23 @@ Run from any directory with Python, NumPy, and SciPy. This checks the current
 manuscript; it does not verify future author-supplied jamovi output.
 """
 from pathlib import Path
+<<<<<<< HEAD
 import argparse
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 import json
 import re
 import numpy as np
 from scipy import stats
 
 ROOT = Path(__file__).resolve().parents[1]
+<<<<<<< HEAD
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--require-practical", action="store_true",
                     help="Fail if any reserved Hands-on section remains empty. This is only a presence check, not verification of jamovi output.")
 args = parser.parse_args()
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 CHAPTERS = ["role", "getting-started", "data-management", "data-cleaning",
             "data-transformation", "analysis-preparation", "descriptive-statistics",
             "graphical-presentation", "hypothesis-testing-concepts", "comparing-two-means",
@@ -23,6 +29,7 @@ CHAPTERS = ["role", "getting-started", "data-management", "data-cleaning",
 config = (ROOT / "_quarto.yml").read_text(encoding="utf-8")
 registered = re.findall(r"(?m)^\s*-\s*(?:part:\s*)?([^\s]+\.qmd)\s*$", config)
 assert len(registered) == 27, f"Unexpected registered page count: {len(registered)}"
+<<<<<<< HEAD
 assert len(registered) == len(set(registered)), "A manuscript page is registered twice"
 assert all((ROOT / name).is_file() for name in registered), "A registered source file is missing"
 # Legacy templates are retained for compatibility, but do not belong to the book.
@@ -34,6 +41,9 @@ assert re.search(r"(?m)^  pdf:\s*$", config), "The main PDF format is missing"
 assert 'include-in-header: includes/pdf-header.tex' in config, "PDF header is missing"
 assert r"\usepackage{needspace}" in (ROOT / "includes/pdf-header.tex").read_text(), \
     "The PDF review-layout filter requires the needspace package"
+=======
+assert set(registered) == {p.name for p in ROOT.glob("*.qmd")}
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 bib = (ROOT / "references.bib").read_text(encoding="utf-8")
 keys = re.findall(r"@\w+\s*\{\s*([^,]+),", bib)
 assert len(keys) == len(set(keys)), "Duplicate bibliography keys"
@@ -70,9 +80,14 @@ for stem in CHAPTERS:
 
 boxes = re.findall(r'::: \{\.callout-note \.hands-on-note[^\n]*\}\n(.*?)\n:::', text, re.S)
 assert len(boxes) == len(CHAPTERS) + 1, f"Expected 17 reserved callouts, found {len(boxes)}"
+<<<<<<< HEAD
 empty_boxes = sum(not re.sub(r"<!--.*?-->", "", body, flags=re.S).strip() for body in boxes)
 if args.require_practical:
     assert empty_boxes == 0, f"Practical sections remain empty: {empty_boxes}; add and verify the author's jamovi material before a complete hands-on release"
+=======
+assert all(not re.sub(r"<!--.*?-->", "", body, flags=re.S).strip() for body in boxes), \
+    "A reserved Hands-on callout contains reader-facing content"
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 
 values = {}
 def check(name, calculated, expected=None, atol=1e-6):
@@ -185,9 +200,13 @@ check("reversed_welch_95ci", -np.array(values["welch_95ci"])[::-1],
 
 report = {
     "status": "passed", "registered_pages": len(registered), "main_chapters": len(CHAPTERS),
+<<<<<<< HEAD
     "content_appendices": 4, "hands_on_callouts": len(boxes),
     "empty_hands_on_callouts": empty_boxes,
     "unregistered_legacy_templates": sorted(unregistered),
+=======
+    "content_appendices": 4, "empty_hands_on_callouts": len(boxes),
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "teaching_figures": len(image_paths), "bibliography_records": len(keys),
     "cited_sources": len(citations), "approximate_chapter_word_counts": word_counts,
     "numerical_calculations": len(values), "illustration_values": values,

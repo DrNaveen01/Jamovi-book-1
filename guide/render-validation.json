@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "status": "passed",
   "revision": 4,
   "date": "2026-10-21",
@@ -15,4 +16,28 @@
     "Automated checks do not replace visual or final author review.",
     "Reserved Hands-on sections remain pending; no executed jamovi workflow is claimed."
   ]
+=======
+  "revision": 2,
+  "date": "2026-10-05",
+  "render": "HTML and PDF successful",
+  "quarto": "1.8.27",
+  "pandoc": "3.6.4",
+  "pdf_pages": 121,
+  "html_pages_checked": 27,
+  "main_chapters": 16,
+  "empty_callouts": 17,
+  "citation_groups": 116,
+  "cited_sources": 63,
+  "citation_numbers_cross_format": "matched",
+  "pdf_citation_occurrences_checked": 155,
+  "equations": "local KaTeX verified in offline browser",
+  "html_equations_rendered": 132,
+  "all_pages_at_390_pixels": true,
+  "layout": "all PDF pages visually reviewed; changed pages reviewed after final layout revision",
+  "pdf_page_overflow": [],
+  "pdf_review_question_lists": "kept together",
+  "R_scripts": "provided, not executed",
+  "numerical_calculations": 61,
+  "jamovi_practical_material": "author-supplied datasets and screenshots pending"
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 }

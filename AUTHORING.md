@@ -1,9 +1,12 @@
 # Adding the Hands-on material
 
+<<<<<<< HEAD
 Follow `BOOK-STYLE.md` for typography, teaching panels, tables, figures, equations,
 and captions. The formatting theme applies to both editions without changing the
 reserved Hands-on source structure.
 
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 Each teaching chapter ends with a separate Hands-on subsection followed by an
 empty note callout. The box has a distinct pale background and border in HTML.
 The source currently contains only an author comment. Keep the heading and
@@ -21,12 +24,15 @@ Use the existing chapter-specific heading ID rather than `hands-on-your-chapter`
 The PDF and HTML share the same teaching source. After editing, render both
 formats and check that the callout and screenshots fit their pages.
 
+<<<<<<< HEAD
 Run `python scripts/validate_project.py` while the book is in review. It permits
 both completed and reserved boxes. Before a complete hands-on release, run it
 with `--require-practical` to reject empty boxes, then verify every demonstration
 in jamovi. Render both formats with `quarto render --to all --profile portable`
 and run `python scripts/check_render.py` before checking the final layout.
 
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
 ## A practical section to complete
 
 Start with the health question, the unit of observation, and the outcome and

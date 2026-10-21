@@ -4,7 +4,11 @@
     "href": "index.html",
     "title": "Hands-On Data Analysis Using Jamovi",
     "section": "",
+<<<<<<< HEAD
     "text": "Preface\nStatistical analysis begins with a research question and ends with a statement that another reader can evaluate. Between these points, the researcher must define the population, understand how observations were collected, choose an appropriate summary or model, examine assumptions, and explain uncertainty. Software supports these decisions; it does not make them on the researcher’s behalf.\nThis book is written for medical students, clinicians, postgraduate trainees, and health researchers beginning applied data analysis. Its purpose is to connect a clinical question with the structure of the data, the statistical method, and the meaning of the result. The emphasis is on estimates and their uncertainty, supported by appropriate tests and clear reporting. The American Statistical Association’s statement provides the basis for interpreting a p-value in context rather than treating a threshold as a complete scientific conclusion. [1]\nThe author dedicates this work to Lord Jagannath. The project began on Ram Navami, 26 March 2026. This version is review revision 4, dated 21 October 2026.",
+=======
+    "text": "Preface\nStatistical analysis begins with a research question and ends with a statement that another reader can evaluate. Between these points, the researcher must define the population, understand how observations were collected, choose an appropriate summary or model, examine assumptions, and explain uncertainty. Software supports these decisions; it does not make them on the researcher’s behalf.\nThis book is written for medical students, clinicians, postgraduate trainees, and health researchers beginning applied data analysis. Its purpose is to connect a clinical question with the structure of the data, the statistical method, and the meaning of the result. The emphasis is on estimates and their uncertainty, supported by appropriate tests and clear reporting. The American Statistical Association’s statement provides the basis for interpreting a p-value in context rather than treating a threshold as a complete scientific conclusion. [1]\nThe author dedicates this work to Lord Jagannath. The project began on Ram Navami, 26 March 2026. This version is review revision 2, dated 5 October 2026.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Preface"
     ]
@@ -94,6 +98,7 @@
     "href": "role.html",
     "title": "1  Role of Statistics in Health Research",
     "section": "",
+<<<<<<< HEAD
     "text": "1.1 Learning objectives",
     "crumbs": [
       "Foundations",
@@ -106,6 +111,9 @@
     "title": "1  Role of Statistics in Health Research",
     "section": "",
     "text": "After this chapter, the reader should be able to translate a health question into an analysis objective; identify the population and unit of observation; distinguish common variable types; recognise independent and paired data; and separate sampling uncertainty from problems in study conduct.",
+=======
+    "text": "1.1 Learning objectives\nAfter this chapter, the reader should be able to translate a health question into an analysis objective; identify the population and unit of observation; distinguish common variable types; recognise independent and paired data; and separate sampling uncertainty from problems in study conduct.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Role of Statistics in Health Research</span>"
@@ -237,13 +245,18 @@
     "href": "getting-started.html",
     "title": "2  Getting Started with jamovi",
     "section": "",
+<<<<<<< HEAD
     "text": "2.1 Learning objectives",
+=======
+    "text": "2.1 Learning objectives\nAfter this chapter, the reader should be able to distinguish the data, analysis, and output components of jamovi; inspect imported variable properties; recognise how file formats affect reproducibility; and prepare a saved analysis file for later review.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting Started with jamovi</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "getting-started.html#learning-objectives",
     "href": "getting-started.html#learning-objectives",
     "title": "2  Getting Started with jamovi",
@@ -255,6 +268,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "getting-started.html#the-purpose-of-the-software",
     "href": "getting-started.html#the-purpose-of-the-software",
     "title": "2  Getting Started with jamovi",
@@ -380,13 +395,18 @@
     "href": "data-management.html",
     "title": "3  Data Entry and Validation",
     "section": "",
+<<<<<<< HEAD
     "text": "3.1 Learning objectives",
+=======
+    "text": "3.1 Learning objectives\nAfter this chapter, the reader should be able to define what one row represents, build a usable data dictionary, distinguish data type from measure type, specify entry checks, and verify that an imported file retains its intended values and structure.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Entry and Validation</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "data-management.html#learning-objectives",
     "href": "data-management.html#learning-objectives",
     "title": "3  Data Entry and Validation",
@@ -398,6 +418,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "data-management.html#start-with-the-measurement-plan",
     "href": "data-management.html#start-with-the-measurement-plan",
     "title": "3  Data Entry and Validation",
@@ -490,7 +512,11 @@
     "href": "data-management.html#an-invented-validation-audit",
     "title": "3  Data Entry and Validation",
     "section": "3.10 An invented validation audit",
+<<<<<<< HEAD
     "text": "3.10 An invented validation audit\n\nSuppose an entry file is expected to contain 120 participants and 12 specified variables. It imports with 120 rows and 12 columns. A further audit identifies two rows sharing an ID, four uses of the undeclared group label b, and three follow-up fields containing the dictionary’s missing code 999.\n\nThe matching row and column counts do not establish validity. Query the repeated ID before deciding whether it represents a duplicate or an incorrect identifier. Confirm whether b means group B before harmonising it. Define 999 as missing according to the dictionary and retain the reason if available. The issues may overlap within participants, so adding 2, 4, and 3 does not necessarily count the number of affected people.\nWrite the audit finding before correcting the working file. The next chapter explains how to resolve and log the findings. Validation discovers an issue; cleaning implements a supported decision.",
+=======
+    "text": "3.10 An invented validation audit\nSuppose an entry file is expected to contain 120 participants and 12 specified variables. It imports with 120 rows and 12 columns. A further audit identifies two rows sharing an ID, four uses of the undeclared group label b, and three follow-up fields containing the dictionary’s missing code 999.\nThe matching row and column counts do not establish validity. Query the repeated ID before deciding whether it represents a duplicate or an incorrect identifier. Confirm whether b means group B before harmonising it. Define 999 as missing according to the dictionary and retain the reason if available. The issues may overlap within participants, so adding 2, 4, and 3 does not necessarily count the number of affected people.\nWrite the audit finding before correcting the working file. The next chapter explains how to resolve and log the findings. Validation discovers an issue; cleaning implements a supported decision.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Entry and Validation</span>"
@@ -545,6 +571,7 @@
     "href": "data-cleaning.html",
     "title": "4  Data Cleaning and Missing Values",
     "section": "",
+<<<<<<< HEAD
     "text": "4.1 Learning objectives",
     "crumbs": [
       "Foundations",
@@ -557,6 +584,9 @@
     "title": "4  Data Cleaning and Missing Values",
     "section": "",
     "text": "After this chapter, the reader should be able to resolve a data query using supporting evidence, distinguish duplicates from repeat observations, document corrections, describe missingness with appropriate denominators, and explain the limits of a complete-case analysis.",
+=======
+    "text": "4.1 Learning objectives\nAfter this chapter, the reader should be able to resolve a data query using supporting evidence, distinguish duplicates from repeat observations, document corrections, describe missingness with appropriate denominators, and explain the limits of a complete-case analysis.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Cleaning and Missing Values</span>"
@@ -732,6 +762,7 @@
     "href": "data-transformation.html",
     "title": "5  Transformations and Derived Variables",
     "section": "",
+<<<<<<< HEAD
     "text": "5.1 Learning objectives",
     "crumbs": [
       "Foundations",
@@ -744,6 +775,9 @@
     "title": "5  Transformations and Derived Variables",
     "section": "",
     "text": "After this chapter, the reader should be able to specify a derived variable, preserve its source measurements, distinguish row calculations from column summaries, check recoding boundaries and missingness, and explain how a transformation changes the scale of an analysis.",
+=======
+    "text": "5.1 Learning objectives\nAfter this chapter, the reader should be able to specify a derived variable, preserve its source measurements, distinguish row calculations from column summaries, check recoding boundaries and missingness, and explain how a transformation changes the scale of an analysis.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Transformations and Derived Variables</span>"
@@ -897,6 +931,7 @@
     "href": "analysis-preparation.html",
     "title": "6  Preparing Data for a Specific Analysis",
     "section": "",
+<<<<<<< HEAD
     "text": "6.1 Learning objectives",
     "crumbs": [
       "Foundations",
@@ -909,6 +944,9 @@
     "title": "6  Preparing Data for a Specific Analysis",
     "section": "",
     "text": "After this chapter, the reader should be able to write an analysis specification, select the variables and observations needed for a basic method, preserve pairing and denominators, check active filters and missing-data rules, and document the final analytical sample.",
+=======
+    "text": "6.1 Learning objectives\nAfter this chapter, the reader should be able to write an analysis specification, select the variables and observations needed for a basic method, preserve pairing and denominators, check active filters and missing-data rules, and document the final analytical sample.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Preparing Data for a Specific Analysis</span>"
@@ -1083,13 +1121,18 @@
     "href": "descriptive-statistics.html",
     "title": "7  Descriptive Statistics",
     "section": "",
+<<<<<<< HEAD
     "text": "7.1 Learning objectives",
+=======
+    "text": "7.1 Learning objectives\nAfter this chapter, the reader should be able to report counts with denominators, select appropriate measures of central value and spread, distinguish standard deviation from standard error, and interpret a descriptive estimate with its uncertainty.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Descriptive Statistics and Graphs",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Descriptive Statistics</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "descriptive-statistics.html#learning-objectives",
     "href": "descriptive-statistics.html#learning-objectives",
     "title": "7  Descriptive Statistics",
@@ -1101,6 +1144,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "descriptive-statistics.html#describe-the-observed-sample-first",
     "href": "descriptive-statistics.html#describe-the-observed-sample-first",
     "title": "7  Descriptive Statistics",
@@ -1193,7 +1238,11 @@
     "href": "descriptive-statistics.html#reporting-example",
     "title": "7  Descriptive Statistics",
     "section": "7.10 Reporting example",
+<<<<<<< HEAD
     "text": "7.10 Reporting example\n\nFor the invented waiting times: “Waiting time was available for 10 observations. The median was 4.5 minutes (first–third quartile 3.25–6.75), with values ranging from 2 to 18 minutes. The mean was 6.0 minutes (SD 4.6), reflecting the influence of the longest wait.”\n\nThis statement gives the availability, location, spread, unit, and reason for displaying both mean and median. A report would usually choose the summaries most relevant to its objective rather than repeat all available numbers.",
+=======
+    "text": "7.10 Reporting example\nFor the invented waiting times: “Waiting time was available for 10 observations. The median was 4.5 minutes (first–third quartile 3.25–6.75), with values ranging from 2 to 18 minutes. The mean was 6.0 minutes (SD 4.6), reflecting the influence of the longest wait.”\nThis statement gives the availability, location, spread, unit, and reason for displaying both mean and median. A report would usually choose the summaries most relevant to its objective rather than repeat all available numbers.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Descriptive Statistics and Graphs",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Descriptive Statistics</span>"
@@ -1248,13 +1297,18 @@
     "href": "graphical-presentation.html",
     "title": "8  Graphical Presentation",
     "section": "",
+<<<<<<< HEAD
     "text": "8.1 Learning objectives",
+=======
+    "text": "8.1 Learning objectives\nAfter this chapter, the reader should be able to select a graph for a stated question, distinguish a categorical bar chart from a histogram, interpret distributional and relationship plots, and label uncertainty without confusing it with individual variation.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Descriptive Statistics and Graphs",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Graphical Presentation</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "graphical-presentation.html#learning-objectives",
     "href": "graphical-presentation.html#learning-objectives",
     "title": "8  Graphical Presentation",
@@ -1266,6 +1320,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "graphical-presentation.html#let-the-question-determine-the-graph",
     "href": "graphical-presentation.html#let-the-question-determine-the-graph",
     "title": "8  Graphical Presentation",
@@ -1423,13 +1479,18 @@
     "href": "hypothesis-testing-concepts.html",
     "title": "9  Estimation and Hypothesis Testing",
     "section": "",
+<<<<<<< HEAD
     "text": "9.1 Learning objectives",
+=======
+    "text": "9.1 Learning objectives\nAfter this chapter, the reader should be able to define a null hypothesis on the correct scale; explain a p-value and confidence interval; distinguish statistical from clinical importance; interpret Type I and Type II errors; and recognise why a non-significant result does not establish equivalence.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Core Inferential Methods",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estimation and Hypothesis Testing</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "hypothesis-testing-concepts.html#learning-objectives",
     "href": "hypothesis-testing-concepts.html#learning-objectives",
     "title": "9  Estimation and Hypothesis Testing",
@@ -1441,6 +1502,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "hypothesis-testing-concepts.html#begin-with-an-estimate",
     "href": "hypothesis-testing-concepts.html#begin-with-an-estimate",
     "title": "9  Estimation and Hypothesis Testing",
@@ -1599,24 +1662,37 @@
     "href": "comparing-two-means.html",
     "title": "10  Comparing Two Groups or Two Paired Measurements",
     "section": "",
+<<<<<<< HEAD
     "text": "10.1 Learning objectives",
+=======
+    "text": "10.1 Learning objectives\nAfter this chapter, the reader should be able to distinguish independent from paired comparisons; define the contrast direction; choose between a mean-based and rank-based question; check the relevant assumptions; and report an estimate without reducing the analysis to a p-value.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Core Inferential Methods",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Comparing Two Groups or Two Paired Measurements</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "comparing-two-means.html#learning-objectives",
     "href": "comparing-two-means.html#learning-objectives",
     "title": "10  Comparing Two Groups or Two Paired Measurements",
     "section": "",
     "text": "After this chapter, the reader should be able to distinguish independent from paired comparisons; define the contrast direction; choose between a mean-based and rank-based question; check the relevant assumptions; and report an estimate without reducing the analysis to a p-value.",
+=======
+    "objectID": "comparing-two-means.html#establish-the-comparison-structure",
+    "href": "comparing-two-means.html#establish-the-comparison-structure",
+    "title": "10  Comparing Two Groups or Two Paired Measurements",
+    "section": "10.2 Establish the comparison structure",
+    "text": "10.2 Establish the comparison structure\nTwo groups are independent when each observation contributes to one group and the sampling or design does not create the paired dependence addressed by a paired method. Two measurements are paired when they belong to the same participant or to a defined matched pair. The distinction comes from the design, not from whether the group sample sizes happen to be equal.\nExamples are mean follow-up blood pressure in separate groups A and B, and baseline versus follow-up blood pressure in the same participants. The first asks about a between-group contrast. The second asks about the mean within-participant change. These questions should not be analysed interchangeably.\n\n\n\n\n\n\n\n\nFeature\nIndependent comparison\nPaired comparison\n\n\n\n\nBasic unit\nOne observation in one group\nOne complete pair\n\n\nMain mean contrast\nMean in A minus mean in B\nMean of defined within-pair differences\n\n\nDependence handled\nGroups are independent under the simple model\nMatching is retained within pairs\n\n\nKey graphical checks\nGroup distributions and unusual observations\nDistribution of within-pair differences\n\n\nMissingness\nAvailable outcome values in each group\nAvailability of both measurements for the paired calculation",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Core Inferential Methods",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Comparing Two Groups or Two Paired Measurements</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "comparing-two-means.html#establish-the-comparison-structure",
     "href": "comparing-two-means.html#establish-the-comparison-structure",
     "title": "10  Comparing Two Groups or Two Paired Measurements",
@@ -1628,6 +1704,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "comparing-two-means.html#decide-what-should-be-compared",
     "href": "comparing-two-means.html#decide-what-should-be-compared",
     "title": "10  Comparing Two Groups or Two Paired Measurements",
@@ -1654,7 +1732,11 @@
     "href": "comparing-two-means.html#calculated-independent-group-illustration",
     "title": "10  Comparing Two Groups or Two Paired Measurements",
     "section": "10.5 Calculated independent-group illustration",
+<<<<<<< HEAD
     "text": "10.5 Calculated independent-group illustration\n\nThe following summaries are invented for teaching and are not extracted from a patient dataset:\n\n\n\n\nGroup\nn\nMean systolic blood pressure, mmHg\nSD, mmHg\n\n\n\n\nA\n60\n128.0\n14.0\n\n\nB\n60\n134.0\n16.0\n\n\n\nThe contrast A minus B is −6.0 mmHg. Its Welch SE is 2.745 mmHg. The t statistic is −2.186, with approximately 115.96 degrees of freedom. The two-sided p-value is 0.0308 and the 95% CI is −11.44 to −0.56 mmHg. These quantities are reproduced in the project’s verification script.\nThe estimate indicates a lower mean in A. The interval excludes zero but still allows a wide range of reductions. If 5 mmHg is used as an explicitly illustrative importance threshold, the interval does not establish that the reduction is at least that large. The study design, rather than the t-test alone, determines whether the difference can be interpreted causally.\n\n10.5.1 Reading the output\nLocate the row for the chosen procedure and confirm the sign of the mean difference. Read the effect estimate and CI before the p-value. The degrees of freedom may be non-integer for Welch’s procedure; this is a property of its approximation, not a sign that participants were counted fractionally.\njamovi’s independent-samples analysis assigns a continuous outcome and a two-level grouping variable. The author will add the dataset, options, and output screenshots in the Hands-on section. [2]\n\n\n10.5.2 A reasoning record for the illustration\n\nThe summary calculations can be reviewed now, while the practical demonstration remains reserved for the author. A complete reasoning record connects the numerical result with its intended question and its limits:\n\n\n\n\n\n\n\n\nStage\nDecision or finding\n\n\n\n\nQuestion\nCompare mean follow-up systolic blood pressure in groups A and B\n\n\nTarget\nThe unadjusted mean difference, A minus B, in mmHg\n\n\nStructure\nOne participant contributes to one group; this independence is an illustration assumption\n\n\nPreparation\nVerify group labels, outcome unit, eligibility, missingness, and one observation per participant\n\n\nProcedure\nWelch’s two-sided comparison of means, with a 95% CI\n\n\nNumerical finding\nEstimated difference -6.0 mmHg; interval -11.44 to -0.56 mmHg\n\n\nMeaning\nA lower estimated mean in A, with uncertainty about the magnitude\n\n\nReporting\nInclude group summaries, contrast direction, CI, method, and design limitations\n\n\n\nThe two summary rows are sufficient for the stated Welch calculation. They are insufficient to inspect distributions, detect influential values, establish the missingness pattern, verify the observation unit, or establish a causal interpretation. Those checks require the study record and individual observations. Do not label them as completed merely because the calculation can be reproduced.\nIf the scientific objective is a baseline-adjusted group contrast, this unadjusted result does not answer the full question. If observations are clustered or repeated, the assumed independent structure is inadequate. These are reasons to revise the analytical method while preserving the stated objective, rather than simply choose another test from the same menu.\nReversing the contrast to B minus A gives +6.0 mmHg and a 95% CI of +0.56 to +11.44 mmHg. The two-sided evidence is unchanged, but the reporting direction must change with it. This is a useful consistency check when reviewing the future jamovi output.",
+=======
+    "text": "10.5 Calculated independent-group illustration\nThe following summaries are invented for teaching and are not extracted from a patient dataset:\n\n\n\nGroup\nn\nMean systolic blood pressure, mmHg\nSD, mmHg\n\n\n\n\nA\n60\n128.0\n14.0\n\n\nB\n60\n134.0\n16.0\n\n\n\nThe contrast A minus B is −6.0 mmHg. Its Welch SE is 2.745 mmHg. The t statistic is −2.186, with approximately 115.96 degrees of freedom. The two-sided p-value is 0.0308 and the 95% CI is −11.44 to −0.56 mmHg. These quantities are reproduced in the project’s verification script.\nThe estimate indicates a lower mean in A. The interval excludes zero but still allows a wide range of reductions. If 5 mmHg is used as an explicitly illustrative importance threshold, the interval does not establish that the reduction is at least that large. The study design, rather than the t-test alone, determines whether the difference can be interpreted causally.\n\n10.5.1 Reading the output\nLocate the row for the chosen procedure and confirm the sign of the mean difference. Read the effect estimate and CI before the p-value. The degrees of freedom may be non-integer for Welch’s procedure; this is a property of its approximation, not a sign that participants were counted fractionally.\njamovi’s independent-samples analysis assigns a continuous outcome and a two-level grouping variable. The author will add the dataset, options, and output screenshots in the Hands-on section. [2]\n\n\n10.5.2 A reasoning record for the illustration\nThe summary calculations can be reviewed now, while the practical demonstration remains reserved for the author. A complete reasoning record connects the numerical result with its intended question and its limits:\n\n\n\n\n\n\n\nStage\nDecision or finding\n\n\n\n\nQuestion\nCompare mean follow-up systolic blood pressure in groups A and B\n\n\nTarget\nThe unadjusted mean difference, A minus B, in mmHg\n\n\nStructure\nOne participant contributes to one group; this independence is an illustration assumption\n\n\nPreparation\nVerify group labels, outcome unit, eligibility, missingness, and one observation per participant\n\n\nProcedure\nWelch’s two-sided comparison of means, with a 95% CI\n\n\nNumerical finding\nEstimated difference -6.0 mmHg; interval -11.44 to -0.56 mmHg\n\n\nMeaning\nA lower estimated mean in A, with uncertainty about the magnitude\n\n\nReporting\nInclude group summaries, contrast direction, CI, method, and design limitations\n\n\n\nThe two summary rows are sufficient for the stated Welch calculation. They are insufficient to inspect distributions, detect influential values, establish the missingness pattern, verify the observation unit, or establish a causal interpretation. Those checks require the study record and individual observations. Do not label them as completed merely because the calculation can be reproduced.\nIf the scientific objective is a baseline-adjusted group contrast, this unadjusted result does not answer the full question. If observations are clustered or repeated, the assumed independent structure is inadequate. These are reasons to revise the analytical method while preserving the stated objective, rather than simply choose another test from the same menu.\nReversing the contrast to B minus A gives +6.0 mmHg and a 95% CI of +0.56 to +11.44 mmHg. The two-sided evidence is unchanged, but the reporting direction must change with it. This is a useful consistency check when reviewing the future jamovi output.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Core Inferential Methods",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Comparing Two Groups or Two Paired Measurements</span>"
@@ -1665,7 +1747,11 @@
     "href": "comparing-two-means.html#paired-t-test",
     "title": "10  Comparing Two Groups or Two Paired Measurements",
     "section": "10.6 Paired t-test",
+<<<<<<< HEAD
     "text": "10.6 Paired t-test\nThe paired t-test analyses the within-pair differences. Define the direction, such as follow-up minus baseline, calculate a difference for each complete pair, and estimate the mean difference with its SE. The distributional assumption used for the conventional small-sample t inference concerns the differences, not separate normality tests for the two measurement columns. [3]\nFor differences d_i,\n\n\\bar d=\\frac{1}{n}\\sum_{i=1}^{n}d_i,\n\\qquad SE(\\bar d)=\\frac{s_d}{\\sqrt n}.\n\nThe model requires independence between the pairs for this simple analysis. It does not require independence between the two measurements within each pair; that dependence is why the pairing is retained.\nConfirm matching by identifier rather than row order alone when measurements were imported from separate files. Excluding a participant with one missing measurement changes the complete-pair sample. Report how many pairs are available and examine whether incomplete follow-up limits the interpretation.\n\n10.6.1 Calculated paired illustration\n\nIn an invented example of 30 complete pairs, the mean baseline value is 146 mmHg and the mean follow-up value is 138 mmHg. The mean difference, follow-up minus baseline, is −8.0 mmHg, and the SD of the differences is 10.0 mmHg.\n\nThe paired SE is 10/\\sqrt{30}=1.826 mmHg. The t statistic is −4.382 with 29 degrees of freedom. The 95% CI for mean change is −11.73 to −4.27 mmHg, and the two-sided p-value is 0.000141. Report p &lt; 0.001 at an appropriate precision.\nThe estimate describes average within-participant change. A before–after study without an appropriate comparison does not isolate the reason for that change. Time trends, additional care, regression to the mean, and incomplete follow-up may remain relevant. The statistical result should not be labelled a treatment effect solely because the change is non-zero.\njamovi’s paired analysis requires the defined measurement pairs and can provide mean-difference, interval, descriptive, and diagnostic outputs. Check the sign convention used in its displayed comparison against the convention specified in the manuscript. [4]",
+=======
+    "text": "10.6 Paired t-test\nThe paired t-test analyses the within-pair differences. Define the direction, such as follow-up minus baseline, calculate a difference for each complete pair, and estimate the mean difference with its SE. The distributional assumption used for the conventional small-sample t inference concerns the differences, not separate normality tests for the two measurement columns. [3]\nFor differences d_i,\n\n\\bar d=\\frac{1}{n}\\sum_{i=1}^{n}d_i,\n\\qquad SE(\\bar d)=\\frac{s_d}{\\sqrt n}.\n\nThe model requires independence between the pairs for this simple analysis. It does not require independence between the two measurements within each pair; that dependence is why the pairing is retained.\nConfirm matching by identifier rather than row order alone when measurements were imported from separate files. Excluding a participant with one missing measurement changes the complete-pair sample. Report how many pairs are available and examine whether incomplete follow-up limits the interpretation.\n\n10.6.1 Calculated paired illustration\nIn an invented example of 30 complete pairs, the mean baseline value is 146 mmHg and the mean follow-up value is 138 mmHg. The mean difference, follow-up minus baseline, is −8.0 mmHg, and the SD of the differences is 10.0 mmHg.\nThe paired SE is 10/\\sqrt{30}=1.826 mmHg. The t statistic is −4.382 with 29 degrees of freedom. The 95% CI for mean change is −11.73 to −4.27 mmHg, and the two-sided p-value is 0.000141. Report p &lt; 0.001 at an appropriate precision.\nThe estimate describes average within-participant change. A before–after study without an appropriate comparison does not isolate the reason for that change. Time trends, additional care, regression to the mean, and incomplete follow-up may remain relevant. The statistical result should not be labelled a treatment effect solely because the change is non-zero.\njamovi’s paired analysis requires the defined measurement pairs and can provide mean-difference, interval, descriptive, and diagnostic outputs. Check the sign convention used in its displayed comparison against the convention specified in the manuscript. [4]",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Core Inferential Methods",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Comparing Two Groups or Two Paired Measurements</span>"
@@ -1742,13 +1828,18 @@
     "href": "comparing-more-than-two-means.html",
     "title": "11  Comparing More Than Two Groups",
     "section": "",
+<<<<<<< HEAD
     "text": "11.1 Learning objectives",
+=======
+    "text": "11.1 Learning objectives\nAfter this chapter, the reader should be able to distinguish an overall comparison from a specific contrast, interpret a one-way ANOVA, recognise when unequal variances require a different method, and select compatible follow-up comparisons for mean-based or rank-based analyses.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Core Inferential Methods",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Comparing More Than Two Groups</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "comparing-more-than-two-means.html#learning-objectives",
     "href": "comparing-more-than-two-means.html#learning-objectives",
     "title": "11  Comparing More Than Two Groups",
@@ -1760,6 +1851,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "comparing-more-than-two-means.html#define-groups-outcomes-and-independence",
     "href": "comparing-more-than-two-means.html#define-groups-outcomes-and-independence",
     "title": "11  Comparing More Than Two Groups",
@@ -1819,7 +1912,11 @@
     "href": "comparing-more-than-two-means.html#calculated-three-group-illustration",
     "title": "11  Comparing More Than Two Groups",
     "section": "11.7 Calculated three-group illustration",
+<<<<<<< HEAD
     "text": "11.7 Calculated three-group illustration\n\nThe following summaries are invented for teaching:\n\n\n\n\nGroup\nn\nMean, mmHg\nSD, mmHg\n\n\n\n\nA\n20\n125.0\n10.0\n\n\nB\n20\n130.0\n10.0\n\n\nC\n20\n135.0\n10.0\n\n\n\nThe overall mean is 130.0 mmHg. The between-group sum of squares is 1,000; the within-group sum of squares is 5,700. Dividing by 2 and 57 degrees of freedom gives mean squares of 500 and 100. The conventional F statistic is therefore 5.00, with df = 2 and 57, and p = 0.00998.\nThe analysis indicates incompatibility with the equal-means model under its assumptions. It does not establish that A differs from B, B differs from C, and A differs from C individually. Those contrasts require their own estimates and inferential procedure.\nThe sample eta-squared summary is\n\n\\eta^2=\\frac{SS_{\\text{between}}}{SS_{\\text{total}}}\n=\\frac{1000}{6700}=0.149.\n\nThis describes the between-group share of the observed squared variation in this example. It is not the percentage of participants who improved or a causal percentage explained by treatment. Prefer original-scale contrast estimates when interpreting the health question.",
+=======
+    "text": "11.7 Calculated three-group illustration\nThe following summaries are invented for teaching:\n\n\n\nGroup\nn\nMean, mmHg\nSD, mmHg\n\n\n\n\nA\n20\n125.0\n10.0\n\n\nB\n20\n130.0\n10.0\n\n\nC\n20\n135.0\n10.0\n\n\n\nThe overall mean is 130.0 mmHg. The between-group sum of squares is 1,000; the within-group sum of squares is 5,700. Dividing by 2 and 57 degrees of freedom gives mean squares of 500 and 100. The conventional F statistic is therefore 5.00, with df = 2 and 57, and p = 0.00998.\nThe analysis indicates incompatibility with the equal-means model under its assumptions. It does not establish that A differs from B, B differs from C, and A differs from C individually. Those contrasts require their own estimates and inferential procedure.\nThe sample eta-squared summary is\n\n\\eta^2=\\frac{SS_{\\text{between}}}{SS_{\\text{total}}}\n=\\frac{1000}{6700}=0.149.\n\nThis describes the between-group share of the observed squared variation in this example. It is not the percentage of participants who improved or a causal percentage explained by treatment. Prefer original-scale contrast estimates when interpreting the health question.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Core Inferential Methods",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Comparing More Than Two Groups</span>"
@@ -1874,7 +1971,11 @@
     "href": "comparing-more-than-two-means.html#reporting-example",
     "title": "11  Comparing More Than Two Groups",
     "section": "11.12 Reporting example",
+<<<<<<< HEAD
     "text": "11.12 Reporting example\n\nFor the calculated conventional illustration: “The invented mean follow-up values were 125.0, 130.0, and 135.0 mmHg in groups A, B, and C, respectively (20 observations per group; SD 10.0 in each group). A conventional one-way ANOVA gave F(2, 57) = 5.00, p = 0.010. The overall comparison does not identify the individual group contrasts; these would require the prespecified follow-up analysis.”\n\nFor a real report, replace the final teaching statement with the relevant contrast estimates and intervals. State why the selected variance model and observation structure are appropriate, and identify the follow-up method if one is used.",
+=======
+    "text": "11.12 Reporting example\nFor the calculated conventional illustration: “The invented mean follow-up values were 125.0, 130.0, and 135.0 mmHg in groups A, B, and C, respectively (20 observations per group; SD 10.0 in each group). A conventional one-way ANOVA gave F(2, 57) = 5.00, p = 0.010. The overall comparison does not identify the individual group contrasts; these would require the prespecified follow-up analysis.”\nFor a real report, replace the final teaching statement with the relevant contrast estimates and intervals. State why the selected variance model and observation structure are appropriate, and identify the follow-up method if one is used.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Core Inferential Methods",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Comparing More Than Two Groups</span>"
@@ -1929,13 +2030,18 @@
     "href": "categorical-variables.html",
     "title": "12  Associations Between Categorical Variables",
     "section": "",
+<<<<<<< HEAD
     "text": "12.1 Learning objectives",
+=======
+    "text": "12.1 Learning objectives\nAfter this chapter, the reader should be able to construct a contingency table, choose the correct denominator, distinguish independent from paired categorical observations, assess expected counts, and interpret a difference or ratio on the scale supported by the study design.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Core Inferential Methods",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Associations Between Categorical Variables</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "categorical-variables.html#learning-objectives",
     "href": "categorical-variables.html#learning-objectives",
     "title": "12  Associations Between Categorical Variables",
@@ -1947,6 +2053,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "categorical-variables.html#start-with-the-design-and-denominator",
     "href": "categorical-variables.html#start-with-the-design-and-denominator",
     "title": "12  Associations Between Categorical Variables",
@@ -2050,7 +2158,11 @@
     "href": "categorical-variables.html#reporting-example",
     "title": "12  Associations Between Categorical Variables",
     "section": "12.11 Reporting example",
+<<<<<<< HEAD
     "text": "12.11 Reporting example\n\nFor the independent teaching illustration: “The event occurred in 30 of 100 participants in group A (30.0%) and 15 of 100 in B (15.0%). Under the stipulated common follow-up, the risk ratio for A versus B was 2.00 (log-Wald 95% CI 1.15–3.48), and the absolute risk difference was 15.0 percentage points (Wald 95% CI 3.6–26.4). The uncorrected Pearson chi-square test gave χ²(1) = 6.45, p = 0.011.”\n\nThis statement names the denominators, measures, directions, interval methods, and test. It does not describe the association as causal. If a different design or procedure is used, revise those elements rather than transplanting this wording unchanged.",
+=======
+    "text": "12.11 Reporting example\nFor the independent teaching illustration: “The event occurred in 30 of 100 participants in group A (30.0%) and 15 of 100 in B (15.0%). Under the stipulated common follow-up, the risk ratio for A versus B was 2.00 (log-Wald 95% CI 1.15–3.48), and the absolute risk difference was 15.0 percentage points (Wald 95% CI 3.6–26.4). The uncorrected Pearson chi-square test gave χ²(1) = 6.45, p = 0.011.”\nThis statement names the denominators, measures, directions, interval methods, and test. It does not describe the association as causal. If a different design or procedure is used, revise those elements rather than transplanting this wording unchanged.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Core Inferential Methods",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Associations Between Categorical Variables</span>"
@@ -2104,35 +2216,56 @@
     "href": "correlation.html",
     "title": "13  Correlation",
     "section": "",
+<<<<<<< HEAD
     "text": "13.1 Learning objectives",
+=======
+    "text": "13.1 Learning objectives\nAfter this chapter, the reader should be able to distinguish linear from monotonic association, interpret direction and magnitude without using universal strength labels, identify the relevant data pairs, and explain why correlation is neither causation nor agreement.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Correlation and Introductory Regression",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Correlation</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "correlation.html#learning-objectives",
     "href": "correlation.html#learning-objectives",
     "title": "13  Correlation",
     "section": "",
     "text": "After this chapter, the reader should be able to distinguish linear from monotonic association, interpret direction and magnitude without using universal strength labels, identify the relevant data pairs, and explain why correlation is neither causation nor agreement.",
-    "crumbs": [
-      "Correlation and Introductory Regression",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Correlation</span>"
-    ]
-  },
-  {
+=======
     "objectID": "correlation.html#define-the-association-question",
     "href": "correlation.html#define-the-association-question",
     "title": "13  Correlation",
     "section": "13.2 Define the association question",
     "text": "13.2 Define the association question\nConsider whether age and systolic blood pressure vary together among study participants. Each participant contributes one age–blood-pressure pair. Neither variable is automatically an outcome in the correlation calculation; the purpose is to summarise their relationship.\nConfirm that paired values belong to the same observation unit. If a participant contributes multiple visits, a conventional correlation across all rows does not account for the dependence between those visits. A correlation between facility averages also answers a different question from a correlation between individual measurements.\nState whether the objective concerns a linear relationship in the original values or an ordered relationship. The choice between Pearson and Spearman should reflect that objective and the observed form, not simply a threshold from a normality test.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Correlation and Introductory Regression",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Correlation</span>"
     ]
   },
   {
+<<<<<<< HEAD
+    "objectID": "correlation.html#define-the-association-question",
+    "href": "correlation.html#define-the-association-question",
+    "title": "13  Correlation",
+    "section": "13.2 Define the association question",
+    "text": "13.2 Define the association question\nConsider whether age and systolic blood pressure vary together among study participants. Each participant contributes one age–blood-pressure pair. Neither variable is automatically an outcome in the correlation calculation; the purpose is to summarise their relationship.\nConfirm that paired values belong to the same observation unit. If a participant contributes multiple visits, a conventional correlation across all rows does not account for the dependence between those visits. A correlation between facility averages also answers a different question from a correlation between individual measurements.\nState whether the objective concerns a linear relationship in the original values or an ordered relationship. The choice between Pearson and Spearman should reflect that objective and the observed form, not simply a threshold from a normality test.",
+=======
+    "objectID": "correlation.html#inspect-the-scatterplot-first",
+    "href": "correlation.html#inspect-the-scatterplot-first",
+    "title": "13  Correlation",
+    "section": "13.3 Inspect the scatterplot first",
+    "text": "13.3 Inspect the scatterplot first\nLook for direction, form, spread, influential observations, and subgroups. The graphical-presentation chapter shows examples of a roughly linear relationship, a monotonic curve, and a U-shaped relationship. A single coefficient cannot communicate all those features.\nA pooled association can depend on differences between subgroups rather than on the relationship within them. Inspect groups relevant to the question before treating a pooled coefficient as the whole explanation. This inspection does not itself adjust for confounding; it reveals a feature that may require a different analysis.\nWhen a verified unusual observation strongly affects the coefficient, show or describe that influence. Do not remove it solely to obtain a preferred value. If a sensitivity analysis is justified, report the rule and its interpretation.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
+    "crumbs": [
+      "Correlation and Introductory Regression",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Correlation</span>"
+    ]
+  },
+  {
+<<<<<<< HEAD
     "objectID": "correlation.html#inspect-the-scatterplot-first",
     "href": "correlation.html#inspect-the-scatterplot-first",
     "title": "13  Correlation",
@@ -2144,6 +2277,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "correlation.html#pearsons-correlation-coefficient",
     "href": "correlation.html#pearsons-correlation-coefficient",
     "title": "13  Correlation",
@@ -2181,7 +2316,11 @@
     "href": "correlation.html#calculated-illustration",
     "title": "13  Correlation",
     "section": "13.7 Calculated illustration",
+<<<<<<< HEAD
     "text": "13.7 Calculated illustration\n\nSuppose an invented Pearson result is r=0.60 from 50 complete, independent pairs. The t statistic is approximately 5.20 with 48 degrees of freedom, giving a two-sided p-value of 0.00000412. The approximate Fisher 95% CI is 0.386 to 0.753.\n\nThe estimate indicates positive linear association, but the interval permits a range of magnitudes. It does not say that a one-year age increase changes blood pressure by 0.60 mmHg. That original-scale question requires a regression slope or another suitable model.\nFor comparison, an invented r=0.30 with the same 50 pairs has p = 0.0343 and a Fisher interval of approximately 0.024 to 0.534. A threshold label alone would hide the uncertainty in its magnitude. These are separate numerical teaching cases, not outcomes selected from one clinical dataset.",
+=======
+    "text": "13.7 Calculated illustration\nSuppose an invented Pearson result is r=0.60 from 50 complete, independent pairs. The t statistic is approximately 5.20 with 48 degrees of freedom, giving a two-sided p-value of 0.00000412. The approximate Fisher 95% CI is 0.386 to 0.753.\nThe estimate indicates positive linear association, but the interval permits a range of magnitudes. It does not say that a one-year age increase changes blood pressure by 0.60 mmHg. That original-scale question requires a regression slope or another suitable model.\nFor comparison, an invented r=0.30 with the same 50 pairs has p = 0.0343 and a Fisher interval of approximately 0.024 to 0.534. A threshold label alone would hide the uncertainty in its magnitude. These are separate numerical teaching cases, not outcomes selected from one clinical dataset.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Correlation and Introductory Regression",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Correlation</span>"
@@ -2236,7 +2375,11 @@
     "href": "correlation.html#reporting-example",
     "title": "13  Correlation",
     "section": "13.12 Reporting example",
+<<<<<<< HEAD
     "text": "13.12 Reporting example\n\nFor the invented 50-pair result: “Age and systolic blood pressure showed a positive linear association (Pearson r = 0.60; approximate Fisher 95% CI 0.39–0.75; n = 50; p &lt; 0.001). Interpretation requires the scatterplot and the observation structure; the coefficient does not establish a causal effect or an original-scale increase per year.”\n\nIn a completed study report, describe the actual scatterplot assessment and any influential observations or design limitation. Avoid adding an unsupported strength category when the numerical result and context are more informative.",
+=======
+    "text": "13.12 Reporting example\nFor the invented 50-pair result: “Age and systolic blood pressure showed a positive linear association (Pearson r = 0.60; approximate Fisher 95% CI 0.39–0.75; n = 50; p &lt; 0.001). Interpretation requires the scatterplot and the observation structure; the coefficient does not establish a causal effect or an original-scale increase per year.”\nIn a completed study report, describe the actual scatterplot assessment and any influential observations or design limitation. Avoid adding an unsupported strength category when the numerical result and context are more informative.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Correlation and Introductory Regression",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Correlation</span>"
@@ -2280,35 +2423,56 @@
     "href": "linear-regression.html",
     "title": "14  Introduction to Simple Linear Regression",
     "section": "",
+<<<<<<< HEAD
     "text": "14.1 Learning objectives",
+=======
+    "text": "14.1 Learning objectives\nAfter this chapter, the reader should be able to specify a continuous outcome and one predictor, interpret an original-scale slope and intercept, distinguish fitted values from residuals, recognise the assumptions for conventional inference, and separate estimation of a mean from prediction of an individual value.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Correlation and Introductory Regression",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "linear-regression.html#learning-objectives",
     "href": "linear-regression.html#learning-objectives",
     "title": "14  Introduction to Simple Linear Regression",
     "section": "",
     "text": "After this chapter, the reader should be able to specify a continuous outcome and one predictor, interpret an original-scale slope and intercept, distinguish fitted values from residuals, recognise the assumptions for conventional inference, and separate estimation of a mean from prediction of an individual value.",
-    "crumbs": [
-      "Correlation and Introductory Regression",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
-    ]
-  },
-  {
+=======
     "objectID": "linear-regression.html#specify-the-outcome-and-predictor",
     "href": "linear-regression.html#specify-the-outcome-and-predictor",
     "title": "14  Introduction to Simple Linear Regression",
     "section": "14.2 Specify the outcome and predictor",
     "text": "14.2 Specify the outcome and predictor\nSuppose the question is how mean systolic blood pressure varies with age in the observed study population. Blood pressure is the outcome, and age is the predictor. Each independent participant contributes an outcome–predictor pair.\nSimple regression uses one predictor. It does not estimate an effect independent of all other patient characteristics. Multiple predictors, confounder selection, interaction, and adjusted interpretation are reserved for Volume II and beyond. Calling a coefficient “independent” merely because it appears in a regression table would overstate this model.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Correlation and Introductory Regression",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
     ]
   },
   {
+<<<<<<< HEAD
+    "objectID": "linear-regression.html#specify-the-outcome-and-predictor",
+    "href": "linear-regression.html#specify-the-outcome-and-predictor",
+    "title": "14  Introduction to Simple Linear Regression",
+    "section": "14.2 Specify the outcome and predictor",
+    "text": "14.2 Specify the outcome and predictor\nSuppose the question is how mean systolic blood pressure varies with age in the observed study population. Blood pressure is the outcome, and age is the predictor. Each independent participant contributes an outcome–predictor pair.\nSimple regression uses one predictor. It does not estimate an effect independent of all other patient characteristics. Multiple predictors, confounder selection, interaction, and adjusted interpretation are reserved for Volume II and beyond. Calling a coefficient “independent” merely because it appears in a regression table would overstate this model.",
+=======
+    "objectID": "linear-regression.html#the-simple-linear-model",
+    "href": "linear-regression.html#the-simple-linear-model",
+    "title": "14  Introduction to Simple Linear Regression",
+    "section": "14.3 The simple linear model",
+    "text": "14.3 The simple linear model\nThe model expresses the outcome as\n\nY_i=\\beta_0+\\beta_1X_i+\\varepsilon_i,\n\\qquad E(\\varepsilon_i\\mid X_i)=0.\n\nThe intercept \\beta_0 is the model’s conditional mean when X=0. The slope \\beta_1 is the difference in conditional mean associated with a one-unit increase in X. The error represents the departure of an individual outcome from that conditional mean.\nOrdinary least squares chooses coefficients that minimise the sum of squared residuals. R’s lm() documentation identifies this as a route for fitting linear models and describes the model specification. [1]\nThe model is linear in its coefficients. The basic chapter uses a straight-line relationship with one predictor so that the slope’s units and interpretation are clear. More flexible relationships are developed later rather than forced into the same interpretation.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
+    "crumbs": [
+      "Correlation and Introductory Regression",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
+    ]
+  },
+  {
+<<<<<<< HEAD
     "objectID": "linear-regression.html#the-simple-linear-model",
     "href": "linear-regression.html#the-simple-linear-model",
     "title": "14  Introduction to Simple Linear Regression",
@@ -2320,6 +2484,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "linear-regression.html#interpret-the-slope-in-its-units",
     "href": "linear-regression.html#interpret-the-slope-in-its-units",
     "title": "14  Introduction to Simple Linear Regression",
@@ -2423,7 +2589,11 @@
     "href": "linear-regression.html#reporting-example",
     "title": "14  Introduction to Simple Linear Regression",
     "section": "14.13 Reporting example",
+<<<<<<< HEAD
     "text": "14.13 Reporting example\n\nFor the constructed coefficient summary: “In the simple unadjusted linear model, each additional year of age was associated with a 0.50-mmHg higher mean systolic blood pressure (95% CI 0.30–0.70; n = 60; t = 5.00, df = 58). The result describes a linear association and does not isolate age from other patient characteristics.”\n\nA completed report should identify the actual residual assessment, included range, exclusions, and other limitations. Do not claim that assumptions were satisfied unless those checks were performed and documented.",
+=======
+    "text": "14.13 Reporting example\nFor the constructed coefficient summary: “In the simple unadjusted linear model, each additional year of age was associated with a 0.50-mmHg higher mean systolic blood pressure (95% CI 0.30–0.70; n = 60; t = 5.00, df = 58). The result describes a linear association and does not isolate age from other patient characteristics.”\nA completed report should identify the actual residual assessment, included range, exclusions, and other limitations. Do not claim that assumptions were satisfied unless those checks were performed and documented.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Correlation and Introductory Regression",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to Simple Linear Regression</span>"
@@ -2467,13 +2637,18 @@
     "href": "logistic-regression.html",
     "title": "15  Introduction to Logistic Regression",
     "section": "",
+<<<<<<< HEAD
     "text": "15.1 Learning objectives",
+=======
+    "text": "15.1 Learning objectives\nAfter this chapter, the reader should be able to define a binary outcome and its event category, distinguish probability from odds, interpret a coefficient as an odds ratio, and recognise the limits of a simple unadjusted binary-outcome model.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Correlation and Introductory Regression",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introduction to Logistic Regression</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "logistic-regression.html#learning-objectives",
     "href": "logistic-regression.html#learning-objectives",
     "title": "15  Introduction to Logistic Regression",
@@ -2485,6 +2660,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "logistic-regression.html#the-scope-of-this-chapter",
     "href": "logistic-regression.html#the-scope-of-this-chapter",
     "title": "15  Introduction to Logistic Regression",
@@ -2610,7 +2787,11 @@
     "href": "logistic-regression.html#reporting-example",
     "title": "15  Introduction to Logistic Regression",
     "section": "15.13 Reporting example",
+<<<<<<< HEAD
     "text": "15.13 Reporting example\n\nFor the teaching table: “In a simple unadjusted logistic model with group B as reference, group A had higher event odds (OR 2.43; Wald 95% CI 1.21–4.87; p = 0.012). The model represents 200 invented participant outcomes, including 45 events. The OR compares odds, not risks, and no other predictors were included.”\n\nFor an actual manuscript, state the event definition and time window, reference category, selected model, missing-data handling, and design limitations. Avoid replacing “odds” with “risk” merely to simplify the sentence.",
+=======
+    "text": "15.13 Reporting example\nFor the teaching table: “In a simple unadjusted logistic model with group B as reference, group A had higher event odds (OR 2.43; Wald 95% CI 1.21–4.87; p = 0.012). The model represents 200 invented participant outcomes, including 45 events. The OR compares odds, not risks, and no other predictors were included.”\nFor an actual manuscript, state the event definition and time window, reference category, selected model, missing-data handling, and design limitations. Avoid replacing “odds” with “risk” merely to simplify the sentence.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Correlation and Introductory Regression",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Introduction to Logistic Regression</span>"
@@ -2664,13 +2845,18 @@
     "href": "reporting-results.html",
     "title": "16  Reporting Statistical Results",
     "section": "",
+<<<<<<< HEAD
     "text": "16.1 Learning objectives",
+=======
+    "text": "16.1 Learning objectives\nAfter this chapter, the reader should be able to write a methods statement and results paragraph for a basic analysis, design a self-contained table or figure, report uncertainty and missingness, and keep interpretation within the study’s design and evidence.",
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "crumbs": [
       "Reporting and Interpretation",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Reporting Statistical Results</span>"
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "reporting-results.html#learning-objectives",
     "href": "reporting-results.html#learning-objectives",
     "title": "16  Reporting Statistical Results",
@@ -2682,6 +2868,8 @@
     ]
   },
   {
+=======
+>>>>>>> 411391a1e81828f29055b7aaced890dd49b2f83e
     "objectID": "reporting-results.html#report-the-answer-to-the-question",
     "href": "reporting-results.html#report-the-answer-to-the-question",
     "title": "16  Reporting Statistical Results",
