@@ -1,21 +1,96 @@
----
-title: "Choosing Right Test"
----
+# Choosing an Appropriate Statistical Method {#sec-decision-guide}
 
+Use this guide after defining the question, observation unit, and variable meaning. It maps basic questions to methods covered in Volume I and marks situations requiring later-volume extensions. A choice is justified by the estimand and design, not by an attempt to find a small p-value.
 
+## Six decisions before choosing a method
 
-::: {#fig-association-test fig-cap="Flowchart for selecting test of association (categorical variables)"}
+First, identify the population and outcome. Second, define the target quantity: a mean, proportion, contrast, association, or prediction. Third, identify the observation unit. Fourth, determine whether observations are independent, paired, repeated, or clustered. Fifth, inspect coding, missingness, and relevant distributions. Sixth, select the procedure and uncertainty method that match the target and structure.
 
-```{mermaid}
-flowchart TD
-A[Test of association] --> B[Check expected frequencies]
+Document the resulting choice before interpreting the output. If an important assumption is not plausible, reconsider the model or estimand and explain the change.
 
-B -->|≥5 in ≥80% of cells| C[Chi-square test]
+Use @sec-analysis-preparation to reconcile the eligibility rule, required variables, matching, active filters, and analytical sample. The same cleaned file can supply different valid samples for different questions; each result needs its own count and denominator.
 
-B -->|<5 in >20% cells| D{Sample size small?}
+## Describe or estimate
 
-D -->|Yes| E[Fisher’s exact test]
-D -->|No| F[Chi-square with Yates continuity correction]
-```
+| Question | Starting method | Required context |
+|:---------|:----------------|:-----------------|
+| How many observations fall in each category? | Frequency table and proportions | Category definitions, denominator, and missingness |
+| What is the central value and spread of a quantitative outcome? | Mean/SD or median/quartile limits suited to the objective | Distribution, units, observed n, and unusual values |
+| How uncertain is a mean estimate? | Appropriate mean CI | Sampling and mean-model assumptions |
+| How uncertain is a proportion estimate? | Appropriate proportion CI, such as a stated exact or score method | Binary definition, denominator, and design |
 
-:::
+A descriptive summary does not require a hypothesis test solely to describe the sample. Refer to the descriptive chapter for the meaning of location and spread and to the uncertainty chapter for interval interpretation.
+
+## Compare quantitative outcomes
+
+| Structure and target | Starting method | Important boundary |
+|:---------------------|:----------------|:-------------------|
+| Two independent groups; mean difference | Welch or justified pooled independent t procedure | Independence, distributional adequacy, and variance model |
+| Two paired measurements; mean change | Paired t procedure | Complete matching; relevant distribution is that of differences |
+| Two independent groups; ordered/distributional comparison | Mann–Whitney procedure | Rank interpretation; median-shift meaning requires additional conditions |
+| Two paired measurements; signed-rank location question | Wilcoxon signed-rank procedure | Non-zero differences and suitable symmetry for location interpretation |
+| More than two independent groups; mean comparison | Conventional or Welch one-way ANOVA | Variance model and compatible planned/follow-up contrasts |
+| More than two independent groups; rank-based comparison | Kruskal–Wallis with compatible follow-up procedure | Global result does not identify individual pairs |
+| More than two repeated measurements or a clustered outcome | Design-specific repeated/clustered method | Later-volume extension; do not use an ordinary independent-group test |
+
+The corresponding statistical documentation distinguishes independent, paired, variance, and rank-based procedures. [@RTTest; @RWilcoxon; @ROneWay; @RKruskal]
+
+## Compare categorical outcomes
+
+Begin with the structure, before expected-count rules:
+
+| Structure | Appropriate direction |
+|:----------|:----------------------|
+| Independent observations; two categorical variables | Contingency-table association method and design-appropriate contrast |
+| Same individuals with two binary statuses | Paired binary method, such as McNemar or a suitable exact counterpart |
+| Repeated, clustered, matched, or more complex paired categorical data | A procedure that explicitly addresses that structure |
+
+For an independent contingency table:
+
+1. Check table dimensions and calculate expected counts under independence.
+2. If the approximation is appropriate, a Pearson chi-square procedure may be used.
+3. For a sparse 2-by-2 table, consider Fisher's exact procedure or another justified method.
+4. For a sparse larger table, consider an appropriate exact or Monte Carlo procedure with documented availability and settings.
+5. Select the effect measure and interval using the design, event definition, and reference group.
+
+Yates correction is confined to a 2-by-2 chi-square calculation; it is not the universal destination for sparse tables. Overall sample size cannot replace an expected-count assessment. [@RChiSq; @RFisher]
+
+For paired binary data, examine discordant pairs and the paired null. A calculation treating before and after observations as independent answers the wrong structure. [@RMcNemar; @jamoviPairedTables]
+
+## Choose the effect measure
+
+| Target | Scale and null value | Interpretation check |
+|:-------|:---------------------|:---------------------|
+| Mean or absolute proportion difference | Difference; null zero | Define A minus B and the unit or percentage points |
+| Risk ratio | Ratio; null one | Follow-up and denominators support a risk interpretation |
+| Prevalence ratio | Ratio; null one | Cross-sectional target and denominator are explicit |
+| Odds ratio | Ratio; null one | Compare odds; do not call it risk |
+| Correlation | Coefficient; zero-linear or zero-rank association as specified | Define coefficient, pairs, relationship form, and interval method |
+| Regression slope | Outcome units per predictor increment; null zero | Name outcome, predictor, unit, and adjustment status |
+
+An available software measure can be inappropriate to the sampled design. In outcome-based sampling, the observed case proportions are not directly population risks. The odds-ratio chapter explains the difference between odds and probabilities. [@BMJOdds]
+
+## Association and simple modeling
+
+| Question | Starting method | Scope limit |
+|:---------|:----------------|:------------|
+| Linear association between two quantitative variables | Pearson correlation with scatterplot and appropriate inference | Conventional independent-pair model; not causation or agreement |
+| Monotonic ordered association | Spearman correlation | Rank-based target; a U-shaped relationship is not generally monotonic |
+| Continuous outcome with one predictor | Simple linear regression | Assess mean form and residual assumptions; unadjusted |
+| Binary outcome with one predictor | Introductory logistic model | Defined event, logit scale, and basic model checks; unadjusted |
+| Adjusted effect, count outcome, survival, repeated data, or diagnostic accuracy | Appropriate specialist model | Volume II |
+| Causal effect identification, complex strategy, predictive validation, or evidence synthesis | Explicit advanced framework | Volume III |
+
+The software and statistical references identify the implemented coefficients and models. Their availability does not define the scientific objective. [@RCor; @RLm; @RGlm]
+
+## When assumptions are doubtful
+
+A doubtful assumption does not automatically identify one replacement test. Determine what failed and whether the intended quantity remains meaningful. Unequal variances, a curved mean relationship, paired observations, and a highly skewed distribution are different problems requiring different responses.
+
+For example, replacing Pearson with Spearman can address a monotonic rank-based objective but does not summarise an arbitrary curve. Replacing a pooled t-test with Welch relaxes equal variance but does not handle clustering. Replacing a paired mean test with signed ranks changes the target and requires its own assumptions.
+
+## A final selection statement
+
+Write the choice as a sentence: "The observations are independent, the outcome is continuous, and the primary estimand is the mean in A minus B; therefore, the analysis uses a specified independent mean-difference method with a 95% CI." For a paired study, the sentence should identify the within-pair change instead.
+
+Then read the relevant chapter. Confirm the data, checks, selected options, output meaning, and reporting. This statement makes a method choice reviewable and helps distinguish a justified analysis from a software-driven choice.

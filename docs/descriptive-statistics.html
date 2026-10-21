@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Descriptive Statistics – Hands-On Data Analysis Using Jamovi</title>
+<title>7&nbsp; Descriptive Statistics – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-885b2cfb8d18508768e9bf8f9ab5c5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,55 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
+<style>html{ scroll-behavior: smooth; }</style>
 
+  <script defer="" src="vendor/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive.html">Descriptive statistics and visualization</a></li><li class="breadcrumb-item"><a href="./descriptive-statistics.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive.html">Descriptive Statistics and Graphs</a></li><li class="breadcrumb-item"><a href="./descriptive-statistics.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,12 +161,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./jamovi-book-volume-1-review.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +206,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +247,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +270,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +305,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +334,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +369,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -305,15 +385,34 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
+   
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">7.1</span> Learning objectives</a></li>
+  <li><a href="#describe-the-observed-sample-first" id="toc-describe-the-observed-sample-first" class="nav-link" data-scroll-target="#describe-the-observed-sample-first"><span class="header-section-number">7.2</span> Describe the observed sample first</a></li>
+  <li><a href="#frequencies-proportions-and-percentages" id="toc-frequencies-proportions-and-percentages" class="nav-link" data-scroll-target="#frequencies-proportions-and-percentages"><span class="header-section-number">7.3</span> Frequencies, proportions, and percentages</a></li>
+  <li><a href="#mean-median-and-mode" id="toc-mean-median-and-mode" class="nav-link" data-scroll-target="#mean-median-and-mode"><span class="header-section-number">7.4</span> Mean, median, and mode</a></li>
+  <li><a href="#standard-deviation-variance-range-and-iqr" id="toc-standard-deviation-variance-range-and-iqr" class="nav-link" data-scroll-target="#standard-deviation-variance-range-and-iqr"><span class="header-section-number">7.5</span> Standard deviation, variance, range, and IQR</a></li>
+  <li><a href="#standard-deviation-is-not-standard-error" id="toc-standard-deviation-is-not-standard-error" class="nav-link" data-scroll-target="#standard-deviation-is-not-standard-error"><span class="header-section-number">7.6</span> Standard deviation is not standard error</a></li>
+  <li><a href="#confidence-intervals-for-descriptive-estimates" id="toc-confidence-intervals-for-descriptive-estimates" class="nav-link" data-scroll-target="#confidence-intervals-for-descriptive-estimates"><span class="header-section-number">7.7</span> Confidence intervals for descriptive estimates</a></li>
+  <li><a href="#choose-summaries-according-to-the-variable-and-question" id="toc-choose-summaries-according-to-the-variable-and-question" class="nav-link" data-scroll-target="#choose-summaries-according-to-the-variable-and-question"><span class="header-section-number">7.8</span> Choose summaries according to the variable and question</a></li>
+  <li><a href="#describe-groups-without-overinterpreting-them" id="toc-describe-groups-without-overinterpreting-them" class="nav-link" data-scroll-target="#describe-groups-without-overinterpreting-them"><span class="header-section-number">7.9</span> Describe groups without overinterpreting them</a></li>
+  <li><a href="#reporting-example" id="toc-reporting-example" class="nav-link" data-scroll-target="#reporting-example"><span class="header-section-number">7.10</span> Reporting example</a></li>
+  <li><a href="#common-errors" id="toc-common-errors" class="nav-link" data-scroll-target="#common-errors"><span class="header-section-number">7.11</span> Common errors</a></li>
+  <li><a href="#hands-on-descriptive-statistics" id="toc-hands-on-descriptive-statistics" class="nav-link" data-scroll-target="#hands-on-descriptive-statistics"><span class="header-section-number">7.12</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">7.13</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">7.14</span> Answers and reasoning</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive.html">Descriptive statistics and visualization</a></li><li class="breadcrumb-item"><a href="./descriptive-statistics.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive.html">Descriptive Statistics and Graphs</a></li><li class="breadcrumb-item"><a href="./descriptive-statistics.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></h1>
+<h1 class="title"><span id="sec-descriptive-statistics" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></h1>
 </div>
 
 
@@ -330,17 +429,188 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="frequencies-and-proportions" class="level3" data-number="4.0.1">
-<h3 data-number="4.0.1" class="anchored" data-anchor-id="frequencies-and-proportions"><span class="header-section-number">4.0.1</span> Frequencies and Proportions</h3>
+<section id="learning-objectives" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">7.1</span> Learning objectives</h2>
+<div class="book-panel book-objectives">
+<p>After this chapter, the reader should be able to report counts with denominators, select appropriate measures of central value and spread, distinguish standard deviation from standard error, and interpret a descriptive estimate with its uncertainty.</p>
+</div>
 </section>
-<section id="mean-median-standard-deviation-iqr" class="level3" data-number="4.0.2">
-<h3 data-number="4.0.2" class="anchored" data-anchor-id="mean-median-standard-deviation-iqr"><span class="header-section-number">4.0.2</span> Mean, Median, Standard Deviation, IQR</h3>
+<section id="describe-the-observed-sample-first" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="describe-the-observed-sample-first"><span class="header-section-number">7.2</span> Describe the observed sample first</h2>
+<p>Start with the number of eligible observations, the number included in the analysis, and the availability of key variables. Then describe variables using summaries that retain their meaning and units. Description is a check on the data and a basis for later method selection.</p>
+<p>Suppose 200 participants are enrolled and 180 provide a follow-up measurement. The enrolled sample and the observed follow-up sample are different denominators. A report should state which denominator is used for each summary, rather than placing 200 at the top of every table column.</p>
 </section>
-<section id="confidence-intervals" class="level3" data-number="4.0.3">
-<h3 data-number="4.0.3" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">4.0.3</span> Confidence Intervals</h3>
+<section id="frequencies-proportions-and-percentages" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="frequencies-proportions-and-percentages"><span class="header-section-number">7.3</span> Frequencies, proportions, and percentages</h2>
+<p>A frequency is a count. A proportion divides a count by a defined denominator. A percentage multiplies a proportion by 100. In an invented example, 40 participants with an event among 200 participants with known event status gives</p>
+<p><span class="math display">
+\hat p=\frac{40}{200}=0.20=20\%.
+</span></p>
+<p>Write “40 of 200 participants (20.0%)” rather than “20%” alone. The count and denominator indicate how much information supports the proportion. The same percentage based on 5 observations and 5,000 observations has very different estimation precision.</p>
+<p>Distinguish percentages of all eligible participants from percentages among those with an observed value. If 40 events are recorded among 180 participants with known status and 20 statuses are unknown, the observed proportion is 40/180, or 22.2%. Reporting 40/200 would require an explicit assumption about the unknown statuses; it is not a neutral alternative.</p>
+<section id="row-and-column-percentages" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="row-and-column-percentages"><span class="header-section-number">7.3.1</span> Row and column percentages</h3>
+<p>In a table comparing event status by group, a row percentage can answer “What fraction of group A had an event?” A column percentage can answer “What fraction of participants with an event belonged to group A?” These are different conditional descriptions. State the denominator in the table title or note.</p>
+<p>jamovi’s contingency-table analysis can display observed counts and row, column, or total percentages. Select the percentage that answers the question and check the orientation of the table. <span class="citation" data-cites="jamoviContingency">[<a href="references.html#ref-jamoviContingency" role="doc-biblioref">22</a>]</span></p>
+</section>
+</section>
+<section id="mean-median-and-mode" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="mean-median-and-mode"><span class="header-section-number">7.4</span> Mean, median, and mode</h2>
+<p>The arithmetic mean is the sum of values divided by their number. The median is the middle ordered value, using the mean of the two middle values when the sample size is even. The mode identifies the most frequent value or category. These summaries describe different aspects of a distribution. <span class="citation" data-cites="NISTLocation">[<a href="references.html#ref-NISTLocation" role="doc-biblioref">23</a>]</span></p>
+<p>Consider invented waiting times, in minutes:</p>
+<p><span class="math display">
+2,\ 3,\ 3,\ 4,\ 4,\ 5,\ 6,\ 7,\ 8,\ 18.
+</span></p>
+<p>The sum is 60, so the mean is 6.0 minutes. The middle values are 4 and 5, so the median is 4.5 minutes. The long wait of 18 minutes pulls the mean upward. Neither result is a calculation error; they answer different descriptive questions about the same observations.</p>
+<p>If the concern is a typical person’s waiting experience, the median and spread of the central values may be helpful. If the concern is total waiting time divided by the number of attendees, the mean has a direct role. Select the summary according to the question and show enough of the distribution to avoid concealing the long waits.</p>
+</section>
+<section id="standard-deviation-variance-range-and-iqr" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="standard-deviation-variance-range-and-iqr"><span class="header-section-number">7.5</span> Standard deviation, variance, range, and IQR</h2>
+<p>The sample standard deviation describes dispersion around the mean and retains the original measurement unit. Variance is its square. The range spans the minimum and maximum. The interquartile range is the 75th percentile minus the 25th percentile and describes the width of the middle half of the distribution. <span class="citation" data-cites="NISTScale">[<a href="references.html#ref-NISTScale" role="doc-biblioref">21</a>]</span></p>
+<p>For the waiting-time example, the sample SD is 4.62 minutes. The minimum is 2 and the maximum is 18 minutes. Using the interpolation convention in the accompanying verification script, the first and third quartiles are 3.25 and 6.75 minutes, giving an IQR of 3.50 minutes.</p>
+<p>Quartile algorithms can give different values in a small sample; report the method when exact reproduction matters. R documents several quantile definitions, with type 7 used by default in its <code>quantile()</code> function. <span class="citation" data-cites="RQuantile">[<a href="references.html#ref-RQuantile" role="doc-biblioref">24</a>]</span></p>
+<p>When writing a median summary, give the two quartile limits rather than an ambiguous single “IQR” number if readers need to see the central interval: “median 4.5 minutes, first–third quartile 3.25–6.75.” For a mean summary, write “mean 6.0 minutes (SD 4.6).” Preserve the distinction between a measure of location and a measure of spread.</p>
+</section>
+<section id="standard-deviation-is-not-standard-error" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="standard-deviation-is-not-standard-error"><span class="header-section-number">7.6</span> Standard deviation is not standard error</h2>
+<p>The SD describes variation among individual observations. The SE describes the sampling variability of an estimate. For a mean of independent observations, the estimated SE is</p>
+<p><span class="math display">
+SE(\bar x)=\frac{s}{\sqrt n}.
+</span></p>
+<p>The SD and sample size determine the standard error used in the conventional confidence interval for a mean. <span class="citation" data-cites="NISTCI">[<a href="references.html#ref-NISTCI" role="doc-biblioref">25</a>]</span></p>
+<p>In an invented sample with SD 18 mmHg and 100 observations, the SE of the mean is 1.8 mmHg. This does not mean that individual blood pressures differ from the mean by only 1.8 mmHg. The smaller number describes uncertainty about the estimated mean, not the variation among people.</p>
+<p>Increasing sample size can reduce the SE while the observed individual variation remains similar. When the purpose is to describe participants, report the SD. When the purpose is to estimate a population mean, report the mean with an appropriate confidence interval.</p>
+</section>
+<section id="confidence-intervals-for-descriptive-estimates" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="confidence-intervals-for-descriptive-estimates"><span class="header-section-number">7.7</span> Confidence intervals for descriptive estimates</h2>
+<p>A confidence interval adds an uncertainty summary to a point estimate. For a mean, a conventional interval uses the estimated SE and a t-distribution critical value under its assumptions. For a proportion, several interval methods exist, and the method should be identified rather than assumed from the percentage alone. An exact binomial interval is one documented option. <span class="citation" data-cites="RBinom">[<a href="references.html#ref-RBinom" role="doc-biblioref">26</a>]</span></p>
+<p>For an invented mean of 136 mmHg, SD 18 mmHg, and 100 independent observations, the conventional two-sided 95% t interval is 132.43 to 139.57 mmHg. This example concerns uncertainty in the mean. It is not an interval describing where 95% of individual blood pressure values lie.</p>
+<p>Interpret confidence as a property of the interval-generating procedure under its assumptions. In repeated sampling, a 95% procedure covers the population parameter in approximately 95% of repetitions. It is not a frequentist probability of 95% that the fixed parameter lies within this particular realised interval. The next chapter develops this interpretation in more detail. <span class="citation" data-cites="NISTCI">[<a href="references.html#ref-NISTCI" role="doc-biblioref">25</a>]</span></p>
+</section>
+<section id="choose-summaries-according-to-the-variable-and-question" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="choose-summaries-according-to-the-variable-and-question"><span class="header-section-number">7.8</span> Choose summaries according to the variable and question</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 29%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Situation</th>
+<th style="text-align: left;">Useful summary</th>
+<th style="text-align: left;">What else should be shown</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Nominal or binary variable</td>
+<td style="text-align: left;">Count and percentage</td>
+<td style="text-align: left;">Denominator, missing values, and category definition</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ordinal category</td>
+<td style="text-align: left;">Counts in the defined order</td>
+<td style="text-align: left;">Category labels and missing values</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Approximately symmetric quantitative distribution</td>
+<td style="text-align: left;">Mean and SD</td>
+<td style="text-align: left;">Units, sample size, and a graph</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skewed distribution or notable long tail</td>
+<td style="text-align: left;">Median and quartile limits; mean when relevant to the estimand</td>
+<td style="text-align: left;">Range or graph showing the tail</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Count outcome with many zeros</td>
+<td style="text-align: left;">Counts or distributional summary suited to the objective</td>
+<td style="text-align: left;">Frequency of zero, range, and possible overdispersion</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Population estimate</td>
+<td style="text-align: left;">Point estimate with CI</td>
+<td style="text-align: left;">Interval method and sampling/design assumptions</td>
+</tr>
+</tbody>
+</table>
+<p>These are starting choices, not automatic rules. A skewed variable can still have a mean as the target quantity. An ordinal scale may have a validated scoring convention that needs to be described. Explain why a summary answers the particular question.</p>
+<p>jamovi’s Descriptives analysis provides counts, missingness, location and spread summaries, and graphical options. Select the required quantities deliberately rather than transferring the entire output into a manuscript. <span class="citation" data-cites="jamoviDesc">[<a href="references.html#ref-jamoviDesc" role="doc-biblioref">27</a>]</span></p>
+</section>
+<section id="describe-groups-without-overinterpreting-them" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="describe-groups-without-overinterpreting-them"><span class="header-section-number">7.9</span> Describe groups without overinterpreting them</h2>
+<p>Group-specific summaries show the observed distributions and denominators. They do not alone establish whether an intervention caused a difference or whether a population contrast is estimated precisely. Those judgments require the design and inferential method.</p>
+<p>For an illustrative table, display the group label, number with an observed value, mean with SD or median with quartile limits, and measurement unit. Use the same summary convention across groups unless a difference is explained. Describe missing values separately instead of embedding them in the denominator silently.</p>
+</section>
+<section id="reporting-example" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="reporting-example"><span class="header-section-number">7.10</span> Reporting example</h2>
+<div class="book-panel book-reporting">
+<p>For the invented waiting times: “Waiting time was available for 10 observations. The median was 4.5 minutes (first–third quartile 3.25–6.75), with values ranging from 2 to 18 minutes. The mean was 6.0 minutes (SD 4.6), reflecting the influence of the longest wait.”</p>
+</div>
+<p>This statement gives the availability, location, spread, unit, and reason for displaying both mean and median. A report would usually choose the summaries most relevant to its objective rather than repeat all available numbers.</p>
+</section>
+<section id="common-errors" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="common-errors"><span class="header-section-number">7.11</span> Common errors</h2>
+<p>Avoid giving percentages without denominators, using SEM to describe individual variation, averaging category codes, reporting identical denominators despite variable-specific missingness, or treating a confidence interval for the mean as the range of individual measurements. Check that each number has the intended role before interpreting it.</p>
+</section>
+<section id="hands-on-descriptive-statistics" class="level2" data-number="7.12">
+<h2 data-number="7.12" class="anchored" data-anchor-id="hands-on-descriptive-statistics"><span class="header-section-number">7.12</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add descriptive analysis, variable summaries, dataset, and annotated screenshots here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="7.13">
+<h2 data-number="7.13" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">7.13</span> Review questions</h2>
+<ol type="1">
+<li>In the waiting-time example, why are the mean and median different?</li>
+<li>With SD 18 and n = 100, what does SE = 1.8 describe?</li>
+<li>If 20 of 200 event statuses are unknown, what denominator is used for the proportion among known statuses?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="7.14">
+<h2 data-number="7.14" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">7.14</span> Answers and reasoning</h2>
+<ol type="1">
+<li>The high value of 18 increases the arithmetic mean more than it changes the middle ordered values.</li>
+<li>It estimates sampling variability of the mean under the independent-observation calculation, not variation among individual observations.</li>
+<li>The denominator is 180. State the 20 unknown statuses separately and explain any alternative analytical assumption.</li>
+</ol>
+</section>
 
 
-</section>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-jamoviContingency" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. Contingency tables: contTables. <a href="https://docs.jamovi.org/jmv/jmv_contTables.html">https://docs.jamovi.org/jmv/jmv_contTables.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-NISTLocation" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">NIST/SEMATECH. Measures of location. <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda351.htm">https://www.itl.nist.gov/div898/handbook/eda/section3/eda351.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-NISTScale" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">NIST/SEMATECH. Measures of scale. <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda356.htm">https://www.itl.nist.gov/div898/handbook/eda/section3/eda356.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RQuantile" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">R Core Team. Sample quantiles. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/quantile.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/quantile.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-NISTCI" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">NIST/SEMATECH. Confidence limits for the mean. <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm">https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RBinom" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">R Core Team. Exact binomial test. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/binom.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/binom.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-jamoviDesc" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. Descriptives: descriptives. <a href="https://docs.jamovi.org/jmv/jmv_descriptives.html">https://docs.jamovi.org/jmv/jmv_descriptives.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -745,13 +1015,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./descriptive.html" class="pagination-link" aria-label="Descriptive statistics and visualization">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Descriptive statistics and visualization</span>
+      <a href="./descriptive.html" class="pagination-link" aria-label="Descriptive Statistics and Graphs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Descriptive Statistics and Graphs</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./graphical-presentation.html" class="pagination-link" aria-label="Graphical Presentation">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -760,4 +1030,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -1,7 +1,132 @@
----
-title: "Descriptive Statistics"
----
+# Descriptive Statistics {#sec-descriptive-statistics}
 
-### Frequencies and Proportions
-### Mean, Median, Standard Deviation, IQR
-### Confidence Intervals
+## Learning objectives
+
+After this chapter, the reader should be able to report counts with denominators, select appropriate measures of central value and spread, distinguish standard deviation from standard error, and interpret a descriptive estimate with its uncertainty.
+
+## Describe the observed sample first
+
+Start with the number of eligible observations, the number included in the analysis, and the availability of key variables. Then describe variables using summaries that retain their meaning and units. Description is a check on the data and a basis for later method selection.
+
+Suppose 200 participants are enrolled and 180 provide a follow-up measurement. The enrolled sample and the observed follow-up sample are different denominators. A report should state which denominator is used for each summary, rather than placing 200 at the top of every table column.
+
+## Frequencies, proportions, and percentages
+
+A frequency is a count. A proportion divides a count by a defined denominator. A percentage multiplies a proportion by 100. In an invented example, 40 participants with an event among 200 participants with known event status gives
+
+$$
+\hat p=\frac{40}{200}=0.20=20\%.
+$$
+
+Write "40 of 200 participants (20.0%)" rather than "20%" alone. The count and denominator indicate how much information supports the proportion. The same percentage based on 5 observations and 5,000 observations has very different estimation precision.
+
+Distinguish percentages of all eligible participants from percentages among those with an observed value. If 40 events are recorded among 180 participants with known status and 20 statuses are unknown, the observed proportion is 40/180, or 22.2%. Reporting 40/200 would require an explicit assumption about the unknown statuses; it is not a neutral alternative.
+
+### Row and column percentages
+
+In a table comparing event status by group, a row percentage can answer "What fraction of group A had an event?" A column percentage can answer "What fraction of participants with an event belonged to group A?" These are different conditional descriptions. State the denominator in the table title or note.
+
+jamovi's contingency-table analysis can display observed counts and row, column, or total percentages. Select the percentage that answers the question and check the orientation of the table. [@jamoviContingency]
+
+## Mean, median, and mode
+
+The arithmetic mean is the sum of values divided by their number. The median is the middle ordered value, using the mean of the two middle values when the sample size is even. The mode identifies the most frequent value or category. These summaries describe different aspects of a distribution. [@NISTLocation]
+
+Consider invented waiting times, in minutes:
+
+$$
+2,\ 3,\ 3,\ 4,\ 4,\ 5,\ 6,\ 7,\ 8,\ 18.
+$$
+
+The sum is 60, so the mean is 6.0 minutes. The middle values are 4 and 5, so the median is 4.5 minutes. The long wait of 18 minutes pulls the mean upward. Neither result is a calculation error; they answer different descriptive questions about the same observations.
+
+If the concern is a typical person's waiting experience, the median and spread of the central values may be helpful. If the concern is total waiting time divided by the number of attendees, the mean has a direct role. Select the summary according to the question and show enough of the distribution to avoid concealing the long waits.
+
+## Standard deviation, variance, range, and IQR
+
+The sample standard deviation describes dispersion around the mean and retains the original measurement unit. Variance is its square. The range spans the minimum and maximum. The interquartile range is the 75th percentile minus the 25th percentile and describes the width of the middle half of the distribution. [@NISTScale]
+
+For the waiting-time example, the sample SD is 4.62 minutes. The minimum is 2 and the maximum is 18 minutes. Using the interpolation convention in the accompanying verification script, the first and third quartiles are 3.25 and 6.75 minutes, giving an IQR of 3.50 minutes.
+
+Quartile algorithms can give different values in a small sample; report the method when exact reproduction matters. R documents several quantile definitions, with type 7 used by default in its `quantile()` function. [@RQuantile]
+
+When writing a median summary, give the two quartile limits rather than an ambiguous single "IQR" number if readers need to see the central interval: "median 4.5 minutes, first–third quartile 3.25–6.75." For a mean summary, write "mean 6.0 minutes (SD 4.6)." Preserve the distinction between a measure of location and a measure of spread.
+
+## Standard deviation is not standard error
+
+The SD describes variation among individual observations. The SE describes the sampling variability of an estimate. For a mean of independent observations, the estimated SE is
+
+$$
+SE(\bar x)=\frac{s}{\sqrt n}.
+$$
+
+The SD and sample size determine the standard error used in the conventional confidence interval for a mean. [@NISTCI]
+
+In an invented sample with SD 18 mmHg and 100 observations, the SE of the mean is 1.8 mmHg. This does not mean that individual blood pressures differ from the mean by only 1.8 mmHg. The smaller number describes uncertainty about the estimated mean, not the variation among people.
+
+Increasing sample size can reduce the SE while the observed individual variation remains similar. When the purpose is to describe participants, report the SD. When the purpose is to estimate a population mean, report the mean with an appropriate confidence interval.
+
+## Confidence intervals for descriptive estimates
+
+A confidence interval adds an uncertainty summary to a point estimate. For a mean, a conventional interval uses the estimated SE and a t-distribution critical value under its assumptions. For a proportion, several interval methods exist, and the method should be identified rather than assumed from the percentage alone. An exact binomial interval is one documented option. [@RBinom]
+
+For an invented mean of 136 mmHg, SD 18 mmHg, and 100 independent observations, the conventional two-sided 95% t interval is 132.43 to 139.57 mmHg. This example concerns uncertainty in the mean. It is not an interval describing where 95% of individual blood pressure values lie.
+
+Interpret confidence as a property of the interval-generating procedure under its assumptions. In repeated sampling, a 95% procedure covers the population parameter in approximately 95% of repetitions. It is not a frequentist probability of 95% that the fixed parameter lies within this particular realised interval. The next chapter develops this interpretation in more detail. [@NISTCI]
+
+## Choose summaries according to the variable and question
+
+| Situation | Useful summary | What else should be shown |
+|:----------|:---------------|:--------------------------|
+| Nominal or binary variable | Count and percentage | Denominator, missing values, and category definition |
+| Ordinal category | Counts in the defined order | Category labels and missing values |
+| Approximately symmetric quantitative distribution | Mean and SD | Units, sample size, and a graph |
+| Skewed distribution or notable long tail | Median and quartile limits; mean when relevant to the estimand | Range or graph showing the tail |
+| Count outcome with many zeros | Counts or distributional summary suited to the objective | Frequency of zero, range, and possible overdispersion |
+| Population estimate | Point estimate with CI | Interval method and sampling/design assumptions |
+
+These are starting choices, not automatic rules. A skewed variable can still have a mean as the target quantity. An ordinal scale may have a validated scoring convention that needs to be described. Explain why a summary answers the particular question.
+
+jamovi's Descriptives analysis provides counts, missingness, location and spread summaries, and graphical options. Select the required quantities deliberately rather than transferring the entire output into a manuscript. [@jamoviDesc]
+
+## Describe groups without overinterpreting them
+
+Group-specific summaries show the observed distributions and denominators. They do not alone establish whether an intervention caused a difference or whether a population contrast is estimated precisely. Those judgments require the design and inferential method.
+
+For an illustrative table, display the group label, number with an observed value, mean with SD or median with quartile limits, and measurement unit. Use the same summary convention across groups unless a difference is explained. Describe missing values separately instead of embedding them in the denominator silently.
+
+## Reporting example
+
+For the invented waiting times: "Waiting time was available for 10 observations. The median was 4.5 minutes (first–third quartile 3.25–6.75), with values ranging from 2 to 18 minutes. The mean was 6.0 minutes (SD 4.6), reflecting the influence of the longest wait."
+
+This statement gives the availability, location, spread, unit, and reason for displaying both mean and median. A report would usually choose the summaries most relevant to its objective rather than repeat all available numbers.
+
+## Common errors
+
+Avoid giving percentages without denominators, using SEM to describe individual variation, averaging category codes, reporting identical denominators despite variable-specific missingness, or treating a confidence interval for the mean as the range of individual measurements. Check that each number has the intended role before interpreting it.
+
+## Hands-on {#hands-on-descriptive-statistics}
+
+::: {.callout-note .hands-on-note title="jamovi workspace" icon=false}
+<!-- Author: add descriptive analysis, variable summaries, dataset, and annotated screenshots here. -->
+:::
+
+::: {.review-questions}
+
+## Review questions
+
+1. In the waiting-time example, why are the mean and median different?
+2. With SD 18 and n = 100, what does SE = 1.8 describe?
+3. If 20 of 200 event statuses are unknown, what denominator is used for the proportion among known statuses?
+
+:::
+
+::: {.review-answers}
+
+## Answers and reasoning
+
+1. The high value of 18 increases the arithmetic mean more than it changes the middle ordered values.
+2. It estimates sampling variability of the mean under the independent-observation calculation, not variation among individual observations.
+3. The denominator is 180. State the 20 unknown statuses separately and explain any alternative analytical assumption.
+
+:::

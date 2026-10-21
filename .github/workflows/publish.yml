@@ -1,0 +1,68 @@
+name: Validate and Publish Quarto Book
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: book-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/requirements-validation.txt
+      - name: Install validation dependencies
+        run: python -m pip install -r scripts/requirements-validation.txt
+      - name: Check sources and numerical illustrations
+        run: python scripts/validate_project.py
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: '1.8.27'
+          tinytex: true
+      - name: Remove previous generated output
+        run: rm -rf docs .quarto
+      - name: Render HTML and PDF from the same revision
+        run: quarto render --to all --profile portable
+      - name: Check chapter links, citations, and PDF download
+        run: python scripts/check_render.py
+      - name: Save the reviewable book
+        uses: actions/upload-artifact@v4
+        with:
+          name: jamovi-book-review-${{ github.sha }}
+          path: |
+            docs/
+            guide/validation-results.json
+            guide/render-validation.json
+          retention-days: 14
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: docs
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-885b2cfb8d18508768e9bf8f9ab5c5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
-
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -99,12 +118,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./jamovi-book-volume-1-review.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +163,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +204,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +227,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +262,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +291,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +326,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -305,15 +342,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
+   
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">1.1</span> Learning objectives</a></li>
+  <li><a href="#start-with-the-question" id="toc-start-with-the-question" class="nav-link" data-scroll-target="#start-with-the-question"><span class="header-section-number">1.2</span> Start with the question</a></li>
+  <li><a href="#define-the-population-sample-and-target-quantity" id="toc-define-the-population-sample-and-target-quantity" class="nav-link" data-scroll-target="#define-the-population-sample-and-target-quantity"><span class="header-section-number">1.3</span> Define the population, sample, and target quantity</a></li>
+  <li><a href="#understand-the-study-design" id="toc-understand-the-study-design" class="nav-link" data-scroll-target="#understand-the-study-design"><span class="header-section-number">1.4</span> Understand the study design</a></li>
+  <li><a href="#identify-the-unit-of-observation" id="toc-identify-the-unit-of-observation" class="nav-link" data-scroll-target="#identify-the-unit-of-observation"><span class="header-section-number">1.5</span> Identify the unit of observation</a></li>
+  <li><a href="#types-of-data-and-measurement-scales" id="toc-types-of-data-and-measurement-scales" class="nav-link" data-scroll-target="#types-of-data-and-measurement-scales"><span class="header-section-number">1.6</span> Types of data and measurement scales</a></li>
+  <li><a href="#sampling-uncertainty-and-bias" id="toc-sampling-uncertainty-and-bias" class="nav-link" data-scroll-target="#sampling-uncertainty-and-bias"><span class="header-section-number">1.7</span> Sampling, uncertainty, and bias</a></li>
+  <li><a href="#establish-an-analysis-workflow" id="toc-establish-an-analysis-workflow" class="nav-link" data-scroll-target="#establish-an-analysis-workflow"><span class="header-section-number">1.8</span> Establish an analysis workflow</a></li>
+  <li><a href="#illustrative-analysis-specification" id="toc-illustrative-analysis-specification" class="nav-link" data-scroll-target="#illustrative-analysis-specification"><span class="header-section-number">1.9</span> Illustrative analysis specification</a></li>
+  <li><a href="#hands-on-role" id="toc-hands-on-role" class="nav-link" data-scroll-target="#hands-on-role"><span class="header-section-number">1.10</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">1.11</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">1.12</span> Answers and reasoning</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./foundations.html">Foundations</a></li><li class="breadcrumb-item"><a href="./role.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Role of Statistics in Health Research</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Role of Statistics in Health Research</span></h1>
+<h1 class="title"><span id="sec-role" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Role of Statistics in Health Research</span></span></h1>
 </div>
 
 
@@ -330,17 +384,260 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="types-of-data-and-measurement-scales" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="types-of-data-and-measurement-scales"><span class="header-section-number">1.0.1</span> Types of Data and Measurement Scales</h3>
+<section id="learning-objectives" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1.1</span> Learning objectives</h2>
+<div class="book-panel book-objectives">
+<p>After this chapter, the reader should be able to translate a health question into an analysis objective; identify the population and unit of observation; distinguish common variable types; recognise independent and paired data; and separate sampling uncertainty from problems in study conduct.</p>
+</div>
 </section>
-<section id="research-designs-in-brief" class="level3" data-number="1.0.2">
-<h3 data-number="1.0.2" class="anchored" data-anchor-id="research-designs-in-brief"><span class="header-section-number">1.0.2</span> Research Designs in Brief</h3>
+<section id="start-with-the-question" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="start-with-the-question"><span class="header-section-number">1.2</span> Start with the question</h2>
+<p>Consider three questions about an outpatient clinic: What proportion of attendees have elevated blood pressure? Does mean blood pressure differ between two treatment groups? Does blood pressure change within a patient after follow-up? These questions require different data structures and target quantities, even though all involve the same measurement.</p>
+<p>Write the question as a sentence before naming a test. Specify who is included, what is measured, which comparison is relevant, and when the measurement occurs. For example: “Among eligible adults attending the clinic during the study period, what is the mean difference in systolic blood pressure between group A and group B at three months?” This sentence defines the population, outcome, groups, time point, and direction of the intended comparison.</p>
+<p>The <strong>analysis objective</strong> describes what the analysis should do. Description summarises observed values. Estimation quantifies a population quantity. Comparison estimates a contrast between groups. Association examines how variables vary together. Prediction estimates an outcome for an individual or future observation. A study can contain more than one objective, but each analysis should have a defined role.</p>
 </section>
-<section id="statistical-workflow-in-jamovi" class="level3" data-number="1.0.3">
-<h3 data-number="1.0.3" class="anchored" data-anchor-id="statistical-workflow-in-jamovi"><span class="header-section-number">1.0.3</span> Statistical Workflow in Jamovi</h3>
+<section id="define-the-population-sample-and-target-quantity" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="define-the-population-sample-and-target-quantity"><span class="header-section-number">1.3</span> Define the population, sample, and target quantity</h2>
+<p>The population is the set of people or observations to which the question refers. The sample is the set actually observed. A clinic sample and a community population are different targets: attendance may depend on illness, access, referral, or willingness to seek care. State the population to which the findings are intended to apply, rather than allowing the software’s sample size to define it.</p>
+<p>A parameter describes a population quantity, such as a mean or proportion. A statistic is its sample-based counterpart. The <strong>estimand</strong> is the precise quantity the study seeks to estimate. “Difference in blood pressure” is incomplete; “mean follow-up blood pressure in A minus that in B among eligible adults” is more precise. A positive or negative value then has a defined meaning.</p>
+<p>Record the scale of the estimand. A difference uses the original measurement unit. A proportion describes a fraction of a defined denominator. A ratio compares two quantities on a multiplicative scale. Each requires a different reporting sentence, even when the underlying research concern is similar.</p>
+</section>
+<section id="understand-the-study-design" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="understand-the-study-design"><span class="header-section-number">1.4</span> Understand the study design</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 32%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Design</th>
+<th style="text-align: left;">What is observed</th>
+<th style="text-align: left;">Basic analytical implication</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cross-sectional study</td>
+<td style="text-align: left;">Variables measured within a specified period</td>
+<td style="text-align: left;">Describe prevalence and concurrent associations; clarify the sampling frame</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cohort study</td>
+<td style="text-align: left;">Outcomes observed over follow-up in defined groups</td>
+<td style="text-align: left;">Specify eligibility, follow-up, and event ascertainment before interpreting risk</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Case-control study</td>
+<td style="text-align: left;">Participants selected according to outcome status</td>
+<td style="text-align: left;">The sampled case fraction is not the population risk; an odds ratio may be appropriate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Randomised trial</td>
+<td style="text-align: left;">Intervention assignment is randomised</td>
+<td style="text-align: left;">Preserve the planned comparison and account for the randomisation unit</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Before–after study</td>
+<td style="text-align: left;">The same individuals measured at two times</td>
+<td style="text-align: left;">Measurements are paired; a change estimate requires complete pairs or another specified method</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Clustered study</td>
+<td style="text-align: left;">People grouped within facilities, households, or other clusters</td>
+<td style="text-align: left;">Standard independent-observation methods may need extension</td>
+</tr>
+</tbody>
+</table>
+<p>This table is an orientation to data structure, not a substitute for a design-specific analysis plan. STROBE identifies the observational designs covered by its statement and the information needed to describe their conduct and analysis. <span class="citation" data-cites="STROBE">[<a href="references.html#ref-STROBE" role="doc-biblioref">3</a>]</span></p>
+<p>Random assignment and random sampling answer different concerns. Assignment determines how study groups are formed; sampling determines how observations enter the study. A trial can randomise treatment among a selected clinic population without representing every person in the wider community. Keep the study’s internal comparison and its intended generalisation as separate judgments.</p>
+</section>
+<section id="identify-the-unit-of-observation" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="identify-the-unit-of-observation"><span class="header-section-number">1.5</span> Identify the unit of observation</h2>
+<p>The unit of observation is the entity represented by one analytical record. It may be a patient, hospital admission, visit, household, or facility. It is not automatically a person. If a patient has several admissions, counting each admission creates a study of admissions unless the analysis explicitly accounts for repeated records from the same person.</p>
+<p>For a simple independent analysis in this volume, one row usually represents one participant and each participant contributes once to the relevant comparison. For a paired analysis, the same participant contributes measurements at two times or a defined matched pair contributes two related observations. More extensive repeated or clustered structures require methods developed in later volumes.</p>
+<p>Before analysis, complete the sentence: “One row represents …” Then count unique units as well as rows. An accidental duplicate row and a valid repeat visit can look similar in a spreadsheet, but they have different meanings and should not be handled by the same deletion rule.</p>
+</section>
+<section id="types-of-data-and-measurement-scales" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="types-of-data-and-measurement-scales"><span class="header-section-number">1.6</span> Types of data and measurement scales</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 24%">
+<col style="width: 27%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable type</th>
+<th style="text-align: left;">Meaning</th>
+<th style="text-align: left;">Illustrative health variable</th>
+<th style="text-align: left;">Suitable initial summary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Nominal</td>
+<td style="text-align: left;">Categories without an intrinsic order</td>
+<td style="text-align: left;">Blood group</td>
+<td style="text-align: left;">Counts and proportions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Binary</td>
+<td style="text-align: left;">A nominal variable with two levels</td>
+<td style="text-align: left;">Event present or absent</td>
+<td style="text-align: left;">Event count and denominator</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ordinal</td>
+<td style="text-align: left;">Ordered categories without a guaranteed equal spacing</td>
+<td style="text-align: left;">Mild, moderate, severe</td>
+<td style="text-align: left;">Ordered counts and proportions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: left;">Quantitative measurement on a meaningful numerical scale</td>
+<td style="text-align: left;">Systolic blood pressure in mmHg</td>
+<td style="text-align: left;">Distribution, central value, and spread</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Count</td>
+<td style="text-align: left;">Number of occurrences</td>
+<td style="text-align: left;">Number of admissions</td>
+<td style="text-align: left;">Distribution, zeros, range, and an appropriate count summary</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Identifier</td>
+<td style="text-align: left;">A label linking records to a unit</td>
+<td style="text-align: left;">Study participant code</td>
+<td style="text-align: left;">Uniqueness and linkage checks</td>
+</tr>
+</tbody>
+</table>
+<p>In jamovi, measure type and storage type are separate properties. An integer column can contain a continuous measurement, an ordered score, a category code, or an identifier. Setting a column as nominal, ordinal, continuous, or ID determines how it is treated in analyses; a numerical code alone does not establish its measurement scale. <span class="citation" data-cites="jamoviData">[<a href="references.html#ref-jamoviData" role="doc-biblioref">4</a>]</span></p>
+<p>Age recorded in years is quantitative even when stored as whole numbers. A code of 1 for a blood group is a label, not a quantity to average. A severity category coded 1, 2, and 3 is ordered, but the numerical distance between categories need not represent equal changes in severity. Preserve that distinction when choosing a method.</p>
+<p>The role of a variable can change across questions. Age may be the outcome in a descriptive analysis and a predictor in a regression. Its measurement type remains the same; its analytical role changes. Define both properties in the data dictionary.</p>
+<section id="interval-and-ratio-measurement-scales" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="interval-and-ratio-measurement-scales"><span class="header-section-number">1.6.1</span> Interval and ratio measurement scales</h3>
+<p>An interval scale has meaningful equal differences but an arbitrary zero. Celsius temperature is a familiar example: a ten-degree difference has meaning, but 20°C is not twice the temperature of 10°C. A ratio scale also has a meaningful zero, allowing ratios such as one measured length being twice another. The distinction concerns the measurement definition, not how many decimal places are stored. <span class="citation" data-cites="PSUScales">[<a href="references.html#ref-PSUScales" role="doc-biblioref">5</a>]</span></p>
+<p>Nominal, ordinal, interval, and ratio are the classical scale categories. Quantitative data can also be discrete, such as a count, or treated as continuous, such as a length measurement. These classifications answer different questions: ordering and meaningful arithmetic on one hand, and the set of possible numerical values on the other.</p>
+</section>
+</section>
+<section id="sampling-uncertainty-and-bias" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="sampling-uncertainty-and-bias"><span class="header-section-number">1.7</span> Sampling, uncertainty, and bias</h2>
+<p>Sampling variability means that repeated samples could give different estimates. A standard error or confidence interval addresses this variation under stated assumptions. A systematic measurement error, selective inclusion, or unaddressed confounding is a different problem. A narrow interval around a biased estimate remains misleading.</p>
+<p>Use a simple thought experiment. Suppose a weighing scale adds two kilograms to every reading. Collecting many measurements can make the sample mean very precise, while the systematic two-kilogram error remains. The remedy is to check the measurement process; merely increasing the sample size does not correct the instrument.</p>
+<p>Similarly, a large clinic dataset may describe clinic attendees well while failing to represent people who never attend. In the report, distinguish the uncertainty quantified by the statistical method from limitations in how the observations were obtained. Confidence intervals are conditional on the analysis assumptions and do not automatically include every source of uncertainty. <span class="citation" data-cites="Greenland2016">[<a href="references.html#ref-Greenland2016" role="doc-biblioref">6</a>]</span></p>
+</section>
+<section id="establish-an-analysis-workflow" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="establish-an-analysis-workflow"><span class="header-section-number">1.8</span> Establish an analysis workflow</h2>
+<p>Start by specifying the question and design. Create a data dictionary and preserve the source file. Check records, coding, units, missingness, and eligibility. Describe the observed data and inspect relevant graphs. Select the estimand and method, examine assumptions, then interpret the estimate and its uncertainty. Finally, write the result and retain the analysis file and decision log.</p>
+<p>The workflow should leave an audit trail. Record a change because it is justified by a coding definition or verified source, not because it improves a p-value. Record an exclusion because it follows the study rules, not because an observation is inconvenient. A documented decision can later be examined and revised; an undocumented change is difficult to reconstruct.</p>
+</section>
+<section id="illustrative-analysis-specification" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="illustrative-analysis-specification"><span class="header-section-number">1.9</span> Illustrative analysis specification</h2>
+<p>The following specification is invented for teaching:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 71%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Question</td>
+<td style="text-align: left;">Compare mean systolic blood pressure at three months between A and B</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Population</td>
+<td style="text-align: left;">Eligible adults included in the study during its recruitment period</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unit</td>
+<td style="text-align: left;">One participant</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Outcome</td>
+<td style="text-align: left;">Follow-up systolic blood pressure, mmHg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Groups</td>
+<td style="text-align: left;">A and B; each participant belongs to one group</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Contrast</td>
+<td style="text-align: left;">A minus B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Main result</td>
+<td style="text-align: left;">Mean difference with a 95% confidence interval</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Checks</td>
+<td style="text-align: left;">Group membership, outcome availability, independence, distribution, and unusual observations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation boundary</td>
+<td style="text-align: left;">The strength of any causal claim depends on the design and conduct</td>
+</tr>
+</tbody>
+</table>
+<p>This specification guides the later analysis. It makes clear why the chapter on two independent groups is relevant and why a paired test would answer a different question.</p>
+</section>
+<section id="hands-on-role" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="hands-on-role"><span class="header-section-number">1.10</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add the chapter dataset, saved jamovi analysis, procedure, and screenshots here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">1.11</span> Review questions</h2>
+<ol type="1">
+<li>A dataset contains 300 visits from 120 patients. What must be defined before calling its sample size 300?</li>
+<li>A severity variable is coded 1, 2, and 3. What information is needed before treating it as continuous?</li>
+<li>A confidence interval becomes narrower after increasing sample size. Which study problems can still remain?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">1.12</span> Answers and reasoning</h2>
+<ol type="1">
+<li>Define the analytical unit and whether repeated visits from the same patient are relevant and dependent. A study of patients and a study of visits have different denominators.</li>
+<li>Establish what the categories mean and whether the scale has a justified quantitative interpretation. Numerical codes do not establish equal spacing.</li>
+<li>Selection, measurement, and other systematic problems may remain. Greater precision does not establish representativeness or correct a biased measurement process.</li>
+</ol>
+</section>
 
 
-</section>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-STROBE" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">EQUATOR Network. STROBE: Guidelines for reporting observational studies. <a href="https://www.equator-network.org/reporting-guidelines/strobe/">https://www.equator-network.org/reporting-guidelines/strobe/</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-jamoviData" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. Data variables. <a href="https://docs.jamovi.org/data/data_1_overview_data_variables.html">https://docs.jamovi.org/data/data_1_overview_data_variables.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-PSUScales" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Pennsylvania State University. What is data: Measurement scales. <a href="https://online.stat.psu.edu/stat857/node/31/">https://online.stat.psu.edu/stat857/node/31/</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-Greenland2016" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Greenland S, Senn SJ, Rothman KJ, Carlin JB, Poole C, Goodman SN, et al. Statistical tests, <span>P</span> values, confidence intervals, and power: A guide to misinterpretations. European Journal of Epidemiology. 2016;31:337–350. doi: <a href="https://doi.org/10.1007/s10654-016-0149-3">10.1007/s10654-016-0149-3</a> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4877414/">https://pmc.ncbi.nlm.nih.gov/articles/PMC4877414/</a></div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -750,8 +1047,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./getting-started.html" class="pagination-link" aria-label="Getting Started With Jamovi">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./getting-started.html" class="pagination-link" aria-label="Getting Started with jamovi">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -760,4 +1057,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

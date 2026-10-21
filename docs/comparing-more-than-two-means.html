@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Comparing More Than Two Means – Hands-On Data Analysis Using Jamovi</title>
+<title>11&nbsp; Comparing More Than Two Groups – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-885b2cfb8d18508768e9bf8f9ab5c5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,55 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
+<style>html{ scroll-behavior: smooth; }</style>
 
+  <script defer="" src="vendor/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./comparing-more-than-two-means.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Methods</a></li><li class="breadcrumb-item"><a href="./comparing-more-than-two-means.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,12 +161,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./jamovi-book-volume-1-review.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +206,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +247,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +270,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +305,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +334,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +369,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -305,15 +385,36 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
+   
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">11.1</span> Learning objectives</a></li>
+  <li><a href="#define-groups-outcomes-and-independence" id="toc-define-groups-outcomes-and-independence" class="nav-link" data-scroll-target="#define-groups-outcomes-and-independence"><span class="header-section-number">11.2</span> Define groups, outcomes, and independence</a></li>
+  <li><a href="#what-a-one-way-anova-tests" id="toc-what-a-one-way-anova-tests" class="nav-link" data-scroll-target="#what-a-one-way-anova-tests"><span class="header-section-number">11.3</span> What a one-way ANOVA tests</a></li>
+  <li><a href="#why-the-procedure-is-called-analysis-of-variance" id="toc-why-the-procedure-is-called-analysis-of-variance" class="nav-link" data-scroll-target="#why-the-procedure-is-called-analysis-of-variance"><span class="header-section-number">11.4</span> Why the procedure is called analysis of variance</a></li>
+  <li><a href="#assess-the-conventional-assumptions" id="toc-assess-the-conventional-assumptions" class="nav-link" data-scroll-target="#assess-the-conventional-assumptions"><span class="header-section-number">11.5</span> Assess the conventional assumptions</a></li>
+  <li><a href="#welchs-one-way-anova" id="toc-welchs-one-way-anova" class="nav-link" data-scroll-target="#welchs-one-way-anova"><span class="header-section-number">11.6</span> Welch’s one-way ANOVA</a></li>
+  <li><a href="#calculated-three-group-illustration" id="toc-calculated-three-group-illustration" class="nav-link" data-scroll-target="#calculated-three-group-illustration"><span class="header-section-number">11.7</span> Calculated three-group illustration</a></li>
+  <li><a href="#planned-contrasts-and-post-hoc-comparisons" id="toc-planned-contrasts-and-post-hoc-comparisons" class="nav-link" data-scroll-target="#planned-contrasts-and-post-hoc-comparisons"><span class="header-section-number">11.8</span> Planned contrasts and post-hoc comparisons</a></li>
+  <li><a href="#multiple-comparisons-and-error-control" id="toc-multiple-comparisons-and-error-control" class="nav-link" data-scroll-target="#multiple-comparisons-and-error-control"><span class="header-section-number">11.9</span> Multiple comparisons and error control</a></li>
+  <li><a href="#kruskalwallis-test" id="toc-kruskalwallis-test" class="nav-link" data-scroll-target="#kruskalwallis-test"><span class="header-section-number">11.10</span> Kruskal–Wallis test</a></li>
+  <li><a href="#reading-jamovi-output" id="toc-reading-jamovi-output" class="nav-link" data-scroll-target="#reading-jamovi-output"><span class="header-section-number">11.11</span> Reading jamovi output</a></li>
+  <li><a href="#reporting-example" id="toc-reporting-example" class="nav-link" data-scroll-target="#reporting-example"><span class="header-section-number">11.12</span> Reporting example</a></li>
+  <li><a href="#common-errors" id="toc-common-errors" class="nav-link" data-scroll-target="#common-errors"><span class="header-section-number">11.13</span> Common errors</a></li>
+  <li><a href="#hands-on-multiple-groups" id="toc-hands-on-multiple-groups" class="nav-link" data-scroll-target="#hands-on-multiple-groups"><span class="header-section-number">11.14</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">11.15</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">11.16</span> Answers and reasoning</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./comparing-more-than-two-means.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Methods</a></li><li class="breadcrumb-item"><a href="./comparing-more-than-two-means.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></h1>
+<h1 class="title"><span id="sec-multiple-groups" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></h1>
 </div>
 
 
@@ -330,21 +431,190 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Analysis of Variance (ANOVA) is used to compare the means of a continuous outcome across two or more groups. While a Student’s t-test is limited to comparing two groups, ANOVA extends this framework to multiple groups within a single model, allowing simultaneous evaluation of differences without inflating the risk of type I error from repeated testing.</p>
-<p>At its core, Analysis of Variance partitions the total variability in the outcome into variability between groups and variability within groups. The ratio of these components forms the F-statistic, which assesses whether the observed differences in group means are greater than would be expected by chance alone. A statistically significant result indicates that at least one group mean differs from the others, but it does not specify which groups are different.</p>
-<p>The validity of ANOVA depends on key assumptions, including independence of observations, approximate normality of the outcome within groups, and homogeneity of variances across groups. Violations of these assumptions can affect the reliability of results and may require alternative approaches such as non-parametric tests or variance adjustments. When the overall ANOVA is significant, post hoc comparisons are performed to identify specific group differences while controlling for multiple testing.</p>
-<p>In applied medical and public health research, ANOVA is commonly used to compare outcomes across exposure groups, treatment arms, or categorical risk factors with more than two levels. Within Jamovi, ANOVA can be implemented through a graphical interface, providing outputs such as F-statistics, p-values, and effect size measures. Proper interpretation requires attention to both statistical significance and the magnitude of differences, as well as appropriate reporting of post hoc analyses where relevant.</p>
-<section id="one-way-anova" class="level3" data-number="8.0.1">
-<h3 data-number="8.0.1" class="anchored" data-anchor-id="one-way-anova"><span class="header-section-number">8.0.1</span> One-way ANOVA</h3>
+<section id="learning-objectives" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">11.1</span> Learning objectives</h2>
+<div class="book-panel book-objectives">
+<p>After this chapter, the reader should be able to distinguish an overall comparison from a specific contrast, interpret a one-way ANOVA, recognise when unequal variances require a different method, and select compatible follow-up comparisons for mean-based or rank-based analyses.</p>
+</div>
 </section>
-<section id="kruskalwallis-test" class="level3" data-number="8.0.2">
-<h3 data-number="8.0.2" class="anchored" data-anchor-id="kruskalwallis-test"><span class="header-section-number">8.0.2</span> Kruskal–Wallis Test</h3>
+<section id="define-groups-outcomes-and-independence" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="define-groups-outcomes-and-independence"><span class="header-section-number">11.2</span> Define groups, outcomes, and independence</h2>
+<p>Consider mean follow-up blood pressure across three independent groups. The outcome is continuous and the grouping variable has three levels. A one-way analysis considers one grouping factor. The number of groups does not change the need to define eligibility, units, missingness, and the observation structure.</p>
+<p>Three measurements from the same participant are not three independent groups. Similarly, participants within shared facilities can have a clustered structure. These designs require an analysis that recognises their dependence, rather than an independent one-way ANOVA applied to every row.</p>
+<p>Identify whether the objective is an overall assessment of group means or a particular comparison, such as intervention A versus a control. An overall test and a specific contrast answer different questions. Define the contrast when it is the primary scientific objective.</p>
 </section>
-<section id="basic-post-hoc-testing" class="level3" data-number="8.0.3">
-<h3 data-number="8.0.3" class="anchored" data-anchor-id="basic-post-hoc-testing"><span class="header-section-number">8.0.3</span> Basic Post-hoc Testing</h3>
+<section id="what-a-one-way-anova-tests" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="what-a-one-way-anova-tests"><span class="header-section-number">11.3</span> What a one-way ANOVA tests</h2>
+<p>The conventional one-way ANOVA evaluates the null hypothesis</p>
+<p><span class="math display">
+H_0:\mu_1=\mu_2=\cdots=\mu_k.
+</span></p>
+<p>Its alternative is that the means are not all equal. A small omnibus p-value does not mean that every pair differs. It also does not identify the size or direction of any particular contrast.</p>
+<p>The fixed-effects one-way model expresses an observation as a group-specific mean component plus an error. The conventional model assumes independent errors with a common variance and a normal distribution for the relevant inference. <span class="citation" data-cites="NISTANOVA">[<a href="references.html#ref-NISTANOVA" role="doc-biblioref">43</a>]</span></p>
+</section>
+<section id="why-the-procedure-is-called-analysis-of-variance" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="why-the-procedure-is-called-analysis-of-variance"><span class="header-section-number">11.4</span> Why the procedure is called analysis of variance</h2>
+<p>ANOVA compares variation between group means with variation within groups. If the observed groups differ substantially relative to the variation among observations within groups, the resulting F statistic becomes larger under the comparison with the null model.</p>
+<p>The total squared variation is divided into between-group and within-group components. Each is converted to a mean square by dividing by its degrees of freedom. For <span class="math inline">k</span> independent groups and <span class="math inline">N</span> observations,</p>
+<p><span class="math display">
+F=\frac{MS_{\text{between}}}{MS_{\text{within}}},
+\qquad df_1=k-1,\quad df_2=N-k.
+</span></p>
+<p>The F value is a test statistic, not a measurement of a clinical difference. Retain group summaries and the relevant contrast estimates when reporting the result.</p>
+</section>
+<section id="assess-the-conventional-assumptions" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="assess-the-conventional-assumptions"><span class="header-section-number">11.5</span> Assess the conventional assumptions</h2>
+<p>Independence is established by design and data structure. A plot cannot prove it. Inspect whether participants contribute once to the comparison and whether matching or clustering needs to be accounted for.</p>
+<p>Distributional assessment concerns within-group deviations or model residuals, rather than the pooled outcome distribution alone. Three groups with different means can create a non-normal-looking pooled distribution even when the within-group model is reasonable. Examine the appropriate residual or group plots.</p>
+<p>The conventional model also assumes a common variance. Consider the observed spreads, sample sizes, and sensitivity to departures. A non-significant preliminary variance test does not prove that the variances are equal. Choosing a method solely from that preliminary p-value is an incomplete decision rule.</p>
+</section>
+<section id="welchs-one-way-anova" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="welchs-one-way-anova"><span class="header-section-number">11.6</span> Welch’s one-way ANOVA</h2>
+<p>Welch’s one-way procedure compares group means while relaxing the common-variance assumption. It uses group-specific variability and an adjusted reference distribution. R’s <code>oneway.test()</code> documentation distinguishes the Welch approach from the equal-variance method, and jamovi’s simplified One-Way ANOVA offers a Welch option. <span class="citation" data-cites="ROneWay jamoviOneWay">[<a href="references.html#ref-jamoviOneWay" role="doc-biblioref">13</a>, <a href="references.html#ref-ROneWay" role="doc-biblioref">44</a>]</span></p>
+<p>Welch’s method does not resolve dependence or a poor match between the intended estimand and the observed outcome. A skewed distribution with a few highly influential values still requires assessment. Report the selected method and its numerator and denominator degrees of freedom as displayed, including non-integer values where appropriate.</p>
+<p>Choose follow-up procedures consistent with the variance model. A method based on a pooled common variance should not be added automatically after selecting an unequal-variance analysis.</p>
+</section>
+<section id="calculated-three-group-illustration" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="calculated-three-group-illustration"><span class="header-section-number">11.7</span> Calculated three-group illustration</h2>
+<div class="book-panel book-example">
+<p>The following summaries are invented for teaching:</p>
+</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Group</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">Mean, mmHg</th>
+<th style="text-align: right;">SD, mmHg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">125.0</td>
+<td style="text-align: right;">10.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">130.0</td>
+<td style="text-align: right;">10.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">135.0</td>
+<td style="text-align: right;">10.0</td>
+</tr>
+</tbody>
+</table>
+<p>The overall mean is 130.0 mmHg. The between-group sum of squares is 1,000; the within-group sum of squares is 5,700. Dividing by 2 and 57 degrees of freedom gives mean squares of 500 and 100. The conventional F statistic is therefore 5.00, with df = 2 and 57, and p = 0.00998.</p>
+<p>The analysis indicates incompatibility with the equal-means model under its assumptions. It does not establish that A differs from B, B differs from C, and A differs from C individually. Those contrasts require their own estimates and inferential procedure.</p>
+<p>The sample eta-squared summary is</p>
+<p><span class="math display">
+\eta^2=\frac{SS_{\text{between}}}{SS_{\text{total}}}
+=\frac{1000}{6700}=0.149.
+</span></p>
+<p>This describes the between-group share of the observed squared variation in this example. It is not the percentage of participants who improved or a causal percentage explained by treatment. Prefer original-scale contrast estimates when interpreting the health question.</p>
+</section>
+<section id="planned-contrasts-and-post-hoc-comparisons" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="planned-contrasts-and-post-hoc-comparisons"><span class="header-section-number">11.8</span> Planned contrasts and post-hoc comparisons</h2>
+<p>A planned contrast is specified from the research objective before inspecting the results. For example, a study may compare the average of two intervention groups with a control. Its coefficients and uncertainty calculation should match that defined comparison.</p>
+<p>Post-hoc pairwise comparisons assess particular pairs, often after an overall exploration. With three groups there are three distinct pairs; with four there are six. State which family of comparisons is being evaluated and which adjustment or simultaneous interval procedure is used.</p>
+<p>Tukey’s procedure provides simultaneous intervals for pairwise mean differences under its model. Games–Howell is an unequal-variance pairwise approach available in jamovi’s One-Way ANOVA documentation. These methods serve different assumptions and should be selected consistently with the main analysis. <span class="citation" data-cites="RTukey jamoviOneWay">[<a href="references.html#ref-jamoviOneWay" role="doc-biblioref">13</a>, <a href="references.html#ref-RTukey" role="doc-biblioref">45</a>]</span></p>
+<p>A scientifically planned contrast need not be treated as a question that exists only after a significant omnibus test. Explain the inferential plan and multiplicity control appropriate to that objective. Conversely, reporting only the favourable pair after many unreported comparisons is selective reporting.</p>
+</section>
+<section id="multiple-comparisons-and-error-control" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="multiple-comparisons-and-error-control"><span class="header-section-number">11.9</span> Multiple comparisons and error control</h2>
+<p>An adjustment applies to a defined family of analyses. Bonferroni controls a familywise error rate by a simple correction; Holm is a sequential familywise procedure. False-discovery-rate methods address a different error criterion. The intended criterion and family should be stated. <span class="citation" data-cites="RPadjust">[<a href="references.html#ref-RPadjust" role="doc-biblioref">37</a>]</span></p>
+<p>Do not describe an adjusted p-value without identifying what was adjusted. A correction across the three group pairs is different from one across several outcomes, subgroup comparisons, and time points. The analysis plan should define the relevant family rather than allow it to change to obtain a preferred result.</p>
+<p>An adjustment also does not turn an exploratory analysis into a prespecified confirmatory one. Preserve that distinction in the interpretation.</p>
+</section>
+<section id="kruskalwallis-test" class="level2" data-number="11.10">
+<h2 data-number="11.10" class="anchored" data-anchor-id="kruskalwallis-test"><span class="header-section-number">11.10</span> Kruskal–Wallis test</h2>
+<p>The Kruskal–Wallis procedure uses ranks for comparisons across independent groups. It is appropriate for a defined rank-based or distributional question under its assumptions. Its location or median interpretation requires additional conditions about distributional shapes; it should not automatically be described as an ANOVA of medians. <span class="citation" data-cites="RKruskal">[<a href="references.html#ref-RKruskal" role="doc-biblioref">46</a>]</span></p>
+<p>As with ANOVA, a global result does not identify which groups differ. Follow-up rank comparisons require a compatible method and a declared multiplicity approach. R documents pairwise Wilcoxon comparisons with p-value adjustment as one implementation route; the procedure chosen in jamovi should be identified by its actual name and version. <span class="citation" data-cites="RPairwiseWilcoxon jamoviKruskal">[<a href="references.html#ref-RPairwiseWilcoxon" role="doc-biblioref">47</a>, <a href="references.html#ref-jamoviKruskal" role="doc-biblioref">48</a>]</span></p>
+<p>Inspect group distributions before using a pure location interpretation. If one group differs mainly in spread and another in location, a global rank result may reflect more than a difference in central values. Show medians and quartile limits as descriptions without claiming that these alone define the test’s null hypothesis.</p>
+</section>
+<section id="reading-jamovi-output" class="level2" data-number="11.11">
+<h2 data-number="11.11" class="anchored" data-anchor-id="reading-jamovi-output"><span class="header-section-number">11.11</span> Reading jamovi output</h2>
+<p>Confirm the continuous outcome and grouping variable, then identify the conventional, Welch, or non-parametric procedure actually requested. Read group counts, summaries, diagnostic information, the overall statistic, and relevant contrast output. Check how missing observations were excluded. <span class="citation" data-cites="jamoviOneWay jamoviKruskal">[<a href="references.html#ref-jamoviOneWay" role="doc-biblioref">13</a>, <a href="references.html#ref-jamoviKruskal" role="doc-biblioref">48</a>]</span></p>
+<p>When pairwise tables are present, verify the reference order of each difference, the CI or adjustment method, and the family to which the comparisons belong. Different contrast directions can coexist in one output table; a sign should never be interpreted without its labels.</p>
+</section>
+<section id="reporting-example" class="level2" data-number="11.12">
+<h2 data-number="11.12" class="anchored" data-anchor-id="reporting-example"><span class="header-section-number">11.12</span> Reporting example</h2>
+<div class="book-panel book-reporting">
+<p>For the calculated conventional illustration: “The invented mean follow-up values were 125.0, 130.0, and 135.0 mmHg in groups A, B, and C, respectively (20 observations per group; SD 10.0 in each group). A conventional one-way ANOVA gave F(2, 57) = 5.00, p = 0.010. The overall comparison does not identify the individual group contrasts; these would require the prespecified follow-up analysis.”</p>
+</div>
+<p>For a real report, replace the final teaching statement with the relevant contrast estimates and intervals. State why the selected variance model and observation structure are appropriate, and identify the follow-up method if one is used.</p>
+</section>
+<section id="common-errors" class="level2" data-number="11.13">
+<h2 data-number="11.13" class="anchored" data-anchor-id="common-errors"><span class="header-section-number">11.13</span> Common errors</h2>
+<p>Avoid applying independent ANOVA to repeated measurements, describing the omnibus result as evidence that all pairs differ, choosing post-hoc methods that contradict the variance model, treating Kruskal–Wallis as an unconditional median test, or reporting pairwise p-values without the adjustment strategy.</p>
+</section>
+<section id="hands-on-multiple-groups" class="level2" data-number="11.14">
+<h2 data-number="11.14" class="anchored" data-anchor-id="hands-on-multiple-groups"><span class="header-section-number">11.14</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add one-way ANOVA, Welch, rank-based, and follow-up analysis datasets and screenshots here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="11.15">
+<h2 data-number="11.15" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">11.15</span> Review questions</h2>
+<ol type="1">
+<li>What does the alternative hypothesis of a one-way ANOVA mean?</li>
+<li>Why are three follow-up measurements from the same participant not three independent groups?</li>
+<li>What must be identified when reporting an adjusted pairwise p-value?</li>
+<li>Does a Kruskal–Wallis result always establish different medians?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="11.16">
+<h2 data-number="11.16" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">11.16</span> Answers and reasoning</h2>
+<ol type="1">
+<li>The means are not all equal; it does not assert that every pair is different.</li>
+<li>Measurements are linked within participants and require an analysis that retains that dependence.</li>
+<li>State the procedure, the family of comparisons, and the direction of the contrast.</li>
+<li>No.&nbsp;The method uses ranks, and a median-shift interpretation requires additional distributional conditions.</li>
+</ol>
+</section>
 
 
-</section>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-NISTANOVA" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">NIST/SEMATECH. The one-way ANOVA model and assumptions. <a href="https://www.itl.nist.gov/div898/handbook/prc/section4/prc432.htm">https://www.itl.nist.gov/div898/handbook/prc/section4/prc432.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-ROneWay" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">R Core Team. Test for equal means in a one-way layout. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/oneway.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/oneway.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-jamoviOneWay" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. One-way ANOVA: anovaOneW. <a href="https://docs.jamovi.org/jmv/jmv_anovaOneW.html">https://docs.jamovi.org/jmv/jmv_anovaOneW.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RTukey" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">R Core Team. Compute tukey honest significant differences. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/TukeyHSD.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/TukeyHSD.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RPadjust" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">R Core Team. Adjust p-values for multiple comparisons. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/p.adjust.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/p.adjust.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RKruskal" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">R Core Team. Kruskal-wallis rank sum test. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/kruskal.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/kruskal.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RPairwiseWilcoxon" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">R Core Team. Pairwise wilcoxon rank sum tests. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/pairwise.wilcox.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/pairwise.wilcox.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-jamoviKruskal" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. One-way ANOVA, non-parametric: anovaNP. <a href="https://docs.jamovi.org/jmv/jmv_anovaNP.html">https://docs.jamovi.org/jmv/jmv_anovaNP.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -749,13 +1019,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./comparing-two-means.html" class="pagination-link" aria-label="Comparing Two Means">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span>
+      <a href="./comparing-two-means.html" class="pagination-link" aria-label="Comparing Two Groups or Two Paired Measurements">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./categorical-variables.html" class="pagination-link" aria-label="Categorical Variables">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./categorical-variables.html" class="pagination-link" aria-label="Associations Between Categorical Variables">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -764,4 +1034,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

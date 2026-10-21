@@ -1,6 +1,125 @@
-# Role of Statistics in Health Research
+# Role of Statistics in Health Research {#sec-role}
 
+## Learning objectives
 
-### Types of Data and Measurement Scales
-### Research Designs in Brief
-### Statistical Workflow in Jamovi
+After this chapter, the reader should be able to translate a health question into an analysis objective; identify the population and unit of observation; distinguish common variable types; recognise independent and paired data; and separate sampling uncertainty from problems in study conduct.
+
+## Start with the question
+
+Consider three questions about an outpatient clinic: What proportion of attendees have elevated blood pressure? Does mean blood pressure differ between two treatment groups? Does blood pressure change within a patient after follow-up? These questions require different data structures and target quantities, even though all involve the same measurement.
+
+Write the question as a sentence before naming a test. Specify who is included, what is measured, which comparison is relevant, and when the measurement occurs. For example: "Among eligible adults attending the clinic during the study period, what is the mean difference in systolic blood pressure between group A and group B at three months?" This sentence defines the population, outcome, groups, time point, and direction of the intended comparison.
+
+The **analysis objective** describes what the analysis should do. Description summarises observed values. Estimation quantifies a population quantity. Comparison estimates a contrast between groups. Association examines how variables vary together. Prediction estimates an outcome for an individual or future observation. A study can contain more than one objective, but each analysis should have a defined role.
+
+## Define the population, sample, and target quantity
+
+The population is the set of people or observations to which the question refers. The sample is the set actually observed. A clinic sample and a community population are different targets: attendance may depend on illness, access, referral, or willingness to seek care. State the population to which the findings are intended to apply, rather than allowing the software's sample size to define it.
+
+A parameter describes a population quantity, such as a mean or proportion. A statistic is its sample-based counterpart. The **estimand** is the precise quantity the study seeks to estimate. "Difference in blood pressure" is incomplete; "mean follow-up blood pressure in A minus that in B among eligible adults" is more precise. A positive or negative value then has a defined meaning.
+
+Record the scale of the estimand. A difference uses the original measurement unit. A proportion describes a fraction of a defined denominator. A ratio compares two quantities on a multiplicative scale. Each requires a different reporting sentence, even when the underlying research concern is similar.
+
+## Understand the study design
+
+| Design | What is observed | Basic analytical implication |
+|:-------|:-----------------|:-----------------------------|
+| Cross-sectional study | Variables measured within a specified period | Describe prevalence and concurrent associations; clarify the sampling frame |
+| Cohort study | Outcomes observed over follow-up in defined groups | Specify eligibility, follow-up, and event ascertainment before interpreting risk |
+| Case-control study | Participants selected according to outcome status | The sampled case fraction is not the population risk; an odds ratio may be appropriate |
+| Randomised trial | Intervention assignment is randomised | Preserve the planned comparison and account for the randomisation unit |
+| Before–after study | The same individuals measured at two times | Measurements are paired; a change estimate requires complete pairs or another specified method |
+| Clustered study | People grouped within facilities, households, or other clusters | Standard independent-observation methods may need extension |
+
+This table is an orientation to data structure, not a substitute for a design-specific analysis plan. STROBE identifies the observational designs covered by its statement and the information needed to describe their conduct and analysis. [@STROBE]
+
+Random assignment and random sampling answer different concerns. Assignment determines how study groups are formed; sampling determines how observations enter the study. A trial can randomise treatment among a selected clinic population without representing every person in the wider community. Keep the study's internal comparison and its intended generalisation as separate judgments.
+
+## Identify the unit of observation
+
+The unit of observation is the entity represented by one analytical record. It may be a patient, hospital admission, visit, household, or facility. It is not automatically a person. If a patient has several admissions, counting each admission creates a study of admissions unless the analysis explicitly accounts for repeated records from the same person.
+
+For a simple independent analysis in this volume, one row usually represents one participant and each participant contributes once to the relevant comparison. For a paired analysis, the same participant contributes measurements at two times or a defined matched pair contributes two related observations. More extensive repeated or clustered structures require methods developed in later volumes.
+
+Before analysis, complete the sentence: "One row represents …" Then count unique units as well as rows. An accidental duplicate row and a valid repeat visit can look similar in a spreadsheet, but they have different meanings and should not be handled by the same deletion rule.
+
+## Types of data and measurement scales
+
+| Variable type | Meaning | Illustrative health variable | Suitable initial summary |
+|:--------------|:--------|:-----------------------------|:-------------------------|
+| Nominal | Categories without an intrinsic order | Blood group | Counts and proportions |
+| Binary | A nominal variable with two levels | Event present or absent | Event count and denominator |
+| Ordinal | Ordered categories without a guaranteed equal spacing | Mild, moderate, severe | Ordered counts and proportions |
+| Continuous | Quantitative measurement on a meaningful numerical scale | Systolic blood pressure in mmHg | Distribution, central value, and spread |
+| Count | Number of occurrences | Number of admissions | Distribution, zeros, range, and an appropriate count summary |
+| Identifier | A label linking records to a unit | Study participant code | Uniqueness and linkage checks |
+
+In jamovi, measure type and storage type are separate properties. An integer column can contain a continuous measurement, an ordered score, a category code, or an identifier. Setting a column as nominal, ordinal, continuous, or ID determines how it is treated in analyses; a numerical code alone does not establish its measurement scale. [@jamoviData]
+
+Age recorded in years is quantitative even when stored as whole numbers. A code of 1 for a blood group is a label, not a quantity to average. A severity category coded 1, 2, and 3 is ordered, but the numerical distance between categories need not represent equal changes in severity. Preserve that distinction when choosing a method.
+
+The role of a variable can change across questions. Age may be the outcome in a descriptive analysis and a predictor in a regression. Its measurement type remains the same; its analytical role changes. Define both properties in the data dictionary.
+
+### Interval and ratio measurement scales
+
+An interval scale has meaningful equal differences but an arbitrary zero. Celsius temperature is a familiar example: a ten-degree difference has meaning, but 20°C is not twice the temperature of 10°C. A ratio scale also has a meaningful zero, allowing ratios such as one measured length being twice another. The distinction concerns the measurement definition, not how many decimal places are stored. [@PSUScales]
+
+Nominal, ordinal, interval, and ratio are the classical scale categories. Quantitative data can also be discrete, such as a count, or treated as continuous, such as a length measurement. These classifications answer different questions: ordering and meaningful arithmetic on one hand, and the set of possible numerical values on the other.
+
+## Sampling, uncertainty, and bias
+
+Sampling variability means that repeated samples could give different estimates. A standard error or confidence interval addresses this variation under stated assumptions. A systematic measurement error, selective inclusion, or unaddressed confounding is a different problem. A narrow interval around a biased estimate remains misleading.
+
+Use a simple thought experiment. Suppose a weighing scale adds two kilograms to every reading. Collecting many measurements can make the sample mean very precise, while the systematic two-kilogram error remains. The remedy is to check the measurement process; merely increasing the sample size does not correct the instrument.
+
+Similarly, a large clinic dataset may describe clinic attendees well while failing to represent people who never attend. In the report, distinguish the uncertainty quantified by the statistical method from limitations in how the observations were obtained. Confidence intervals are conditional on the analysis assumptions and do not automatically include every source of uncertainty. [@Greenland2016]
+
+## Establish an analysis workflow
+
+Start by specifying the question and design. Create a data dictionary and preserve the source file. Check records, coding, units, missingness, and eligibility. Describe the observed data and inspect relevant graphs. Select the estimand and method, examine assumptions, then interpret the estimate and its uncertainty. Finally, write the result and retain the analysis file and decision log.
+
+The workflow should leave an audit trail. Record a change because it is justified by a coding definition or verified source, not because it improves a p-value. Record an exclusion because it follows the study rules, not because an observation is inconvenient. A documented decision can later be examined and revised; an undocumented change is difficult to reconstruct.
+
+## Illustrative analysis specification
+
+The following specification is invented for teaching:
+
+| Item | Specification |
+|:-----|:--------------|
+| Question | Compare mean systolic blood pressure at three months between A and B |
+| Population | Eligible adults included in the study during its recruitment period |
+| Unit | One participant |
+| Outcome | Follow-up systolic blood pressure, mmHg |
+| Groups | A and B; each participant belongs to one group |
+| Contrast | A minus B |
+| Main result | Mean difference with a 95% confidence interval |
+| Checks | Group membership, outcome availability, independence, distribution, and unusual observations |
+| Interpretation boundary | The strength of any causal claim depends on the design and conduct |
+
+This specification guides the later analysis. It makes clear why the chapter on two independent groups is relevant and why a paired test would answer a different question.
+
+## Hands-on {#hands-on-role}
+
+::: {.callout-note .hands-on-note title="jamovi workspace" icon=false}
+<!-- Author: add the chapter dataset, saved jamovi analysis, procedure, and screenshots here. -->
+:::
+
+::: {.review-questions}
+
+## Review questions
+
+1. A dataset contains 300 visits from 120 patients. What must be defined before calling its sample size 300?
+2. A severity variable is coded 1, 2, and 3. What information is needed before treating it as continuous?
+3. A confidence interval becomes narrower after increasing sample size. Which study problems can still remain?
+
+:::
+
+::: {.review-answers}
+
+## Answers and reasoning
+
+1. Define the analytical unit and whether repeated visits from the same patient are relevant and dependent. A study of patients and a study of visits have different denominators.
+2. Establish what the categories mean and whether the scale has a justified quantitative interpretation. Numerical codes do not establish equal spacing.
+3. Selection, measurement, and other systematic problems may remain. Greater precision does not establish representativeness or correct a biased measurement process.
+
+:::

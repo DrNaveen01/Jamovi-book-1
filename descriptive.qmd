@@ -1,34 +1,10 @@
+# Descriptive Statistics and Graphs {.unnumbered}
 
-# Descriptive statistics and visualization {#sec-descriptive}
+Description answers what was observed: how many participants were analysed, how variables were distributed, which values were missing, and how groups differed in their observed characteristics. A descriptive table should therefore identify the denominator and measurement unit, not merely display numbers.
 
-Descriptive statistics form the first level of data analysis, focused on organizing, summarizing, and presenting data in a meaningful way. At this stage, the objective is not to draw conclusions beyond the observed dataset, but to understand its internal structure, distribution, and patterns. Raw data, in its original form, are often unstructured and difficult to interpret; descriptive methods convert these into interpretable summaries through tabulation, numerical measures, and graphical representation.
+The next two chapters address numerical summaries and graphical presentation. Use both. A mean and standard deviation can conceal skewness, multiple peaks, or an influential observation. A graph can reveal those features but may not communicate the exact count or estimate needed for reporting. The NIST handbook describes these complementary numerical and graphical approaches to exploratory analysis. [@NISTHist; @NISTScale]
 
-The process begins with data preparation, including cleaning, coding, and organizing variables into a usable format. Once structured, the data are summarized using measures of central tendency such as mean, median, and mode, which represent the typical value, and measures of dispersion such as standard deviation, interquartile range, and range, which reflect variability. These numerical summaries are complemented by visual tools—such as histograms, bar charts, and boxplots—that provide an intuitive understanding of distributional characteristics, outliers, and group differences.
+Describe the data before comparing groups. This order helps identify coding problems and clarifies which statistical quantity would answer the question. A choice between a mean and a median should reflect the objective and distribution, rather than a rule that every variable must be reduced to the same summary.
 
-Descriptive statistics are essential for identifying data quality issues, detecting anomalies, and guiding subsequent analytical decisions. They provide the necessary context for inferential analysis by clarifying the nature of the data, including scale, distribution, and underlying patterns. Within Jamovi, these procedures can be executed efficiently through a graphical interface; however, their value lies in correct interpretation rather than mechanical computation. Descriptive analysis does not establish causation or generalize findings to a population, but it defines the foundation upon which all further statistical inference is built.
+By the end of this part, the reader should be able to construct a descriptive table, select a suitable graph, and explain the important features of an observed distribution.
 
-
-
-::: {#fig-descriptive-analysis fig-cap="Framework of descriptive statistics"}
-```{mermaid}
-flowchart TD
-A[Raw data]
-B[Data preparation<br/>Cleaning and coding]
-C[Organized data]
-D[Descriptive statistics]
-E[Central tendency<br/>Mean, median]
-F[Dispersion<br/>SD, IQR]
-G[Visualization<br/>Plots]
-H[Summary<br/>Patterns]
-
-A --> B
-B --> C
-C --> D
-D --> E
-D --> F
-D --> G
-E --> H
-F --> H
-G --> H
-```
-:::

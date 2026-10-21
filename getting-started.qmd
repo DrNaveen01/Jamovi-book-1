@@ -1,7 +1,104 @@
----
-title: "Getting Started With Jamovi"
----
+# Getting Started with jamovi {#sec-getting-started}
 
-### Installation and Interface
-### Importing and Structuring Data
-### Variable Properties and Levels
+## Learning objectives
+
+After this chapter, the reader should be able to distinguish the data, analysis, and output components of jamovi; inspect imported variable properties; recognise how file formats affect reproducibility; and prepare a saved analysis file for later review.
+
+## The purpose of the software
+
+jamovi provides a spreadsheet-style data view and an analysis interface with results displayed alongside the data. Its official introductory guidance describes importing data, setting variable properties, running an analysis, and saving the data and analysis together in an `.omv` file. [@jamoviGettingStarted]
+
+Treat the software as an environment for implementing an analysis plan. It can calculate results once variables and options are assigned, but it cannot determine whether the study question, population, eligibility rules, or causal interpretation are appropriate. A result appearing in the output panel confirms that a calculation was performed; it does not by itself validate the analysis.
+
+## Installation and version information
+
+Obtain jamovi from the official website, <https://www.jamovi.org>. The author's Hands-on demonstration should identify the operating system, jamovi version, and any additional module used. The same analysis name can be available through different modules, and software updates can alter defaults or output labels.
+
+Record versions at the beginning of a project and when an analysis is repeated after an update. If two researchers obtain different results, compare the data, variable settings, selected options, missing-data handling, and versions before assuming that one numerical result is wrong. Reproducibility requires matching these choices.
+
+The learning aim is to understand the meaning of an option before selecting it. For example, selecting a confidence interval does not change the research question; it requests an uncertainty summary. Changing the reference category changes the direction of a reported contrast. These options have different analytical consequences.
+
+## Understand the interface
+
+The data area contains observations and variables. The variable editor defines properties such as the name, data type, measure type, and levels. The analysis area assigns variables and options to a method. The results area displays tables and other output. The spreadsheet documentation explains the distinction between data variables, computed variables, and transformed variables. [@jamoviSpreadsheet]
+
+Use the data view to verify what will enter an analysis. Use the analysis options to verify what calculation is requested. Use the output to inspect the resulting estimate, sample size, uncertainty, and assumptions. Each area answers a different question, so a complete review should examine all three.
+
+An automatically updated result can be useful during exploration, but it also means that a later change to the data or a filter can change previously generated output. Save dated versions at important review points and record intentional changes. Do not treat a screenshot as a substitute for the file that generated it.
+
+## Importing and structuring data
+
+Prepare the source file with one header row, one variable per column, and one record per defined observation unit. Avoid merged cells, embedded totals, decorative headings, and values that combine a number with a unit in the same cell. A column of values such as "120 mmHg" requires a clear conversion to numeric values before being treated as a continuous measurement.
+
+Maintain a source copy before changing the imported data. Compare the imported number of rows and variables with the expected source dimensions. Inspect several records at the beginning and end of the file, as well as unusual values, rather than assuming that a successful import preserved the intended meaning of every column.
+
+Use short, stable variable names with descriptions for their full meaning. For example, `sbp_followup` can have the description "Systolic blood pressure at the three-month visit, mmHg." A clear name helps identify the variable in analysis dialogs, while the description preserves its definition.
+
+### Illustrative import checklist
+
+| Check | What to verify |
+|:------|:---------------|
+| Dimensions | Expected number of records and variables |
+| Unit of observation | One patient, visit, admission, or other defined unit per record |
+| Names | Unique, meaningful column names |
+| Numeric variables | Values are numeric; units are documented separately |
+| Categories | Codes and labels match the data dictionary |
+| Missing values | Blank or coded missing entries are distinguished from valid zero values |
+| Identifiers | Record linkage and duplicates are understood |
+| Group structure | Independent groups or paired measurements match the intended analysis |
+
+## Variable properties and levels
+
+Check the measure type after importing. Imported values can be stored as integer, decimal, or text, while their measure type may be nominal, ordinal, continuous, or ID. jamovi may infer properties on opening a file, so the researcher should verify them against the dictionary. [@jamoviData]
+
+An outcome such as blood pressure should retain its measurement unit and continuous meaning. A grouping variable should display its category labels. A participant identifier should link records rather than act as a predictor solely because it contains numbers. For an ordinal variable, inspect the order of the levels as well as their labels.
+
+Reference categories require particular care. If an analysis reports group B relative to A, the sign or ratio direction differs from A relative to B. Write the intended comparison before reading the output. Later chapters show how this direction affects mean differences, correlation, and odds ratios.
+
+## Saving data and analyses
+
+A plain data file and a saved analysis file serve different purposes. A CSV can provide an accessible rectangular data source, but it does not preserve the complete set of jamovi analyses and options. The `.omv` format saves the jamovi project information needed to reopen the analysis. [@jamoviGettingStarted]
+
+Keep three related items: the unchanged source file, a documented analysis-ready file, and the saved jamovi analysis. Give each an understandable name and version date. For example, an author may distinguish `clinic_source`, `clinic_clean_v01`, and `clinic_analysis_v01`; the exact naming convention is less important than its consistent use.
+
+When sharing a result for review, include the analysis file, data dictionary, and a short record of exclusions and transformations. A screenshot can help explain a table, but another researcher should be able to examine the underlying variables and options as well.
+
+## Reviewing an output before interpretation
+
+Read the analysis title and verify that it matches the intended method. Check the variables and sample size. Identify the estimate and its direction. Locate the confidence interval, test statistic, degrees of freedom where applicable, and p-value. Check any note about missing values, assumptions, or estimation failure.
+
+Suppose a table contains 80 observations although the imported file has 100 records. Possible explanations include missing values, an active filter, or an analysis limited to one subgroup. Determine which explanation applies before interpreting the estimate. The difference between imported records and analysed observations must be understandable.
+
+Do not copy every software table into a manuscript. Retain the output for verification, then choose the quantities needed to answer the research question. A reader-facing table has a defined purpose and usually requires clearer labels than those used in the analysis window.
+
+## R as a later reproducibility layer
+
+jamovi offers syntax mode and Rj for working with R. These provide routes to code-based analysis, with package and environment requirements that should be checked when they are used. The availability of R integration does not mean that every method proposed for the series is supplied by the default interface. [@jamoviR]
+
+For Volume I, begin with transparent data definitions, saved analyses, and recorded options. The project's verification script separately reproduces the small numerical illustrations using base R; it is not a replacement for the author's future jamovi demonstrations. Later volumes develop a fuller relationship between graphical analysis and code.
+
+## Hands-on {#hands-on-getting-started}
+
+::: {.callout-note .hands-on-note title="jamovi workspace" icon=false}
+<!-- Author: add installation, import, variable setup, saving, and output screenshots here. -->
+:::
+
+::: {.review-questions}
+
+## Review questions
+
+1. Why should a numeric participant identifier not automatically be treated as continuous?
+2. What can an `.omv` file preserve that a plain CSV does not preserve?
+3. An output uses fewer observations than the imported file. What should be checked before interpreting it?
+
+:::
+
+::: {.review-answers}
+
+## Answers and reasoning
+
+1. Its numbers are labels for linking observations; arithmetic on them does not answer the health question.
+2. It preserves the jamovi analysis context, including analyses and their settings, alongside the data.
+3. Check missingness, active filters, subgroup selections, and the analysis-specific requirements. Report the resulting analytical denominator.
+
+:::

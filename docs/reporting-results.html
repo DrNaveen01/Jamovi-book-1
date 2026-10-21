@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Reporting Results – Hands-On Data Analysis Using Jamovi</title>
+<title>16&nbsp; Reporting Statistical Results – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -33,7 +53,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./statistical-formulas.html" rel="next">
 <link href="./reporting.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-885b2cfb8d18508768e9bf8f9ab5c5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
-
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reporting.html">Reporting Your Findings</a></li><li class="breadcrumb-item"><a href="./reporting-results.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reporting.html">Reporting and Interpretation</a></li><li class="breadcrumb-item"><a href="./reporting-results.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,12 +118,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./jamovi-book-volume-1-review.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +163,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +204,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +227,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +262,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +291,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +326,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -305,15 +342,37 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
+   
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">16.1</span> Learning objectives</a></li>
+  <li><a href="#report-the-answer-to-the-question" id="toc-report-the-answer-to-the-question" class="nav-link" data-scroll-target="#report-the-answer-to-the-question"><span class="header-section-number">16.2</span> Report the answer to the question</a></li>
+  <li><a href="#a-minimum-reporting-structure" id="toc-a-minimum-reporting-structure" class="nav-link" data-scroll-target="#a-minimum-reporting-structure"><span class="header-section-number">16.3</span> A minimum reporting structure</a></li>
+  <li><a href="#write-the-methods-before-the-results" id="toc-write-the-methods-before-the-results" class="nav-link" data-scroll-target="#write-the-methods-before-the-results"><span class="header-section-number">16.4</span> Write the methods before the results</a></li>
+  <li><a href="#report-descriptive-results" id="toc-report-descriptive-results" class="nav-link" data-scroll-target="#report-descriptive-results"><span class="header-section-number">16.5</span> Report descriptive results</a></li>
+  <li><a href="#report-mean-comparisons" id="toc-report-mean-comparisons" class="nav-link" data-scroll-target="#report-mean-comparisons"><span class="header-section-number">16.6</span> Report mean comparisons</a></li>
+  <li><a href="#report-categorical-associations" id="toc-report-categorical-associations" class="nav-link" data-scroll-target="#report-categorical-associations"><span class="header-section-number">16.7</span> Report categorical associations</a></li>
+  <li><a href="#report-correlation-and-regression" id="toc-report-correlation-and-regression" class="nav-link" data-scroll-target="#report-correlation-and-regression"><span class="header-section-number">16.8</span> Report correlation and regression</a></li>
+  <li><a href="#build-a-table-around-a-clear-purpose" id="toc-build-a-table-around-a-clear-purpose" class="nav-link" data-scroll-target="#build-a-table-around-a-clear-purpose"><span class="header-section-number">16.9</span> Build a table around a clear purpose</a></li>
+  <li><a href="#report-figures-and-uncertainty-consistently" id="toc-report-figures-and-uncertainty-consistently" class="nav-link" data-scroll-target="#report-figures-and-uncertainty-consistently"><span class="header-section-number">16.10</span> Report figures and uncertainty consistently</a></li>
+  <li><a href="#precision-and-rounding" id="toc-precision-and-rounding" class="nav-link" data-scroll-target="#precision-and-rounding"><span class="header-section-number">16.11</span> Precision and rounding</a></li>
+  <li><a href="#report-analyses-that-did-not-give-a-small-p-value" id="toc-report-analyses-that-did-not-give-a-small-p-value" class="nav-link" data-scroll-target="#report-analyses-that-did-not-give-a-small-p-value"><span class="header-section-number">16.12</span> Report analyses that did not give a small p-value</a></li>
+  <li><a href="#keep-the-conclusion-within-the-evidence" id="toc-keep-the-conclusion-within-the-evidence" class="nav-link" data-scroll-target="#keep-the-conclusion-within-the-evidence"><span class="header-section-number">16.13</span> Keep the conclusion within the evidence</a></li>
+  <li><a href="#preserve-an-auditable-result" id="toc-preserve-an-auditable-result" class="nav-link" data-scroll-target="#preserve-an-auditable-result"><span class="header-section-number">16.14</span> Preserve an auditable result</a></li>
+  <li><a href="#hands-on-reporting-results" id="toc-hands-on-reporting-results" class="nav-link" data-scroll-target="#hands-on-reporting-results"><span class="header-section-number">16.15</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">16.16</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">16.17</span> Answers and reasoning</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reporting.html">Reporting Your Findings</a></li><li class="breadcrumb-item"><a href="./reporting-results.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./reporting.html">Reporting and Interpretation</a></li><li class="breadcrumb-item"><a href="./reporting-results.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></h1>
+<h1 class="title"><span id="sec-reporting-results" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></h1>
 </div>
 
 
@@ -330,17 +389,208 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="writing-statistical-results" class="level3" data-number="13.0.1">
-<h3 data-number="13.0.1" class="anchored" data-anchor-id="writing-statistical-results"><span class="header-section-number">13.0.1</span> Writing Statistical Results</h3>
+<section id="learning-objectives" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">16.1</span> Learning objectives</h2>
+<div class="book-panel book-objectives">
+<p>After this chapter, the reader should be able to write a methods statement and results paragraph for a basic analysis, design a self-contained table or figure, report uncertainty and missingness, and keep interpretation within the study’s design and evidence.</p>
+</div>
 </section>
-<section id="table-interpretation" class="level3" data-number="13.0.2">
-<h3 data-number="13.0.2" class="anchored" data-anchor-id="table-interpretation"><span class="header-section-number">13.0.2</span> Table Interpretation</h3>
+<section id="report-the-answer-to-the-question" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="report-the-answer-to-the-question"><span class="header-section-number">16.2</span> Report the answer to the question</h2>
+<p>The results section should make the analytical finding visible. A software table contains many possible quantities; a manuscript selects those needed to answer the research question. Begin with the observation count and comparison, then present the estimate, uncertainty, and relevant inferential result.</p>
+<p>The methods explain how the analysis was performed. The results state what it produced. The discussion interprets the result in relation to the question, limitations, and other evidence. Keeping these roles distinct reduces repetition and unsupported conclusions.</p>
+<p>The SAMPL guidelines provide statistical reporting guidance, while ICMJE recommends sufficient methodological detail for a knowledgeable reader to evaluate and verify the analysis. Use the guideline appropriate to the study design alongside these general principles. <span class="citation" data-cites="SAMPL ICMJE">[<a href="references.html#ref-SAMPL" role="doc-biblioref">2</a>, <a href="references.html#ref-ICMJE" role="doc-biblioref">31</a>]</span></p>
 </section>
-<section id="common-mistakes-in-reporting" class="level3" data-number="13.0.3">
-<h3 data-number="13.0.3" class="anchored" data-anchor-id="common-mistakes-in-reporting"><span class="header-section-number">13.0.3</span> Common Mistakes in Reporting</h3>
+<section id="a-minimum-reporting-structure" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="a-minimum-reporting-structure"><span class="header-section-number">16.3</span> A minimum reporting structure</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 71%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Element</th>
+<th style="text-align: left;">What the reader needs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Population and sample</td>
+<td style="text-align: left;">Who contributed and the analytical denominator</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Outcome</td>
+<td style="text-align: left;">Definition, unit, and measurement time</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Comparison</td>
+<td style="text-align: left;">Groups, reference category, and contrast direction</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Method</td>
+<td style="text-align: left;">Actual procedure, relevant settings, and interval method</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Estimate</td>
+<td style="text-align: left;">Magnitude on a named scale</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Uncertainty</td>
+<td style="text-align: left;">Interval and confidence level</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Test information</td>
+<td style="text-align: left;">Test statistic, degrees of freedom where relevant, and p-value</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Limitations</td>
+<td style="text-align: left;">Missingness, design, or model issues affecting interpretation</td>
+</tr>
+</tbody>
+</table>
+<p>Not every paragraph needs every statistic. The reporting purpose determines which details belong in the main text, table, methods, or supplement. The essential information should nevertheless be recoverable from the report.</p>
+</section>
+<section id="write-the-methods-before-the-results" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="write-the-methods-before-the-results"><span class="header-section-number">16.4</span> Write the methods before the results</h2>
+<p>Describe variable definitions, inclusion rules, summary conventions, and the intended analysis. Identify independent, paired, or repeated data. State how missing observations were handled and how uncertainty was calculated. Record software and module versions for the actual implementation.</p>
+<p>A template for the independent mean illustration is: “Follow-up systolic blood pressure was compared between groups A and B using Welch’s independent-samples t-test. The estimand was the mean in A minus the mean in B, expressed in mmHg. The mean difference and two-sided 95% CI were reported; the analytical denominator was the number with an observed follow-up value in each group.”</p>
+<p>This template does not assert that real diagnostic checks were completed. In an actual report, add the checks performed and how any important departures were addressed. Do not write “assumptions were satisfied” as a standard sentence copied across all analyses.</p>
+</section>
+<section id="report-descriptive-results" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="report-descriptive-results"><span class="header-section-number">16.5</span> Report descriptive results</h2>
+<p>For a categorical variable, give the count and denominator with the percentage. For a quantitative variable, identify the summary and unit. Distinguish mean with SD from mean with CI; the first describes observed dispersion, while the second describes estimation uncertainty under its method.</p>
+<p>For the invented waiting times: “The median waiting time was 4.5 minutes (first–third quartile 3.25–6.75; n = 10). Values ranged from 2 to 18 minutes.” This is a descriptive statement. It does not need a hypothesis test simply to state what was observed.</p>
+<p>If values are unavailable for some participants, report that availability explicitly. A table can include an observed n for each variable or a missing-value column. Choose a format that allows the denominator to be understood without excessive footnotes.</p>
+</section>
+<section id="report-mean-comparisons" class="level2" data-number="16.6">
+<h2 data-number="16.6" class="anchored" data-anchor-id="report-mean-comparisons"><span class="header-section-number">16.6</span> Report mean comparisons</h2>
+<p>For the invented independent groups: “Mean systolic blood pressure was 128.0 mmHg (SD 14.0) in A and 134.0 mmHg (SD 16.0) in B, with 60 observations in each group. The difference, A minus B, was −6.0 mmHg (95% CI −11.4 to −0.6; Welch t = −2.19, df = 115.96, p = 0.031).”</p>
+<p>The sign and units make the result interpretable. “There was a significant difference” does not communicate the magnitude, direction, or precision. If the manuscript focuses on the contrast, the group summaries can sit in a table while the paragraph highlights the difference and CI.</p>
+<p>For the paired example: “Among 30 complete pairs, mean follow-up minus baseline blood pressure was −8.0 mmHg (95% CI −11.7 to −4.3; paired t = −4.38, df = 29, p &lt; 0.001).” State the complete-pair denominator and the direction of change.</p>
+</section>
+<section id="report-categorical-associations" class="level2" data-number="16.7">
+<h2 data-number="16.7" class="anchored" data-anchor-id="report-categorical-associations"><span class="header-section-number">16.7</span> Report categorical associations</h2>
+<p>Use the measure supported by the design and name it. A risk ratio, prevalence ratio, odds ratio, and absolute percentage-point difference are not interchangeable. Identify the event and reference group before reporting a ratio.</p>
+<p>For the invented independent table: “Events occurred in 30/100 participants in A and 15/100 in B. Under the stipulated follow-up, the RR for A versus B was 2.00 (log-Wald 95% CI 1.15–3.48).” If an odds ratio is reported instead, write “OR 2.43 (log-Wald 95% CI 1.21–4.87)” and interpret it as odds.</p>
+<p>Name the test and interval procedure. “Fisher’s exact p-value” and “Wald OR interval” describe different components; do not imply that they all came from one exact method unless that is what the procedure returned.</p>
+</section>
+<section id="report-correlation-and-regression" class="level2" data-number="16.8">
+<h2 data-number="16.8" class="anchored" data-anchor-id="report-correlation-and-regression"><span class="header-section-number">16.8</span> Report correlation and regression</h2>
+<p>For correlation, name the coefficient, provide its estimate, analytical pairs, and appropriate uncertainty, and describe the graph-based context. For the teaching example: “Pearson r was 0.60 (approximate Fisher 95% CI 0.39–0.75; n = 50; p &lt; 0.001).” Do not translate this into an original-scale slope.</p>
+<p>For linear regression, give the outcome unit and predictor increment. For the constructed example: “Each additional year of age was associated with a 0.50-mmHg higher conditional mean SBP in the simple unadjusted model (95% CI 0.30–0.70; n = 60).” Describe the model and its assessment separately.</p>
+<p>For logistic regression, state the event, reference, OR, CI, and adjustment status. Avoid using “independent predictor” when the model contains only one predictor or when the intended meaning of independence has not been justified.</p>
+</section>
+<section id="build-a-table-around-a-clear-purpose" class="level2" data-number="16.9">
+<h2 data-number="16.9" class="anchored" data-anchor-id="build-a-table-around-a-clear-purpose"><span class="header-section-number">16.9</span> Build a table around a clear purpose</h2>
+<p>A table for a mean comparison could contain group, observed n, mean with SD, contrast, and CI. A categorical table could contain counts and percentages with a defined denominator, followed by the chosen measure of association. A model table could contain predictor definition, estimate, interval, and reference categories.</p>
+<p>Do not add every software column simply because it is available. Include enough information to assess the result and place secondary output in a supplement when it has a clear role. Define abbreviations in a table note and retain measurement units in the column heading.</p>
+<p>An illustrative compact comparison table is:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: left;">Teaching result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Group A</td>
+<td style="text-align: left;">n = 60; mean 128.0 mmHg; SD 14.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Group B</td>
+<td style="text-align: left;">n = 60; mean 134.0 mmHg; SD 16.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mean difference, A minus B</td>
+<td style="text-align: left;">−6.0 mmHg</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">95% Welch CI</td>
+<td style="text-align: left;">−11.4 to −0.6 mmHg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Test</td>
+<td style="text-align: left;">t = −2.19; df = 115.96; p = 0.031</td>
+</tr>
+</tbody>
+</table>
+<p>The table is explicitly a teaching illustration. Its quantities should not appear under a title implying that they were observed in the author’s institution or patient sample.</p>
+</section>
+<section id="report-figures-and-uncertainty-consistently" class="level2" data-number="16.10">
+<h2 data-number="16.10" class="anchored" data-anchor-id="report-figures-and-uncertainty-consistently"><span class="header-section-number">16.10</span> Report figures and uncertainty consistently</h2>
+<p>Use the same outcome unit, group labels, and contrast direction in the text, table, and figure. Define plotted intervals and any transformation. If a figure shows group means but the text concerns their difference, ensure the relevant contrast is also reported.</p>
+<p>For a graph with individual points, identify the observation unit. For a paired graph, describe the pairing and time order. For a model curve, identify whether it shows a fitted mean or an individual prediction interval.</p>
+</section>
+<section id="precision-and-rounding" class="level2" data-number="16.11">
+<h2 data-number="16.11" class="anchored" data-anchor-id="precision-and-rounding"><span class="header-section-number">16.11</span> Precision and rounding</h2>
+<p>Use precision that reflects the measurement and purpose. Consistent rounding makes a report easier to read, but do not round a value so aggressively that its interpretation changes. A p-value should not be written as 0.000; use an appropriate bound such as p &lt; 0.001 or give the small value in scientific notation.</p>
+<p>Keep full precision for calculations and round the displayed results at the final reporting step. A CI calculated from rounded intermediate values can differ from one calculated from the original estimate and SE. The accompanying script therefore retains full precision while the manuscript uses readable rounding.</p>
+<p>Distinguish a relative percentage change from a percentage-point difference. Increasing a proportion from 15% to 30% is a 15-percentage-point increase and a 100% relative increase. Name the scale to prevent an ambiguous statement.</p>
+</section>
+<section id="report-analyses-that-did-not-give-a-small-p-value" class="level2" data-number="16.12">
+<h2 data-number="16.12" class="anchored" data-anchor-id="report-analyses-that-did-not-give-a-small-p-value"><span class="header-section-number">16.12</span> Report analyses that did not give a small p-value</h2>
+<p>A non-significant result still contains an estimate and uncertainty. Report them and explain which values remain compatible with the data and method. The absence of a small p-value does not establish absence of an effect. <span class="citation" data-cites="BMJAbsence">[<a href="references.html#ref-BMJAbsence" role="doc-biblioref">36</a>]</span></p>
+<p>Distinguish an inconclusive estimate from a precise estimate near a prespecified negligible range. Equivalence and non-inferiority analyses require their own planned margins and methods. Do not retrofit their conclusions to a conventional comparison.</p>
+</section>
+<section id="keep-the-conclusion-within-the-evidence" class="level2" data-number="16.13">
+<h2 data-number="16.13" class="anchored" data-anchor-id="keep-the-conclusion-within-the-evidence"><span class="header-section-number">16.13</span> Keep the conclusion within the evidence</h2>
+<p>Use “associated with” for an observational or simple unadjusted relationship unless the design and analysis support a stronger claim. A result from the recruited sample does not automatically generalise to all patients, all facilities, or the entire community.</p>
+<p>Separate a statistical estimate from a treatment recommendation. Clinical relevance depends on the clinical objective, benefits and harms, uncertainty, and evidence beyond one analytical result. The invented numerical examples in this book teach interpretation and are not evidence for practice recommendations.</p>
+</section>
+<section id="preserve-an-auditable-result" class="level2" data-number="16.14">
+<h2 data-number="16.14" class="anchored" data-anchor-id="preserve-an-auditable-result"><span class="header-section-number">16.14</span> Preserve an auditable result</h2>
+<p>Retain the source, cleaned data, dictionary, analysis log, saved jamovi file, software versions, and final exported output. A reviewer should be able to connect the reported result to the analysis settings and the observations used.</p>
+<p>Before release, compare the text, table, figure, and output. Check denominators, sign, units, reference categories, intervals, rounding, and p-values. This final consistency check often identifies reporting errors that a successful statistical calculation cannot detect.</p>
+</section>
+<section id="hands-on-reporting-results" class="level2" data-number="16.15">
+<h2 data-number="16.15" class="anchored" data-anchor-id="hands-on-reporting-results"><span class="header-section-number">16.15</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add exported jamovi output, manuscript tables, screenshots, and reporting exercise here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="16.16">
+<h2 data-number="16.16" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">16.16</span> Review questions</h2>
+<ol type="1">
+<li>What is missing from the statement “There was a significant difference”?</li>
+<li>Why is “OR = 2.43, so risk is 2.43 times higher” incorrect in the teaching example?</li>
+<li>What should be reported when a comparison is non-significant?</li>
+<li>Which quantities should agree across the paragraph, table, figure, and saved analysis?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="16.17">
+<h2 data-number="16.17" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">16.17</span> Answers and reasoning</h2>
+<ol type="1">
+<li>The comparison, direction, magnitude, units, uncertainty, and analytical sample.</li>
+<li>The OR compares odds, and the example’s risk ratio is 2.00. The scales differ.</li>
+<li>The estimate, interval, method, denominator, and relevant interpretation of the remaining uncertainty.</li>
+<li>Denominators, variable definitions, contrast direction, units, reference categories, estimates, intervals, and appropriately rounded inferential results.</li>
+</ol>
+</section>
 
 
-</section>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-SAMPL" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">EQUATOR Network. Basic statistical reporting for articles published in biomedical journals: The SAMPL guidelines. <a href="https://www.equator-network.org/reporting-guidelines/sampl/">https://www.equator-network.org/reporting-guidelines/sampl/</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-ICMJE" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">International Committee of Medical Journal Editors. Preparing a manuscript for submission to a medical journal. <a href="https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html">https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-BMJAbsence" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Altman DG, Bland JM. Absence of evidence is not evidence of absence. BMJ. 1995;311:485. doi: <a href="https://doi.org/10.1136/bmj.311.7003.485">10.1136/bmj.311.7003.485</a> <a href="https://www.bmj.com/content/311/7003/485">https://www.bmj.com/content/311/7003/485</a></div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -745,13 +995,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./reporting.html" class="pagination-link" aria-label="Reporting Your Findings">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Reporting Your Findings</span>
+      <a href="./reporting.html" class="pagination-link" aria-label="Reporting and Interpretation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Reporting and Interpretation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./statistical-formulas.html" class="pagination-link" aria-label="Statistical Formulas">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Statistical Formulas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -760,4 +1010,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

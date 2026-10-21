@@ -1,13 +1,11 @@
----
-title: "Foundations"
----
+# Foundations {.unnumbered}
 
-The foundation section establishes the essential groundwork for conducting any form of data analysis. Before applying statistical methods or interpreting results, it is necessary to understand the role that data analysis plays within the broader research process, how to operate within the analytical environment, and how to manage data in a structured and reliable manner. Without this foundation, subsequent analyses risk becoming mechanical, inconsistent, and methodologically unsound.
+The first task is to establish what the data can answer. A well-defined question identifies the population, the outcome, the comparison or predictor, and the time at which the outcome is measured. The study design then determines whether observations are independent, paired, repeated, or clustered. These decisions must precede a statistical test.
 
-Data analysis serves as the link between raw observations and meaningful conclusions. It transforms collected data into interpretable information that can address research questions, test hypotheses, and support decision-making. This requires clarity regarding the type of analysis being performed—whether descriptive, inferential, or predictive—and how each aligns with the study objectives. Establishing this perspective early ensures that analytical choices remain purposeful rather than arbitrary.
+The six chapters in this part move from the research question to a usable analytical record. The first introduces designs, measurement scales, sampling, and the unit of observation. The second explains the jamovi environment. Four dedicated preparation chapters then address data entry and validation, cleaning and missing values, transformations and derived variables, and preparation for a specific analysis.
 
-Getting started with the analytical environment involves developing familiarity with the tools used for analysis. Within Jamovi, this includes importing datasets, understanding variable structures, and navigating the interface to perform basic operations. Early competence at this stage reduces technical errors and allows focus to remain on analytical reasoning rather than software mechanics.
+These stages have different purposes. Validation discovers discrepancies between the file and the measurement plan. Cleaning resolves them using evidence. Transformation creates quantities needed for the question. Analysis preparation defines which eligible observations and variables contribute to a particular result. Keeping those purposes explicit helps the researcher explain both the values and the denominator.
 
-Equally critical is data management, which underpins the validity of all subsequent analysis. This includes defining variables correctly, assigning appropriate measurement levels, handling missing data, and maintaining consistency in coding. Well-managed data ensure that the dataset accurately represents the underlying study population and that statistical procedures operate on valid inputs.
+Use this part to prepare an analysis specification containing the question, eligible observations, variables, coding, missing-value rules, and intended summaries. STROBE reporting guidance asks observational researchers to describe participants, variables, bias, study size, and statistical methods explicitly. That reporting requirement is easier to meet when these items are documented before analysis. [@STROBE]
 
-Together, these components provide a structured entry point into data analysis. They ensure that the analytical process begins with clarity, control, and data integrity, forming the basis upon which all further statistical work is built.
+By the end of this part, the reader should be able to inspect a dataset without starting a test and identify whether its structure matches the intended analysis.

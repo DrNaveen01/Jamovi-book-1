@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Categorical Variables – Hands-On Data Analysis Using Jamovi</title>
+<title>12&nbsp; Associations Between Categorical Variables – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-885b2cfb8d18508768e9bf8f9ab5c5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,55 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
+<style>html{ scroll-behavior: smooth; }</style>
 
+  <script defer="" src="vendor/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./categorical-variables.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Methods</a></li><li class="breadcrumb-item"><a href="./categorical-variables.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,12 +161,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./jamovi-book-volume-1-review.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +206,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +247,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +270,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +305,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +334,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +369,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -305,15 +385,34 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
+   
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">12.1</span> Learning objectives</a></li>
+  <li><a href="#start-with-the-design-and-denominator" id="toc-start-with-the-design-and-denominator" class="nav-link" data-scroll-target="#start-with-the-design-and-denominator"><span class="header-section-number">12.2</span> Start with the design and denominator</a></li>
+  <li><a href="#construct-and-label-the-contingency-table" id="toc-construct-and-label-the-contingency-table" class="nav-link" data-scroll-target="#construct-and-label-the-contingency-table"><span class="header-section-number">12.3</span> Construct and label the contingency table</a></li>
+  <li><a href="#pearson-chi-square-test-of-independence" id="toc-pearson-chi-square-test-of-independence" class="nav-link" data-scroll-target="#pearson-chi-square-test-of-independence"><span class="header-section-number">12.4</span> Pearson chi-square test of independence</a></li>
+  <li><a href="#expected-counts-and-sparse-tables" id="toc-expected-counts-and-sparse-tables" class="nav-link" data-scroll-target="#expected-counts-and-sparse-tables"><span class="header-section-number">12.5</span> Expected counts and sparse tables</a></li>
+  <li><a href="#fishers-exact-procedure" id="toc-fishers-exact-procedure" class="nav-link" data-scroll-target="#fishers-exact-procedure"><span class="header-section-number">12.6</span> Fisher’s exact procedure</a></li>
+  <li><a href="#risk-or-prevalence-difference" id="toc-risk-or-prevalence-difference" class="nav-link" data-scroll-target="#risk-or-prevalence-difference"><span class="header-section-number">12.7</span> Risk or prevalence difference</a></li>
+  <li><a href="#risk-ratio-and-odds-ratio" id="toc-risk-ratio-and-odds-ratio" class="nav-link" data-scroll-target="#risk-ratio-and-odds-ratio"><span class="header-section-number">12.8</span> Risk ratio and odds ratio</a></li>
+  <li><a href="#larger-contingency-tables" id="toc-larger-contingency-tables" class="nav-link" data-scroll-target="#larger-contingency-tables"><span class="header-section-number">12.9</span> Larger contingency tables</a></li>
+  <li><a href="#paired-binary-outcomes-mcnemars-question" id="toc-paired-binary-outcomes-mcnemars-question" class="nav-link" data-scroll-target="#paired-binary-outcomes-mcnemars-question"><span class="header-section-number">12.10</span> Paired binary outcomes: McNemar’s question</a></li>
+  <li><a href="#reporting-example" id="toc-reporting-example" class="nav-link" data-scroll-target="#reporting-example"><span class="header-section-number">12.11</span> Reporting example</a></li>
+  <li><a href="#hands-on-categorical" id="toc-hands-on-categorical" class="nav-link" data-scroll-target="#hands-on-categorical"><span class="header-section-number">12.12</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">12.13</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">12.14</span> Answers and reasoning</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./categorical-variables.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Methods</a></li><li class="breadcrumb-item"><a href="./categorical-variables.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></h1>
+<h1 class="title"><span id="sec-categorical" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></h1>
 </div>
 
 
@@ -330,12 +429,219 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The chi-square test is used to assess the association between two categorical variables by comparing observed frequencies with those expected under the assumption of independence. It evaluates whether the distribution of one variable differs across the levels of another, providing a basis for determining whether an observed pattern is likely due to chance. This method is central to the analysis of contingency tables in medical and public health research, particularly when outcomes and exposures are expressed as categories.</p>
-<p>The most commonly applied form is the Chi-square test for independence. When applied to 2×2 tables with small sample sizes, a continuity correction—often referred to as Yates’ correction—may be used to adjust for the discrete nature of the data and reduce overestimation of statistical significance. However, this correction can be overly conservative and is generally unnecessary when sample sizes are adequate. In situations where expected cell frequencies are low (typically less than 5), the Fisher’s exact test provides an exact probability calculation and is preferred over the chi-square approximation.</p>
-<p>The validity of the chi-square test depends on key assumptions, including independence of observations and sufficiently large expected frequencies in each cell. Violations of these assumptions can lead to inaccurate p-values and misleading conclusions. Therefore, evaluation of expected counts and appropriate selection between chi-square, continuity-corrected chi-square, and Fisher’s exact test are essential components of the analytical process.</p>
-<p>In applied settings, these tests are used to examine associations such as exposure–outcome relationships, treatment effects, or differences in proportions across groups. Within Jamovi, both chi-square and Fisher’s exact test can be performed through a graphical interface, with options for continuity correction where applicable. Interpretation should focus on the strength and direction of association, supported by measures such as proportions or risk estimates, rather than reliance on p-values alone.</p>
+<section id="learning-objectives" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">12.1</span> Learning objectives</h2>
+<div class="book-panel book-objectives">
+<p>After this chapter, the reader should be able to construct a contingency table, choose the correct denominator, distinguish independent from paired categorical observations, assess expected counts, and interpret a difference or ratio on the scale supported by the study design.</p>
+</div>
+</section>
+<section id="start-with-the-design-and-denominator" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="start-with-the-design-and-denominator"><span class="header-section-number">12.2</span> Start with the design and denominator</h2>
+<p>Consider whether an event occurs more often in group A than in group B. For an independent comparison, each participant contributes one group assignment and one event status. The table describes two categorical variables observed on the same set of independent participants.</p>
+<p>Before calculating a percentage, establish who was eligible to contribute to the event denominator and whether status is known. A recorded absence is different from an unknown outcome. If follow-up is incomplete, a simple event proportion may fail to answer the intended risk question.</p>
+<p>The study design determines the interpretation. An event proportion over defined follow-up can describe risk when its denominator and ascertainment support that meaning. A cross-sectional proportion may describe prevalence. A rate uses an appropriate person-time denominator and is a different quantity. In a case-control sample, selection by outcome means the sampled case proportion is not the population risk.</p>
+</section>
+<section id="construct-and-label-the-contingency-table" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="construct-and-label-the-contingency-table"><span class="header-section-number">12.3</span> Construct and label the contingency table</h2>
+<p>The following independent-group example is invented for teaching. Assume complete event status over the same defined follow-up in both groups:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Group</th>
+<th style="text-align: right;">Event present</th>
+<th style="text-align: right;">Event absent</th>
+<th style="text-align: right;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">85</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">155</td>
+<td style="text-align: right;">200</td>
+</tr>
+</tbody>
+</table>
+<p>The group-specific event proportions are 30/100 = 30% and 15/100 = 15%. These are row percentages in this orientation. The fraction of all event cases belonging to A is 30/45 = 66.7%, a different denominator and question.</p>
+<p>State the reference direction. The calculations below compare A with B. Reversing that direction changes the sign of a difference and takes the reciprocal of a ratio.</p>
+</section>
+<section id="pearson-chi-square-test-of-independence" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="pearson-chi-square-test-of-independence"><span class="header-section-number">12.4</span> Pearson chi-square test of independence</h2>
+<p>The null model states that the two categorical variables are independent. It specifies expected cell counts calculated from the row and column totals:</p>
+<p><span class="math display">
+E_{ij}=\frac{(\text{row total}_i)(\text{column total}_j)}{N}.
+</span></p>
+<p>The test statistic summarises the observed deviations from these expected counts:</p>
+<p><span class="math display">
+\chi^2=\sum_{i,j}\frac{(O_{ij}-E_{ij})^2}{E_{ij}},
+\qquad df=(r-1)(c-1).
+</span></p>
+<p>This is a test of association, not a measure of the magnitude of the association. R’s documentation describes the Pearson procedure, continuity correction for a 2-by-2 table, and a simulation-based option. <span class="citation" data-cites="RChiSq">[<a href="references.html#ref-RChiSq" role="doc-biblioref">49</a>]</span></p>
+<p>In the invented table, the expected event count in each group is 22.5, and the expected absent count is 77.5. The uncorrected Pearson statistic is 6.452 with one degree of freedom, giving p = 0.0111. The estimate of association still needs to be reported separately.</p>
+</section>
+<section id="expected-counts-and-sparse-tables" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="expected-counts-and-sparse-tables"><span class="header-section-number">12.5</span> Expected counts and sparse tables</h2>
+<p>The adequacy of the chi-square approximation concerns <strong>expected</strong> counts, not simply observed counts or overall sample size. A large total sample can still contain sparse cells when one category is rare. Examine the table dimensions and the distribution of expected counts.</p>
+<p>One commonly used screening convention checks for no expected count below one and a high proportion of expected counts at least five. R’s documented hybrid Fisher procedure uses more than 80% at least five and none below one. These are approximation rules within a defined procedure, not a universal guarantee of validity for every table. <span class="citation" data-cites="RFisher">[<a href="references.html#ref-RFisher" role="doc-biblioref">50</a>]</span></p>
+<p>For a sparse 2-by-2 table, Fisher’s exact procedure is a common option. For larger tables, an appropriate exact or Monte Carlo procedure may be needed, subject to computational feasibility and software availability. State the method and, for simulations, the number of repetitions and relevant reproducibility settings.</p>
+<p>Yates continuity correction applies to a 2-by-2 chi-square calculation. It is not a general repair for sparse tables of arbitrary dimensions. Select the procedure using observation structure, dimensions, expected counts, and the question rather than overall sample size alone. <span class="citation" data-cites="RChiSq">[<a href="references.html#ref-RChiSq" role="doc-biblioref">49</a>]</span></p>
+<p>Do not combine categories merely to make a test run unless the grouping is substantively defensible. Category merging changes the question and should be documented.</p>
+</section>
+<section id="fishers-exact-procedure" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="fishers-exact-procedure"><span class="header-section-number">12.6</span> Fisher’s exact procedure</h2>
+<p>Fisher’s test evaluates the table conditional on its margins under the independence model. For the invented 2-by-2 table, the two-sided p-value is 0.0171. This differs from the uncorrected Pearson p-value because the procedures use different inferential calculations.</p>
+<p>An “exact” calculation does not remove the need for appropriate observation structure or eliminate every uncertainty about design. The term identifies how the probability is calculated under the model. The two-sided definition and reported odds-ratio estimator can also vary by procedure; R’s Fisher documentation uses a conditional estimate rather than the simple cross-product ratio. <span class="citation" data-cites="RFisher">[<a href="references.html#ref-RFisher" role="doc-biblioref">50</a>]</span></p>
+<p>When reporting, identify the chosen procedure rather than selecting whichever p-value is smaller. The point estimate and interval should also be labelled with their calculation method.</p>
+</section>
+<section id="risk-or-prevalence-difference" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="risk-or-prevalence-difference"><span class="header-section-number">12.7</span> Risk or prevalence difference</h2>
+<p>Under the stated teaching follow-up, the risk difference is</p>
+<p><span class="math display">
+RD=\frac{30}{100}-\frac{15}{100}=0.15.
+</span></p>
+<p>This is <strong>15 percentage points</strong>, not a 15% relative increase. Its large-sample Wald 95% CI in this illustration is approximately 3.6 to 26.4 percentage points. The absolute difference communicates how much the group-specific proportions differ on the original probability scale.</p>
+<p>If the same table arose from a cross-sectional study, use an interpretation appropriate to prevalence rather than follow-up risk. If it arose from outcome-based sampling, do not calculate a population risk difference from the sampled case fractions.</p>
+</section>
+<section id="risk-ratio-and-odds-ratio" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="risk-ratio-and-odds-ratio"><span class="header-section-number">12.8</span> Risk ratio and odds ratio</h2>
+<p>For the teaching follow-up table,</p>
+<p><span class="math display">
+RR=\frac{30/100}{15/100}=2.00.
+</span></p>
+<p>The group A event risk is twice that in B under the stipulated design and complete follow-up. A log-scale large-sample 95% CI is 1.15 to 3.48.</p>
+<p>Odds are probability divided by its complement. Group A odds are 30/70; group B odds are 15/85. The sample odds ratio is</p>
+<p><span class="math display">
+OR=\frac{30/70}{15/85}=\frac{30\times85}{70\times15}=2.43.
+</span></p>
+<p>Its log-Wald 95% CI is 1.21 to 4.87. The odds ratio and risk ratio differ because odds and probability differ. An OR of 2.43 here is not a statement that the event probability is 2.43 times as high. Bland and Altman’s Statistics Note explains the odds-ratio calculation and interpretation. <span class="citation" data-cites="BMJOdds">[<a href="references.html#ref-BMJOdds" role="doc-biblioref">51</a>]</span></p>
+<p>The approximation of an OR to an RR depends on the outcome probabilities and context; it should not be assumed without checking. Always name the reported measure and reference category.</p>
+<section id="interpret-interval-methods-carefully" class="level3" data-number="12.8.1">
+<h3 data-number="12.8.1" class="anchored" data-anchor-id="interpret-interval-methods-carefully"><span class="header-section-number">12.8.1</span> Interpret interval methods carefully</h3>
+<p>The Wald intervals above are teaching calculations appropriate to the stated positive cell counts and large-sample approximation. They are not presented as the exact intervals returned by Fisher’s procedure. With small or zero counts, the simple log formulas can fail or perform poorly, requiring a suitable alternative method.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 14%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Measure in the example</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: left;">Interpretation of A relative to B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Risk difference</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: left;">15 percentage points higher risk</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Risk ratio</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: left;">Twice the risk</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Odds ratio</td>
+<td style="text-align: right;">2.43</td>
+<td style="text-align: left;">2.43 times the odds</td>
+</tr>
+</tbody>
+</table>
+<p>The numerical direction is the same, but the magnitudes are not interchangeable. A reporting table should not use one generic heading such as “relative risk” for all three quantities.</p>
+</section>
+</section>
+<section id="larger-contingency-tables" class="level2" data-number="12.9">
+<h2 data-number="12.9" class="anchored" data-anchor-id="larger-contingency-tables"><span class="header-section-number">12.9</span> Larger contingency tables</h2>
+<p>For more than two rows or columns, the overall chi-square test evaluates independence across the complete table. Its result does not identify a particular category as the cause of the association. Examine observed counts, relevant percentages, and prespecified comparisons before drawing a category-specific conclusion.</p>
+<p>Cramér’s V can summarise the strength of an association without giving its clinical direction. It is not a risk ratio, an odds ratio, or the proportion of participants with an event. Prefer question-specific contrasts when available and substantively useful.</p>
+<p>jamovi’s contingency-table analysis can display observed and expected counts, percentages, test results, and several association measures. Select the quantities appropriate to the table and design; an available checkbox does not establish that every measure is meaningful for that study. <span class="citation" data-cites="jamoviContingency">[<a href="references.html#ref-jamoviContingency" role="doc-biblioref">22</a>]</span></p>
+</section>
+<section id="paired-binary-outcomes-mcnemars-question" class="level2" data-number="12.10">
+<h2 data-number="12.10" class="anchored" data-anchor-id="paired-binary-outcomes-mcnemars-question"><span class="header-section-number">12.10</span> Paired binary outcomes: McNemar’s question</h2>
+<p>If the same participants have a binary status before and after an observation period, the data are paired. A 2-by-2 table now cross-classifies before and after status rather than two independent groups. McNemar’s procedure evaluates marginal symmetry and uses the discordant pairs for the comparison. <span class="citation" data-cites="RMcNemar">[<a href="references.html#ref-RMcNemar" role="doc-biblioref">52</a>]</span></p>
+<p>In an invented table, suppose 20 participants have the event at both times, 15 change from present to absent, 5 change from absent to present, and 60 are absent at both times. There are 100 pairs, but only the 20 discordant pairs inform the change-direction comparison. The before proportion is 35% and the after proportion is 25%.</p>
+<p>An independent Pearson test applied as if the before and after samples were unrelated would discard the pairing. Use a paired categorical procedure, with an exact conditional approach considered when the discordant counts require it. A binomial calculation on the discordant counts is one exact route under the paired null model. <span class="citation" data-cites="RBinom jamoviPairedTables">[<a href="references.html#ref-RBinom" role="doc-biblioref">26</a>, <a href="references.html#ref-jamoviPairedTables" role="doc-biblioref">53</a>]</span></p>
+</section>
+<section id="reporting-example" class="level2" data-number="12.11">
+<h2 data-number="12.11" class="anchored" data-anchor-id="reporting-example"><span class="header-section-number">12.11</span> Reporting example</h2>
+<div class="book-panel book-reporting">
+<p>For the independent teaching illustration: “The event occurred in 30 of 100 participants in group A (30.0%) and 15 of 100 in B (15.0%). Under the stipulated common follow-up, the risk ratio for A versus B was 2.00 (log-Wald 95% CI 1.15–3.48), and the absolute risk difference was 15.0 percentage points (Wald 95% CI 3.6–26.4). The uncorrected Pearson chi-square test gave χ²(1) = 6.45, p = 0.011.”</p>
+</div>
+<p>This statement names the denominators, measures, directions, interval methods, and test. It does not describe the association as causal. If a different design or procedure is used, revise those elements rather than transplanting this wording unchanged.</p>
+</section>
+<section id="hands-on-categorical" class="level2" data-number="12.12">
+<h2 data-number="12.12" class="anchored" data-anchor-id="hands-on-categorical"><span class="header-section-number">12.12</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add independent and paired categorical examples, expected counts, datasets, and screenshots here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="12.13">
+<h2 data-number="12.13" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">12.13</span> Review questions</h2>
+<ol type="1">
+<li>Which counts determine whether the chi-square approximation may be inadequate?</li>
+<li>Does a large total sample guarantee that all table cells have adequate expected counts?</li>
+<li>In the invented table, why are RR = 2.00 and OR = 2.43 different?</li>
+<li>Which observations inform McNemar’s comparison in the paired example?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="12.14">
+<h2 data-number="12.14" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">12.14</span> Answers and reasoning</h2>
+<ol type="1">
+<li>Expected counts under the independence model, assessed with table dimensions and the distribution of sparse cells.</li>
+<li>No.&nbsp;A rare category can create sparse expected counts despite a large total.</li>
+<li>The RR compares probabilities; the OR compares probability divided by its complement.</li>
+<li>The 15 present-to-absent and 5 absent-to-present pairs. The concordant pairs do not contribute to that direction comparison.</li>
+</ol>
+</section>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-RChiSq" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">R Core Team. Pearson’s chi-squared test for count data. <a href="https://www.stat.ethz.ch/R-manual/R-patched/library/stats/html/chisq.test.html">https://www.stat.ethz.ch/R-manual/R-patched/library/stats/html/chisq.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RFisher" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">R Core Team. Fisher’s exact test for count data. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/fisher.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/fisher.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-BMJOdds" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Bland JM, Altman DG. The odds ratio. BMJ. 2000;320:1468. doi: <a href="https://doi.org/10.1136/bmj.320.7247.1468">10.1136/bmj.320.7247.1468</a> <a href="https://www.bmj.com/content/320/7247/1468.1">https://www.bmj.com/content/320/7247/1468.1</a></div>
+</div>
+<div id="ref-jamoviContingency" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. Contingency tables: contTables. <a href="https://docs.jamovi.org/jmv/jmv_contTables.html">https://docs.jamovi.org/jmv/jmv_contTables.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RMcNemar" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">R Core Team. McNemar’s chi-squared test for count data. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/mcnemar.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/mcnemar.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RBinom" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">R Core Team. Exact binomial test. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/binom.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/binom.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-jamoviPairedTables" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. Paired samples contingency tables: contTablesPaired. <a href="https://docs.jamovi.org/jmv/jmv_contTablesPaired.html">https://docs.jamovi.org/jmv/jmv_contTablesPaired.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -740,13 +1046,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./comparing-more-than-two-means.html" class="pagination-link" aria-label="Comparing More Than Two Means">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span>
+      <a href="./comparing-more-than-two-means.html" class="pagination-link" aria-label="Comparing More Than Two Groups">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./regression.html" class="pagination-link" aria-label="Regression">
-        <span class="nav-page-text">Regression</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./regression.html" class="pagination-link" aria-label="Correlation and Introductory Regression">
+        <span class="nav-page-text">Correlation and Introductory Regression</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -755,4 +1061,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

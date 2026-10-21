@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Logistic Regression – Hands-On Data Analysis Using Jamovi</title>
+<title>15&nbsp; Introduction to Logistic Regression – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-885b2cfb8d18508768e9bf8f9ab5c5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,55 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
+<style>html{ scroll-behavior: smooth; }</style>
 
+  <script defer="" src="vendor/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Regression</a></li><li class="breadcrumb-item"><a href="./logistic-regression.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Correlation and Introductory Regression</a></li><li class="breadcrumb-item"><a href="./logistic-regression.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,12 +161,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./jamovi-book-volume-1-review.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +206,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +247,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +270,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +305,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +334,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +369,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -305,15 +385,36 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
+   
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">15.1</span> Learning objectives</a></li>
+  <li><a href="#the-scope-of-this-chapter" id="toc-the-scope-of-this-chapter" class="nav-link" data-scroll-target="#the-scope-of-this-chapter"><span class="header-section-number">15.2</span> The scope of this chapter</a></li>
+  <li><a href="#a-binary-outcome-needs-a-defined-event" id="toc-a-binary-outcome-needs-a-defined-event" class="nav-link" data-scroll-target="#a-binary-outcome-needs-a-defined-event"><span class="header-section-number">15.3</span> A binary outcome needs a defined event</a></li>
+  <li><a href="#probability-odds-and-log-odds" id="toc-probability-odds-and-log-odds" class="nav-link" data-scroll-target="#probability-odds-and-log-odds"><span class="header-section-number">15.4</span> Probability, odds, and log odds</a></li>
+  <li><a href="#the-simple-logistic-model" id="toc-the-simple-logistic-model" class="nav-link" data-scroll-target="#the-simple-logistic-model"><span class="header-section-number">15.5</span> The simple logistic model</a></li>
+  <li><a href="#a-binary-predictor-connects-the-model-to-a-table" id="toc-a-binary-predictor-connects-the-model-to-a-table" class="nav-link" data-scroll-target="#a-binary-predictor-connects-the-model-to-a-table"><span class="header-section-number">15.6</span> A binary predictor connects the model to a table</a></li>
+  <li><a href="#a-continuous-predictor-and-the-probability-curve" id="toc-a-continuous-predictor-and-the-probability-curve" class="nav-link" data-scroll-target="#a-continuous-predictor-and-the-probability-curve"><span class="header-section-number">15.7</span> A continuous predictor and the probability curve</a></li>
+  <li><a href="#confidence-intervals-and-p-values" id="toc-confidence-intervals-and-p-values" class="nav-link" data-scroll-target="#confidence-intervals-and-p-values"><span class="header-section-number">15.8</span> Confidence intervals and p-values</a></li>
+  <li><a href="#basic-model-checks" id="toc-basic-model-checks" class="nav-link" data-scroll-target="#basic-model-checks"><span class="header-section-number">15.9</span> Basic model checks</a></li>
+  <li><a href="#association-and-prediction-are-different-objectives" id="toc-association-and-prediction-are-different-objectives" class="nav-link" data-scroll-target="#association-and-prediction-are-different-objectives"><span class="header-section-number">15.10</span> Association and prediction are different objectives</a></li>
+  <li><a href="#design-affects-interpretation-of-fitted-probabilities" id="toc-design-affects-interpretation-of-fitted-probabilities" class="nav-link" data-scroll-target="#design-affects-interpretation-of-fitted-probabilities"><span class="header-section-number">15.11</span> Design affects interpretation of fitted probabilities</a></li>
+  <li><a href="#reading-jamovi-output" id="toc-reading-jamovi-output" class="nav-link" data-scroll-target="#reading-jamovi-output"><span class="header-section-number">15.12</span> Reading jamovi output</a></li>
+  <li><a href="#reporting-example" id="toc-reporting-example" class="nav-link" data-scroll-target="#reporting-example"><span class="header-section-number">15.13</span> Reporting example</a></li>
+  <li><a href="#hands-on-logistic-regression" id="toc-hands-on-logistic-regression" class="nav-link" data-scroll-target="#hands-on-logistic-regression"><span class="header-section-number">15.14</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">15.15</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">15.16</span> Answers and reasoning</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Regression</a></li><li class="breadcrumb-item"><a href="./logistic-regression.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Correlation and Introductory Regression</a></li><li class="breadcrumb-item"><a href="./logistic-regression.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-log-reg" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></h1>
+<h1 class="title"><span id="sec-logistic-regression" class="quarto-section-identifier"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></h1>
 </div>
 
 
@@ -330,12 +431,164 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Logistic regression is used to model the relationship between one or more predictor variables and a binary outcome. It is applied when the dependent variable represents the occurrence of an event, such as disease status, treatment response, or mortality. Unlike linear regression, which models continuous outcomes, logistic regression estimates the probability of an event while ensuring that predicted values remain within the valid range of 0 to 1.</p>
-<p>At its core, Logistic regression uses a logit transformation to relate predictors to the outcome. The coefficients obtained from the model are interpreted in terms of odds ratios, representing the change in odds of the outcome for a one-unit increase in the predictor, holding other variables constant. This allows quantification of associations in a way that is directly applicable to clinical and epidemiological contexts. Multiple logistic regression extends this framework by incorporating several predictors simultaneously, enabling adjustment for confounding and identification of independent effects.</p>
-<p>The validity of logistic regression depends on key assumptions, including independence of observations, correct specification of the model, and a linear relationship between continuous predictors and the log-odds of the outcome. Issues such as multicollinearity, sparse data, or complete separation can affect model stability and interpretation. Therefore, model diagnostics and careful variable selection are essential components of the analytical process.</p>
-<p>In applied research, logistic regression is widely used to identify risk factors, estimate adjusted associations, and support decision-making. Within Jamovi, it can be implemented through a graphical interface; however, interpretation requires attention to odds ratios, confidence intervals, model fit measures, and the distinction between statistical association and causal inference.</p>
+<section id="learning-objectives" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">15.1</span> Learning objectives</h2>
+<div class="book-panel book-objectives">
+<p>After this chapter, the reader should be able to define a binary outcome and its event category, distinguish probability from odds, interpret a coefficient as an odds ratio, and recognise the limits of a simple unadjusted binary-outcome model.</p>
+</div>
+</section>
+<section id="the-scope-of-this-chapter" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="the-scope-of-this-chapter"><span class="header-section-number">15.2</span> The scope of this chapter</h2>
+<p>This is an introductory bridge from Volume I to Volume II. It explains the binary-outcome scale and a model with one predictor. Multiple predictors, confounder selection, interaction, detailed diagnostics, penalised estimation, and prediction-model validation belong to later volumes.</p>
+<p>The chapter connects a contingency-table odds ratio with a regression coefficient. Its introductory role supports interpretation of the binary-outcome scale before moving to adjusted modeling.</p>
+</section>
+<section id="a-binary-outcome-needs-a-defined-event" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="a-binary-outcome-needs-a-defined-event"><span class="header-section-number">15.3</span> A binary outcome needs a defined event</h2>
+<p>A binary outcome has two defined categories. Write which category is the event being modeled and which is the comparison. A model of event presence and a model of event absence describe complementary probabilities and reverse the odds-ratio direction.</p>
+<p>For teaching, code event present as <span class="math inline">Y=1</span> and event absent as <span class="math inline">Y=0</span>. The probability <span class="math inline">p=P(Y=1\mid X)</span> is the conditional event probability. In software, verify the actual event and reference labels in the output; do not infer them from a remembered default.</p>
+<p>The observation unit and outcome window remain essential. One record per participant with a known event status is different from several visits per participant. A binary variable can be entered into the software in both situations, but the same simple independence model is not automatically appropriate.</p>
+</section>
+<section id="probability-odds-and-log-odds" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="probability-odds-and-log-odds"><span class="header-section-number">15.4</span> Probability, odds, and log odds</h2>
+<p>Probability ranges from zero to one. Odds are</p>
+<p><span class="math display">
+\text{odds}=\frac{p}{1-p}.
+</span></p>
+<p>If the event probability is 0.15, the odds are 0.15/0.85 = 0.1765. A probability of 0.30 gives odds of 0.30/0.70 = 0.4286. The probability ratio is 2.00, while the odds ratio is 2.43. The measures describe different scales. <span class="citation" data-cites="BMJOdds">[<a href="references.html#ref-BMJOdds" role="doc-biblioref">51</a>]</span></p>
+<p>The natural logarithm of the odds is the <strong>logit</strong>:</p>
+<p><span class="math display">
+\operatorname{logit}(p)=\log\left(\frac{p}{1-p}\right).
+</span></p>
+<p>Unlike probability, log odds can vary over the full numerical line. Logistic regression models that transformed quantity and maps it back to a probability between zero and one.</p>
+</section>
+<section id="the-simple-logistic-model" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="the-simple-logistic-model"><span class="header-section-number">15.5</span> The simple logistic model</h2>
+<p>With one predictor,</p>
+<p><span class="math display">
+\log\left(\frac{p_i}{1-p_i}\right)=\beta_0+\beta_1X_i.
+</span></p>
+<p>The corresponding event probability is</p>
+<p><span class="math display">
+p_i=\frac{\exp(\beta_0+\beta_1X_i)}{1+\exp(\beta_0+\beta_1X_i)}.
+</span></p>
+<p>The binomial family with a logit link is a documented generalised linear model specification. R’s family and model documentation distinguish the response distribution from its link function. <span class="citation" data-cites="RFamily RGlm">[<a href="references.html#ref-RFamily" role="doc-biblioref">60</a>, <a href="references.html#ref-RGlm" role="doc-biblioref">61</a>]</span></p>
+<p>A one-unit predictor increase adds <span class="math inline">\beta_1</span> to the log odds and multiplies the odds by <span class="math inline">\exp(\beta_1)</span>. It does not add a fixed amount to the event probability. The probability change depends on the starting probability and the model.</p>
+</section>
+<section id="a-binary-predictor-connects-the-model-to-a-table" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="a-binary-predictor-connects-the-model-to-a-table"><span class="header-section-number">15.6</span> A binary predictor connects the model to a table</h2>
+<p>Return to the invented independent-group table: 30 events among 100 participants in A and 15 among 100 in B. Let <span class="math inline">X=0</span> for B and <span class="math inline">X=1</span> for A.</p>
+<p>The intercept is the log odds in B:</p>
+<p><span class="math display">
+\beta_0=\log(15/85)=-1.7346.
+</span></p>
+<p>The group coefficient is the log odds ratio:</p>
+<p><span class="math display">
+\beta_1=\log\left(\frac{30/70}{15/85}\right)=0.8873.
+</span></p>
+<p>Exponentiating gives <span class="math inline">\exp(0.8873)=2.4286</span>. Transforming the linear predictor back to probability gives 0.15 for B and 0.30 for A. This reproduces the two observed teaching proportions in the simple two-group model.</p>
+<p>The coefficient is unadjusted because the model contains only group. It should not be described as an association independent of age, severity, or other characteristics.</p>
+</section>
+<section id="a-continuous-predictor-and-the-probability-curve" class="level2" data-number="15.7">
+<h2 data-number="15.7" class="anchored" data-anchor-id="a-continuous-predictor-and-the-probability-curve"><span class="header-section-number">15.7</span> A continuous predictor and the probability curve</h2>
+<p>For a continuous predictor, the model assumes a straight-line relationship between that predictor and the log odds in this simple specification. It does not assume a straight-line relationship with the raw event probability. A one-unit effect on the odds can correspond to different absolute probability changes at different starting probabilities.</p>
+<div id="fig-logistic-curve" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A smooth S-shaped curve shows event probability increasing with an arbitrary predictor while remaining between zero and one.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-logistic-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/teaching/logistic-curve.png" class="img-fluid figure-img" style="width:100.0%" alt="A smooth S-shaped curve shows event probability increasing with an arbitrary predictor while remaining between zero and one.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-logistic-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.1: A teaching logistic curve maps a straight-line log-odds predictor to probabilities between zero and one. Its numerical predictor units are arbitrary and do not represent a validated clinical score.
+</figcaption>
+</figure>
+</div>
+<p>State the predictor unit and consider a clinically understandable scaling before reporting a coefficient. A coefficient per year and one per decade differ numerically because the unit differs. Their odds ratios must be interpreted on the stated increment.</p>
+</section>
+<section id="confidence-intervals-and-p-values" class="level2" data-number="15.8">
+<h2 data-number="15.8" class="anchored" data-anchor-id="confidence-intervals-and-p-values"><span class="header-section-number">15.8</span> Confidence intervals and p-values</h2>
+<p>A common large-sample Wald interval is first calculated for the log-odds coefficient, then exponentiated to the OR scale. The no-association coefficient is zero; the corresponding OR is one. Other interval procedures may be appropriate, so identify the method rather than assuming all intervals are Wald intervals.</p>
+<p>For the invented table, the group coefficient is 0.8873 with SE 0.3550. Its Wald z statistic is 2.499, p = 0.0124, and the exponentiated 95% interval is 1.21 to 4.87. These are calculated teaching values from the single-predictor table, not results of an author-supplied jamovi dataset.</p>
+<p>The Wald p-value differs from the Pearson and Fisher p-values in the categorical chapter because these procedures use different test calculations. The relevant question is whether the selected procedure and its assumptions are appropriate, not which value is most favourable.</p>
+</section>
+<section id="basic-model-checks" class="level2" data-number="15.9">
+<h2 data-number="15.9" class="anchored" data-anchor-id="basic-model-checks"><span class="header-section-number">15.9</span> Basic model checks</h2>
+<p>Check event coding, predictor coding, reference category, analytical sample, and observation independence. For continuous predictors, assess whether the linear logit form is appropriate. Consider whether the data provide enough event and non-event information for the model being fitted.</p>
+<p>Binary outcomes do not have normally distributed errors in the ordinary linear-model sense. A normality test of the 0/1 outcome is therefore not a prerequisite for logistic regression. The binomial variance changes with probability, and the model uses that response structure. <span class="citation" data-cites="RFamily">[<a href="references.html#ref-RFamily" role="doc-biblioref">60</a>]</span></p>
+<p>Very sparse combinations or separation can produce unstable or diverging coefficient estimates. Separation occurs when predictor information divides event from non-event status perfectly in a way that prevents a finite ordinary maximum-likelihood estimate. Unusually large estimates, broad intervals, or fitting warnings require investigation rather than uncritical interpretation. <span class="citation" data-cites="RGlm">[<a href="references.html#ref-RGlm" role="doc-biblioref">61</a>]</span></p>
+<p>Do not use a rigid event-count rule as proof that a model is adequate. The information, complexity, predictor distributions, and intended use matter. Detailed strategy for limited information and more complex models is reserved for Volume II and III.</p>
+</section>
+<section id="association-and-prediction-are-different-objectives" class="level2" data-number="15.10">
+<h2 data-number="15.10" class="anchored" data-anchor-id="association-and-prediction-are-different-objectives"><span class="header-section-number">15.10</span> Association and prediction are different objectives</h2>
+<p>An association analysis focuses on the predictor contrast and its interpretation. A prediction model focuses on estimating an individual’s outcome probability in a specified setting. A significant OR does not by itself show that prediction is accurate or clinically useful.</p>
+<p>Prediction requires assessment of calibration, discrimination, and validation appropriate to the use. A classification accuracy at one cutoff can be misleading when the event is uncommon, and the cutoff has to serve a specified decision. This chapter does not claim to validate a clinical prediction tool.</p>
+<p>Pseudo-<span class="math inline">R^2</span> measures in logistic output are not interchangeable with the ordinary linear model’s <span class="math inline">R^2</span>. Do not label them as the literal percentage of individual outcome variation explained without identifying their definition.</p>
+</section>
+<section id="design-affects-interpretation-of-fitted-probabilities" class="level2" data-number="15.11">
+<h2 data-number="15.11" class="anchored" data-anchor-id="design-affects-interpretation-of-fitted-probabilities"><span class="header-section-number">15.11</span> Design affects interpretation of fitted probabilities</h2>
+<p>The teaching table stipulates complete common follow-up and supports its stated risk interpretation. In outcome-based sampling, the sampled event fraction does not directly reproduce the population event probability. An odds-ratio analysis may remain relevant, but absolute risks require additional design information and an appropriate method.</p>
+<p>Likewise, a before–after binary outcome or matched case-control design requires recognition of pairing or matching. A simple unadjusted independent logistic model should not be transplanted into those structures without extension.</p>
+</section>
+<section id="reading-jamovi-output" class="level2" data-number="15.12">
+<h2 data-number="15.12" class="anchored" data-anchor-id="reading-jamovi-output"><span class="header-section-number">15.12</span> Reading jamovi output</h2>
+<p>Confirm the binary outcome, modeled event, reference level, and single predictor. Distinguish the coefficient on the log-odds scale from its exponentiated OR. Read the interval, SE or test quantity, analytical sample, and relevant model notes. jamovi’s logistic documentation describes coefficient, odds-ratio, and model-fit outputs. <span class="citation" data-cites="jamoviLogistic">[<a href="references.html#ref-jamoviLogistic" role="doc-biblioref">56</a>]</span></p>
+<p>The complete procedure, dataset, and screenshots will be added in the empty Hands-on box. This introductory text supports interpretation of that output; it does not claim that the missing practical demonstration has already been performed.</p>
+</section>
+<section id="reporting-example" class="level2" data-number="15.13">
+<h2 data-number="15.13" class="anchored" data-anchor-id="reporting-example"><span class="header-section-number">15.13</span> Reporting example</h2>
+<div class="book-panel book-reporting">
+<p>For the teaching table: “In a simple unadjusted logistic model with group B as reference, group A had higher event odds (OR 2.43; Wald 95% CI 1.21–4.87; p = 0.012). The model represents 200 invented participant outcomes, including 45 events. The OR compares odds, not risks, and no other predictors were included.”</p>
+</div>
+<p>For an actual manuscript, state the event definition and time window, reference category, selected model, missing-data handling, and design limitations. Avoid replacing “odds” with “risk” merely to simplify the sentence.</p>
+</section>
+<section id="hands-on-logistic-regression" class="level2" data-number="15.14">
+<h2 data-number="15.14" class="anchored" data-anchor-id="hands-on-logistic-regression"><span class="header-section-number">15.14</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add the introductory binary-outcome dataset, event coding, model, and screenshots here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="15.15">
+<h2 data-number="15.15" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">15.15</span> Review questions</h2>
+<ol type="1">
+<li>What is the OR when a coefficient on the log-odds scale is zero?</li>
+<li>Does OR = 2 mean that event probability doubles?</li>
+<li>What must be verified before interpreting the direction of a software coefficient?</li>
+<li>Does the one-predictor teaching model adjust for age or other characteristics?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="15.16">
+<h2 data-number="15.16" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">15.16</span> Answers and reasoning</h2>
+<ol type="1">
+<li><span class="math inline">\exp(0)=1</span>, the no-association value.</li>
+<li>No.&nbsp;It means that odds double; the corresponding probability change depends on the initial probability.</li>
+<li>Verify the modeled event, predictor coding, and reference category.</li>
+<li>No.&nbsp;It contains group only and is unadjusted.</li>
+</ol>
+</section>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-BMJOdds" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Bland JM, Altman DG. The odds ratio. BMJ. 2000;320:1468. doi: <a href="https://doi.org/10.1136/bmj.320.7247.1468">10.1136/bmj.320.7247.1468</a> <a href="https://www.bmj.com/content/320/7247/1468.1">https://www.bmj.com/content/320/7247/1468.1</a></div>
+</div>
+<div id="ref-RFamily" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">R Core Team. Family objects for models. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/family.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/family.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RGlm" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">R Core Team. Fitting generalized linear models. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-jamoviLogistic" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. From SPSS to jamovi: Logistic regression. <a href="https://docs.jamovi.org/spss2jamovi/s2j_logReg.html">https://docs.jamovi.org/spss2jamovi/s2j_logReg.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -740,13 +993,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./linear-regression.html" class="pagination-link" aria-label="Introduction To Linear Regression">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span>
+      <a href="./linear-regression.html" class="pagination-link" aria-label="Introduction to Simple Linear Regression">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./reporting.html" class="pagination-link" aria-label="Reporting Your Findings">
-        <span class="nav-page-text">Reporting Your Findings</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./reporting.html" class="pagination-link" aria-label="Reporting and Interpretation">
+        <span class="nav-page-text">Reporting and Interpretation</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -755,4 +1008,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

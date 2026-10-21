@@ -1,0 +1,156 @@
+# Data Cleaning and Missing Values {#sec-data-cleaning}
+
+## Learning objectives
+
+After this chapter, the reader should be able to resolve a data query using supporting evidence, distinguish duplicates from repeat observations, document corrections, describe missingness with appropriate denominators, and explain the limits of a complete-case analysis.
+
+## Cleaning is a documented decision process
+
+Cleaning changes an analytical representation when an issue has been identified and a supported resolution is available. It includes correcting a transcription error, harmonising equivalent labels, recognising special missing codes, and resolving duplicated records. Each action needs a reason that another researcher can inspect.
+
+Keep the original export unchanged and work on a named copy. Record the source version and the dictionary used to interpret it. Save the rules and change log with the cleaned file. Preserving a raw file separately from analytical work is part of good spreadsheet organisation. [@BromanWoo]
+
+The aim is to represent the recorded observations correctly. A cleaner distribution, a larger analytical sample, or a smaller p-value is not evidence that a correction is valid. When a finding cannot be resolved, retain its status and explain how it will affect the analysis.
+
+## Classify the finding before changing the value
+
+Separate confirmed errors, equivalent representations, valid unusual observations, and unresolved queries. They require different responses.
+
+| Finding | Evidence needed | Suitable action |
+|:--------|:----------------|:----------------|
+| Transcription error | Source confirms a different value | Correct the working value and log the change |
+| Equivalent category labels | Dictionary confirms a common meaning | Apply a consistent label mapping |
+| Special missing code | Dictionary defines the code | Represent it as missing for calculation |
+| Valid unusual observation | Source and measurement definition support it | Retain it; assess influence if relevant |
+| Unresolved conflicting values | Available sources do not settle the discrepancy | Record the query and apply a stated analytical rule |
+
+Do not guess that a large value is a misplaced decimal point. Query the source. If it confirms the recorded value, the statistical analysis must accommodate or transparently assess it. If it confirms an error, correct that error because of the source evidence, even if the result is almost unchanged.
+
+## Resolve duplicates using the correct key
+
+In a participant-level file, an ID repeated twice is a query. In a visit-level file, the same ID can appear legitimately at several occasions. The combination of ID and visit may be the correct row key. Check the observation unit defined in @sec-data-management before removing anything.
+
+An exact duplicate has the same relevant values and key as another record. A conflicting duplicate shares a key but contains different values. The latter requires source review; retaining the first or last row by default can select an arbitrary measurement.
+
+Suppose an invented file contains 204 rows expected to represent one row per participant. Source review establishes that four rows are repeated exports of existing records, leaving 200 distinct participant records. This arithmetic is valid only after confirming what those four rows represent. A file with 204 legitimate visits from 200 participants would require a different interpretation.
+
+If several measurements are eligible, use a defined selection rule, such as a protocol's scheduled occasion and allowed time window. Record tie handling. Averaging repeated measurements or choosing one is a derivation with consequences for the target quantity; it is not merely duplicate removal.
+
+## Harmonise categories without changing their meaning
+
+Inspect frequency tables before and after recoding. Differences in case, spacing, or spelling may produce separate labels for the same category. Confirm equivalence from the dictionary or source, then map them to a defined common label.
+
+For example, `B`, `b`, and `Group B` may represent the same study group. `Unknown` and `No` do not represent the same event status. A text value such as `NA` is also ambiguous until the source explains whether it means missing, not applicable, or a legitimate category.
+
+Preserve the original label when the mapping needs an audit. Compare original and cleaned variables in a cross-tabulation. Verify that every intended category has a destination, and inspect values left unmapped. A new label alone cannot demonstrate that the recode worked.
+
+## Check units, dates, and internal consistency
+
+A measurement can be numerically plausible while using the wrong unit. Review the source unit and dictionary before conversion. When a column combines values measured in centimetres and metres, an additional unit field or reliable source record is needed to determine which conversion applies. Guessing from the magnitude can misclassify valid observations.
+
+Check chronology against the study definitions. A recorded follow-up before baseline can indicate an entry error, an incorrect visit label, or a source-system convention. Confirm the explanation before calculating elapsed time. Preserve the original date representation and specify the parsing rule used in any external preparation step.
+
+Cross-field checks should reflect the collection process. An event date outside the defined observation period is a query about the outcome definition. A total that differs from the sum of recorded components is a query about calculation or measurement. Record the resolved values and the evidence, rather than silently forcing consistency.
+
+## Distinguish missingness from exclusion
+
+An ineligible participant is outside a stated analysis population. A participant with a missing outcome may be eligible but lack the value needed for a particular calculation. A verified duplicate is an extra representation of an existing observation. These are different reasons for changing a record count.
+
+Retain reason fields so the counts can be reported separately. If several exclusion criteria overlap, use a stated order for a sequential flow and also retain the underlying flags. Summing overlapping flags does not necessarily equal the number excluded.
+
+Missingness should be described among the observations for which the measurement was intended. Report the eligible number, observed number, and missing number. If not-applicable observations are excluded from that denominator, explain the rule.
+
+## An invented sample-flow example
+
+The following counts illustrate documentation; they do not describe an included patient dataset. Begin with the 200 distinct participant records from the duplicate example. Eight fail the specified eligibility criteria, leaving 192 eligible participants. Among these, 12 lack the follow-up outcome, leaving 180 available values for that outcome.
+
+| Stage | Number | Meaning |
+|:------|-------:|:--------|
+| Imported rows | 204 | Includes four verified duplicate rows |
+| Distinct participants | 200 | Duplicate resolution completed |
+| Eligible participants | 192 | Eight distinct participants are ineligible |
+| Observed follow-up outcomes | 180 | Twelve eligible participants lack this outcome |
+
+The missing-outcome percentage among eligible participants is $12/192\times100=6.25\%$. The 180 observed outcomes represent 93.75% of eligible participants. The missing proportion is not $12/204$, because imported rows are not the relevant eligible participant denominator.
+
+Suppose the eligible groups each contain 96 participants. Four outcomes are missing in A and eight in B, leaving 92 and 88 observed values. The group-specific missing proportions are 4.17% and 8.33%. A similar overall percentage could hide a different pattern between groups.
+
+These counts can describe the missingness pattern. They cannot establish that the missing outcomes would have the same distribution as observed outcomes. Interpretation requires information about follow-up and reasons for absence.
+
+## Understand assumptions about missingness
+
+**Missing completely at random (MCAR)** means that the missingness process is unrelated to observed and unobserved values. **Missing at random (MAR)** means that, conditional on relevant observed information, missingness does not depend on the missing values. **Missing not at random (MNAR)** means that dependence on unobserved values remains. These are properties and assumptions of the data process, rather than conclusions obtained from the percentage of blank cells. [@RubinMissing]
+
+A missed visit caused by an administrative accident may have a different relationship with health status from a missed visit caused by worsening illness. Even when a reason is recorded, its implications require judgment. Observed associations with missingness can challenge a simple assumption, but absence of such associations does not establish that unseen values are irrelevant.
+
+Record known reasons, examine missingness by group or occasion, and identify which assumptions the intended analysis needs. Formal missing-data modeling and sensitivity analysis belong beyond the introductory workflow in this volume.
+
+## Know what complete-case analysis does
+
+A complete-case analysis includes observations that have the values needed for its specified variables. A follow-up group comparison may use 180 outcomes in the invented example, while a paired analysis may use fewer if some baseline values are also missing. Missingness in an unrelated variable need not exclude a participant from the first calculation.
+
+R's `complete.cases` identifies observations without missing values in the supplied variables. The variables supplied therefore determine the case definition. [@RComplete] jamovi analyses also offer different missing-data handling choices in some procedures; inspect the relevant analysis settings and the resulting sample size. [@jamoviOneWay]
+
+Complete-case analysis changes the analysed set and may change the population represented by the result. Its validity depends on the missingness process, design, and target quantity. A large retained sample is not sufficient proof that bias is negligible.
+
+State which variables defined completeness, how many observations were omitted, and what is known about their missingness. If the same analysis is compared across different models, explain whether the sample changed as well as the model.
+
+## Why simple replacement is not a neutral repair
+
+Replacing an unknown value with zero turns absence of information into an observed measurement. Replacing every missing outcome with the sample mean creates repeated invented values and suppresses the variation that those outcomes might have contained. Neither action restores the lost information.
+
+Carrying a previous measurement forward also imposes a substantive assumption about change. It should not be described as an ordinary cleaning step. An imputation procedure needs a rationale, an appropriate uncertainty calculation, and assumptions that match the study. [@RubinMissing]
+
+For this introductory workflow, resolve coding errors, preserve actual missingness, report the analytical sample, and acknowledge the limitation. Seek an appropriate missing-data strategy when the intended research conclusion depends materially on unavailable values.
+
+## Handle unusual observations transparently
+
+Use summaries and graphs to locate values for review, but use evidence to decide whether they are errors. A boxplot flag or a large standardised distance is a description of an observation relative to the sample, not proof that the observation is invalid.
+
+A confirmed unusual value can have substantial influence on a mean or fitted line. An additional analysis examining that influence may be informative when justified and labelled. Report the main analysis rule and the sensitivity result; do not replace the primary result silently because an alternative is more convenient.
+
+Deleting valid extreme values changes the analysed distribution and can change the target population. An exclusion rule should follow the design or a defensible measurement rule and should be stated before selecting results.
+
+## Keep a change log and a release record
+
+A useful log includes the file version, affected key or variable, issue, supporting source, action, reason, date, and reviewer. Keep identifying details limited to what the authorised review process requires.
+
+| Log field | Example entry for a teaching file |
+|:----------|:---------------------------------|
+| Issue | Three records use lowercase group label `b` |
+| Verification | Dictionary and source confirm group B |
+| Action | Map `b` to B in the cleaned group column |
+| Check | Original-by-cleaned table has no unintended mapping |
+| Record | Rule, affected count, date, and reviewer retained |
+
+Before release, reconcile row and participant counts, repeat range and category checks, compare missingness with the raw file, and list unresolved issues. A corrected missing code may increase the recognised missing count even though no information was lost during cleaning. Explain that change.
+
+The cleaned file is ready for derivation when its values and structure have been reviewed. It is ready for a particular analysis only after the population, required variables, matching, and exclusion settings have also been checked in @sec-analysis-preparation.
+
+## Hands-on {#hands-on-data-cleaning}
+
+::: {.callout-note .hands-on-note title="jamovi workspace" icon=false}
+<!-- Author: add duplicate queries, cleaning records, missingness tables, and screenshots here. -->
+:::
+
+::: {.review-questions}
+
+## Review questions
+
+1. Why is a repeated participant ID not always a duplicate row?
+2. In the invented flow, which denominator gives the missing follow-up percentage?
+3. Does 6.25% missingness establish MCAR or MAR?
+4. Why may a paired analysis contain fewer observations than a follow-up-only comparison?
+
+:::
+
+::: {.review-answers}
+
+## Answers and reasoning
+
+1. Rows may represent different visits or events. The observation unit and full row key determine whether repetition is legitimate.
+2. The 192 eligible participants for whom follow-up was intended; 12/192 is 6.25%.
+3. No. Those assumptions concern how missingness relates to observed and unobserved values, which a percentage cannot establish.
+4. The paired calculation needs both defined measurements. An observed follow-up without baseline does not form a complete pair.
+
+:::

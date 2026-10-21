@@ -1,4 +1,238 @@
----
-title: "Statistical Formulas"
----
+# Statistical Formulas {#sec-formulas}
+
+This appendix is a reference for the basic quantities used in the chapters. A formula does not establish that its assumptions fit a dataset. Select the estimand and observation structure first, then use the calculation appropriate to them. The cited statistical documentation identifies the corresponding procedures.
+
+## Symbols and direction
+
+| Symbol | Meaning |
+|:-------|:--------|
+| $n$ | Number of independent observations, or complete pairs when specified |
+| $\bar x$ | Sample mean |
+| $s$ | Sample standard deviation |
+| $\hat p$ | Sample proportion |
+| $\widehat\Delta$ | Estimated difference in the defined direction |
+| $\alpha$ | Nominal significance level |
+| $t_{q,\nu}$ | Quantile q of a t distribution with ν degrees of freedom |
+| $z_q$ | Quantile q of the standard normal distribution |
+
+For independent comparisons, this appendix uses A minus B or A relative to B. For paired changes, it uses follow-up minus baseline. Define a different direction explicitly if one is used.
+
+## Mean, variance, and standard deviation
+
+$$
+\bar x=\frac{1}{n}\sum_{i=1}^{n}x_i,
+\qquad
+s^2=\frac{\sum_{i=1}^{n}(x_i-\bar x)^2}{n-1},
+\qquad s=\sqrt{s^2}.
+$$
+
+The mean and SD retain the measurement unit; variance has the squared unit. The sample SD requires at least two observations. The definitions are described in the NIST location and scale guidance. [@NISTLocation; @NISTScale]
+
+The median is the middle ordered value, averaging the two middle observations for an even n. The IQR is $Q_3-Q_1$. Quantile interpolation conventions can affect small-sample quartiles; the verification script uses R's default type 7. [@RQuantile]
+
+## Standard error and interval for a mean
+
+For independent observations under the conventional mean model,
+
+$$
+SE(\bar x)=\frac{s}{\sqrt n},
+\qquad CI_{1-\alpha}=\bar x\pm t_{1-\alpha/2,n-1}\frac{s}{\sqrt n}.
+$$
+
+This is an interval for the population mean, not a range for individual observations. Its coverage depends on the model and procedure. [@NISTCI]
+
+## Proportion
+
+$$
+\hat p=\frac{\text{number with the defined characteristic}}{\text{appropriate denominator}},
+\qquad \text{percentage}=100\hat p.
+$$
+
+An independent binomial large-sample SE is $\sqrt{\hat p(1-\hat p)/n}$. The corresponding simple Wald interval can perform poorly near zero or one or with limited information. Use a suitable interval procedure and name it; an exact binomial interval is one documented option. [@RBinom]
+
+## Independent mean difference: Welch
+
+$$
+\widehat\Delta=\bar x_A-\bar x_B,
+\qquad SE(\widehat\Delta)=\sqrt{\frac{s_A^2}{n_A}+\frac{s_B^2}{n_B}}.
+$$
+
+The Welch degrees of freedom are
+
+$$
+\nu=
+\frac{(s_A^2/n_A+s_B^2/n_B)^2}
+{\dfrac{(s_A^2/n_A)^2}{n_A-1}+\dfrac{(s_B^2/n_B)^2}{n_B-1}}.
+$$
+
+For a null difference $\Delta_0$,
+
+$$
+t=\frac{\widehat\Delta-\Delta_0}{SE(\widehat\Delta)},
+\qquad CI=\widehat\Delta\pm t_{1-\alpha/2,\nu}SE(\widehat\Delta).
+$$
+
+Welch's calculation uses separate variance estimates. A pooled Student method has a different variance assumption and degrees of freedom. [@RTTest]
+
+## Independent mean difference: pooled variance
+
+If a shared variance model is appropriate,
+
+$$
+s_p^2=\frac{(n_A-1)s_A^2+(n_B-1)s_B^2}{n_A+n_B-2},
+$$
+
+$$
+SE(\widehat\Delta)=s_p\sqrt{\frac{1}{n_A}+\frac{1}{n_B}},
+\qquad df=n_A+n_B-2.
+$$
+
+Use the pooled SE and its degrees of freedom in the corresponding test and interval. Do not switch between pooled and Welch formulas without identifying the selected model.
+
+## Paired mean change
+
+Let $d_i=x_{i,\text{follow-up}}-x_{i,\text{baseline}}$ for n complete pairs:
+
+$$
+\bar d=\frac{1}{n}\sum_i d_i,
+\qquad SE(\bar d)=\frac{s_d}{\sqrt n},
+$$
+
+$$
+t=\frac{\bar d-d_0}{s_d/\sqrt n},
+\quad df=n-1,
+\quad CI=\bar d\pm t_{1-\alpha/2,n-1}\frac{s_d}{\sqrt n}.
+$$
+
+The relevant spread is the SD of differences, not an independent-group combination of the two measurement SDs. [@NISTPaired]
+
+## Rank quantities
+
+For independent groups with no ties, one U convention is
+
+$$
+U_A=R_A-\frac{n_A(n_A+1)}{2},
+$$
+
+where $R_A$ is A's rank sum in the combined sample. With ties, a probability-of-superiority summary gives half credit to tied pairs. The test statistic convention, tie handling, and exact or approximate inference should be identified. [@RWilcoxon]
+
+The signed-rank calculation uses ranks of non-zero absolute paired differences, retaining their signs. It has a different estimand and assumptions from the paired mean calculation.
+
+## Conventional one-way ANOVA
+
+For k groups, total N, group means $\bar x_j$, and overall mean $\bar x$,
+
+$$
+SS_B=\sum_{j=1}^{k}n_j(\bar x_j-\bar x)^2,
+\qquad SS_W=\sum_{j=1}^{k}\sum_i(x_{ij}-\bar x_j)^2.
+$$
+
+$$
+F=\frac{SS_B/(k-1)}{SS_W/(N-k)},
+\qquad \eta^2=\frac{SS_B}{SS_B+SS_W}.
+$$
+
+These quantities use the conventional independent common-variance model. Welch's one-way procedure uses a different calculation and reference distribution. [@NISTANOVA; @ROneWay]
+
+## Independent categorical association
+
+$$
+E_{ij}=\frac{R_iC_j}{N},
+\qquad
+\chi^2=\sum_{i,j}\frac{(O_{ij}-E_{ij})^2}{E_{ij}},
+\qquad df=(r-1)(c-1).
+$$
+
+Here $R_i$ and $C_j$ are the row and column totals. Assess the approximation using expected counts and table structure. Yates correction is a 2-by-2 option, not a general sparse-table solution. [@RChiSq; @RFisher]
+
+For an r-by-c table, a common sample Cramér's V summary based on the uncorrected Pearson statistic is
+
+$$
+V=\sqrt{\frac{\chi^2}{N\min(r-1,c-1)}}.
+$$
+
+It is an association summary without a risk or odds direction. Its magnitude should not replace question-specific group contrasts.
+
+## Two-by-two differences and ratios
+
+Use the table orientation:
+
+| Group | Event | No event | Total |
+|:------|:------|:---------|:------|
+| A | a | b | $n_A=a+b$ |
+| B | c | d | $n_B=c+d$ |
+
+$$
+p_A=\frac{a}{a+b},\quad p_B=\frac{c}{c+d},\quad
+RD=p_A-p_B,\quad RR=\frac{p_A}{p_B},\quad OR=\frac{ad}{bc}.
+$$
+
+A risk interpretation requires an appropriate design and denominator. Odds and probability are different scales. [@BMJOdds]
+
+For independent groups, large-sample formulas are
+
+$$
+SE(RD)=\sqrt{\frac{p_A(1-p_A)}{n_A}+\frac{p_B(1-p_B)}{n_B}},
+$$
+
+$$
+SE(\log RR)=\sqrt{\frac1a-\frac1{a+b}+\frac1c-\frac1{c+d}},
+$$
+
+$$
+SE(\log OR)=\sqrt{\frac1a+\frac1b+\frac1c+\frac1d}.
+$$
+
+For the difference, use $RD\pm z_{1-\alpha/2}SE(RD)$. For a ratio, use
+
+$$
+\exp\{\log(\text{ratio})\pm z_{1-\alpha/2}SE(\log\text{ratio})\}.
+$$
+
+The log formulas require positive relevant cell counts. They are approximate intervals, not Fisher exact intervals, and are not a general remedy for sparse or zero-count tables. Appropriate exact, score, or other methods should be considered for those situations.
+
+## Paired binary comparison
+
+If b and c now denote the discordant counts in a paired before–after table, an uncorrected McNemar statistic is
+
+$$
+\chi^2_M=\frac{(b-c)^2}{b+c}.
+$$
+
+A continuity-corrected version uses $[\max(|b-c|-1,0)]^2/(b+c)$. Under the conditional null, the direction count among the discordant pairs can be tested with a binomial probability of one half. If $b+c=0$, there is no discordant information for the comparison. [@RMcNemar; @RBinom]
+
+## Pearson correlation
+
+$$
+r=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}
+{\sqrt{\sum_i(x_i-\bar x)^2\sum_i(y_i-\bar y)^2}},
+\qquad
+t=r\sqrt{\frac{n-2}{1-r^2}}.
+$$
+
+The conventional zero-correlation test uses n − 2 degrees of freedom under its model. An approximate Fisher interval forms $z=\operatorname{atanh}(r)$, uses $SE(z)=1/\sqrt{n-3}$, and back-transforms the limits. Computing r and justifying its inference are separate tasks. [@RCor]
+
+Spearman's coefficient applies Pearson correlation to ranks, with appropriate handling of ties and inference. Do not use a no-ties shortcut indiscriminately when tied ranks are present.
+
+## Simple linear regression
+
+$$
+\hat\beta_1=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},
+\qquad \hat\beta_0=\bar y-\hat\beta_1\bar x.
+$$
+
+$$
+\hat y_i=\hat\beta_0+\hat\beta_1x_i,\qquad e_i=y_i-\hat y_i.
+$$
+
+With an intercept, $R^2=1-SS_E/SS_T$. For one quantitative predictor and the same complete observations, $R^2=r^2$. Coefficient inference and individual prediction require their own assumptions and uncertainty calculations. [@RLm; @RSummaryLm; @RPredictLm]
+
+## Simple logistic regression
+
+$$
+\operatorname{logit}(p_i)=\beta_0+\beta_1x_i,
+\qquad p_i=\frac{\exp(\beta_0+\beta_1x_i)}{1+\exp(\beta_0+\beta_1x_i)}.
+$$
+
+For a one-unit predictor increase, $OR=\exp(\beta_1)$. A common Wald interval exponentiates $\hat\beta_1\pm z_{1-\alpha/2}SE(\hat\beta_1)$. The no-association values are zero on the coefficient scale and one on the OR scale. [@RGlm; @RSummaryGlm]
 

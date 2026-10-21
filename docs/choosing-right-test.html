@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix B — Choosing Right Test – Hands-On Data Analysis Using Jamovi</title>
+<title>Appendix B — Choosing an Appropriate Statistical Method – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-885b2cfb8d18508768e9bf8f9ab5c5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,16 +92,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
-
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -90,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./statistical-formulas.html">Appendices</a></li><li class="breadcrumb-item"><a href="./choosing-right-test.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./statistical-formulas.html">Appendices</a></li><li class="breadcrumb-item"><a href="./choosing-right-test.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -102,12 +118,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./jamovi-book-volume-1-review.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -126,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -147,13 +163,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -161,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -170,13 +204,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -184,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -193,25 +227,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -219,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -228,19 +262,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -248,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -257,17 +291,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -286,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -298,7 +326,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -308,15 +342,28 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
+   
+  <ul class="collapse">
+  <li><a href="#six-decisions-before-choosing-a-method" id="toc-six-decisions-before-choosing-a-method" class="nav-link active" data-scroll-target="#six-decisions-before-choosing-a-method"><span class="header-section-number">B.1</span> Six decisions before choosing a method</a></li>
+  <li><a href="#describe-or-estimate" id="toc-describe-or-estimate" class="nav-link" data-scroll-target="#describe-or-estimate"><span class="header-section-number">B.2</span> Describe or estimate</a></li>
+  <li><a href="#compare-quantitative-outcomes" id="toc-compare-quantitative-outcomes" class="nav-link" data-scroll-target="#compare-quantitative-outcomes"><span class="header-section-number">B.3</span> Compare quantitative outcomes</a></li>
+  <li><a href="#compare-categorical-outcomes" id="toc-compare-categorical-outcomes" class="nav-link" data-scroll-target="#compare-categorical-outcomes"><span class="header-section-number">B.4</span> Compare categorical outcomes</a></li>
+  <li><a href="#choose-the-effect-measure" id="toc-choose-the-effect-measure" class="nav-link" data-scroll-target="#choose-the-effect-measure"><span class="header-section-number">B.5</span> Choose the effect measure</a></li>
+  <li><a href="#association-and-simple-modeling" id="toc-association-and-simple-modeling" class="nav-link" data-scroll-target="#association-and-simple-modeling"><span class="header-section-number">B.6</span> Association and simple modeling</a></li>
+  <li><a href="#when-assumptions-are-doubtful" id="toc-when-assumptions-are-doubtful" class="nav-link" data-scroll-target="#when-assumptions-are-doubtful"><span class="header-section-number">B.7</span> When assumptions are doubtful</a></li>
+  <li><a href="#a-final-selection-statement" id="toc-a-final-selection-statement" class="nav-link" data-scroll-target="#a-final-selection-statement"><span class="header-section-number">B.8</span> A final selection statement</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./statistical-formulas.html">Appendices</a></li><li class="breadcrumb-item"><a href="./choosing-right-test.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./statistical-formulas.html">Appendices</a></li><li class="breadcrumb-item"><a href="./choosing-right-test.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix B — Choosing Right Test</h1>
+<h1 class="title"><span id="sec-decision-guide" class="quarto-section-identifier">Appendix B — Choosing an Appropriate Statistical Method</span></h1>
 </div>
 
 
@@ -333,37 +380,298 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div id="fig-association-test" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-association-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-A[Test of association] --&gt; B[Check expected frequencies]
+<p>Use this guide after defining the question, observation unit, and variable meaning. It maps basic questions to methods covered in Volume I and marks situations requiring later-volume extensions. A choice is justified by the estimand and design, not by an attempt to find a small p-value.</p>
+<section id="six-decisions-before-choosing-a-method" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="six-decisions-before-choosing-a-method"><span class="header-section-number">B.1</span> Six decisions before choosing a method</h2>
+<p>First, identify the population and outcome. Second, define the target quantity: a mean, proportion, contrast, association, or prediction. Third, identify the observation unit. Fourth, determine whether observations are independent, paired, repeated, or clustered. Fifth, inspect coding, missingness, and relevant distributions. Sixth, select the procedure and uncertainty method that match the target and structure.</p>
+<p>Document the resulting choice before interpreting the output. If an important assumption is not plausible, reconsider the model or estimand and explain the change.</p>
+<p>Use <a href="analysis-preparation.html" class="quarto-xref"><span>Chapter 6</span></a> to reconcile the eligibility rule, required variables, matching, active filters, and analytical sample. The same cleaned file can supply different valid samples for different questions; each result needs its own count and denominator.</p>
+</section>
+<section id="describe-or-estimate" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="describe-or-estimate"><span class="header-section-number">B.2</span> Describe or estimate</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 37%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Question</th>
+<th style="text-align: left;">Starting method</th>
+<th style="text-align: left;">Required context</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">How many observations fall in each category?</td>
+<td style="text-align: left;">Frequency table and proportions</td>
+<td style="text-align: left;">Category definitions, denominator, and missingness</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">What is the central value and spread of a quantitative outcome?</td>
+<td style="text-align: left;">Mean/SD or median/quartile limits suited to the objective</td>
+<td style="text-align: left;">Distribution, units, observed n, and unusual values</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">How uncertain is a mean estimate?</td>
+<td style="text-align: left;">Appropriate mean CI</td>
+<td style="text-align: left;">Sampling and mean-model assumptions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">How uncertain is a proportion estimate?</td>
+<td style="text-align: left;">Appropriate proportion CI, such as a stated exact or score method</td>
+<td style="text-align: left;">Binary definition, denominator, and design</td>
+</tr>
+</tbody>
+</table>
+<p>A descriptive summary does not require a hypothesis test solely to describe the sample. Refer to the descriptive chapter for the meaning of location and spread and to the uncertainty chapter for interval interpretation.</p>
+</section>
+<section id="compare-quantitative-outcomes" class="level2" data-number="B.3">
+<h2 data-number="B.3" class="anchored" data-anchor-id="compare-quantitative-outcomes"><span class="header-section-number">B.3</span> Compare quantitative outcomes</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 28%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Structure and target</th>
+<th style="text-align: left;">Starting method</th>
+<th style="text-align: left;">Important boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Two independent groups; mean difference</td>
+<td style="text-align: left;">Welch or justified pooled independent t procedure</td>
+<td style="text-align: left;">Independence, distributional adequacy, and variance model</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Two paired measurements; mean change</td>
+<td style="text-align: left;">Paired t procedure</td>
+<td style="text-align: left;">Complete matching; relevant distribution is that of differences</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Two independent groups; ordered/distributional comparison</td>
+<td style="text-align: left;">Mann–Whitney procedure</td>
+<td style="text-align: left;">Rank interpretation; median-shift meaning requires additional conditions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Two paired measurements; signed-rank location question</td>
+<td style="text-align: left;">Wilcoxon signed-rank procedure</td>
+<td style="text-align: left;">Non-zero differences and suitable symmetry for location interpretation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">More than two independent groups; mean comparison</td>
+<td style="text-align: left;">Conventional or Welch one-way ANOVA</td>
+<td style="text-align: left;">Variance model and compatible planned/follow-up contrasts</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">More than two independent groups; rank-based comparison</td>
+<td style="text-align: left;">Kruskal–Wallis with compatible follow-up procedure</td>
+<td style="text-align: left;">Global result does not identify individual pairs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">More than two repeated measurements or a clustered outcome</td>
+<td style="text-align: left;">Design-specific repeated/clustered method</td>
+<td style="text-align: left;">Later-volume extension; do not use an ordinary independent-group test</td>
+</tr>
+</tbody>
+</table>
+<p>The corresponding statistical documentation distinguishes independent, paired, variance, and rank-based procedures. <span class="citation" data-cites="RTTest RWilcoxon ROneWay RKruskal">[<a href="references.html#ref-RTTest" role="doc-biblioref">38</a>, <a href="references.html#ref-RWilcoxon" role="doc-biblioref">42</a>, <a href="references.html#ref-ROneWay" role="doc-biblioref">44</a>, <a href="references.html#ref-RKruskal" role="doc-biblioref">46</a>]</span></p>
+</section>
+<section id="compare-categorical-outcomes" class="level2" data-number="B.4">
+<h2 data-number="B.4" class="anchored" data-anchor-id="compare-categorical-outcomes"><span class="header-section-number">B.4</span> Compare categorical outcomes</h2>
+<p>Begin with the structure, before expected-count rules:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 67%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Structure</th>
+<th style="text-align: left;">Appropriate direction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Independent observations; two categorical variables</td>
+<td style="text-align: left;">Contingency-table association method and design-appropriate contrast</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Same individuals with two binary statuses</td>
+<td style="text-align: left;">Paired binary method, such as McNemar or a suitable exact counterpart</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Repeated, clustered, matched, or more complex paired categorical data</td>
+<td style="text-align: left;">A procedure that explicitly addresses that structure</td>
+</tr>
+</tbody>
+</table>
+<p>For an independent contingency table:</p>
+<ol type="1">
+<li>Check table dimensions and calculate expected counts under independence.</li>
+<li>If the approximation is appropriate, a Pearson chi-square procedure may be used.</li>
+<li>For a sparse 2-by-2 table, consider Fisher’s exact procedure or another justified method.</li>
+<li>For a sparse larger table, consider an appropriate exact or Monte Carlo procedure with documented availability and settings.</li>
+<li>Select the effect measure and interval using the design, event definition, and reference group.</li>
+</ol>
+<p>Yates correction is confined to a 2-by-2 chi-square calculation; it is not the universal destination for sparse tables. Overall sample size cannot replace an expected-count assessment. <span class="citation" data-cites="RChiSq RFisher">[<a href="references.html#ref-RChiSq" role="doc-biblioref">49</a>, <a href="references.html#ref-RFisher" role="doc-biblioref">50</a>]</span></p>
+<p>For paired binary data, examine discordant pairs and the paired null. A calculation treating before and after observations as independent answers the wrong structure. <span class="citation" data-cites="RMcNemar jamoviPairedTables">[<a href="references.html#ref-RMcNemar" role="doc-biblioref">52</a>, <a href="references.html#ref-jamoviPairedTables" role="doc-biblioref">53</a>]</span></p>
+</section>
+<section id="choose-the-effect-measure" class="level2" data-number="B.5">
+<h2 data-number="B.5" class="anchored" data-anchor-id="choose-the-effect-measure"><span class="header-section-number">B.5</span> Choose the effect measure</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 42%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Target</th>
+<th style="text-align: left;">Scale and null value</th>
+<th style="text-align: left;">Interpretation check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean or absolute proportion difference</td>
+<td style="text-align: left;">Difference; null zero</td>
+<td style="text-align: left;">Define A minus B and the unit or percentage points</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Risk ratio</td>
+<td style="text-align: left;">Ratio; null one</td>
+<td style="text-align: left;">Follow-up and denominators support a risk interpretation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Prevalence ratio</td>
+<td style="text-align: left;">Ratio; null one</td>
+<td style="text-align: left;">Cross-sectional target and denominator are explicit</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Odds ratio</td>
+<td style="text-align: left;">Ratio; null one</td>
+<td style="text-align: left;">Compare odds; do not call it risk</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Correlation</td>
+<td style="text-align: left;">Coefficient; zero-linear or zero-rank association as specified</td>
+<td style="text-align: left;">Define coefficient, pairs, relationship form, and interval method</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Regression slope</td>
+<td style="text-align: left;">Outcome units per predictor increment; null zero</td>
+<td style="text-align: left;">Name outcome, predictor, unit, and adjustment status</td>
+</tr>
+</tbody>
+</table>
+<p>An available software measure can be inappropriate to the sampled design. In outcome-based sampling, the observed case proportions are not directly population risks. The odds-ratio chapter explains the difference between odds and probabilities. <span class="citation" data-cites="BMJOdds">[<a href="references.html#ref-BMJOdds" role="doc-biblioref">51</a>]</span></p>
+</section>
+<section id="association-and-simple-modeling" class="level2" data-number="B.6">
+<h2 data-number="B.6" class="anchored" data-anchor-id="association-and-simple-modeling"><span class="header-section-number">B.6</span> Association and simple modeling</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 42%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Question</th>
+<th style="text-align: left;">Starting method</th>
+<th style="text-align: left;">Scope limit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Linear association between two quantitative variables</td>
+<td style="text-align: left;">Pearson correlation with scatterplot and appropriate inference</td>
+<td style="text-align: left;">Conventional independent-pair model; not causation or agreement</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Monotonic ordered association</td>
+<td style="text-align: left;">Spearman correlation</td>
+<td style="text-align: left;">Rank-based target; a U-shaped relationship is not generally monotonic</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Continuous outcome with one predictor</td>
+<td style="text-align: left;">Simple linear regression</td>
+<td style="text-align: left;">Assess mean form and residual assumptions; unadjusted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Binary outcome with one predictor</td>
+<td style="text-align: left;">Introductory logistic model</td>
+<td style="text-align: left;">Defined event, logit scale, and basic model checks; unadjusted</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adjusted effect, count outcome, survival, repeated data, or diagnostic accuracy</td>
+<td style="text-align: left;">Appropriate specialist model</td>
+<td style="text-align: left;">Volume II</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Causal effect identification, complex strategy, predictive validation, or evidence synthesis</td>
+<td style="text-align: left;">Explicit advanced framework</td>
+<td style="text-align: left;">Volume III</td>
+</tr>
+</tbody>
+</table>
+<p>The software and statistical references identify the implemented coefficients and models. Their availability does not define the scientific objective. <span class="citation" data-cites="RCor RLm RGlm">[<a href="references.html#ref-RCor" role="doc-biblioref">30</a>, <a href="references.html#ref-RLm" role="doc-biblioref">57</a>, <a href="references.html#ref-RGlm" role="doc-biblioref">61</a>]</span></p>
+</section>
+<section id="when-assumptions-are-doubtful" class="level2" data-number="B.7">
+<h2 data-number="B.7" class="anchored" data-anchor-id="when-assumptions-are-doubtful"><span class="header-section-number">B.7</span> When assumptions are doubtful</h2>
+<p>A doubtful assumption does not automatically identify one replacement test. Determine what failed and whether the intended quantity remains meaningful. Unequal variances, a curved mean relationship, paired observations, and a highly skewed distribution are different problems requiring different responses.</p>
+<p>For example, replacing Pearson with Spearman can address a monotonic rank-based objective but does not summarise an arbitrary curve. Replacing a pooled t-test with Welch relaxes equal variance but does not handle clustering. Replacing a paired mean test with signed ranks changes the target and requires its own assumptions.</p>
+</section>
+<section id="a-final-selection-statement" class="level2" data-number="B.8">
+<h2 data-number="B.8" class="anchored" data-anchor-id="a-final-selection-statement"><span class="header-section-number">B.8</span> A final selection statement</h2>
+<p>Write the choice as a sentence: “The observations are independent, the outcome is continuous, and the primary estimand is the mean in A minus B; therefore, the analysis uses a specified independent mean-difference method with a 95% CI.” For a paired study, the sentence should identify the within-pair change instead.</p>
+<p>Then read the relevant chapter. Confirm the data, checks, selected options, output meaning, and reporting. This statement makes a method choice reviewable and helps distinguish a justified analysis from a software-driven choice.</p>
 
-B --&gt;|≥5 in ≥80% of cells| C[Chi-square test]
 
-B --&gt;|&lt;5 in &gt;20% cells| D{Sample size small?}
-
-D --&gt;|Yes| E[Fisher’s exact test]
-D --&gt;|No| F[Chi-square with Yates continuity correction]
-</pre>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-RTTest" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">R Core Team. Student’s t-test. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html</a> [accessed 5 Oct. 2026].</div>
 </div>
-<p></p></figure><p></p>
+<div id="ref-RWilcoxon" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">R Core Team. Wilcoxon rank sum and signed rank tests. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/wilcox.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/wilcox.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-ROneWay" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">R Core Team. Test for equal means in a one-way layout. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/oneway.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/oneway.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RKruskal" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">R Core Team. Kruskal-wallis rank sum test. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/kruskal.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/kruskal.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RChiSq" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">R Core Team. Pearson’s chi-squared test for count data. <a href="https://www.stat.ethz.ch/R-manual/R-patched/library/stats/html/chisq.test.html">https://www.stat.ethz.ch/R-manual/R-patched/library/stats/html/chisq.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RFisher" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">R Core Team. Fisher’s exact test for count data. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/fisher.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/fisher.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RMcNemar" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">R Core Team. McNemar’s chi-squared test for count data. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/mcnemar.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/mcnemar.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-jamoviPairedTables" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. Paired samples contingency tables: contTablesPaired. <a href="https://docs.jamovi.org/jmv/jmv_contTablesPaired.html">https://docs.jamovi.org/jmv/jmv_contTablesPaired.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-BMJOdds" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Bland JM, Altman DG. The odds ratio. BMJ. 2000;320:1468. doi: <a href="https://doi.org/10.1136/bmj.320.7247.1468">10.1136/bmj.320.7247.1468</a> <a href="https://www.bmj.com/content/320/7247/1468.1">https://www.bmj.com/content/320/7247/1468.1</a></div>
+</div>
+<div id="ref-RCor" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">R Core Team. Test for association/correlation between paired samples. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cor.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RLm" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">R Core Team. Fitting linear models. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RGlm" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">R Core Team. Fitting generalized linear models. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html</a> [accessed 5 Oct. 2026].</div>
 </div>
 </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-association-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;B.1: Flowchart for selecting test of association (categorical variables)
-</figcaption>
-</figure>
-</div>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -783,4 +1091,5 @@ Figure&nbsp;B.1: Flowchart for selecting test of association (categorical variab
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

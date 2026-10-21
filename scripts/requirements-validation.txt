@@ -1,0 +1,4 @@
+# Reproduce the independent arithmetic and output checks with Python 3.12.
+numpy==2.3.5
+scipy==1.17.0
+pypdf==6.10.0

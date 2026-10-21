@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-21",
+  "book_revision": 4,
+  "formatting_standard": "1.0",
+  "quarto": "1.8.27",
+  "print_profile": "portable",
+  "teaching_chapter_sources_changed": 0,
+  "review_preface_changed": "revision and date only",
+  "reserved_hands_on_sections": 17,
+  "source_numerical_checks": 61,
+  "html": {
+    "actual_body_fonts": [
+      {
+        "familyName": "TeX Gyre Termes",
+        "postScriptName": "TeXGyreTermes-Regular",
+        "isCustomFont": true,
+        "glyphCount": 73
+      }
+    ],
+    "browser": "131.0.6778.204",
+    "mobile_pages_checked": 27,
+    "mobile_width": 390,
+    "horizontal_page_overflow": [],
+    "equations_rendered": 132,
+    "javascript_errors": [],
+    "failed_responses": []
+  },
+  "pdf": {
+    "pdf_pages": 129,
+    "page_edge_flags": [],
+    "preview_pages": [
+      1,
+      62,
+      63,
+      64,
+      67
+    ],
+    "chapter_10_pages": [
+      62,
+      68
+    ]
+  },
+  "windows_profile": "configured for installed Times New Roman; not rendered on this Linux host"
+}

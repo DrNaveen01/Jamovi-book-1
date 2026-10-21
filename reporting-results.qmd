@@ -1,7 +1,146 @@
----
-title: "Reporting Results"
----
+# Reporting Statistical Results {#sec-reporting-results}
 
-### Writing Statistical Results
-### Table Interpretation
-### Common Mistakes in Reporting
+## Learning objectives
+
+After this chapter, the reader should be able to write a methods statement and results paragraph for a basic analysis, design a self-contained table or figure, report uncertainty and missingness, and keep interpretation within the study's design and evidence.
+
+## Report the answer to the question
+
+The results section should make the analytical finding visible. A software table contains many possible quantities; a manuscript selects those needed to answer the research question. Begin with the observation count and comparison, then present the estimate, uncertainty, and relevant inferential result.
+
+The methods explain how the analysis was performed. The results state what it produced. The discussion interprets the result in relation to the question, limitations, and other evidence. Keeping these roles distinct reduces repetition and unsupported conclusions.
+
+The SAMPL guidelines provide statistical reporting guidance, while ICMJE recommends sufficient methodological detail for a knowledgeable reader to evaluate and verify the analysis. Use the guideline appropriate to the study design alongside these general principles. [@SAMPL; @ICMJE]
+
+## A minimum reporting structure
+
+| Element | What the reader needs |
+|:--------|:----------------------|
+| Population and sample | Who contributed and the analytical denominator |
+| Outcome | Definition, unit, and measurement time |
+| Comparison | Groups, reference category, and contrast direction |
+| Method | Actual procedure, relevant settings, and interval method |
+| Estimate | Magnitude on a named scale |
+| Uncertainty | Interval and confidence level |
+| Test information | Test statistic, degrees of freedom where relevant, and p-value |
+| Limitations | Missingness, design, or model issues affecting interpretation |
+
+Not every paragraph needs every statistic. The reporting purpose determines which details belong in the main text, table, methods, or supplement. The essential information should nevertheless be recoverable from the report.
+
+## Write the methods before the results
+
+Describe variable definitions, inclusion rules, summary conventions, and the intended analysis. Identify independent, paired, or repeated data. State how missing observations were handled and how uncertainty was calculated. Record software and module versions for the actual implementation.
+
+A template for the independent mean illustration is: "Follow-up systolic blood pressure was compared between groups A and B using Welch's independent-samples t-test. The estimand was the mean in A minus the mean in B, expressed in mmHg. The mean difference and two-sided 95% CI were reported; the analytical denominator was the number with an observed follow-up value in each group."
+
+This template does not assert that real diagnostic checks were completed. In an actual report, add the checks performed and how any important departures were addressed. Do not write "assumptions were satisfied" as a standard sentence copied across all analyses.
+
+## Report descriptive results
+
+For a categorical variable, give the count and denominator with the percentage. For a quantitative variable, identify the summary and unit. Distinguish mean with SD from mean with CI; the first describes observed dispersion, while the second describes estimation uncertainty under its method.
+
+For the invented waiting times: "The median waiting time was 4.5 minutes (first–third quartile 3.25–6.75; n = 10). Values ranged from 2 to 18 minutes." This is a descriptive statement. It does not need a hypothesis test simply to state what was observed.
+
+If values are unavailable for some participants, report that availability explicitly. A table can include an observed n for each variable or a missing-value column. Choose a format that allows the denominator to be understood without excessive footnotes.
+
+## Report mean comparisons
+
+For the invented independent groups: "Mean systolic blood pressure was 128.0 mmHg (SD 14.0) in A and 134.0 mmHg (SD 16.0) in B, with 60 observations in each group. The difference, A minus B, was −6.0 mmHg (95% CI −11.4 to −0.6; Welch t = −2.19, df = 115.96, p = 0.031)."
+
+The sign and units make the result interpretable. "There was a significant difference" does not communicate the magnitude, direction, or precision. If the manuscript focuses on the contrast, the group summaries can sit in a table while the paragraph highlights the difference and CI.
+
+For the paired example: "Among 30 complete pairs, mean follow-up minus baseline blood pressure was −8.0 mmHg (95% CI −11.7 to −4.3; paired t = −4.38, df = 29, p < 0.001)." State the complete-pair denominator and the direction of change.
+
+## Report categorical associations
+
+Use the measure supported by the design and name it. A risk ratio, prevalence ratio, odds ratio, and absolute percentage-point difference are not interchangeable. Identify the event and reference group before reporting a ratio.
+
+For the invented independent table: "Events occurred in 30/100 participants in A and 15/100 in B. Under the stipulated follow-up, the RR for A versus B was 2.00 (log-Wald 95% CI 1.15–3.48)." If an odds ratio is reported instead, write "OR 2.43 (log-Wald 95% CI 1.21–4.87)" and interpret it as odds.
+
+Name the test and interval procedure. "Fisher's exact p-value" and "Wald OR interval" describe different components; do not imply that they all came from one exact method unless that is what the procedure returned.
+
+## Report correlation and regression
+
+For correlation, name the coefficient, provide its estimate, analytical pairs, and appropriate uncertainty, and describe the graph-based context. For the teaching example: "Pearson r was 0.60 (approximate Fisher 95% CI 0.39–0.75; n = 50; p < 0.001)." Do not translate this into an original-scale slope.
+
+For linear regression, give the outcome unit and predictor increment. For the constructed example: "Each additional year of age was associated with a 0.50-mmHg higher conditional mean SBP in the simple unadjusted model (95% CI 0.30–0.70; n = 60)." Describe the model and its assessment separately.
+
+For logistic regression, state the event, reference, OR, CI, and adjustment status. Avoid using "independent predictor" when the model contains only one predictor or when the intended meaning of independence has not been justified.
+
+## Build a table around a clear purpose
+
+A table for a mean comparison could contain group, observed n, mean with SD, contrast, and CI. A categorical table could contain counts and percentages with a defined denominator, followed by the chosen measure of association. A model table could contain predictor definition, estimate, interval, and reference categories.
+
+Do not add every software column simply because it is available. Include enough information to assess the result and place secondary output in a supplement when it has a clear role. Define abbreviations in a table note and retain measurement units in the column heading.
+
+An illustrative compact comparison table is:
+
+| Quantity | Teaching result |
+|:---------|:----------------|
+| Group A | n = 60; mean 128.0 mmHg; SD 14.0 |
+| Group B | n = 60; mean 134.0 mmHg; SD 16.0 |
+| Mean difference, A minus B | −6.0 mmHg |
+| 95% Welch CI | −11.4 to −0.6 mmHg |
+| Test | t = −2.19; df = 115.96; p = 0.031 |
+
+The table is explicitly a teaching illustration. Its quantities should not appear under a title implying that they were observed in the author's institution or patient sample.
+
+## Report figures and uncertainty consistently
+
+Use the same outcome unit, group labels, and contrast direction in the text, table, and figure. Define plotted intervals and any transformation. If a figure shows group means but the text concerns their difference, ensure the relevant contrast is also reported.
+
+For a graph with individual points, identify the observation unit. For a paired graph, describe the pairing and time order. For a model curve, identify whether it shows a fitted mean or an individual prediction interval.
+
+## Precision and rounding
+
+Use precision that reflects the measurement and purpose. Consistent rounding makes a report easier to read, but do not round a value so aggressively that its interpretation changes. A p-value should not be written as 0.000; use an appropriate bound such as p < 0.001 or give the small value in scientific notation.
+
+Keep full precision for calculations and round the displayed results at the final reporting step. A CI calculated from rounded intermediate values can differ from one calculated from the original estimate and SE. The accompanying script therefore retains full precision while the manuscript uses readable rounding.
+
+Distinguish a relative percentage change from a percentage-point difference. Increasing a proportion from 15% to 30% is a 15-percentage-point increase and a 100% relative increase. Name the scale to prevent an ambiguous statement.
+
+## Report analyses that did not give a small p-value
+
+A non-significant result still contains an estimate and uncertainty. Report them and explain which values remain compatible with the data and method. The absence of a small p-value does not establish absence of an effect. [@BMJAbsence]
+
+Distinguish an inconclusive estimate from a precise estimate near a prespecified negligible range. Equivalence and non-inferiority analyses require their own planned margins and methods. Do not retrofit their conclusions to a conventional comparison.
+
+## Keep the conclusion within the evidence
+
+Use "associated with" for an observational or simple unadjusted relationship unless the design and analysis support a stronger claim. A result from the recruited sample does not automatically generalise to all patients, all facilities, or the entire community.
+
+Separate a statistical estimate from a treatment recommendation. Clinical relevance depends on the clinical objective, benefits and harms, uncertainty, and evidence beyond one analytical result. The invented numerical examples in this book teach interpretation and are not evidence for practice recommendations.
+
+## Preserve an auditable result
+
+Retain the source, cleaned data, dictionary, analysis log, saved jamovi file, software versions, and final exported output. A reviewer should be able to connect the reported result to the analysis settings and the observations used.
+
+Before release, compare the text, table, figure, and output. Check denominators, sign, units, reference categories, intervals, rounding, and p-values. This final consistency check often identifies reporting errors that a successful statistical calculation cannot detect.
+
+## Hands-on {#hands-on-reporting-results}
+
+::: {.callout-note .hands-on-note title="jamovi workspace" icon=false}
+<!-- Author: add exported jamovi output, manuscript tables, screenshots, and reporting exercise here. -->
+:::
+
+::: {.review-questions}
+
+## Review questions
+
+1. What is missing from the statement "There was a significant difference"?
+2. Why is "OR = 2.43, so risk is 2.43 times higher" incorrect in the teaching example?
+3. What should be reported when a comparison is non-significant?
+4. Which quantities should agree across the paragraph, table, figure, and saved analysis?
+
+:::
+
+::: {.review-answers}
+
+## Answers and reasoning
+
+1. The comparison, direction, magnitude, units, uncertainty, and analytical sample.
+2. The OR compares odds, and the example's risk ratio is 2.00. The scales differ.
+3. The estimate, interval, method, denominator, and relevant interpretation of the remaining uncertainty.
+4. Denominators, variable definitions, contrast direction, units, reference categories, estimates, intervals, and appropriately rounded inferential results.
+
+:::

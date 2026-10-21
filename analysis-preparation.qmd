@@ -1,0 +1,161 @@
+# Preparing Data for a Specific Analysis {#sec-analysis-preparation}
+
+## Learning objectives
+
+After this chapter, the reader should be able to write an analysis specification, select the variables and observations needed for a basic method, preserve pairing and denominators, check active filters and missing-data rules, and document the final analytical sample.
+
+## A cleaned file does not define every analysis
+
+A reviewed dataset can support several questions, each using different variables and observations. Describing a follow-up measurement, comparing paired measurements, and fitting a relationship with age do not necessarily use the same sample. Analysis preparation makes those differences explicit before interpreting results.
+
+The process starts with the research question and target quantity. State who is eligible, what one observation represents, which outcome is being analysed, which comparison or predictor is relevant, and at what time the outcome is measured. Then select a method that matches that specification.
+
+Do not begin by trying every procedure that accepts the columns. The software's acceptance of a variable does not establish that the variable has the right role, that observations are independent, or that the result answers the intended question.
+
+## Write a short analysis specification
+
+The specification connects the design to the analytical file. It can be brief, but it must contain enough information to reproduce the included observations, variable definitions, method, and contrast direction.
+
+The following specification is invented for an unadjusted follow-up comparison:
+
+| Component | Stated decision |
+|:----------|:----------------|
+| Question | How does mean follow-up systolic blood pressure differ between eligible groups A and B? |
+| Outcome | The protocol-defined follow-up measurement, in mmHg |
+| Observation unit | One eligible participant, contributing once |
+| Comparison | A minus B |
+| Analytical sample | Eligible participants with known group and observed follow-up outcome |
+| Method | Welch independent-samples comparison, if the design and data support its use |
+| Descriptive output | Group-specific n, mean, SD, missing count, and distribution plots |
+| Main result | Mean difference with 95% CI, followed by the test result |
+| Limitation | An unadjusted comparison does not account for baseline or other group differences |
+
+This specification does not assert that the assumptions have already passed. It identifies what must be checked and what the result will mean. Where the study requires a baseline-adjusted or other multivariable analysis, the simple comparison is insufficient as the final model; those methods are developed in Volume II.
+
+Distinguish a prespecified primary analysis from an exploratory analysis. If the plan changes because of a data issue, record what changed and why. Do not describe a choice made after inspecting several results as if it had been fixed beforehand.
+
+## Match the variables and structure to the method
+
+Check the scientific definition, measure type, categories, and required matching for each selected variable. The following map supports the core methods in this volume:
+
+| Method | Required variables | Observation check |
+|:-------|:-------------------|:------------------|
+| Descriptive summary | Variable of interest; optional group | Correct denominator for each reported summary |
+| Independent two-group comparison | Quantitative outcome and two-level group | Participants contribute once to one group |
+| Paired comparison | Two defined measurements or a within-pair difference | Valid pairs, with independence between pairs under the simple model |
+| One-way group comparison | Quantitative outcome and defined group levels | Independent observations under the basic model |
+| Categorical association | Two categorical variables | Count participants in the correct cells; check design and denominator |
+| Correlation | Two quantitative or appropriately ordered variables | Values belong to the same observation; confirm paired completeness |
+| Simple linear regression | Quantitative outcome and one defined predictor | Correct outcome role and defensible mean relationship |
+| Introductory logistic regression | Defined binary outcome and one predictor | Event coding and reference group are explicit |
+
+This table is a preparation map, not a complete test-selection rule. The relevant chapters explain assumptions, alternative targets, and reporting. @sec-decision-guide provides the method-selection guide.
+
+## Preserve the unit of observation
+
+A file with one row per visit can contain more rows than participants. An independent t-test applied to all those rows would ordinarily fail to account for the relationship between visits from the same person. A matching ID does not make the ordinary independent procedure handle that dependence automatically.
+
+Specify whether the question concerns participants, visits, or another unit. If one measurement per participant is required, select it using a justified occasion rule and document how conflicts are resolved. If repeated observations are part of the question, use a method that models their structure rather than deleting the dependence from the description.
+
+Similarly, participants sampled within households or clinics may share cluster-level influences. Preserve the cluster variables and identify when the simple independent methods in this volume are insufficient. A larger row count cannot compensate for an inappropriate independence assumption.
+
+## Define eligibility before activating filters
+
+An eligibility rule determines which observations belong to the target analysis population. Write it in words and implement it using defined variables. Separate eligibility from the availability of measurements needed for a particular calculation.
+
+For example, first identify eligible participants, then determine which have the follow-up outcome. Record both counts. If an unknown eligibility field is encountered, resolve it or state the handling rule; treating an unknown value as an automatic yes or no can change the target population.
+
+jamovi row filters exclude observations from analyses without requiring deletion of the source records. The filter state can therefore change existing results. Multiple filters and calculations involving column summaries need attention to their order and reference set. [@jamoviFilters]
+
+Check every active filter when the displayed sample size is unexpected. Record its expression, purpose, and included and excluded counts. An eligibility filter for one question may be inappropriate for another question in the same file. Save separate analysis files or clearly documented filter states when necessary to avoid confusing their samples.
+
+Do not hide an analytical exclusion inside an unexplained derived column. If a value has been made missing to implement a subset, that is part of the inclusion rule and must be recorded as such.
+
+## Account for missing values for the selected variables
+
+The required-variable list defines what completeness means. A descriptive summary of age does not necessarily require an observed follow-up outcome. A paired blood pressure comparison requires both defined measurements. A correlation requires an observed value of each variable for the same participant.
+
+Inspect the sample count reported by each analysis and reconcile it with the eligibility and missing-value rules. jamovi's one-way documentation, for example, distinguishes per-analysis and listwise exclusion options. [@jamoviOneWay] Different procedures and options should not be assumed to use identical cases.
+
+When comparing models or tables, state whether differences arise from the method, the selected variables, or the analysed participants. Holding the sample constant can sometimes help isolate a model comparison, but it also excludes observations and needs a stated purpose. It is not an automatic requirement for every descriptive result.
+
+## An invented complete-pair audit
+
+Consider a separate teaching example with 120 eligible participants. Six have no baseline measurement, eight have no follow-up measurement, and two lack both. There are 114 available baseline values and 112 available follow-up values, but neither number gives the complete-pair count.
+
+The number lacking at least one measurement is $6+8-2=12$, because the two who lack both were counted twice in the sum. The paired analysis therefore has $120-12=108$ complete pairs.
+
+| Availability | Number | Contribution to a paired calculation |
+|:-------------|-------:|:------------------------------------|
+| Both measurements observed | 108 | One defined difference per participant |
+| Baseline missing only | 4 | No complete difference |
+| Follow-up missing only | 6 | No complete difference |
+| Both missing | 2 | No complete difference |
+
+For these 108 pairs, the mean of individual follow-up-minus-baseline differences equals the follow-up mean minus the baseline mean calculated on those same pairs. It need not equal the difference between the means calculated from all 112 follow-up and all 114 baseline values.
+
+This identity depends on using the same matched participants. It explains why matching and missingness checks precede a paired test. The numerical illustration in the paired-comparison chapter is a different teaching case with 30 complete pairs.
+
+## Confirm categorical denominators and event coding
+
+For an event proportion, state the observation period, event definition, eligible population, and number with known status. Unknown status cannot be combined with confirmed absence merely to complete a two-by-two table.
+
+In another invented illustration, 192 participants are eligible, 180 have known status, and 36 of these have the event. The observed-status proportion is $36/180=20\%$. Dividing 36 by 192 gives 18.75%, but that calculation treats the 12 unknown statuses as contributing no recorded events to the full denominator.
+
+Without additional information, between 36 and 48 of the 192 could have the event if every unknown status is respectively absent or present. The corresponding 18.75% to 25% range is a simple accounting bound. It is not a confidence interval and does not resolve the missingness mechanism.
+
+Report the known-status calculation with its denominator and missing count. If a full eligible-population quantity is intended, justify how unknown outcomes are handled. The design also matters: case-control sampling does not generally allow the sampled event fraction to be interpreted as population risk.
+
+For a binary model, verify which category is the event and which predictor level is the reference. The labels 0 and 1 need an explicit dictionary. A change in coding can reverse an odds-ratio comparison without changing the underlying records.
+
+## Prepare assumption checks without automatic test switching
+
+Inspect appropriate summaries and graphs for the chosen question. Independent group comparisons need group distributions and counts. Paired inference needs within-pair differences. Regression needs the relationship and relevant residual patterns. Categorical procedures need the observed table and, for an approximation, attention to expected counts.
+
+A preliminary test result should not operate as an automatic switch between methods that target different quantities. A significant normality test does not by itself establish that a mean is no longer the research target. A non-significant test does not prove that the relevant model is adequate.
+
+Resolve data errors first. Then evaluate whether the method is suitable, whether an alternative preserves or changes the target quantity, and whether the available sample supports the intended inference. Document that reasoning in the analysis record.
+
+## Keep the analytical record reproducible
+
+Save the reviewed source version, dictionary, cleaning log, derivation definitions, eligibility rules, required-variable list, method settings, and analytical sample counts. The saved jamovi analysis should be identifiable as belonging to that record, with software and module versions documented when relevant.
+
+A CSV export can carry values without carrying the full set of analysis settings and transformation definitions. Retain the saved analysis file as well as a suitable data export when both are needed for review. Confirm what survives each export rather than assuming that every format preserves the same information.
+
+Reopen the saved file and verify that the intended variables, filters, counts, and results remain available. If an updated source is imported, repeat the count and derivation checks. A refreshed file may produce different results even when the analytical options have not changed.
+
+## Report the final sample and decisions
+
+Describe the eligible population, required measurements, missing-data handling, and method. Give group counts or complete-pair counts where relevant. Explain exclusions using their actual reasons rather than a single unexplained phrase such as "incomplete data were removed."
+
+For the complete-pair teaching example, a defensible methods statement is: "The paired analysis required both baseline and follow-up measurements. Of 120 eligible participants, 108 had a complete pair; six lacked baseline, eight lacked follow-up, and two lacked both. Change was defined as follow-up minus baseline."
+
+The result should then use those 108 pairs and acknowledge what incomplete follow-up means for the interpretation. Do not borrow an estimate from a different sample or the separate 30-pair illustration to complete the paragraph.
+
+## Hands-on {#hands-on-analysis-preparation}
+
+::: {.callout-note .hands-on-note title="jamovi workspace" icon=false}
+<!-- Author: add analysis specifications, filter checks, sample-count audits, and screenshots here. -->
+:::
+
+::: {.review-questions}
+
+## Review questions
+
+1. Why can two valid analyses of the same dataset use different sample sizes?
+2. How many complete pairs remain when 6 of 120 lack baseline, 8 lack follow-up, and 2 lack both?
+3. Why is the event accounting bound different from a confidence interval?
+4. What should be checked when a saved analysis unexpectedly has fewer participants?
+
+:::
+
+::: {.review-answers}
+
+## Answers and reasoning
+
+1. They can require different variables, eligibility rules, matching, or missing-data settings. Reconcile each count with its specification.
+2. There are 108: subtract the union of missing measurements, 6 + 8 - 2 = 12, from 120.
+3. It assigns extreme possible statuses to unknown outcomes. It does not quantify sampling uncertainty or justify a missingness model.
+4. Check active filters, eligibility, required-variable completeness, coding, pairing, and the source version before attributing the change to the statistical procedure.
+
+:::

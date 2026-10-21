@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix D — Practice Dataset And Excercises – Hands-On Data Analysis Using Jamovi</title>
+<title>Appendix D — Practice Questions and Applied Cases – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
 <link href="./glossary.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -43,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-885b2cfb8d18508768e9bf8f9ab5c5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,13 +72,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
-
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./statistical-formulas.html">Appendices</a></li><li class="breadcrumb-item"><a href="./practice-dataset-excercises.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./statistical-formulas.html">Appendices</a></li><li class="breadcrumb-item"><a href="./practice-dataset-excercises.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -98,12 +98,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./jamovi-book-volume-1-review.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -143,13 +143,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -157,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -166,13 +184,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -180,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -189,25 +207,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -215,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -224,19 +242,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -244,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -253,17 +271,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -282,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -294,7 +306,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -304,15 +322,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
+   
+  <ul class="collapse">
+  <li><a href="#case-1-prepare-the-analysis-question" id="toc-case-1-prepare-the-analysis-question" class="nav-link active" data-scroll-target="#case-1-prepare-the-analysis-question"><span class="header-section-number">D.1</span> Case 1: Prepare the analysis question</a></li>
+  <li><a href="#case-2-summarise-waiting-times" id="toc-case-2-summarise-waiting-times" class="nav-link" data-scroll-target="#case-2-summarise-waiting-times"><span class="header-section-number">D.2</span> Case 2: Summarise waiting times</a></li>
+  <li><a href="#case-3-compare-independent-groups" id="toc-case-3-compare-independent-groups" class="nav-link" data-scroll-target="#case-3-compare-independent-groups"><span class="header-section-number">D.3</span> Case 3: Compare independent groups</a></li>
+  <li><a href="#case-4-compare-paired-measurements" id="toc-case-4-compare-paired-measurements" class="nav-link" data-scroll-target="#case-4-compare-paired-measurements"><span class="header-section-number">D.4</span> Case 4: Compare paired measurements</a></li>
+  <li><a href="#case-5-interpret-a-three-group-analysis" id="toc-case-5-interpret-a-three-group-analysis" class="nav-link" data-scroll-target="#case-5-interpret-a-three-group-analysis"><span class="header-section-number">D.5</span> Case 5: Interpret a three-group analysis</a></li>
+  <li><a href="#case-6-compare-event-proportions" id="toc-case-6-compare-event-proportions" class="nav-link" data-scroll-target="#case-6-compare-event-proportions"><span class="header-section-number">D.6</span> Case 6: Compare event proportions</a></li>
+  <li><a href="#case-7-preserve-categorical-pairing" id="toc-case-7-preserve-categorical-pairing" class="nav-link" data-scroll-target="#case-7-preserve-categorical-pairing"><span class="header-section-number">D.7</span> Case 7: Preserve categorical pairing</a></li>
+  <li><a href="#case-8-correlation-and-regression-interpretation" id="toc-case-8-correlation-and-regression-interpretation" class="nav-link" data-scroll-target="#case-8-correlation-and-regression-interpretation"><span class="header-section-number">D.8</span> Case 8: Correlation and regression interpretation</a></li>
+  <li><a href="#case-9-translate-log-odds" id="toc-case-9-translate-log-odds" class="nav-link" data-scroll-target="#case-9-translate-log-odds"><span class="header-section-number">D.9</span> Case 9: Translate log odds</a></li>
+  <li><a href="#case-10-audit-a-results-paragraph" id="toc-case-10-audit-a-results-paragraph" class="nav-link" data-scroll-target="#case-10-audit-a-results-paragraph"><span class="header-section-number">D.10</span> Case 10: Audit a results paragraph</a></li>
+  <li><a href="#practical-datasets-to-be-added-by-the-author" id="toc-practical-datasets-to-be-added-by-the-author" class="nav-link" data-scroll-target="#practical-datasets-to-be-added-by-the-author"><span class="header-section-number">D.11</span> Practical datasets to be added by the author</a></li>
+  <li><a href="#hands-on-practice" id="toc-hands-on-practice" class="nav-link" data-scroll-target="#hands-on-practice"><span class="header-section-number">D.12</span> Hands-on</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./statistical-formulas.html">Appendices</a></li><li class="breadcrumb-item"><a href="./practice-dataset-excercises.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./statistical-formulas.html">Appendices</a></li><li class="breadcrumb-item"><a href="./practice-dataset-excercises.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix D — Practice Dataset And Excercises</h1>
+<h1 class="title"><span id="sec-practice" class="quarto-section-identifier">Appendix D — Practice Questions and Applied Cases</span></h1>
 </div>
 
 
@@ -329,8 +364,243 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>This appendix contains conceptual and numerical exercises that can be completed from the teaching text. All values are invented. Downloadable jamovi datasets and screenshots are reserved for the Hands-on sections and will be supplied by the author.</p>
+<section id="case-1-prepare-the-analysis-question" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="case-1-prepare-the-analysis-question"><span class="header-section-number">D.1</span> Case 1: Prepare the analysis question</h2>
+<p>A clinic file contains participant ID, group A/B, baseline SBP, follow-up SBP, and event status. Some participants have more than one visit record, and event status is unavailable for some.</p>
+<section id="tasks" class="level3" data-number="D.1.1">
+<h3 data-number="D.1.1" class="anchored" data-anchor-id="tasks"><span class="header-section-number">D.1.1</span> Tasks</h3>
+<ol type="1">
+<li>Define an independent-group mean question and a paired-change question.</li>
+<li>Identify the observation unit required for each simple analysis.</li>
+<li>Explain why an unknown event status should not be coded as absence.</li>
+<li>Specify the information needed to select one follow-up record per participant.</li>
+</ol>
+</section>
+<section id="reasoning-and-answers" class="level3" data-number="D.1.2">
+<h3 data-number="D.1.2" class="anchored" data-anchor-id="reasoning-and-answers"><span class="header-section-number">D.1.2</span> Reasoning and answers</h3>
+<p>An independent question can ask for the mean follow-up SBP in A minus B among eligible participants with a defined follow-up measurement. A paired question can ask for mean follow-up minus baseline SBP among complete pairs. The first requires one outcome per participant in one group; the second requires matching the two measurements within each participant.</p>
+<p>Unknown status does not establish no event. Record missingness and ascertainment separately. To select one follow-up record, define the time window and selection rule from the protocol, such as proximity to the planned visit. A choice based on which result is favourable is not a valid record-selection rule.</p>
+</section>
+</section>
+<section id="case-2-summarise-waiting-times" class="level2" data-number="D.2">
+<h2 data-number="D.2" class="anchored" data-anchor-id="case-2-summarise-waiting-times"><span class="header-section-number">D.2</span> Case 2: Summarise waiting times</h2>
+<p>The invented values are 2, 3, 3, 4, 4, 5, 6, 7, 8, and 18 minutes.</p>
+<section id="tasks-1" class="level3" data-number="D.2.1">
+<h3 data-number="D.2.1" class="anchored" data-anchor-id="tasks-1"><span class="header-section-number">D.2.1</span> Tasks</h3>
+<ol type="1">
+<li>Calculate the mean and median.</li>
+<li>Calculate the sample SD and first–third quartiles using the script’s type-7 convention.</li>
+<li>Explain what the value of 18 does to the mean relative to the median.</li>
+<li>Select a graph and write a two-sentence descriptive result.</li>
+</ol>
+</section>
+<section id="reasoning-and-answers-1" class="level3" data-number="D.2.2">
+<h3 data-number="D.2.2" class="anchored" data-anchor-id="reasoning-and-answers-1"><span class="header-section-number">D.2.2</span> Reasoning and answers</h3>
+<p>The mean is 6.0 minutes, median 4.5, sample SD 4.62, and first–third quartiles 3.25–6.75. The IQR is 3.50 and observed limits are 2–18 minutes. The value of 18 extends the upper tail and increases the mean relative to the central ordered values.</p>
+<p>A histogram with a boxplot or individual points can show concentration and the long upper tail. A result could read: “Waiting time was available for 10 observations. The median was 4.5 minutes (first–third quartile 3.25–6.75), and values ranged from 2 to 18 minutes; the mean was 6.0 minutes (SD 4.6).”</p>
+<p>The separate value is not automatically an error. Verify its source before deciding whether any analytical treatment is needed.</p>
+</section>
+</section>
+<section id="case-3-compare-independent-groups" class="level2" data-number="D.3">
+<h2 data-number="D.3" class="anchored" data-anchor-id="case-3-compare-independent-groups"><span class="header-section-number">D.3</span> Case 3: Compare independent groups</h2>
+<p>Group A has n = 60, mean SBP 128 mmHg, and SD 14. Group B has n = 60, mean 134, and SD 16. Assume the independent structure and conventional Welch inference are suitable for the illustration.</p>
+<section id="tasks-2" class="level3" data-number="D.3.1">
+<h3 data-number="D.3.1" class="anchored" data-anchor-id="tasks-2"><span class="header-section-number">D.3.1</span> Tasks</h3>
+<ol type="1">
+<li>Define the contrast A minus B and calculate its estimate.</li>
+<li>Reproduce the Welch SE, degrees of freedom, and 95% interval.</li>
+<li>Interpret the result without relying on the p-value threshold alone.</li>
+<li>Assess whether the interval establishes a reduction of at least an illustrative 5 mmHg.</li>
+</ol>
+</section>
+<section id="reasoning-and-answers-2" class="level3" data-number="D.3.2">
+<h3 data-number="D.3.2" class="anchored" data-anchor-id="reasoning-and-answers-2"><span class="header-section-number">D.3.2</span> Reasoning and answers</h3>
+<p>The estimate is −6.0 mmHg, SE 2.745, degrees of freedom approximately 115.96, and 95% CI −11.44 to −0.56. The two-sided p-value is 0.0308.</p>
+<p>The estimate is negative in the stated direction and the interval excludes zero under the model. However, the interval includes reductions smaller than 5 mmHg as well as larger reductions. It therefore does not establish a reduction of at least that illustrative size. Whether the difference can be attributed to treatment depends on design and conduct not specified by these summaries.</p>
+</section>
+</section>
+<section id="case-4-compare-paired-measurements" class="level2" data-number="D.4">
+<h2 data-number="D.4" class="anchored" data-anchor-id="case-4-compare-paired-measurements"><span class="header-section-number">D.4</span> Case 4: Compare paired measurements</h2>
+<p>There are 30 complete pairs. Mean follow-up minus baseline SBP is −8 mmHg and the SD of differences is 10 mmHg.</p>
+<section id="tasks-3" class="level3" data-number="D.4.1">
+<h3 data-number="D.4.1" class="anchored" data-anchor-id="tasks-3"><span class="header-section-number">D.4.1</span> Tasks</h3>
+<ol type="1">
+<li>Calculate the paired SE and t statistic.</li>
+<li>State the degrees of freedom and 95% CI.</li>
+<li>Identify the distribution that needs assessment for the conventional paired t inference.</li>
+<li>Explain why the result does not alone establish the cause of the change.</li>
+</ol>
+</section>
+<section id="reasoning-and-answers-3" class="level3" data-number="D.4.2">
+<h3 data-number="D.4.2" class="anchored" data-anchor-id="reasoning-and-answers-3"><span class="header-section-number">D.4.2</span> Reasoning and answers</h3>
+<p>The SE is 1.826 mmHg, t = −4.382, df = 29, and CI −11.73 to −4.27. The two-sided p-value is 0.000141. The relevant small-sample distributional assessment concerns the within-pair differences.</p>
+<p>Matching and dependence between pairs also need to be checked. A before–after change can be associated with several time-related processes, so a non-zero mean change does not itself isolate an intervention effect.</p>
+</section>
+</section>
+<section id="case-5-interpret-a-three-group-analysis" class="level2" data-number="D.5">
+<h2 data-number="D.5" class="anchored" data-anchor-id="case-5-interpret-a-three-group-analysis"><span class="header-section-number">D.5</span> Case 5: Interpret a three-group analysis</h2>
+<p>Three groups each have 20 observations and SD 10 mmHg; their means are 125, 130, and 135 mmHg. The conventional one-way illustration gives F(2, 57) = 5.00 and p = 0.00998.</p>
+<section id="tasks-4" class="level3" data-number="D.5.1">
+<h3 data-number="D.5.1" class="anchored" data-anchor-id="tasks-4"><span class="header-section-number">D.5.1</span> Tasks</h3>
+<ol type="1">
+<li>State the null and alternative hypotheses.</li>
+<li>Explain why the omnibus result does not identify all pairwise differences.</li>
+<li>Identify what must be specified for follow-up comparisons.</li>
+<li>Explain why three repeated time points would require a different analysis structure.</li>
+</ol>
+</section>
+<section id="reasoning-and-answers-4" class="level3" data-number="D.5.2">
+<h3 data-number="D.5.2" class="anchored" data-anchor-id="reasoning-and-answers-4"><span class="header-section-number">D.5.2</span> Reasoning and answers</h3>
+<p>The null states that all population means are equal. The alternative states that they are not all equal. At least one departure can produce the omnibus result; it does not establish that each pair differs.</p>
+<p>Specify the contrasts or pairs, the variance model, compatible follow-up procedure, and multiplicity family. Measurements repeated in the same people are dependent and cannot be treated as three independent samples by this model.</p>
+</section>
+</section>
+<section id="case-6-compare-event-proportions" class="level2" data-number="D.6">
+<h2 data-number="D.6" class="anchored" data-anchor-id="case-6-compare-event-proportions"><span class="header-section-number">D.6</span> Case 6: Compare event proportions</h2>
+<p>Assume an invented cohort-like comparison with complete common follow-up. A has 30 events and 70 non-events; B has 15 events and 85 non-events.</p>
+<section id="tasks-5" class="level3" data-number="D.6.1">
+<h3 data-number="D.6.1" class="anchored" data-anchor-id="tasks-5"><span class="header-section-number">D.6.1</span> Tasks</h3>
+<ol type="1">
+<li>Calculate group-specific proportions and the absolute difference.</li>
+<li>Calculate RR and OR for A relative to B.</li>
+<li>Calculate expected counts and identify the Pearson test result.</li>
+<li>Explain why OR and RR should not be interchanged.</li>
+<li>Explain how the interpretation would change in outcome-based sampling.</li>
+</ol>
+</section>
+<section id="reasoning-and-answers-5" class="level3" data-number="D.6.2">
+<h3 data-number="D.6.2" class="anchored" data-anchor-id="reasoning-and-answers-5"><span class="header-section-number">D.6.2</span> Reasoning and answers</h3>
+<p>The proportions are 30% and 15%, the difference is 15 percentage points, RR = 2.00, and OR = 2.43. Expected counts are 22.5 and 77.5 in each row. The uncorrected Pearson statistic is 6.452 with df = 1 and p = 0.0111.</p>
+<p>RR compares probabilities; OR compares odds. The log-Wald intervals are 1.15–3.48 for RR and 1.21–4.87 for OR. Fisher’s two-sided p = 0.0171 is a different inferential calculation, not an alternative selected because it is preferable numerically.</p>
+<p>If participants were selected as cases and controls, the sampled event fractions would not directly estimate the population risks. The design must support the interpretation of the displayed denominator and effect measure.</p>
+</section>
+</section>
+<section id="case-7-preserve-categorical-pairing" class="level2" data-number="D.7">
+<h2 data-number="D.7" class="anchored" data-anchor-id="case-7-preserve-categorical-pairing"><span class="header-section-number">D.7</span> Case 7: Preserve categorical pairing</h2>
+<p>In 100 invented before–after pairs, 20 are present at both times, 15 change present to absent, 5 change absent to present, and 60 remain absent.</p>
+<section id="tasks-6" class="level3" data-number="D.7.1">
+<h3 data-number="D.7.1" class="anchored" data-anchor-id="tasks-6"><span class="header-section-number">D.7.1</span> Tasks</h3>
+<ol type="1">
+<li>Calculate the before and after proportions.</li>
+<li>Identify the discordant pairs.</li>
+<li>Name the structure-appropriate comparison and explain why independent testing is unsuitable.</li>
+</ol>
+</section>
+<section id="reasoning-and-answers-6" class="level3" data-number="D.7.2">
+<h3 data-number="D.7.2" class="anchored" data-anchor-id="reasoning-and-answers-6"><span class="header-section-number">D.7.2</span> Reasoning and answers</h3>
+<p>The before proportion is 35% and after proportion 25%. The discordant counts are 15 and 5, totalling 20. A McNemar-type or suitable exact paired comparison retains the matching. Treating before and after as independent samples would discard it.</p>
+<p>The exact conditional two-sided binomial p-value for 15 of 20 discordant pairs in one direction under probability 0.5 is 0.0414. Its interpretation and interval require a specified paired procedure; this teaching result should not be mistaken for the independent-table example.</p>
+</section>
+</section>
+<section id="case-8-correlation-and-regression-interpretation" class="level2" data-number="D.8">
+<h2 data-number="D.8" class="anchored" data-anchor-id="case-8-correlation-and-regression-interpretation"><span class="header-section-number">D.8</span> Case 8: Correlation and regression interpretation</h2>
+<p>Consider two separate invented summaries: Pearson r = 0.60 from 50 pairs, and a simple linear slope of 0.50 mmHg per year with SE 0.10 from 60 observations.</p>
+<section id="tasks-7" class="level3" data-number="D.8.1">
+<h3 data-number="D.8.1" class="anchored" data-anchor-id="tasks-7"><span class="header-section-number">D.8.1</span> Tasks</h3>
+<ol type="1">
+<li>Interpret the coefficient of correlation and its Fisher interval.</li>
+<li>Explain why the correlation does not give a slope in mmHg/year.</li>
+<li>Interpret the slope and its approximate 95% interval.</li>
+<li>Explain why a perfectly correlated pair of measurement methods can disagree.</li>
+</ol>
+</section>
+<section id="reasoning-and-answers-7" class="level3" data-number="D.8.2">
+<h3 data-number="D.8.2" class="anchored" data-anchor-id="reasoning-and-answers-7"><span class="header-section-number">D.8.2</span> Reasoning and answers</h3>
+<p>The correlation describes positive linear association, with an approximate Fisher CI of 0.39–0.75. It is unitless and does not quantify the original-scale increment. The slope indicates a 0.50-mmHg difference in conditional mean for each year in the simple unadjusted model, with CI approximately 0.30–0.70.</p>
+<p>If method B equals A plus 20 units, their Pearson correlation can be +1 while a systematic difference remains. Agreement and correlation therefore answer different questions.</p>
+</section>
+</section>
+<section id="case-9-translate-log-odds" class="level2" data-number="D.9">
+<h2 data-number="D.9" class="anchored" data-anchor-id="case-9-translate-log-odds"><span class="header-section-number">D.9</span> Case 9: Translate log odds</h2>
+<p>In the simple model for the independent event table, group B is coded 0, A is coded 1, and the group coefficient is 0.8873.</p>
+<section id="tasks-8" class="level3" data-number="D.9.1">
+<h3 data-number="D.9.1" class="anchored" data-anchor-id="tasks-8"><span class="header-section-number">D.9.1</span> Tasks</h3>
+<ol type="1">
+<li>Exponentiate the coefficient.</li>
+<li>State the no-association value on each scale.</li>
+<li>Explain what is and is not adjusted by this model.</li>
+<li>Write one result sentence using the correct outcome scale.</li>
+</ol>
+</section>
+<section id="reasoning-and-answers-8" class="level3" data-number="D.9.2">
+<h3 data-number="D.9.2" class="anchored" data-anchor-id="reasoning-and-answers-8"><span class="header-section-number">D.9.2</span> Reasoning and answers</h3>
+<p>The exponentiated coefficient is approximately 2.43. The null is zero for log odds and one for the OR. The model contains group only and has not adjusted for other characteristics.</p>
+<p>A sentence could read: “Group A had higher event odds than B in the simple unadjusted model (OR 2.43; Wald 95% CI 1.21–4.87).” It should not replace odds with risk or claim independent adjustment.</p>
+</section>
+</section>
+<section id="case-10-audit-a-results-paragraph" class="level2" data-number="D.10">
+<h2 data-number="D.10" class="anchored" data-anchor-id="case-10-audit-a-results-paragraph"><span class="header-section-number">D.10</span> Case 10: Audit a results paragraph</h2>
+<p>Consider the deliberately flawed statement: “The treatment significantly improved the outcome (p = 0.000), and there was no difference in the other outcome (p = 0.08).”</p>
+<section id="tasks-9" class="level3" data-number="D.10.1">
+<h3 data-number="D.10.1" class="anchored" data-anchor-id="tasks-9"><span class="header-section-number">D.10.1</span> Tasks</h3>
+<p>Identify the missing information and unsupported conclusions. Rewrite the structure using placeholders for information that would be required from the actual study.</p>
+</section>
+<section id="reasoning-and-answers-9" class="level3" data-number="D.10.2">
+<h3 data-number="D.10.2" class="anchored" data-anchor-id="reasoning-and-answers-9"><span class="header-section-number">D.10.2</span> Reasoning and answers</h3>
+<p>The statement omits the outcome definition, analytical sample, groups, effect magnitude, units, intervals, test, and design. “Improved” asserts a favourable and potentially causal interpretation without the required context. p = 0.000 is an inappropriate rounding statement. p = 0.08 does not establish no difference.</p>
+<p>A defensible structure is: “Among [analytical n], [outcome] differed between [defined groups] by [estimate and unit] ([interval and method]; [test and p-value]). For [second outcome], the estimate was [value] with CI [limits], indicating [what the remaining uncertainty permits].” Complete the placeholders from the actual analysis rather than inventing the missing study results.</p>
+</section>
+</section>
+<section id="practical-datasets-to-be-added-by-the-author" class="level2" data-number="D.11">
+<h2 data-number="D.11" class="anchored" data-anchor-id="practical-datasets-to-be-added-by-the-author"><span class="header-section-number">D.11</span> Practical datasets to be added by the author</h2>
+<p>The software exercises will need datasets with documented variables and the appropriate structure:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 31%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dataset purpose</th>
+<th style="text-align: left;">Required structure</th>
+<th style="text-align: left;">Core variable definitions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Description and independent comparisons</td>
+<td style="text-align: left;">One eligible participant per row</td>
+<td style="text-align: left;">ID, group, outcome, unit, and missingness</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Paired comparison</td>
+<td style="text-align: left;">Matched baseline and follow-up values</td>
+<td style="text-align: left;">ID, timing, paired measurements, and difference direction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Categorical association</td>
+<td style="text-align: left;">Independent group and known event status</td>
+<td style="text-align: left;">Group, event definition, follow-up, and reference categories</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Correlation and simple modeling</td>
+<td style="text-align: left;">Complete predictor–outcome pairs</td>
+<td style="text-align: left;">ID, quantitative variables, units, and included range</td>
+</tr>
+</tbody>
+</table>
+<p>Provide a data dictionary, source or generation description, and version information with each file. The numerical illustrations above remain separate teaching calculations unless a practical dataset is explicitly designed and checked to reproduce them.</p>
+</section>
+<section id="hands-on-practice" class="level2" data-number="D.12">
+<h2 data-number="D.12" class="anchored" data-anchor-id="hands-on-practice"><span class="header-section-number">D.12</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add practice datasets, jamovi files, screenshots, software tasks, and practical solutions here. -->
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -740,6 +1010,9 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -747,4 +1020,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

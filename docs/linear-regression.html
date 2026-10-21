@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Introduction To Linear Regression – Hands-On Data Analysis Using Jamovi</title>
+<title>14&nbsp; Introduction to Simple Linear Regression – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-885b2cfb8d18508768e9bf8f9ab5c5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,55 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
+<style>html{ scroll-behavior: smooth; }</style>
 
+  <script defer="" src="vendor/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Regression</a></li><li class="breadcrumb-item"><a href="./linear-regression.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Correlation and Introductory Regression</a></li><li class="breadcrumb-item"><a href="./linear-regression.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,12 +161,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./jamovi-book-volume-1-review.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +206,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +247,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +270,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +305,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +334,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +369,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -306,22 +386,35 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
-    <h2 id="toc-title"><b>Sections</b></h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
    
   <ul class="collapse">
-  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link active" data-scroll-target="#simple-linear-regression"><span class="header-section-number">11.1</span> Simple Linear Regression</a></li>
-  <li><a href="#basic-assumptions" id="toc-basic-assumptions" class="nav-link" data-scroll-target="#basic-assumptions"><span class="header-section-number">11.2</span> Basic Assumptions</a></li>
-  <li><a href="#output-interpretation-in-jamovi" id="toc-output-interpretation-in-jamovi" class="nav-link" data-scroll-target="#output-interpretation-in-jamovi"><span class="header-section-number">11.3</span> Output Interpretation in Jamovi</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">14.1</span> Learning objectives</a></li>
+  <li><a href="#specify-the-outcome-and-predictor" id="toc-specify-the-outcome-and-predictor" class="nav-link" data-scroll-target="#specify-the-outcome-and-predictor"><span class="header-section-number">14.2</span> Specify the outcome and predictor</a></li>
+  <li><a href="#the-simple-linear-model" id="toc-the-simple-linear-model" class="nav-link" data-scroll-target="#the-simple-linear-model"><span class="header-section-number">14.3</span> The simple linear model</a></li>
+  <li><a href="#interpret-the-slope-in-its-units" id="toc-interpret-the-slope-in-its-units" class="nav-link" data-scroll-target="#interpret-the-slope-in-its-units"><span class="header-section-number">14.4</span> Interpret the slope in its units</a></li>
+  <li><a href="#interpret-the-intercept-only-where-meaningful" id="toc-interpret-the-intercept-only-where-meaningful" class="nav-link" data-scroll-target="#interpret-the-intercept-only-where-meaningful"><span class="header-section-number">14.5</span> Interpret the intercept only where meaningful</a></li>
+  <li><a href="#fitted-values-and-residuals" id="toc-fitted-values-and-residuals" class="nav-link" data-scroll-target="#fitted-values-and-residuals"><span class="header-section-number">14.6</span> Fitted values and residuals</a></li>
+  <li><a href="#assumptions-and-what-they-are-needed-for" id="toc-assumptions-and-what-they-are-needed-for" class="nav-link" data-scroll-target="#assumptions-and-what-they-are-needed-for"><span class="header-section-number">14.7</span> Assumptions and what they are needed for</a></li>
+  <li><a href="#confidence-intervals-and-hypothesis-tests-for-the-slope" id="toc-confidence-intervals-and-hypothesis-tests-for-the-slope" class="nav-link" data-scroll-target="#confidence-intervals-and-hypothesis-tests-for-the-slope"><span class="header-section-number">14.8</span> Confidence intervals and hypothesis tests for the slope</a></li>
+  <li><a href="#what-r-squared-describes" id="toc-what-r-squared-describes" class="nav-link" data-scroll-target="#what-r-squared-describes"><span class="header-section-number">14.9</span> What R-squared describes</a></li>
+  <li><a href="#estimating-a-mean-versus-predicting-an-individual" id="toc-estimating-a-mean-versus-predicting-an-individual" class="nav-link" data-scroll-target="#estimating-a-mean-versus-predicting-an-individual"><span class="header-section-number">14.10</span> Estimating a mean versus predicting an individual</a></li>
+  <li><a href="#a-binary-predictor-as-a-mean-comparison" id="toc-a-binary-predictor-as-a-mean-comparison" class="nav-link" data-scroll-target="#a-binary-predictor-as-a-mean-comparison"><span class="header-section-number">14.11</span> A binary predictor as a mean comparison</a></li>
+  <li><a href="#reading-jamovi-output" id="toc-reading-jamovi-output" class="nav-link" data-scroll-target="#reading-jamovi-output"><span class="header-section-number">14.12</span> Reading jamovi output</a></li>
+  <li><a href="#reporting-example" id="toc-reporting-example" class="nav-link" data-scroll-target="#reporting-example"><span class="header-section-number">14.13</span> Reporting example</a></li>
+  <li><a href="#hands-on-linear-regression" id="toc-hands-on-linear-regression" class="nav-link" data-scroll-target="#hands-on-linear-regression"><span class="header-section-number">14.14</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">14.15</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">14.16</span> Answers and reasoning</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Regression</a></li><li class="breadcrumb-item"><a href="./linear-regression.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regression.html">Correlation and Introductory Regression</a></li><li class="breadcrumb-item"><a href="./linear-regression.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-linear-reg" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></h1>
+<h1 class="title"><span id="sec-linear-regression" class="quarto-section-identifier"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></h1>
 </div>
 
 
@@ -338,21 +431,202 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Linear regression is a statistical method used to model the relationship between a continuous outcome variable and one or more predictor variables. It extends the idea of association by providing a quantitative estimate of how the outcome changes with variation in predictors. Unlike correlation, which measures the strength of association without directionality, regression defines a dependent–independent structure, allowing both explanation and prediction.</p>
-<p>At its core, Linear regression expresses the outcome as a linear function of predictors, with each coefficient representing the expected change in the outcome for a one-unit change in the corresponding predictor, holding other variables constant. In simple linear regression, this relationship involves a single predictor, whereas multiple linear regression incorporates several predictors simultaneously, enabling adjustment for confounding and assessment of independent effects.</p>
-<p>The validity of linear regression depends on key assumptions, including linearity of relationships, independence of observations, homoscedasticity of residuals, and approximate normality of errors. Violations of these assumptions can lead to biased estimates or incorrect inference. Therefore, regression analysis is not limited to model fitting but requires systematic evaluation of these conditions and, where necessary, transformation or alternative modeling approaches.</p>
-<p>In applied medical and public health research, linear regression is used to quantify relationships between exposures and continuous outcomes, such as the effect of age, body mass index, or treatment duration on physiological measurements. Within Jamovi, linear regression can be implemented through a graphical interface; however, meaningful interpretation requires understanding of coefficients, confidence intervals, model fit indices, and the distinction between statistical and practical significance.</p>
-<section id="simple-linear-regression" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="simple-linear-regression"><span class="header-section-number">11.1</span> Simple Linear Regression</h2>
+<section id="learning-objectives" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">14.1</span> Learning objectives</h2>
+<div class="book-panel book-objectives">
+<p>After this chapter, the reader should be able to specify a continuous outcome and one predictor, interpret an original-scale slope and intercept, distinguish fitted values from residuals, recognise the assumptions for conventional inference, and separate estimation of a mean from prediction of an individual value.</p>
+</div>
 </section>
-<section id="basic-assumptions" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="basic-assumptions"><span class="header-section-number">11.2</span> Basic Assumptions</h2>
+<section id="specify-the-outcome-and-predictor" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="specify-the-outcome-and-predictor"><span class="header-section-number">14.2</span> Specify the outcome and predictor</h2>
+<p>Suppose the question is how mean systolic blood pressure varies with age in the observed study population. Blood pressure is the outcome, and age is the predictor. Each independent participant contributes an outcome–predictor pair.</p>
+<p>Simple regression uses one predictor. It does not estimate an effect independent of all other patient characteristics. Multiple predictors, confounder selection, interaction, and adjusted interpretation are reserved for Volume II and beyond. Calling a coefficient “independent” merely because it appears in a regression table would overstate this model.</p>
 </section>
-<section id="output-interpretation-in-jamovi" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="output-interpretation-in-jamovi"><span class="header-section-number">11.3</span> Output Interpretation in Jamovi</h2>
+<section id="the-simple-linear-model" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="the-simple-linear-model"><span class="header-section-number">14.3</span> The simple linear model</h2>
+<p>The model expresses the outcome as</p>
+<p><span class="math display">
+Y_i=\beta_0+\beta_1X_i+\varepsilon_i,
+\qquad E(\varepsilon_i\mid X_i)=0.
+</span></p>
+<p>The intercept <span class="math inline">\beta_0</span> is the model’s conditional mean when <span class="math inline">X=0</span>. The slope <span class="math inline">\beta_1</span> is the difference in conditional mean associated with a one-unit increase in <span class="math inline">X</span>. The error represents the departure of an individual outcome from that conditional mean.</p>
+<p>Ordinary least squares chooses coefficients that minimise the sum of squared residuals. R’s <code>lm()</code> documentation identifies this as a route for fitting linear models and describes the model specification. <span class="citation" data-cites="RLm">[<a href="references.html#ref-RLm" role="doc-biblioref">57</a>]</span></p>
+<p>The model is linear in its coefficients. The basic chapter uses a straight-line relationship with one predictor so that the slope’s units and interpretation are clear. More flexible relationships are developed later rather than forced into the same interpretation.</p>
+</section>
+<section id="interpret-the-slope-in-its-units" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="interpret-the-slope-in-its-units"><span class="header-section-number">14.4</span> Interpret the slope in its units</h2>
+<p>In a deliberately specified teaching equation,</p>
+<p><span class="math display">
+\widehat{\text{SBP}}=100+0.50\times\text{age},
+</span></p>
+<p>the slope is 0.50 mmHg per year. A ten-year age difference corresponds to a five-mmHg difference in the fitted conditional mean under this equation. It is an association in the specified model, not a claim that changing age causes blood pressure to change.</p>
+<p>The fitted mean at age 40 is 120 mmHg; at age 50 it is 125 mmHg. These are values generated by the teaching equation, not predictions validated in a clinical population. Do not use them to guide care.</p>
+<p>Scaling the predictor changes the numerical coefficient without changing the underlying fitted relationship. If age is expressed in decades, the same slope becomes 5.0 mmHg per decade. Always state the predictor unit.</p>
+</section>
+<section id="interpret-the-intercept-only-where-meaningful" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="interpret-the-intercept-only-where-meaningful"><span class="header-section-number">14.5</span> Interpret the intercept only where meaningful</h2>
+<p>The teaching equation gives an intercept of 100 mmHg at age zero. If the study includes adults only, age zero is outside the observed range. The intercept is part of the mathematical equation but may not have a useful substantive interpretation in that study.</p>
+<p>Centering age at 40 would write the same fitted relationship as</p>
+<p><span class="math display">
+\widehat{\text{SBP}}=120+0.50\times(\text{age}-40).
+</span></p>
+<p>The intercept now describes the fitted mean at age 40, while the slope and fitted values are unchanged. This illustrates why a reference value can make an intercept easier to interpret.</p>
+</section>
+<section id="fitted-values-and-residuals" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="fitted-values-and-residuals"><span class="header-section-number">14.6</span> Fitted values and residuals</h2>
+<p>A fitted value is the outcome value on the estimated mean line for a given predictor value. A residual is observed minus fitted:</p>
+<p><span class="math display">
+e_i=y_i-\hat y_i.
+</span></p>
+<p>If an invented participant aged 40 has observed SBP 132 mmHg, the teaching equation gives a fitted value of 120 and a residual of +12 mmHg. The residual indicates where that observation lies relative to the mean line; it is not a model coefficient.</p>
+<p>Residual plots assess whether the mean relationship and error structure are suitable. Curvature, changing spread, and influential observations can identify aspects that a single fit summary conceals. NIST emphasises that a high <span class="math inline">R^2</span> does not establish adequate model fit. <span class="citation" data-cites="NISTRegDiagnostics">[<a href="references.html#ref-NISTRegDiagnostics" role="doc-biblioref">58</a>]</span></p>
+<div id="fig-regression-diagnostics" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two residual plots compare an approximately pattern-free set of residuals with a U-shaped residual pattern after a straight line is fit to curved coordinates.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-regression-diagnostics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/teaching/regression-diagnostics.png" class="img-fluid figure-img" style="width:100.0%" alt="Two residual plots compare an approximately pattern-free set of residuals with a U-shaped residual pattern after a straight line is fit to curved coordinates.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regression-diagnostics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.1: A correctly shaped linear teaching relationship has residuals without a systematic curve; fitting a straight line to a curved relationship leaves a visible residual pattern. All coordinates are invented for illustration.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="assumptions-and-what-they-are-needed-for" class="level2" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="assumptions-and-what-they-are-needed-for"><span class="header-section-number">14.7</span> Assumptions and what they are needed for</h2>
+<p>The conditional mean should be represented adequately by the specified model. Observation or error dependence should be handled according to the study design. The conventional equal-variance SE assumes an appropriate constant error variance. Normality of errors supplies the conventional exact small-sample t inference, rather than a requirement that the raw predictor be normally distributed.</p>
+<p>These conditions have different roles. It is possible to calculate an ordinary least-squares line without establishing that its usual confidence interval is valid. Examine the estimation and inference assumptions separately instead of treating “the regression ran” as confirmation of both.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 42%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Check</th>
+<th style="text-align: left;">What to inspect</th>
+<th style="text-align: left;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean relationship</td>
+<td style="text-align: left;">Outcome–predictor plot and residual pattern</td>
+<td style="text-align: left;">A curve can suggest the straight-line mean is inadequate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Observation structure</td>
+<td style="text-align: left;">Sampling, repeated records, and clusters</td>
+<td style="text-align: left;">Dependence requires a suitable model or variance approach</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Error spread</td>
+<td style="text-align: left;">Residuals across fitted values</td>
+<td style="text-align: left;">Changing spread can affect the usual SE calculation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Error distribution</td>
+<td style="text-align: left;">Residual Q–Q plot</td>
+<td style="text-align: left;">Relevant to conventional small-sample inference</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Influence</td>
+<td style="text-align: left;">Verified unusual predictor or outcome combinations</td>
+<td style="text-align: left;">Assess effect on the fit; do not delete automatically</td>
+</tr>
+</tbody>
+</table>
+<p>A high-leverage observation is unusual in its predictor position. A large residual is unusual relative to the fitted outcome. An influential observation changes the fitted model materially. These descriptions overlap but are not identical.</p>
+</section>
+<section id="confidence-intervals-and-hypothesis-tests-for-the-slope" class="level2" data-number="14.8">
+<h2 data-number="14.8" class="anchored" data-anchor-id="confidence-intervals-and-hypothesis-tests-for-the-slope"><span class="header-section-number">14.8</span> Confidence intervals and hypothesis tests for the slope</h2>
+<p>A conventional slope interval has the form</p>
+<p><span class="math display">
+\hat\beta_1\pm t_{1-\alpha/2,n-2}\,SE(\hat\beta_1),
+</span></p>
+<p>under the simple model’s assumptions. The corresponding null slope is zero. An interval excluding zero describes evidence of a non-zero linear association under that model; it does not establish a clinically important or causal effect.</p>
+<p>For an invented summary with n = 60, slope 0.50 mmHg/year, and SE 0.10, the t statistic is 5.00 with 58 degrees of freedom. The 95% interval is approximately 0.30 to 0.70 mmHg/year. This summary is constructed for teaching; it is separate from the correlation example’s 50 observations.</p>
+<p>Read the coefficient estimate and interval with its units. A standardised coefficient uses a different scale and should not be substituted silently for the original-scale slope.</p>
+</section>
+<section id="what-r-squared-describes" class="level2" data-number="14.9">
+<h2 data-number="14.9" class="anchored" data-anchor-id="what-r-squared-describes"><span class="header-section-number">14.9</span> What R-squared describes</h2>
+<p>With an intercept, <span class="math inline">R^2</span> describes the proportion of the observed outcome sum of squared deviations accounted for by the fitted model. It is not the percentage of people correctly predicted or a guarantee that the model is useful in a new setting.</p>
+<p>For the invented simple-model summary above, the corresponding <span class="math inline">R^2</span> is <span class="math inline">25/(25+58)=0.301</span>. This algebra follows from the simple regression test relationship. The remaining outcome variation is not made irrelevant by a non-zero slope.</p>
+<p>A high <span class="math inline">R^2</span> can coexist with a poor functional form, influential observations, or invalid prediction outside the data. Check residuals and the intended use rather than selecting a model solely because this number is large. <span class="citation" data-cites="NISTRegDiagnostics">[<a href="references.html#ref-NISTRegDiagnostics" role="doc-biblioref">58</a>]</span></p>
+</section>
+<section id="estimating-a-mean-versus-predicting-an-individual" class="level2" data-number="14.10">
+<h2 data-number="14.10" class="anchored" data-anchor-id="estimating-a-mean-versus-predicting-an-individual"><span class="header-section-number">14.10</span> Estimating a mean versus predicting an individual</h2>
+<p>A confidence interval for the fitted conditional mean addresses uncertainty about the mean at a specified predictor value. A prediction interval for a new individual also includes the unexplained individual variation. Under the model, the latter is wider because it answers a different question. <span class="citation" data-cites="RPredictLm">[<a href="references.html#ref-RPredictLm" role="doc-biblioref">59</a>]</span></p>
+<p>Do not use a narrow mean interval to suggest that individual outcomes can be predicted equally precisely. Similarly, an estimated mean relationship within the observed age range does not validate extrapolation to an age far outside that range.</p>
+<p>Prediction-model development requires additional assessment of performance and validation. Those tasks are beyond this introductory association model and are reserved for later volumes.</p>
+</section>
+<section id="a-binary-predictor-as-a-mean-comparison" class="level2" data-number="14.11">
+<h2 data-number="14.11" class="anchored" data-anchor-id="a-binary-predictor-as-a-mean-comparison"><span class="header-section-number">14.11</span> A binary predictor as a mean comparison</h2>
+<p>A predictor coded 0 for group B and 1 for A gives an intercept representing the mean in B and a slope representing A minus B in the simple unadjusted model. This links regression coefficients to the mean-difference question introduced earlier.</p>
+<p>The usual pooled regression SE corresponds to its variance model. It should not be assumed to reproduce the unequal-variance Welch calculation merely because the coefficient estimate is the same. Preserve the intended inference assumptions as well as the estimand.</p>
+</section>
+<section id="reading-jamovi-output" class="level2" data-number="14.12">
+<h2 data-number="14.12" class="anchored" data-anchor-id="reading-jamovi-output"><span class="header-section-number">14.12</span> Reading jamovi output</h2>
+<p>Confirm the continuous outcome and single predictor. Identify the original-scale coefficient, SE, confidence interval, test result, and the analysis sample. Examine the fit and residual information appropriate to the model. jamovi’s linear regression documentation describes these outputs and diagnostic options. <span class="citation" data-cites="jamoviLinear">[<a href="references.html#ref-jamoviLinear" role="doc-biblioref">55</a>]</span></p>
+<p>An output can also offer multiple predictors. Their availability does not mean that this introductory analysis should add variables without a research-based plan. Model specification belongs to the question, design, and later-volume adjustment strategy.</p>
+</section>
+<section id="reporting-example" class="level2" data-number="14.13">
+<h2 data-number="14.13" class="anchored" data-anchor-id="reporting-example"><span class="header-section-number">14.13</span> Reporting example</h2>
+<div class="book-panel book-reporting">
+<p>For the constructed coefficient summary: “In the simple unadjusted linear model, each additional year of age was associated with a 0.50-mmHg higher mean systolic blood pressure (95% CI 0.30–0.70; n = 60; t = 5.00, df = 58). The result describes a linear association and does not isolate age from other patient characteristics.”</p>
+</div>
+<p>A completed report should identify the actual residual assessment, included range, exclusions, and other limitations. Do not claim that assumptions were satisfied unless those checks were performed and documented.</p>
+</section>
+<section id="hands-on-linear-regression" class="level2" data-number="14.14">
+<h2 data-number="14.14" class="anchored" data-anchor-id="hands-on-linear-regression"><span class="header-section-number">14.14</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add simple-model dataset, coefficients, residual diagnostics, predictions, and screenshots here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="14.15">
+<h2 data-number="14.15" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">14.15</span> Review questions</h2>
+<ol type="1">
+<li>What are the units of a slope when SBP is in mmHg and age is in years?</li>
+<li>Does a large R-squared establish that the straight-line model fits adequately?</li>
+<li>Why is a prediction interval for a new individual wider than a mean interval?</li>
+<li>Does a one-predictor coefficient establish an independent effect after adjustment?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="14.16">
+<h2 data-number="14.16" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">14.16</span> Answers and reasoning</h2>
+<ol type="1">
+<li>mmHg per year.</li>
+<li>No.&nbsp;The residual pattern and design may reveal inadequacy that the scalar fit summary conceals.</li>
+<li>It includes both uncertainty in the mean relationship and individual outcome variation under the model.</li>
+<li>No.&nbsp;A simple model contains one predictor and has not adjusted for other characteristics.</li>
+</ol>
+</section>
 
 
-</section>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-RLm" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">R Core Team. Fitting linear models. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-NISTRegDiagnostics" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">NIST/SEMATECH. How can i tell if a model fits my data? <a href="https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm">https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RPredictLm" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">R Core Team. Predict method for linear model fits. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/predict.lm.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/predict.lm.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-jamoviLinear" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. Linear regression: linReg. <a href="https://docs.jamovi.org/jmv/jmv_linReg.html">https://docs.jamovi.org/jmv/jmv_linReg.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -758,12 +1032,12 @@ ul.task-list li input[type="checkbox"] {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./correlation.html" class="pagination-link" aria-label="Correlation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./logistic-regression.html" class="pagination-link" aria-label="Logistic Regression">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./logistic-regression.html" class="pagination-link" aria-label="Introduction to Logistic Regression">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -772,4 +1046,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

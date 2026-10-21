@@ -1,7 +1,138 @@
----
-title: "Data Management"
----
+# Data Entry and Validation {#sec-data-management}
 
-### Recoding and Transforming Variables
-### Handling Missing Data
-### Filtering and Creating Computed Variables
+## Learning objectives
+
+After this chapter, the reader should be able to define what one row represents, build a usable data dictionary, distinguish data type from measure type, specify entry checks, and verify that an imported file retains its intended values and structure.
+
+## Start with the measurement plan
+
+Data entry is the conversion of recorded observations into a structured analytical file. Validation asks whether that conversion follows the study's definitions. A file can open successfully and still contain the wrong unit, a truncated identifier, or a category whose code has changed meaning. Successful import is therefore the beginning of validation.
+
+Before entering data, identify the source, population, observation unit, measurement occasion, and expected number of records. Specify who records each item and how unclear source entries will be resolved. The questionnaire, case record form, and data dictionary should use compatible definitions. An analysis cannot distinguish a missing measurement from an unrecorded negative result if the collection form did not preserve that distinction.
+
+The four preparation chapters have separate responsibilities. This chapter covers capture and validation. @sec-data-cleaning addresses verified corrections and missingness. @sec-data-transformation develops derived variables. @sec-analysis-preparation assembles the variables, eligible observations, and settings needed for a particular analysis.
+
+## Define the row and its identifier
+
+A row may represent a participant, visit, admission, specimen, household, or event. State its meaning before choosing an identifier. A participant-level file ordinarily needs a unique participant ID. A visit-level file may need the combination of participant ID and visit occasion to identify a row uniquely.
+
+An identifier links records; its numerical appearance does not make it a quantitative measurement. The ID `0017` may be different from `17` in a source system. Preserve the intended format during entry and import. Do not use the current row number as a substitute for a stable identifier, because sorting or inserting records can change that number.
+
+For paired measurements, the same row must contain measurements from the same participant, or a verified key must link the separate files. A convenient row order does not establish matching. For clustered data, retain the cluster identifier even when the current volume's simple methods cannot accommodate the full dependence structure.
+
+## Build the data dictionary
+
+The dictionary should allow another researcher to interpret a column without asking the person who entered it. Include the name, definition, source, timing, unit, data and measure types, permitted values, missing codes, and any validation rule. A derived variable also needs its formula and the version of its source variables.
+
+The following entries are invented specifications for a teaching study:
+
+| Variable | Meaning and timing | Representation | Validation rule |
+|:---------|:-------------------|:---------------|:----------------|
+| `study_id` | Participant code assigned at enrolment | Text ID | Present and unique in the participant file |
+| `group` | Defined study group | Nominal; A or B | One permitted label per eligible participant |
+| `sbp_baseline` | Baseline systolic blood pressure | Decimal; continuous; mmHg | Numeric when observed; source checked when flagged |
+| `sbp_followup` | Value at the specified follow-up visit | Decimal; continuous; mmHg | Timing meets the study's visit rule |
+| `event` | Defined event during the stated period | Nominal; 1 present, 0 absent | Unknown status is missing, with a reason recorded separately |
+| `severity` | Recorded ordered category | Ordinal; mild, moderate, severe | Order matches the collection form |
+
+The blood pressure entries intentionally contain no invented clinical acceptance limit. A project's limits should come from its measurement protocol and instrument, and should distinguish an error from a value that needs review.
+
+Use short, stable variable names and informative descriptions. Keep units out of the cells containing numeric values: store `128`, with mmHg in the dictionary, rather than mixing `128 mmHg` and `128` in one column. Store a categorical response in its own column instead of using cell colour to encode its meaning. These principles are consistent with recommendations for organising spreadsheet data. [@BromanWoo]
+
+## Separate data type from measure type
+
+The **data type** describes how values are stored. jamovi distinguishes integer, decimal, and text data. The **measure type** describes how a variable should be treated: continuous, ordinal, nominal, or ID. The automatic choices made during import need review against the dictionary. [@jamoviData]
+
+A study group coded 1 and 2 is nominal, because subtracting the codes has no scientific meaning. A count stored as an integer may be used as a quantitative variable, but that storage choice does not make every statistical model appropriate. An ordinal severity score retains order without establishing equal distances between categories.
+
+Check category labels as well as codes. If 1 means present in one source and absent in another, the same stored value has different meanings. Establish a common mapping from the dictionaries before combining files. Record the reference group and ordinal order explicitly; they affect the presentation and interpretation of later results.
+
+## Choose a consistent table structure
+
+Keep one header row, one variable per column, and one value per cell in a rectangular entry table. Put explanatory notes, totals, and presentation tables elsewhere. Avoid merged cells, repeated headers within the data, and blank rows used to separate groups. They describe a visual layout rather than an analytical structure. [@BromanWoo]
+
+**Wide format** places different measurement occasions in separate columns for the same participant. This is a useful starting structure for the simple paired procedures in Volume I. **Long format** places occasions in separate rows and preserves an ID and time variable. Neither arrangement removes dependence between measurements from one participant.
+
+| Intended question | Starting structure | Required check |
+|:------------------|:-------------------|:---------------|
+| Independent group comparison | Participant ID, outcome, group | Each participant contributes once |
+| Baseline and follow-up comparison | Participant ID and both measurement columns | The columns form valid within-person pairs |
+| Repeated visit description | Participant ID, visit, outcome | ID plus visit identifies the row; counts distinguish people from visits |
+| Event proportion over a defined period | Participant ID and event status | Eligibility, observation period, and unknown status remain explicit |
+
+Keep the source structure when it contains information that a later analysis needs. Reducing repeated visits to one outcome is an analytical decision with a selection rule, rather than a routine formatting operation.
+
+## Use checks at entry and after entry
+
+Validation rules should be specified before viewing the statistical results. Their role is to detect departures from the collection definitions, rather than force the dataset to fit a preferred distribution.
+
+| Check | Example of what it detects | Required response |
+|:------|:--------------------------|:------------------|
+| Required field | Missing participant identifier | Resolve from the source before linkage |
+| Permitted category | Group recorded as an undefined C | Query the source or dictionary |
+| Data format | Text in a numeric measurement | Check for units, special codes, or import errors |
+| Range or plausibility | Value outside a protocol-defined range | Distinguish an error from a valid unusual value |
+| Cross-field consistency | Follow-up recorded before enrolment | Verify dates and the occasion definition |
+| Uniqueness | Repeated participant key | Determine whether it is duplication or a different observation unit |
+
+A **hard rule** concerns a contradiction with the definition, such as a negative count of events. A **review rule** flags a value whose validity requires evidence, such as an unusually high measurement. A flag is not itself an instruction to delete the observation. Keep the rule, source query, and eventual decision traceable.
+
+Some entry systems allow limits and permitted categories to be enforced immediately. A spreadsheet or imported file still needs a separate validation pass. Independent double entry or a targeted source check may be appropriate when the error consequences justify the effort. Record the verification coverage; checking a sample does not establish that every value was checked.
+
+## Distinguish missing, zero, and not applicable
+
+Zero is a value. Missing means that the intended value is unavailable. Not applicable means that the item does not apply under a defined rule. An event count of zero among observed participants is different from an unknown event count, and both differ from a measurement that was never required.
+
+Keep a numeric measurement column suitable for calculation and record missing reasons in a separate field when those reasons matter. A reason might distinguish an absent visit, a failed measurement, and a participant outside the eligible measurement group. Do not use a numeric zero for all three situations.
+
+jamovi represents missing values as blank cells. If a source uses a special code, define that code as missing in the variable settings or create a documented cleaned variable before analysis. Otherwise the code may be treated as an ordinary value. [@jamoviData] A special code is missing because the dictionary says so, rather than because it is inconvenient for the analysis.
+
+## Verify the import
+
+Preserve the source file and import a named working copy. Note the source version, export format, delimiter, decimal convention, and date convention. Inspect whether quoted text, accented labels, leading zeros, and blank cells have survived the transfer. If a date such as `05/06/2026` is ambiguous, resolve its convention from the source rather than from whichever interpretation produces a plausible chronology.
+
+Compare expected and imported records, variables, and category counts. Inspect a few source values from the beginning, middle, and end of the file, including values that challenge the format: a decimal, a special missing code, an identifier with leading zeros, and a label containing punctuation. Reconcile discrepancies before calculating results.
+
+An imported numeric column may be text if some cells include units or unexpected characters. Converting the whole column without investigating those cells can create new missing values. Document the number of conversions that succeed and fail, and verify that no genuine observations disappeared unnoticed.
+
+## An invented validation audit
+
+Suppose an entry file is expected to contain 120 participants and 12 specified variables. It imports with 120 rows and 12 columns. A further audit identifies two rows sharing an ID, four uses of the undeclared group label `b`, and three follow-up fields containing the dictionary's missing code 999.
+
+The matching row and column counts do not establish validity. Query the repeated ID before deciding whether it represents a duplicate or an incorrect identifier. Confirm whether `b` means group B before harmonising it. Define 999 as missing according to the dictionary and retain the reason if available. The issues may overlap within participants, so adding 2, 4, and 3 does not necessarily count the number of affected people.
+
+Write the audit finding before correcting the working file. The next chapter explains how to resolve and log the findings. Validation discovers an issue; cleaning implements a supported decision.
+
+## Release a validated entry file
+
+Before handover, confirm the observation unit and keys, reconcile record counts, verify variable properties, inspect categories and missing codes, and list unresolved queries. Save the dictionary with the entry file. A reviewer should know whether the file is ready for cleaning or whether source questions remain.
+
+For reporting, describe the collection and validation process at the level needed to assess the data. A statement such as "Data were checked" is insufficient when the relevant questions concern matching, eligibility, or conflicting measurements. The later reporting chapter explains how these preparation decisions enter the methods section.
+
+## Hands-on {#hands-on-data-management}
+
+::: {.callout-note .hands-on-note title="jamovi workspace" icon=false}
+<!-- Author: add the entry file, dictionary, import checks, variable settings, and screenshots here. -->
+:::
+
+::: {.review-questions}
+
+## Review questions
+
+1. Why can 120 imported rows fail to represent 120 distinct participants?
+2. A group is coded 1 and 2. What determines its measure type?
+3. Why should an unusual value trigger review rather than automatic deletion?
+4. Which checks are needed when an ID such as 0017 is imported?
+
+:::
+
+::: {.review-answers}
+
+## Answers and reasoning
+
+1. A row may be duplicated, may represent a repeat visit, or may contain an incorrect ID. Count participants using a verified key and the defined observation unit.
+2. The scientific meaning determines the measure type. Group membership is nominal even when its stored codes are numbers.
+3. An unusual observation can be valid. Resolve it against the source and protocol, and retain a record of the decision.
+4. Verify the intended text format, leading zeros, uniqueness, and linkage to the source; do not assume the numeric-looking value has survived unchanged.
+
+:::

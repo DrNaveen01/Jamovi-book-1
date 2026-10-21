@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "revision": 4,
+  "date": "2026-10-21",
+  "source_sha256": "aad972a007a19a41ec4a5b71c7d5801e8dda6c6c6459a47b92cec7ed212adbb3",
+  "html_pages_checked": 27,
+  "local_links_checked": 1909,
+  "css_assets_checked": 125,
+  "pdf_download_links": 27,
+  "citation_groups_checked": 116,
+  "shared_numbered_references": 63,
+  "pdf_pages": 128,
+  "pdf_sha256": "927495f577de16f970239de988a1327397e1e8f3cba01c64d8ef8cc0ef2c9a0b",
+  "limits": [
+    "Automated checks do not replace visual or final author review.",
+    "Reserved Hands-on sections remain pending; no executed jamovi workflow is claimed."
+  ]
+}

@@ -1,118 +1,56 @@
 ---
-title: "Applied Data Analysis Using Jamovi – Volume II"
-subtitle: "Regression, Advanced Methods, and Applied Modeling in Health Research"
-author: "Author Name"
-format:
-  pdf:
-    toc: true
-    number-sections: true
-  docx:
-    toc: true
-    number-sections: true
-  html:
-    toc: true
-    number-sections: true
+title: "Hands-On Data Analysis Using Jamovi — Volume II plan"
+subtitle: "Adjusted Models and Specialist Methods for Health Researchers"
+author: "Dr Naveen Suthar"
+format: html
 ---
 
-# Front Matter
+# Planned scope
 
-## Preface to Volume II
-## Prerequisites and Scope
-## List of Abbreviations
-## List of Figures
-## List of Tables
+**Status:** planning outline. This project does not contain a completed Volume II
+manuscript. Readers should first understand Volume I's question, design, data,
+uncertainty, and reporting framework.
 
-# Section I: Regression Framework
+Volume II extends association into adjusted models and specialist analyses.
+Confounding, predictor coding, interaction, model assumptions, and interpretation
+must be connected to the study design. The volume should distinguish an explanatory
+or association model from a prediction task.
 
-## Chapter 1: From Association to Modeling
-### Concept of Prediction vs Explanation
-### Confounding and Effect Modification
-### Model Building Strategy
+| Planned chapter | Intended contribution |
+|:----------------|:----------------------|
+| 1. From association to modeling | Adjustment, confounding, effect modification, and analysis objectives |
+| 2. Multiple linear regression | Conditional coefficients, coding, collinearity, diagnostics, and reporting |
+| 3. Multiple logistic regression | Adjusted OR, reference groups, interactions, fit, and predicted probabilities |
+| 4. Model assessment | Residuals, influence, model specification, and an introduction to validation |
+| 5. Count data models | Poisson assumptions, person-time offsets, overdispersion, and negative binomial models |
+| 6. Risk models | Difference and ratio scales; risk versus odds; supported modeling alternatives |
+| 7. Survival analysis | Censoring, risk sets, Kaplan–Meier curves, and log-rank comparisons |
+| 8. Cox regression | Conditional hazard ratios, proportional hazards, and adjusted survival models |
+| 9. Diagnostic test evaluation | Sensitivity, specificity, predictive values, ROC, AUC, and context-dependent cut-offs |
+| 10. Reliability and agreement | Internal consistency, kappa, ICC, and the distinction between reliability and agreement |
+| 11. Factorial ANOVA | Main effects, interaction, planned contrasts, and conditional interpretation |
+| 12. Repeated measures ANOVA | Within-person structure, sphericity, corrections, and missing observations |
+| 13. Writing model results | Model definitions, tables, uncertainty, diagnostic findings, and limitations |
+| 14. Applied modeling cases | Complete cohort and case-control workflows, with verified software output |
 
-## Chapter 2: Multiple Linear Regression
-### Model Specification
-### Assumption Checking
-### Multicollinearity
-### Interpretation of Coefficients
-### Model Diagnostics
+## Delivery requirements
 
-## Chapter 3: Logistic Regression
-### Binary Logistic Regression
-### Adjusted Odds Ratio
-### Model Fit (Pseudo R², AIC)
-### Interaction Terms
-### Interpretation in Clinical Context
+Use the same chapter sequence and separate Hands-on note layout as Volume I.
+Specify the installed jamovi and module versions for specialist procedures.
+If a procedure requires an add-on or R, name the dependency and provide a tested
+path; do not imply that all specialist analyses are available in the core menus.
 
-## Chapter 4: Model Validation
-### Residual Analysis
-### Influence Diagnostics
-### Internal Validation Concepts
+Each adjusted example needs a stated target, defensible predictor selection,
+coding and reference levels, missing-data handling, model assessment, and a
+result that remains on the correct scale. Statistical adjustment alone does
+not establish causal identification.
 
-# Section II: Generalized Linear Models
+Model assessment in this volume concerns specification, fit, and basic diagnostic
+judgments. Formal prediction development, resampling, calibration, transportability,
+and external validation are developed in Volume III. Reliability coefficients
+are introduced here; detailed method-comparison limits of agreement are developed
+in Volume III. These boundaries prevent duplicate chapters with different claims.
 
-## Chapter 5: Count Data Models
-### Poisson Regression
-### Overdispersion
-### Negative Binomial Regression
-
-## Chapter 6: Risk Modeling
-### Relative Risk vs Odds Ratio
-### Log-binomial Models (Conceptual)
-### Clinical Interpretation
-
-# Section III: Time-to-Event Analysis
-
-## Chapter 7: Survival Analysis
-### Kaplan–Meier Estimation
-### Log-rank Test
-### Median Survival Interpretation
-
-## Chapter 8: Cox Proportional Hazards Model
-### Hazard Ratio
-### Proportional Hazards Assumption
-### Multivariable Survival Modeling
-
-# Section IV: Diagnostic and Measurement Analytics
-
-## Chapter 9: Diagnostic Test Evaluation
-### Sensitivity and Specificity
-### ROC Curve and AUC
-### Cut-off Selection
-
-## Chapter 10: Reliability and Agreement
-### Cronbach’s Alpha
-### Cohen’s Kappa
-### Intraclass Correlation Coefficient
-
-# Section V: Advanced ANOVA and Repeated Measures
-
-## Chapter 11: Factorial ANOVA
-### Interaction Effects
-### Effect Size
-
-## Chapter 12: Repeated Measures ANOVA
-### Within-Subject Designs
-### Sphericity and Corrections
-### Post-hoc Comparisons
-
-# Section VI: Reporting and Applied Case Modeling
-
-## Chapter 13: Writing Regression Results
-### Structured Reporting
-### Table Presentation
-### Common Analytical Errors
-
-## Chapter 14: Applied Modeling Case Studies
-### Cohort Study Example
-### Case-control Study Example
-### Clinical Dataset Modeling Workflow
-
-# Appendices
-
-## Appendix A: Assumption Checklist for Regression
-## Appendix B: Model Selection Flowchart
-## Appendix C: Interpretation Templates
-## Appendix D: Practice Datasets
-
-# References
-# Index
+Planned appendices include diagnostic checklists, model selection guidance,
+reporting templates, and documented practice datasets. They are not supplied
+as completed appendices in the current review project.

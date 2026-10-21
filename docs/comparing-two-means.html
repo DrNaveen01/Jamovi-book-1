@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.36">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Comparing Two Means – Hands-On Data Analysis Using Jamovi</title>
+<title>10&nbsp; Comparing Two Groups or Two Paired Measurements – Hands-On Data Analysis Using Jamovi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -44,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5abe276e11d0ef74fc71cc0b7f490f8d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-885b2cfb8d18508768e9bf8f9ab5c5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,13 +92,55 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro" rel="stylesheet">
+<style>html{ scroll-behavior: smooth; }</style>
 
+  <script defer="" src="vendor/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./comparing-two-means.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Methods</a></li><li class="breadcrumb-item"><a href="./comparing-two-means.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,12 +161,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Data Analysis Using Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="./Hands-On-Data-Analysis-Using-Jamovi.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="./jamovi-book-volume-1-review.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -123,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Frontmatter</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -144,13 +206,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started With Jamovi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with jamovi</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Entry and Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Cleaning and Missing Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-transformation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Transformations and Derived Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analysis-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Preparing Data for a Specific Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -158,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./descriptive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive statistics and visualization</span></a>
+ <span class="menu-text">Descriptive Statistics and Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,13 +247,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Descriptive Statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./graphical-presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphical Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./inferential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Core Inferential Statistics</span></a>
+ <span class="menu-text">Core Inferential Methods</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,25 +270,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis-testing-concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-two-means.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing-more-than-two-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./categorical-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Categorical Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Associations Between Categorical Variables</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Correlation and Introductory Regression</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -225,19 +305,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction To Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Simple Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Logistic Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Your Findings</span></a>
+ <span class="menu-text">Reporting and Interpretation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,17 +334,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reporting Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Reporting Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
@@ -283,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./choosing-right-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing Right Test</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Choosing an Appropriate Statistical Method</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -295,7 +369,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./practice-dataset-excercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Dataset And Excercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Practice Questions and Applied Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -306,24 +386,31 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
-    <h2 id="toc-title"><b>Sections</b></h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
    
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">7.1</span> Overview</a></li>
-  <li><a href="#independent-t-test" id="toc-independent-t-test" class="nav-link" data-scroll-target="#independent-t-test"><span class="header-section-number">7.2</span> Independent t-test</a></li>
-  <li><a href="#paired-t-test" id="toc-paired-t-test" class="nav-link" data-scroll-target="#paired-t-test"><span class="header-section-number">7.3</span> Paired t-test</a></li>
-  <li><a href="#mannwhitney-u-test" id="toc-mannwhitney-u-test" class="nav-link" data-scroll-target="#mannwhitney-u-test"><span class="header-section-number">7.4</span> Mann–Whitney U Test</a></li>
-  <li><a href="#wilcoxon-signed-rank-test" id="toc-wilcoxon-signed-rank-test" class="nav-link" data-scroll-target="#wilcoxon-signed-rank-test"><span class="header-section-number">7.5</span> Wilcoxon Signed-Rank Test</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">10.1</span> Learning objectives</a></li>
+  <li><a href="#establish-the-comparison-structure" id="toc-establish-the-comparison-structure" class="nav-link" data-scroll-target="#establish-the-comparison-structure"><span class="header-section-number">10.2</span> Establish the comparison structure</a></li>
+  <li><a href="#decide-what-should-be-compared" id="toc-decide-what-should-be-compared" class="nav-link" data-scroll-target="#decide-what-should-be-compared"><span class="header-section-number">10.3</span> Decide what should be compared</a></li>
+  <li><a href="#independent-samples-t-tests" id="toc-independent-samples-t-tests" class="nav-link" data-scroll-target="#independent-samples-t-tests"><span class="header-section-number">10.4</span> Independent-samples t-tests</a></li>
+  <li><a href="#calculated-independent-group-illustration" id="toc-calculated-independent-group-illustration" class="nav-link" data-scroll-target="#calculated-independent-group-illustration"><span class="header-section-number">10.5</span> Calculated independent-group illustration</a></li>
+  <li><a href="#paired-t-test" id="toc-paired-t-test" class="nav-link" data-scroll-target="#paired-t-test"><span class="header-section-number">10.6</span> Paired t-test</a></li>
+  <li><a href="#mannwhitney-u-test" id="toc-mannwhitney-u-test" class="nav-link" data-scroll-target="#mannwhitney-u-test"><span class="header-section-number">10.7</span> Mann–Whitney U test</a></li>
+  <li><a href="#wilcoxon-signed-rank-test" id="toc-wilcoxon-signed-rank-test" class="nav-link" data-scroll-target="#wilcoxon-signed-rank-test"><span class="header-section-number">10.8</span> Wilcoxon signed-rank test</a></li>
+  <li><a href="#effect-size-and-reporting" id="toc-effect-size-and-reporting" class="nav-link" data-scroll-target="#effect-size-and-reporting"><span class="header-section-number">10.9</span> Effect size and reporting</a></li>
+  <li><a href="#hands-on-two-groups" id="toc-hands-on-two-groups" class="nav-link" data-scroll-target="#hands-on-two-groups"><span class="header-section-number">10.10</span> Hands-on</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions"><span class="header-section-number">10.11</span> Review questions</a></li>
+  <li><a href="#answers-and-reasoning" id="toc-answers-and-reasoning" class="nav-link" data-scroll-target="#answers-and-reasoning"><span class="header-section-number">10.12</span> Answers and reasoning</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Statistics</a></li><li class="breadcrumb-item"><a href="./comparing-two-means.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inferential.html">Core Inferential Methods</a></li><li class="breadcrumb-item"><a href="./comparing-two-means.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Comparing Two Means</span></h1>
+<h1 class="title"><span id="sec-two-groups" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparing Two Groups or Two Paired Measurements</span></span></h1>
 </div>
 
 
@@ -340,27 +427,271 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">7.1</span> Overview</h2>
-<p>The t-test is used to compare the means of a continuous outcome between two groups. It is one of the most commonly applied inferential methods in medical and public health research, particularly when assessing differences between an exposure and control group or before-and-after measurements within the same individuals. The objective is to determine whether the observed difference in means is likely to reflect a true difference in the population or can be attributed to random variation.</p>
-<p>The most widely used form, the Student’s t-test, evaluates the difference between group means relative to the variability within the data. Variants of the test are selected based on study design: the independent samples t-test compares two unrelated groups, while the paired t-test is used when observations are matched or repeated within the same subjects. In situations where the assumption of equal variances between groups is not met, the Welch t-test provides a more robust alternative.</p>
-<p>The validity of the t-test depends on key assumptions, including independence of observations, approximate normal distribution of the outcome within groups, and, for the standard version, homogeneity of variances. Deviations from these assumptions may require transformation of data or the use of non-parametric alternatives. Therefore, appropriate test selection and assumption checking are integral to correct application.</p>
-<p>In applied research, the t-test provides both a statistical test of difference and an estimate of the magnitude of that difference, typically reported alongside confidence intervals. Within Jamovi, it can be implemented through a graphical interface; however, interpretation requires attention to the direction and size of the mean difference, not solely the p-value.</p>
+<section id="learning-objectives" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">10.1</span> Learning objectives</h2>
+<div class="book-panel book-objectives">
+<p>After this chapter, the reader should be able to distinguish independent from paired comparisons; define the contrast direction; choose between a mean-based and rank-based question; check the relevant assumptions; and report an estimate without reducing the analysis to a p-value.</p>
+</div>
 </section>
-<section id="independent-t-test" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="independent-t-test"><span class="header-section-number">7.2</span> Independent t-test</h2>
+<section id="establish-the-comparison-structure" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="establish-the-comparison-structure"><span class="header-section-number">10.2</span> Establish the comparison structure</h2>
+<p>Two groups are independent when each observation contributes to one group and the sampling or design does not create the paired dependence addressed by a paired method. Two measurements are paired when they belong to the same participant or to a defined matched pair. The distinction comes from the design, not from whether the group sample sizes happen to be equal.</p>
+<p>Examples are mean follow-up blood pressure in separate groups A and B, and baseline versus follow-up blood pressure in the same participants. The first asks about a between-group contrast. The second asks about the mean within-participant change. These questions should not be analysed interchangeably.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 46%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Independent comparison</th>
+<th style="text-align: left;">Paired comparison</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Basic unit</td>
+<td style="text-align: left;">One observation in one group</td>
+<td style="text-align: left;">One complete pair</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Main mean contrast</td>
+<td style="text-align: left;">Mean in A minus mean in B</td>
+<td style="text-align: left;">Mean of defined within-pair differences</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dependence handled</td>
+<td style="text-align: left;">Groups are independent under the simple model</td>
+<td style="text-align: left;">Matching is retained within pairs</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Key graphical checks</td>
+<td style="text-align: left;">Group distributions and unusual observations</td>
+<td style="text-align: left;">Distribution of within-pair differences</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Missingness</td>
+<td style="text-align: left;">Available outcome values in each group</td>
+<td style="text-align: left;">Availability of both measurements for the paired calculation</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="paired-t-test" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="paired-t-test"><span class="header-section-number">7.3</span> Paired t-test</h2>
+<section id="decide-what-should-be-compared" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="decide-what-should-be-compared"><span class="header-section-number">10.3</span> Decide what should be compared</h2>
+<p>A comparison of means targets an arithmetic difference. A rank-based comparison asks about the ordering or distribution of observations under its assumptions. A non-parametric test is not simply a mean test with the normality requirement removed.</p>
+<p>Specify which quantity matters. If the objective concerns average resource use, a mean may remain relevant even when the distribution is skewed. If it concerns an ordered outcome or a distributional shift, a rank-based approach may be suitable. The choice should retain the original research objective.</p>
 </section>
-<section id="mannwhitney-u-test" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="mannwhitney-u-test"><span class="header-section-number">7.4</span> Mann–Whitney U Test</h2>
+<section id="independent-samples-t-tests" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="independent-samples-t-tests"><span class="header-section-number">10.4</span> Independent-samples t-tests</h2>
+<section id="welchs-method" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="welchs-method"><span class="header-section-number">10.4.1</span> Welch’s method</h3>
+<p>Welch’s t-test estimates a mean difference using the two sample variances separately. It does not impose the equal-variance assumption of the pooled Student method. R documents the Welch/Satterthwaite degrees-of-freedom calculation and distinguishes it from the pooled-variance option. <span class="citation" data-cites="RTTest">[<a href="references.html#ref-RTTest" role="doc-biblioref">38</a>]</span></p>
+<p>For groups A and B,</p>
+<p><span class="math display">
+\widehat\Delta=\bar x_A-\bar x_B,
+\qquad
+SE(\widehat\Delta)=\sqrt{\frac{s_A^2}{n_A}+\frac{s_B^2}{n_B}}.
+</span></p>
+<p>The test compares this difference with the specified null value using the appropriate t reference distribution. A confidence interval adds and subtracts the relevant critical value multiplied by the SE.</p>
+<p>Welch’s method addresses unequal variances; it does not repair dependence, invalid coding, or an outcome dominated by a few influential observations. Inspect those issues separately. In small samples, major departures from the intended distributional model require particular attention.</p>
 </section>
-<section id="wilcoxon-signed-rank-test" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="wilcoxon-signed-rank-test"><span class="header-section-number">7.5</span> Wilcoxon Signed-Rank Test</h2>
+<section id="pooled-students-method" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="pooled-students-method"><span class="header-section-number">10.4.2</span> Pooled Student’s method</h3>
+<p>The pooled independent t-test uses a shared variance estimate. Its interpretation requires a defensible equal-variance model in addition to the independent-observation and distributional conditions. A preliminary variance test alone should not determine whether those assumptions are scientifically reasonable.</p>
+<p>If the pooled method is used, explain why the common-variance model is appropriate. If Welch’s method is used, report it by name rather than labelling every independent comparison simply as “a t-test.” The choice affects the SE and degrees of freedom when group variances or sizes differ.</p>
+</section>
+<section id="check-the-data-before-reading-the-test" class="level3" data-number="10.4.3">
+<h3 data-number="10.4.3" class="anchored" data-anchor-id="check-the-data-before-reading-the-test"><span class="header-section-number">10.4.3</span> Check the data before reading the test</h3>
+<p>Confirm the group labels, outcome unit, group counts, missingness, and contrast direction. Inspect each group’s distribution and check verified extreme values for their influence. Distinguish a coding error from a genuine unusual observation. The analysis should follow the specified estimand rather than change because one version gives a smaller p-value.</p>
+</section>
+</section>
+<section id="calculated-independent-group-illustration" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="calculated-independent-group-illustration"><span class="header-section-number">10.5</span> Calculated independent-group illustration</h2>
+<div class="book-panel book-example">
+<p>The following summaries are invented for teaching and are not extracted from a patient dataset:</p>
+</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Group</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">Mean systolic blood pressure, mmHg</th>
+<th style="text-align: right;">SD, mmHg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">128.0</td>
+<td style="text-align: right;">14.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">134.0</td>
+<td style="text-align: right;">16.0</td>
+</tr>
+</tbody>
+</table>
+<p>The contrast A minus B is −6.0 mmHg. Its Welch SE is 2.745 mmHg. The t statistic is −2.186, with approximately 115.96 degrees of freedom. The two-sided p-value is 0.0308 and the 95% CI is −11.44 to −0.56 mmHg. These quantities are reproduced in the project’s verification script.</p>
+<p>The estimate indicates a lower mean in A. The interval excludes zero but still allows a wide range of reductions. If 5 mmHg is used as an explicitly illustrative importance threshold, the interval does not establish that the reduction is at least that large. The study design, rather than the t-test alone, determines whether the difference can be interpreted causally.</p>
+<section id="reading-the-output" class="level3" data-number="10.5.1">
+<h3 data-number="10.5.1" class="anchored" data-anchor-id="reading-the-output"><span class="header-section-number">10.5.1</span> Reading the output</h3>
+<p>Locate the row for the chosen procedure and confirm the sign of the mean difference. Read the effect estimate and CI before the p-value. The degrees of freedom may be non-integer for Welch’s procedure; this is a property of its approximation, not a sign that participants were counted fractionally.</p>
+<p>jamovi’s independent-samples analysis assigns a continuous outcome and a two-level grouping variable. The author will add the dataset, options, and output screenshots in the Hands-on section. <span class="citation" data-cites="jamoviIndependent">[<a href="references.html#ref-jamoviIndependent" role="doc-biblioref">39</a>]</span></p>
+</section>
+<section id="a-reasoning-record-for-the-illustration" class="level3" data-number="10.5.2">
+<h3 data-number="10.5.2" class="anchored" data-anchor-id="a-reasoning-record-for-the-illustration"><span class="header-section-number">10.5.2</span> A reasoning record for the illustration</h3>
+<div class="book-panel book-example">
+<p>The summary calculations can be reviewed now, while the practical demonstration remains reserved for the author. A complete reasoning record connects the numerical result with its intended question and its limits:</p>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Stage</th>
+<th style="text-align: left;">Decision or finding</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Question</td>
+<td style="text-align: left;">Compare mean follow-up systolic blood pressure in groups A and B</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Target</td>
+<td style="text-align: left;">The unadjusted mean difference, A minus B, in mmHg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Structure</td>
+<td style="text-align: left;">One participant contributes to one group; this independence is an illustration assumption</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Preparation</td>
+<td style="text-align: left;">Verify group labels, outcome unit, eligibility, missingness, and one observation per participant</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Procedure</td>
+<td style="text-align: left;">Welch’s two-sided comparison of means, with a 95% CI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Numerical finding</td>
+<td style="text-align: left;">Estimated difference -6.0 mmHg; interval -11.44 to -0.56 mmHg</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Meaning</td>
+<td style="text-align: left;">A lower estimated mean in A, with uncertainty about the magnitude</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reporting</td>
+<td style="text-align: left;">Include group summaries, contrast direction, CI, method, and design limitations</td>
+</tr>
+</tbody>
+</table>
+<p>The two summary rows are sufficient for the stated Welch calculation. They are insufficient to inspect distributions, detect influential values, establish the missingness pattern, verify the observation unit, or establish a causal interpretation. Those checks require the study record and individual observations. Do not label them as completed merely because the calculation can be reproduced.</p>
+<p>If the scientific objective is a baseline-adjusted group contrast, this unadjusted result does not answer the full question. If observations are clustered or repeated, the assumed independent structure is inadequate. These are reasons to revise the analytical method while preserving the stated objective, rather than simply choose another test from the same menu.</p>
+<p>Reversing the contrast to B minus A gives +6.0 mmHg and a 95% CI of +0.56 to +11.44 mmHg. The two-sided evidence is unchanged, but the reporting direction must change with it. This is a useful consistency check when reviewing the future jamovi output.</p>
+</section>
+</section>
+<section id="paired-t-test" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="paired-t-test"><span class="header-section-number">10.6</span> Paired t-test</h2>
+<p>The paired t-test analyses the within-pair differences. Define the direction, such as follow-up minus baseline, calculate a difference for each complete pair, and estimate the mean difference with its SE. The distributional assumption used for the conventional small-sample t inference concerns the differences, not separate normality tests for the two measurement columns. <span class="citation" data-cites="NISTPaired">[<a href="references.html#ref-NISTPaired" role="doc-biblioref">40</a>]</span></p>
+<p>For differences <span class="math inline">d_i</span>,</p>
+<p><span class="math display">
+\bar d=\frac{1}{n}\sum_{i=1}^{n}d_i,
+\qquad SE(\bar d)=\frac{s_d}{\sqrt n}.
+</span></p>
+<p>The model requires independence between the pairs for this simple analysis. It does not require independence between the two measurements within each pair; that dependence is why the pairing is retained.</p>
+<p>Confirm matching by identifier rather than row order alone when measurements were imported from separate files. Excluding a participant with one missing measurement changes the complete-pair sample. Report how many pairs are available and examine whether incomplete follow-up limits the interpretation.</p>
+<section id="calculated-paired-illustration" class="level3" data-number="10.6.1">
+<h3 data-number="10.6.1" class="anchored" data-anchor-id="calculated-paired-illustration"><span class="header-section-number">10.6.1</span> Calculated paired illustration</h3>
+<div class="book-panel book-example">
+<p>In an invented example of 30 complete pairs, the mean baseline value is 146 mmHg and the mean follow-up value is 138 mmHg. The mean difference, follow-up minus baseline, is −8.0 mmHg, and the SD of the differences is 10.0 mmHg.</p>
+</div>
+<p>The paired SE is <span class="math inline">10/\sqrt{30}=1.826</span> mmHg. The t statistic is −4.382 with 29 degrees of freedom. The 95% CI for mean change is −11.73 to −4.27 mmHg, and the two-sided p-value is 0.000141. Report p &lt; 0.001 at an appropriate precision.</p>
+<p>The estimate describes average within-participant change. A before–after study without an appropriate comparison does not isolate the reason for that change. Time trends, additional care, regression to the mean, and incomplete follow-up may remain relevant. The statistical result should not be labelled a treatment effect solely because the change is non-zero.</p>
+<p>jamovi’s paired analysis requires the defined measurement pairs and can provide mean-difference, interval, descriptive, and diagnostic outputs. Check the sign convention used in its displayed comparison against the convention specified in the manuscript. <span class="citation" data-cites="jamoviPaired">[<a href="references.html#ref-jamoviPaired" role="doc-biblioref">41</a>]</span></p>
+</section>
+</section>
+<section id="mannwhitney-u-test" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="mannwhitney-u-test"><span class="header-section-number">10.7</span> Mann–Whitney U test</h2>
+<p>The Mann–Whitney test uses the relative ranks of observations in two independent groups. It is useful for an ordered or distributional comparison under its assumptions. An interpretation as a simple location or median shift requires additional conditions, such as comparable distributional shapes; it is not automatically a test of two medians. <span class="citation" data-cites="RWilcoxon">[<a href="references.html#ref-RWilcoxon" role="doc-biblioref">42</a>]</span></p>
+<p>For a small invented illustration, let A contain 2, 4, 6, and 8, and B contain 1, 3, 5, and 7. The combined ranks for A are 2, 4, 6, and 8, with rank sum 20. Subtracting <span class="math inline">4(4+1)/2=10</span> gives one convention for <span class="math inline">U_A=10</span>.</p>
+<p>Among the 16 A–B pairs, A is higher in 10, so the observed probability-of-superiority summary is 10/16 = 0.625, with no ties. This calculation helps explain the ordering information. It does not replace a test or interval appropriate to the chosen estimand, and the sample is too small for a precise population conclusion.</p>
+<p>Software may report a rank-sum statistic or a transformed U statistic. Identify the definition when reproducing output. Ties and exact versus asymptotic calculations can also affect the reported p-value, so record the selected approach.</p>
+</section>
+<section id="wilcoxon-signed-rank-test" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="wilcoxon-signed-rank-test"><span class="header-section-number">10.8</span> Wilcoxon signed-rank test</h2>
+<p>The signed-rank test is for paired differences or a one-sample difference distribution. It ranks the non-zero absolute differences and uses their signs. Its conventional location interpretation assumes a suitably symmetric difference distribution; it is not an assumption-free alternative for any paired dataset. <span class="citation" data-cites="RWilcoxon">[<a href="references.html#ref-RWilcoxon" role="doc-biblioref">42</a>]</span></p>
+<p>For invented differences −4, −2, −1, 3, and 6, the ranks of the absolute differences are 4, 2, 1, 3, and 5. The positive rank sum is 3 + 5 = 8, and the negative rank sum is 4 + 2 + 1 = 7. This example shows why the signed-rank method uses both direction and ranked magnitude, rather than just counting positive changes.</p>
+<p>If a difference distribution is strongly asymmetric, consider whether a different estimand or method is required. The paired t-test targets a mean change; the signed-rank procedure targets a different distributional feature. Changing tests should not be described as preserving the same question automatically.</p>
+</section>
+<section id="effect-size-and-reporting" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="effect-size-and-reporting"><span class="header-section-number">10.9</span> Effect size and reporting</h2>
+<p>Retain the effect on its original scale when that scale is clinically interpretable. A −6-mmHg difference communicates more directly than a standardised label alone. If a standardised effect is added, define its denominator and sign convention. Paired and independent standardisations are not interchangeable.</p>
+<p>A reporting sentence for the independent illustration is: “Group A had a lower mean follow-up systolic blood pressure than group B (128.0 versus 134.0 mmHg; n = 60 in each group). The mean difference, A minus B, was −6.0 mmHg (95% CI −11.4 to −0.6; Welch t = −2.19, df = 115.96, p = 0.031).”</p>
+<p>For the paired illustration: “Among 30 complete pairs, mean follow-up minus baseline systolic blood pressure was −8.0 mmHg (SD of differences 10.0; 95% CI −11.7 to −4.3; paired t = −4.38, df = 29, p &lt; 0.001).” The interpretation should then state the design limitations relevant to attributing the change.</p>
+</section>
+<section id="hands-on-two-groups" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="hands-on-two-groups"><span class="header-section-number">10.10</span> Hands-on</h2>
+<div class="hands-on-note callout callout-style-default callout-note no-icon callout-titled" title="jamovi workspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>jamovi workspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Author: add independent, paired, Mann–Whitney, and signed-rank datasets and screenshots here. -->
+</div>
+</div>
+</section>
+<section id="review-questions" class="level2 review-questions" data-number="10.11">
+<h2 data-number="10.11" class="anchored" data-anchor-id="review-questions"><span class="header-section-number">10.11</span> Review questions</h2>
+<ol type="1">
+<li>Two groups have the same number of observations. Does this make them paired?</li>
+<li>Which distribution is relevant to the paired t-test’s conventional normality assumption?</li>
+<li>What does Welch’s procedure address, and what does it leave unresolved?</li>
+<li>Why is a Mann–Whitney result not automatically evidence of different medians?</li>
+</ol>
+</section>
+<section id="answers-and-reasoning" class="level2 review-answers" data-number="10.12">
+<h2 data-number="10.12" class="anchored" data-anchor-id="answers-and-reasoning"><span class="header-section-number">10.12</span> Answers and reasoning</h2>
+<ol type="1">
+<li>No.&nbsp;Pairing requires a defined relationship between observations.</li>
+<li>The within-pair differences.</li>
+<li>It relaxes the pooled equal-variance assumption. It does not resolve dependence, biased sampling, invalid coding, or every form of influential non-normality.</li>
+<li>The procedure uses ranks and distributional ordering. A pure median or location-shift interpretation needs additional distributional conditions.</li>
+</ol>
+</section>
 
 
-</section>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-RTTest" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">R Core Team. Student’s t-test. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-jamoviIndependent" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. T-test: Independent samples. <a href="https://docs.jamovi.org/analyses/jg_21_t-test-independent.html">https://docs.jamovi.org/analyses/jg_21_t-test-independent.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-NISTPaired" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">NIST/SEMATECH. Analysis of paired observations. <a href="https://www.itl.nist.gov/div898/handbook/prc/section3/prc311.htm">https://www.itl.nist.gov/div898/handbook/prc/section3/prc311.htm</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-jamoviPaired" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline"><span class="nocase">jamovi</span>. Paired samples t-test: ttestPS. <a href="https://docs.jamovi.org/jmv/jmv_ttestPS.html">https://docs.jamovi.org/jmv/jmv_ttestPS.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+<div id="ref-RWilcoxon" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">R Core Team. Wilcoxon rank sum and signed rank tests. <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/wilcox.test.html">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/wilcox.test.html</a> [accessed 5 Oct. 2026].</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -765,13 +1096,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./hypothesis-testing-concepts.html" class="pagination-link" aria-label="Hypothesis Testing Concepts">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Hypothesis Testing Concepts</span></span>
+      <a href="./hypothesis-testing-concepts.html" class="pagination-link" aria-label="Estimation and Hypothesis Testing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Estimation and Hypothesis Testing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./comparing-more-than-two-means.html" class="pagination-link" aria-label="Comparing More Than Two Means">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Comparing More Than Two Means</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./comparing-more-than-two-means.html" class="pagination-link" aria-label="Comparing More Than Two Groups">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparing More Than Two Groups</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -780,4 +1111,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

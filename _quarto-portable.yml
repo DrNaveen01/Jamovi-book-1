@@ -1,0 +1,11 @@
+format:
+  pdf:
+    mainfont: texgyretermes
+    mainfontoptions:
+      - Path=fonts/texgyre/
+      - UprightFont=*-regular.otf
+      - BoldFont=*-bold.otf
+      - ItalicFont=*-italic.otf
+      - BoldItalicFont=*-bolditalic.otf
+    sansfont: "Latin Modern Sans"
+    monofont: "Latin Modern Mono"

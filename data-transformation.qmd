@@ -1,0 +1,163 @@
+# Transformations and Derived Variables {#sec-data-transformation}
+
+## Learning objectives
+
+After this chapter, the reader should be able to specify a derived variable, preserve its source measurements, distinguish row calculations from column summaries, check recoding boundaries and missingness, and explain how a transformation changes the scale of an analysis.
+
+## Define the purpose before the formula
+
+A derived variable expresses a quantity needed for the research question. A change score, a unit conversion, an ordered category, and a logarithm are different operations with different meanings. Write the intended definition in words before implementing its formula.
+
+Keep the source columns. Give the derived column a distinct name and a description containing its unit, direction, formula, permissible inputs, and missing-value rule. Record why the derivation is needed and whether it was specified before examining the outcomes.
+
+Cleaning resolves a supported representation problem. Transformation creates a new representation for an analytical purpose. Correcting a verified transcription error is cleaning; calculating follow-up minus baseline is derivation. A mathematical transformation does not repair invalid source values or make an unsuitable study design valid.
+
+## Computed and transformed variables in jamovi
+
+jamovi's computed variables create columns from formulas involving existing variables. Transformed variables allow a reusable rule to be applied to source columns. A transformation refers to its selected source with `$source`, and recode conditions are evaluated in order, using the first condition that is true. [@jamoviComputed; @jamoviTransform]
+
+The chapter uses small formula illustrations. They are not results from an included dataset or a tested saved jamovi analysis. The author will add version-specific demonstrations and screenshots in the reserved Hands-on section.
+
+Choose the tool according to the derivation. A difference between two specified columns is naturally a computed variable. Reversing several items on the same response scale can use one reusable transformation. In either case, the formula needs independent checks before it supports a reported result.
+
+## Distinguish calculations within a row from column summaries
+
+A row calculation uses values belonging to one observation. A column summary uses a set of observations. Confusing these levels can produce a syntactically valid but scientifically wrong variable.
+
+For example, the mean of three specified questionnaire items within a participant differs from the mean response to one item across participants. Likewise, an individual's change from baseline differs from the difference between two column means when the columns contain different observed participants.
+
+The documented jamovi function names distinguish several row and variable operations: `MEAN(...)` and `SUM(...)` are row functions, whereas `VMEAN(var)` and `VSUM(var)` summarise a column. `Z(var)` standardises a variable, and `LN(var)` takes natural logarithms. [@jamoviFunctions] Check the function's input and missing-value behaviour against the intended rule; a function name alone does not define a valid score.
+
+## Unit conversion and ratios
+
+Convert only when the original unit is known. A height of 160 cm becomes 1.60 m by dividing by 100. Retain the source height and label the converted column in metres. Do not combine units in one column and infer the unit solely from magnitude.
+
+Body mass index uses weight in kilograms divided by squared height in metres. [@WHOBMI] An invented illustration uses a weight of 80 kg and a height of 1.60 m:
+
+$$
+\mathrm{BMI}=\frac{\mathrm{weight\ in\ kg}}{(\mathrm{height\ in\ m})^2}
+=\frac{80}{1.60^2}=31.25\ \mathrm{kg/m^2}.
+$$
+
+This is a derivation example, without a clinical classification. Inserting 160 instead of 1.60 gives 0.003125, showing why unit verification must precede calculation. A zero, missing, or unresolved height cannot produce a valid BMI; investigate the source rather than treating an infinite or absent result as a new measured value.
+
+A ratio also requires a meaningful denominator. A rate per unit time requires observed time in the stated unit. When the denominator is zero or unknown, define how the result is represented and what the source problem means. Do not silently convert an undefined ratio to zero.
+
+## Change scores and direction
+
+For paired baseline and follow-up measurements, define
+
+$$
+d=\mathrm{follow\!\text{-}\!up}-\mathrm{baseline}.
+$$
+
+With this definition, negative values indicate a lower follow-up measurement. The formula illustration `sbp_followup - sbp_baseline` uses columns belonging to the same participant. Verify matching before calculating it.
+
+For invented baseline and follow-up values of 146 and 138 mmHg, the change is -8 mmHg. Reversing the subtraction gives +8 mmHg. The statistical evidence can be equivalent under a consistent sign change, but the reporting language must follow the stated direction.
+
+An individual's percentage change, when baseline is a valid non-zero denominator, is
+
+$$
+100\times\frac{\mathrm{follow\!\text{-}\!up}-\mathrm{baseline}}{\mathrm{baseline}}.
+$$
+
+For those values it is -5.48%. Percentage change and absolute change answer different questions. A smaller baseline can produce a larger percentage change for the same absolute difference. When baseline is zero, the ratio is undefined. When baseline is missing, no observed within-person percentage change exists.
+
+The average of individual percentage changes is also generally different from the percentage change in the two group means. Define which quantity is being reported. Preserve enough information to reproduce that calculation.
+
+## Recode categories with explicit boundaries
+
+Recoding needs a complete mapping, not just a new name. Specify the destination for each permitted source category and the treatment of missing or unexpected values. Verify the mapping with an original-by-derived table.
+
+For an invented waiting-time categorisation, define three groups without implying a clinical threshold:
+
+| Source value, minutes | Derived category | Boundary check |
+|:----------------------|:-----------------|:---------------|
+| $0\leq x<10$ | Shorter | 0 belongs here; 10 does not |
+| $10\leq x<20$ | Intermediate | 10 belongs here; 20 does not |
+| $x\geq20$ | Longer | 20 belongs here |
+| Missing or invalid input | Missing or flagged for review | Do not label it as a valid shorter wait |
+
+Check values just below, exactly at, and just above each boundary. Mutually exclusive conditions avoid ambiguity. If a procedure uses the first true rule, a broad condition placed first can make later conditions unreachable. [@jamoviTransform]
+
+Categorisation removes distinctions within each category. Values of 10 and 19.9 become identical under the invented middle category, while 19.9 and 20 become different despite their small separation. Dichotomising a continuous variable can discard information and reduce statistical power. [@AltmanDichotomy]
+
+Use a category when its definition serves the question, with a stated source or purpose. Retain the original continuous variable. Do not search repeatedly for the threshold that produces the preferred result.
+
+## Reverse scoring and composite scores
+
+For an item coded from a minimum $a$ to a maximum $b$, reversal is
+
+$$
+x_{\mathrm{reversed}}=a+b-x.
+$$
+
+On an invented 1-to-5 response scale, this becomes $6-x$: 1 maps to 5, 2 to 4, and 3 remains 3. A reusable jamovi transformation can express this as `6 - $source`. [@jamoviTransform] Recognise declared missing codes before reversal; a missing code of 99 should not become a score of -93.
+
+Reversal is justified by the scoring specification, not by whether it improves an internal consistency statistic. For an established instrument, follow its permitted item coding, scoring, and missing-item rules. Correct arithmetic does not establish that an invented item set measures a valid construct.
+
+Suppose three invented items, after correct reversal where required, have scores 4, 5, and 3. Their sum is 12 and their mean is 4. If one item is missing, a sum of only the two available items is not comparable with a complete three-item sum. An available-item mean also makes assumptions about what the missing item represents.
+
+State the minimum number of required items and the procedure when that minimum is not met. A prorated or available-item score is a deliberate rule that needs justification; it should not arise accidentally from a function's default handling of blanks. Verify complete, partly missing, and entirely missing examples separately.
+
+## Logarithms change the scale of the question
+
+The natural logarithm is defined for positive values. For a positive variable $x$, the transformed value is $\ln(x)$; the original scale is recovered with $\exp(\ln(x))=x$. The documented jamovi function `LN(var)` performs the natural-log calculation. [@jamoviFunctions]
+
+On the log scale, equal ratios give equal differences. Increasing from 10 to 20 and from 20 to 40 gives the same log difference, $\ln(2)=0.6931$, despite different absolute increases. This can be useful when multiplicative relationships match the scientific question.
+
+Transforming individual values also changes the meaning of an average. For the invented positive values 10 and 40, the arithmetic mean is 25. The mean of their natural logs, back-transformed, is 20, the geometric mean. It is not a new way to calculate the arithmetic mean.
+
+Zero and negative values need substantive attention before a log transformation. Adding a constant merely to make the calculation possible changes the resulting scale and interpretation. Adding 1 in one measurement unit need not have the same effect after converting to another unit. Explain the chosen definition rather than treating it as a universal repair.
+
+A transformation may improve the suitability of a model for its intended relationship, but it should not be selected only to pass a normality test. Inspect the transformed distribution and, when modeling, the relevant residual behaviour. Later chapters connect those checks with the method's assumptions.
+
+## Standardisation and its reference set
+
+A sample z-score is
+
+$$
+z_i=\frac{x_i-\bar x}{s},
+$$
+
+where the mean and SD refer to a stated set of observations. For an invented value of 140 mmHg, reference mean 130, and reference SD 10, the z-score is 1. The score describes relative position in that reference distribution; it does not define a clinical diagnosis.
+
+Record whether the reference comes from all eligible observations, a group, or an external population. If the reference mean or SD changes, the same measurement receives a different score. A column with zero SD cannot be standardised by this formula.
+
+Active filters can matter for calculations involving column summaries. jamovi's filter documentation describes how sequential filters affect the observations used in subsequent calculations. [@jamoviFilters] Verify the actual reference set when saving standardised variables. A value derived under one filter state should not be described as based on a different sample.
+
+## Verify and document the derivation
+
+Check simple values by hand, both boundaries of recodes, missing inputs, invalid inputs, and the range and distribution of the new variable. Compare selected derived values with an independent calculation. Reconcile the number of missing results with the rule rather than assuming every new blank is expected.
+
+For a change score, confirm direction and matching. For a unit conversion, confirm the factor and output unit. For a category, inspect the mapping. For a score, check item reversal and missing-item eligibility. For a log, count non-positive inputs before interpreting the transformed values.
+
+Keep full useful precision in the analytical column and round for presentation. Rounding before deriving a boundary category or a difference can change the classification or result. Record the transformation definition with the dictionary so a reviewer can rebuild it from the source variables.
+
+## Hands-on {#hands-on-data-transformation}
+
+::: {.callout-note .hands-on-note title="jamovi workspace" icon=false}
+<!-- Author: add computed columns, reusable transforms, scoring rules, boundary checks, and screenshots here. -->
+:::
+
+::: {.review-questions}
+
+## Review questions
+
+1. Why can follow-up minus baseline differ from the difference between the two available column means?
+2. Under the invented waiting categories, where do 10 and 20 minutes belong?
+3. Why should 99 be recognised as missing before reversing a 1-to-5 item?
+4. Is the back-transformed average of log values the arithmetic mean?
+
+:::
+
+::: {.review-answers}
+
+## Answers and reasoning
+
+1. Individual differences require complete matched measurements. Available column means can use different participants when missingness differs.
+2. Ten belongs to Intermediate and 20 to Longer; the boundaries were defined explicitly.
+3. Applying 6 - 99 would create an invalid score of -93 instead of preserving the declared missingness.
+4. No. Averaging logs and exponentiating gives a geometric mean for positive values; 10 and 40 illustrate 20 versus the arithmetic mean of 25.
+
+:::

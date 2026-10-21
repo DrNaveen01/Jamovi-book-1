@@ -1,88 +1,113 @@
 project:
   type: book
   output-dir: docs
+  post-render:
+    - scripts/harmonise_citations.ts
+  resources:
+    - data/
+    - images/
+    - vendor/
+    - fonts/
 
-engine: knitr
+profile:
+  default: portable
+
 book:
   title: "Hands-On Data Analysis Using Jamovi"
-  subtitle: "Foundations and Core Statistical Methods for Health Researchers"
-  author: "Dr Naveen Suthar"
-  date: "2026-03-26"
-  draft-mode: visible
+  subtitle: "Volume I: Foundations and Core Statistical Methods for Health Researchers"
+  author: ""
+  date: "2026-10-21"
+  date-format: "D MMMM YYYY"
+  output-file: "jamovi-book-volume-1-review"
+  downloads: [pdf]
+  search: true
+  reader-mode: true
+  sidebar:
+    style: docked
+    background: light
   chapters:
     - index.qmd
     - part: foundations.qmd
-      chapters: 
+      chapters:
         - role.qmd
         - getting-started.qmd
         - data-management.qmd
+        - data-cleaning.qmd
+        - data-transformation.qmd
+        - analysis-preparation.qmd
     - part: descriptive.qmd
-      chapters: 
+      chapters:
         - descriptive-statistics.qmd
         - graphical-presentation.qmd
     - part: inferential.qmd
-      chapters: 
+      chapters:
         - hypothesis-testing-concepts.qmd
         - comparing-two-means.qmd
         - comparing-more-than-two-means.qmd
         - categorical-variables.qmd
     - part: regression.qmd
-      chapters: 
+      chapters:
         - correlation.qmd
         - linear-regression.qmd
         - logistic-regression.qmd
     - part: reporting.qmd
-      chapters: 
+      chapters:
         - reporting-results.qmd
-    - references.qmd
-  appendices: 
+  appendices:
     - statistical-formulas.qmd
     - choosing-right-test.qmd
     - glossary.qmd
     - practice-dataset-excercises.qmd
+    - references.qmd
 
-  announcement: This work is in part of a project to write a companion to data analysis using Jamovi software for medical professionals.
-  bread-crumbs: true
-  volume: 1
-  volume-title: First book of the series
-  status: forthcoming
-  publisher-place: "Patna, India"
-  reader-mode: true
-  number-of-volumes: 3
-  downloads: pdf
-  
 bibliography: references.bib
+csl: vancouver.csl
+link-citations: true
+lang: en-GB
 toc: true
-toc-expand: true
 toc-depth: 2
-lof: true
-lot: true
-date-format: "D MMMM YYYY"
 number-sections: true
-fig-height: 5
-fig-width: 8
-execute: 
+callout-icon: false
+filters:
+  - filters/book-style.lua
+  - filters/review-layout.lua
+execute:
+  eval: false
   echo: false
   warning: false
+
 format:
   html:
-    theme: cosmo
-    fontsize: 16px
-    mainfont: "Merriweather, serif"
-    code-link: true
-    toc-title: "<b>Sections</b>"
-    html-math-method: katex
-    published-title: "Last updated"
-    include-in-header:
-      file: fonts.html
+    theme: [cosmo, styles.scss]
+    fontsize: 18px
+    mainfont: "'Times New Roman', 'Book Termes', Georgia, serif"
+    grid:
+      body-width: 760px
+      sidebar-width: 250px
+      margin-width: 210px
+    html-math-method:
+      method: katex
+      url: vendor/katex/
+    toc-title: "In this chapter"
+    published-title: "Draft revised"
+    code-copy: true
+    smooth-scroll: true
   pdf:
     documentclass: book
-    classoption: oneside
+    classoption: [oneside, openany]
     pdf-engine: xelatex
-    fig-align: center
-    zotero: true
-    
-    
-  
-
-
+    mainfont: "Latin Modern Roman"
+    sansfont: "Latin Modern Sans"
+    monofont: "Latin Modern Mono"
+    fontsize: 12pt
+    linestretch: 1.1
+    papersize: a4
+    geometry: [margin=25mm]
+    colorlinks: false
+    keep-tex: true
+    toc-depth: 1
+    include-in-header: includes/pdf-header.tex
+    include-before-body: includes/pdf-frontmatter.tex
+    toc-title: "Contents"
+    fig-cap-location: bottom
+    tbl-cap-location: top

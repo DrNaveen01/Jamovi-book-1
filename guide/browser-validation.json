@@ -1,0 +1,17 @@
+{
+  "actual_body_fonts": [
+    {
+      "familyName": "TeX Gyre Termes",
+      "postScriptName": "TeXGyreTermes-Regular",
+      "isCustomFont": true,
+      "glyphCount": 73
+    }
+  ],
+  "browser": "131.0.6778.204",
+  "mobile_pages_checked": 27,
+  "mobile_width": 390,
+  "horizontal_page_overflow": [],
+  "equations_rendered": 132,
+  "javascript_errors": [],
+  "failed_responses": []
+}

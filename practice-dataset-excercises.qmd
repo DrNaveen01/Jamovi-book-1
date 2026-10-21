@@ -1,4 +1,193 @@
----
-title: "Practice Dataset And Excercises"
----
+# Practice Questions and Applied Cases {#sec-practice}
 
+This appendix contains conceptual and numerical exercises that can be completed from the teaching text. All values are invented. Downloadable jamovi datasets and screenshots are reserved for the Hands-on sections and will be supplied by the author.
+
+## Case 1: Prepare the analysis question
+
+A clinic file contains participant ID, group A/B, baseline SBP, follow-up SBP, and event status. Some participants have more than one visit record, and event status is unavailable for some.
+
+### Tasks
+
+1. Define an independent-group mean question and a paired-change question.
+2. Identify the observation unit required for each simple analysis.
+3. Explain why an unknown event status should not be coded as absence.
+4. Specify the information needed to select one follow-up record per participant.
+
+### Reasoning and answers
+
+An independent question can ask for the mean follow-up SBP in A minus B among eligible participants with a defined follow-up measurement. A paired question can ask for mean follow-up minus baseline SBP among complete pairs. The first requires one outcome per participant in one group; the second requires matching the two measurements within each participant.
+
+Unknown status does not establish no event. Record missingness and ascertainment separately. To select one follow-up record, define the time window and selection rule from the protocol, such as proximity to the planned visit. A choice based on which result is favourable is not a valid record-selection rule.
+
+## Case 2: Summarise waiting times
+
+The invented values are 2, 3, 3, 4, 4, 5, 6, 7, 8, and 18 minutes.
+
+### Tasks
+
+1. Calculate the mean and median.
+2. Calculate the sample SD and first–third quartiles using the script's type-7 convention.
+3. Explain what the value of 18 does to the mean relative to the median.
+4. Select a graph and write a two-sentence descriptive result.
+
+### Reasoning and answers
+
+The mean is 6.0 minutes, median 4.5, sample SD 4.62, and first–third quartiles 3.25–6.75. The IQR is 3.50 and observed limits are 2–18 minutes. The value of 18 extends the upper tail and increases the mean relative to the central ordered values.
+
+A histogram with a boxplot or individual points can show concentration and the long upper tail. A result could read: "Waiting time was available for 10 observations. The median was 4.5 minutes (first–third quartile 3.25–6.75), and values ranged from 2 to 18 minutes; the mean was 6.0 minutes (SD 4.6)."
+
+The separate value is not automatically an error. Verify its source before deciding whether any analytical treatment is needed.
+
+## Case 3: Compare independent groups
+
+Group A has n = 60, mean SBP 128 mmHg, and SD 14. Group B has n = 60, mean 134, and SD 16. Assume the independent structure and conventional Welch inference are suitable for the illustration.
+
+### Tasks
+
+1. Define the contrast A minus B and calculate its estimate.
+2. Reproduce the Welch SE, degrees of freedom, and 95% interval.
+3. Interpret the result without relying on the p-value threshold alone.
+4. Assess whether the interval establishes a reduction of at least an illustrative 5 mmHg.
+
+### Reasoning and answers
+
+The estimate is −6.0 mmHg, SE 2.745, degrees of freedom approximately 115.96, and 95% CI −11.44 to −0.56. The two-sided p-value is 0.0308.
+
+The estimate is negative in the stated direction and the interval excludes zero under the model. However, the interval includes reductions smaller than 5 mmHg as well as larger reductions. It therefore does not establish a reduction of at least that illustrative size. Whether the difference can be attributed to treatment depends on design and conduct not specified by these summaries.
+
+## Case 4: Compare paired measurements
+
+There are 30 complete pairs. Mean follow-up minus baseline SBP is −8 mmHg and the SD of differences is 10 mmHg.
+
+### Tasks
+
+1. Calculate the paired SE and t statistic.
+2. State the degrees of freedom and 95% CI.
+3. Identify the distribution that needs assessment for the conventional paired t inference.
+4. Explain why the result does not alone establish the cause of the change.
+
+### Reasoning and answers
+
+The SE is 1.826 mmHg, t = −4.382, df = 29, and CI −11.73 to −4.27. The two-sided p-value is 0.000141. The relevant small-sample distributional assessment concerns the within-pair differences.
+
+Matching and dependence between pairs also need to be checked. A before–after change can be associated with several time-related processes, so a non-zero mean change does not itself isolate an intervention effect.
+
+## Case 5: Interpret a three-group analysis
+
+Three groups each have 20 observations and SD 10 mmHg; their means are 125, 130, and 135 mmHg. The conventional one-way illustration gives F(2, 57) = 5.00 and p = 0.00998.
+
+### Tasks
+
+1. State the null and alternative hypotheses.
+2. Explain why the omnibus result does not identify all pairwise differences.
+3. Identify what must be specified for follow-up comparisons.
+4. Explain why three repeated time points would require a different analysis structure.
+
+### Reasoning and answers
+
+The null states that all population means are equal. The alternative states that they are not all equal. At least one departure can produce the omnibus result; it does not establish that each pair differs.
+
+Specify the contrasts or pairs, the variance model, compatible follow-up procedure, and multiplicity family. Measurements repeated in the same people are dependent and cannot be treated as three independent samples by this model.
+
+## Case 6: Compare event proportions
+
+Assume an invented cohort-like comparison with complete common follow-up. A has 30 events and 70 non-events; B has 15 events and 85 non-events.
+
+### Tasks
+
+1. Calculate group-specific proportions and the absolute difference.
+2. Calculate RR and OR for A relative to B.
+3. Calculate expected counts and identify the Pearson test result.
+4. Explain why OR and RR should not be interchanged.
+5. Explain how the interpretation would change in outcome-based sampling.
+
+### Reasoning and answers
+
+The proportions are 30% and 15%, the difference is 15 percentage points, RR = 2.00, and OR = 2.43. Expected counts are 22.5 and 77.5 in each row. The uncorrected Pearson statistic is 6.452 with df = 1 and p = 0.0111.
+
+RR compares probabilities; OR compares odds. The log-Wald intervals are 1.15–3.48 for RR and 1.21–4.87 for OR. Fisher's two-sided p = 0.0171 is a different inferential calculation, not an alternative selected because it is preferable numerically.
+
+If participants were selected as cases and controls, the sampled event fractions would not directly estimate the population risks. The design must support the interpretation of the displayed denominator and effect measure.
+
+## Case 7: Preserve categorical pairing
+
+In 100 invented before–after pairs, 20 are present at both times, 15 change present to absent, 5 change absent to present, and 60 remain absent.
+
+### Tasks
+
+1. Calculate the before and after proportions.
+2. Identify the discordant pairs.
+3. Name the structure-appropriate comparison and explain why independent testing is unsuitable.
+
+### Reasoning and answers
+
+The before proportion is 35% and after proportion 25%. The discordant counts are 15 and 5, totalling 20. A McNemar-type or suitable exact paired comparison retains the matching. Treating before and after as independent samples would discard it.
+
+The exact conditional two-sided binomial p-value for 15 of 20 discordant pairs in one direction under probability 0.5 is 0.0414. Its interpretation and interval require a specified paired procedure; this teaching result should not be mistaken for the independent-table example.
+
+## Case 8: Correlation and regression interpretation
+
+Consider two separate invented summaries: Pearson r = 0.60 from 50 pairs, and a simple linear slope of 0.50 mmHg per year with SE 0.10 from 60 observations.
+
+### Tasks
+
+1. Interpret the coefficient of correlation and its Fisher interval.
+2. Explain why the correlation does not give a slope in mmHg/year.
+3. Interpret the slope and its approximate 95% interval.
+4. Explain why a perfectly correlated pair of measurement methods can disagree.
+
+### Reasoning and answers
+
+The correlation describes positive linear association, with an approximate Fisher CI of 0.39–0.75. It is unitless and does not quantify the original-scale increment. The slope indicates a 0.50-mmHg difference in conditional mean for each year in the simple unadjusted model, with CI approximately 0.30–0.70.
+
+If method B equals A plus 20 units, their Pearson correlation can be +1 while a systematic difference remains. Agreement and correlation therefore answer different questions.
+
+## Case 9: Translate log odds
+
+In the simple model for the independent event table, group B is coded 0, A is coded 1, and the group coefficient is 0.8873.
+
+### Tasks
+
+1. Exponentiate the coefficient.
+2. State the no-association value on each scale.
+3. Explain what is and is not adjusted by this model.
+4. Write one result sentence using the correct outcome scale.
+
+### Reasoning and answers
+
+The exponentiated coefficient is approximately 2.43. The null is zero for log odds and one for the OR. The model contains group only and has not adjusted for other characteristics.
+
+A sentence could read: "Group A had higher event odds than B in the simple unadjusted model (OR 2.43; Wald 95% CI 1.21–4.87)." It should not replace odds with risk or claim independent adjustment.
+
+## Case 10: Audit a results paragraph
+
+Consider the deliberately flawed statement: "The treatment significantly improved the outcome (p = 0.000), and there was no difference in the other outcome (p = 0.08)."
+
+### Tasks
+
+Identify the missing information and unsupported conclusions. Rewrite the structure using placeholders for information that would be required from the actual study.
+
+### Reasoning and answers
+
+The statement omits the outcome definition, analytical sample, groups, effect magnitude, units, intervals, test, and design. "Improved" asserts a favourable and potentially causal interpretation without the required context. p = 0.000 is an inappropriate rounding statement. p = 0.08 does not establish no difference.
+
+A defensible structure is: "Among [analytical n], [outcome] differed between [defined groups] by [estimate and unit] ([interval and method]; [test and p-value]). For [second outcome], the estimate was [value] with CI [limits], indicating [what the remaining uncertainty permits]." Complete the placeholders from the actual analysis rather than inventing the missing study results.
+
+## Practical datasets to be added by the author
+
+The software exercises will need datasets with documented variables and the appropriate structure:
+
+| Dataset purpose | Required structure | Core variable definitions |
+|:----------------|:-------------------|:--------------------------|
+| Description and independent comparisons | One eligible participant per row | ID, group, outcome, unit, and missingness |
+| Paired comparison | Matched baseline and follow-up values | ID, timing, paired measurements, and difference direction |
+| Categorical association | Independent group and known event status | Group, event definition, follow-up, and reference categories |
+| Correlation and simple modeling | Complete predictor–outcome pairs | ID, quantitative variables, units, and included range |
+
+Provide a data dictionary, source or generation description, and version information with each file. The numerical illustrations above remain separate teaching calculations unless a practical dataset is explicitly designed and checked to reproduce them.
+
+## Hands-on {#hands-on-practice}
+
+::: {.callout-note .hands-on-note title="jamovi workspace" icon=false}
+<!-- Author: add practice datasets, jamovi files, screenshots, software tasks, and practical solutions here. -->
+:::

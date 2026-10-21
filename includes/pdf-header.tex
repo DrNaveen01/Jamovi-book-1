@@ -1,0 +1,71 @@
+% Book style 1.0: typography, hierarchy, panels, tables and navigation.
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{etoolbox}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage[skins,breakable]{tcolorbox}
+\usepackage{caption}
+\definecolor{bookink}{HTML}{202320}
+\definecolor{bookaccent}{HTML}{285F5A}
+\definecolor{bookrule}{HTML}{CCD6D2}
+\definecolor{bookgrey}{HTML}{F3F5F3}
+\definecolor{bookcream}{HTML}{FBF7EF}
+\setkeys{Gin}{keepaspectratio}
+\raggedbottom
+\setlength{\emergencystretch}{3em}
+\widowpenalty=10000
+\clubpenalty=10000
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\color{bookink}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{9.5}{11}\selectfont Hands-On Data Analysis Using Jamovi}
+\fancyhead[R]{\fontsize{9.5}{11}\selectfont Volume I | Review draft}
+\fancyfoot[C]{\fontsize{10}{12}\selectfont\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{16pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\fontsize{10}{12}\selectfont\thepage}\renewcommand{\headrulewidth}{0pt}}
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\fontsize{24}{28}\selectfont\color{black}\raggedright}
+  {\normalfont\fontsize{10}{12}\selectfont\color{bookaccent}\MakeUppercase{\chaptertitlename}\ \thechapter}
+  {9pt}{}[\vspace{8pt}{\color{bookrule}\titlerule}]
+\titlespacing*{\chapter}{0pt}{22pt}{24pt}
+\titleformat{\section}{\normalfont\bfseries\fontsize{15}{18}\selectfont\color{black}\raggedright}{\thesection}{.6em}{}
+\titlespacing*{\section}{0pt}{1.4\baselineskip}{.6\baselineskip}
+\titleformat{\subsection}{\normalfont\bfseries\fontsize{12.5}{15}\selectfont\color{black}\raggedright}{\thesubsection}{.6em}{}
+\titlespacing*{\subsection}{0pt}{1.1\baselineskip}{.45\baselineskip}
+\captionsetup{font=small,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=false,skip=7pt}
+\AtBeginEnvironment{longtable}{\fontsize{10.5}{12.5}\selectfont\renewcommand{\arraystretch}{1.12}}
+\tcbset{bookbase/.style={enhanced,breakable,sharp corners,boxrule=.35pt,leftrule=1.6pt,
+  left=10pt,right=10pt,top=7pt,bottom=6pt,before skip=4pt,after skip=10pt,
+  fontupper=\normalsize,coltext=bookink}}
+\newtcolorbox{bookobjectives}{bookbase,colback=bookgrey,colframe=bookaccent}
+\newtcolorbox{bookexample}{bookbase,colback=bookcream,colframe=black!40}
+\newtcolorbox{bookreporting}{bookbase,colback=black!3,colframe=black!45}
+\AtBeginDocument{%
+  \definecolor{quarto-callout-note-color}{HTML}{285F5A}%
+  \definecolor{quarto-callout-note-color-frame}{HTML}{A8BFB7}%
+}
+\makeatletter
+\providecommand{\booksubtitle}{}
+\providecommand{\subtitle}[1]{\gdef\booksubtitle{#1}}
+\renewcommand{\maketitle}{%
+  \begin{titlepage}\thispagestyle{empty}\raggedright
+  \vspace*{30mm}
+  {\fontsize{11}{14}\selectfont\color{bookaccent} VOLUME I\par}
+  \vspace{9mm}
+  {\fontsize{28}{33}\selectfont\bfseries\color{black}\@title\par}
+  \vspace{5mm}
+  {\normalfont\fontsize{15}{20}\selectfont\booksubtitle\par}
+  \vspace{9mm}
+  {\color{bookaccent}\rule{30mm}{1.2pt}\par}
+  \vspace{14mm}
+  {\fontsize{14}{18}\selectfont\@author\par}
+  \vfill
+  {\fontsize{10.5}{14}\selectfont Author-review edition\par\@date\par}
+  \end{titlepage}%
+}
+\makeatother
